@@ -1,0 +1,1061 @@
+/**
+	All Homepage styles / elements comes here.
+	@author: xafaR
+	@file: page-element-home
+
+*/
+
+
+// <editor-fold desc="- - - - [ HOMEPAGE & FULL WIDTH ELEMENTS ] - - - -">
+.homepage {
+
+
+
+
+
+	#header-wrapper {
+		//background: url(images/header-bg-large.png) no-repeat center bottom;
+
+
+
+
+		.header-primary {
+		//	background: transparent;
+		}
+
+
+		.banner-wrapper {
+			.h-tag {
+				position: absolute;
+			}
+		}
+	}
+
+} // homepage
+
+#body-wrapper {
+	overflow: hidden;
+}
+
+
+.homepage,
+.full-width {
+
+	.page-container.container,
+	#body-wrapper,
+	#content,
+	#content #main-column {
+
+		width: 100%;
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		//	.box-sizing(~'border-box');
+	}
+
+	#content {
+		padding-top: 0;
+	}
+
+	#content #main-column {
+		//padding: 0;
+		margin:0!important;
+
+		@include  box-shadow(unset);
+
+	}
+
+
+
+}
+
+
+//=====================================================================================
+//=====================================================================================
+// 	Layout
+//=====================================================================================
+//=====================================================================================
+.homepage,
+.full-width {
+
+	.body-content  {
+		padding: 0;
+		margin-top: 0;
+
+
+		> .container {
+			width: 100%;
+			padding: 0;
+			margin-top: 0;
+			max-width: 100%;
+		}
+	}
+}
+
+
+
+
+// Homepage
+
+/**
+ - FULL WIDTH
+*/
+
+
+// full-width
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ Theme Elements ]-------">
+
+
+
+
+	.layer-wrap {
+		position: relative;
+		padding-top: 80%;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ LANDING PAGE ELEMENTS FOR THEME ] - - - -">
+
+
+
+
+	// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ Theme Sections HOMEPAGE ]-------">
+
+
+						//=========================================================================
+			//=========================================================================
+			//  SERVICE SECTIONS        -----------------------------------------------
+			//=========================================================================
+			//=========================================================================
+				.service-area {
+					
+					background-size: 100%;
+
+
+
+					.srv-card {
+						width: 100%;
+						min-height: 50vh;
+						overflow: hidden;
+						position: relative;						
+					}
+
+
+					@include desktop {
+
+
+						.title-wrap {
+							padding: 40px;
+							width: auto;
+							margin-bottom: 10vh;
+							text-align: left;
+
+
+							@include transform(translateX(-10%));
+							@include xash-box-shadow(0 0 30px rgba($brand-primary,.20));
+
+
+
+						}
+
+
+
+						.srv-container {
+							height : 100vh;
+							width: auto;
+							display: flex;
+							flex-wrap: wrap;
+							padding-left: $grid-gutter-width * 1.5;
+
+							//@TEST
+							///background: rgba(0,0,0,.15);
+
+
+
+							.srv-card {
+								height: 100%;
+								width: auto;
+								display: flex;
+								align-items: center;
+							}
+	
+
+						}
+
+
+
+
+
+					} // media : desktop
+
+
+					.misc.back {
+						position : absolute;
+						top: 50%;
+						left: 10%;
+						width: 100%;
+						height: 100%;
+
+						@include transform(translateY(-50%));
+					
+					}
+
+
+					.sm-item-plx {
+						//@include transition(transform .5s linear )
+					}
+
+					.srv-circle-wrap {
+						width: 100%;
+					}				
+
+				} // service area
+
+
+
+
+
+
+.tags-container {
+	div:nth-child(2n) {align-self: flex-end;}
+	div:nth-child(3n) {align-self: center;}
+	div:nth-child(4n) {align-self: flex-end;}
+	div:nth-child(5n) { @include transform(translateX(-15%))}
+}
+
+	/////////////////////////////////////////////////////////////////////////
+
+
+
+	// <editor-fold desc="- - - - [ FORMS ] - - - -">
+
+
+
+
+		//-----------------------------------------------------------
+		//  Search Form
+		//-----------------------------------------------------------
+		.modal-content {
+
+			.form-wrapper {
+				width: 100%;
+				margin: 0;
+
+				form.row {
+					margin: 0;
+				}
+
+				@include xash-box-shadow(none);
+			}
+
+
+			.glb-search-form & {
+				background: white;
+
+
+				.modal-footer {
+					display: none;
+				}
+			}
+
+		}
+
+
+
+	// </editor-fold>
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Theme Pages ] - - - -">
+
+	
+
+	/// <editor-fold defaultstate="collapsed" desc="-------[ PAGES ]-------">
+
+		//=========================================================================
+		//=========================================================================
+		// About Us
+		//=========================================================================
+		//=========================================================================
+		.anim-circle-wrap {
+
+
+			@include desktop {
+				margin-top: 10vh;
+
+			}
+
+			.circle-pt {
+				margin: auto;
+			}
+
+
+		}   // anim-wrap
+
+	
+
+
+		// ------------------------------------------------------------------------
+		// About Us Ends  ---------------------------------------------------------
+
+
+
+
+
+
+		//=========================================================================
+		//=========================================================================
+		//=========================================================================
+		//  Contact Us
+		//=========================================================================
+		//=========================================================================
+
+
+		// Contact Us Ends --------------------------------------------------------
+
+
+
+
+
+		//=========================================================================
+		//=========================================================================
+		// VERTICAL PANELS (experimental for masonry)
+		//=========================================================================
+		//=========================================================================
+		.v-masonary-grid {
+
+			// use vpanel if vertical row is being used..
+			.row.vt {
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-items: stretch;
+				height: 100%;
+
+
+				> div[class*="v-panel-"] {
+					padding: 0;
+				}
+
+			}
+
+
+			.phz-1 {
+				width: calc(100% / 3);
+				flex-basis: calc(100% / 3);
+			}
+
+
+			.phz-2 {
+				width: calc(100% / 2);
+				flex-basis: calc(100% / 2);
+			}
+
+			.phz-3 {
+				width: 100%;
+				flex-basis: 100%;
+			}
+
+			.pvt-1 { height: calc(100% / 3); }
+			.pvt-2 { height: calc( (100% / 3) * 2 ); }
+			.pvt-half { height: calc( 100% / 2); }
+			.pvt-3 { height: calc(100%); }
+
+
+		}
+
+
+
+		.h-masonry-grid {
+			display: flex;
+			flex-flow: row wrap;
+			width: 100%;
+			align-items: stretch;
+
+			&.test .brick,
+			.brick.bg {
+				background: rgba(118, 255, 236, 0.15);
+			}
+
+			.br-auto {
+				flex-basis: auto;
+				flex-grow: 1;
+			}
+
+			@for $i from 1 through 12 {
+				$width: percentage($i / 12) ;
+
+				.brick.br-#{$i} {
+					width: 100%;
+					flex-basis: 100%;
+					max-width: 100%;
+				}
+
+				.brick.br-offset-#{$i} {
+					//margin-left: $width;
+				}
+			}
+			// loop
+
+
+
+			.brick {
+				margin : $grid-gutter-width 0;
+			}
+
+
+
+			// Temp only brick width
+			@include desktop {
+
+				margin-left: -$grid-gutter-width; /* Adjustment for the gutter */
+				margin-right: -$grid-gutter-width;
+
+
+
+					@for $i from 1 through 12 {
+						$width: percentage($i / 12) ;
+
+						.brick.br-#{$i} {
+							width: $width;
+							flex-basis: $width;
+							max-width: $width;
+						}
+
+						.brick.br-offset-#{$i} {
+							margin-left: $width;
+						}
+					}
+					// loop
+
+
+
+
+				.brick {
+					//flex: auto;
+					min-height: 250px;
+					min-width: 150px;
+					margin: 0 0 $grid-gutter-width*6 0; /* Some gutter */
+					padding-left: $grid-gutter-width;
+					padding-right: $grid-gutter-width;
+
+					&.hz-1 {
+						width: 33%;
+					}
+					&.hz-2 {
+						width: 66%;
+					}
+					&.hz-3 {
+						width: 70%;
+					}
+
+					&.vt-1 {
+						height: 29%;
+						height: 20vh;
+					}
+					&.vt-2 {
+						height: 54%;
+						height: 54vh;
+					}
+					&.vt-3 {
+						height: 90%;
+						height: 90vh;
+					}
+
+					&.auto {
+						flex-grow: 1;
+					}
+				}
+
+			} // @DESKTOP!! -------------------
+		}
+
+		.screen-height {
+			height: 90vh;
+		}
+		.v-row {
+
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 (-$grid-gutter-width / 2 );
+
+
+			> div {
+				padding: $grid-gutter-width / 2;
+
+
+				.content {
+
+					width: 100%;
+					height : 100%;
+
+
+					&.bg {
+						background : #676e7f;
+					}
+				}
+			}
+
+
+
+		}
+
+		//-------------------------------------------------------------------------
+
+
+		//=========================================================================
+		//=========================================================================
+		// PortFolio - Showcase
+		//=========================================================================
+		//=========================================================================
+		
+		//=========================================================================
+		//=========================================================================
+		//  BRANDING
+		//=========================================================================
+		//=========================================================================
+		// <editor-fold desc="- - - - [ PAGE BRANDING ] - - - -">
+
+
+
+
+			//header area
+ 		$__bg_branding_page : #FEFEFE;
+		$_bg-srv-brand : $__bg_branding_page;
+		.page-srv-branding {
+
+
+			shape-rendering: geometricPrecision;
+
+			#wrapper {
+				overflow: hidden;
+				background: $_bg-srv-brand url(images/bg-long-curve.svg)repeat-y center top;
+				background-size: 100%;
+
+			}
+
+
+			.banner-wrapper {
+				background: url( images/header-branding.jpg) no-repeat center top;
+				background-size: cover;
+			}
+
+
+			.branding-box {
+				text-align: center;
+
+				h2 {
+					margin: 0;
+				}
+
+			}
+
+
+
+			.bnd-emblm {
+				color: white;
+				text-align: left;
+
+
+				> span {
+					display: block;
+					font-size: 3.5em;
+
+
+					&.line-row {
+						margin: 0 0 -20px ;
+						line-height: 1.1;
+					}
+
+					&:nth-child(2) {font-size: 2.25em;}
+					&:nth-child(3) {font-size: 1.75em;}
+				}
+
+			}
+
+
+
+
+
+
+			.img-3 {
+				margin-top: -120px;
+			}
+
+
+
+			.img-cont.illus-wrap
+			{
+				position: absolute;
+				top: 10%;
+				left: 0;
+				height: 100%;
+				width: auto;
+
+				> * {
+					height: 100%;
+				}
+			}
+
+
+			.logo-tmp {
+				width: 100%;
+				max-width: 100vw;
+
+
+				@include desktop {
+					max-width: 70vw;
+				}
+			}
+
+
+			.card-illus {
+				width: 50vw;
+				height: 50vh;
+				position: absolute;
+				left: 50%;
+				top : 50%;
+
+				@include transform(translate(-50%,-50%));
+				@include xash-border-radius(45px);
+				@include xash-box-shadow(0 20px 35px rgba(0,0,0,.15));
+				@include opacity(0);
+			}
+
+
+
+			.white-over {
+				background: $__bg_branding_page;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				@include opacity(0);
+			}
+
+
+		}  // Srv-branding
+
+
+		// General CHits Shit
+
+			.obj-1-v,
+			.obj-2-v,
+			.obj-3-v ,
+			.chit,
+			.chit-l {
+				position: absolute;
+				background: white;
+				padding: $grid-gutter-width * 1.5;
+				@include xash-box-shadow(0 0 25px rgba(black,.1));
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				> * {
+					@include reset();
+				}
+			}
+
+			.obj-1-v {
+				height: 60vh;
+				width: 94px;
+
+				top: 0;
+				left: 10%;
+				align-items: flex-end;
+
+				> * {
+					//color: $blue;
+					width: 312px;
+					display: inline-block;
+					overflow: visible;
+					transform-origin: left top;
+					position: absolute;
+					left: 30px;
+					bottom: 0;
+					@include transform(rotate(-90deg));
+				}
+			}
+
+
+			.obj-2-v,
+			.chit {
+				width: 320px;
+				height: 200px;
+				right: 0;
+				top : 25%;
+				padding: $grid-gutter-width / 2;
+
+				align-items: flex-end;
+				justify-content: flex-end;
+
+				font-family: $font-heading;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: $text-color;
+			}
+
+
+
+
+
+
+		
+			//----------------------------------------------------------------------------------
+			// Page- Service Branding end.
+
+			// </editor-fold>
+
+
+
+
+		// <editor-fold desc="- - - - [ PAGE WEB DEV ] - - - -">
+
+			//=========================================================================
+			//=========================================================================
+			//  Page Web Development
+			//=========================================================================
+			//=========================================================================
+			
+			.bg-dotted {
+				background:url(images/bg-circle-dotted.svg) no-repeat center center fixed;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			//=========================================================================
+			//=========================================================================
+			//  MAIN SERVICES Area
+			//=========================================================================
+			//=========================================================================
+				
+
+
+				// Header ---
+				//-------------------------------------------------------------------
+
+
+		// </editor-fold>
+
+
+
+
+		// <editor-fold desc="- - - - [ PAGE WEB HOSTING ] - - - -">
+
+		
+		// </editor-fold>
+
+
+
+
+
+// </editor-fold>
+	
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Archive Pages ] - - - -">
+.theme-dark {
+	background-color: $bg-dark;
+
+
+
+	#page-content {
+		background-color: $bg-dark;
+	}
+
+
+
+
+	.bg-line-ovrlay,
+	.bg-line-ovrlay:before {
+		border-color: rgba($text-color-light, .1);
+	}
+
+
+	#{$text-grp}{
+		color: $text-color-light;
+	}
+
+
+	// Header Section
+	.site-title svg * {
+		fill: $text-color-light;
+	}
+
+
+	.color-light {
+		color: #2393c9 !important;
+	}
+
+
+	.color-dark {
+		color: #080d13!important;
+	}
+
+
+}
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ MISC USED ELEMENTS ] - - - -">
+
+
+.list-stylish {
+	&,
+	li {
+		@include reset()
+	}
+
+	li {
+
+		padding: 4px 10px;
+		margin: 5px 10px;
+		background: rgba(white , .15);
+		font-size: .9rem;
+		
+
+		@include xash-box-shadow(0 4px 20px rgba( black, .4 ));
+		@include xash-border-radius(4px);
+
+
+
+		@include desktop {
+			padding: 10px;
+			margin: 8px 10px;
+			text-align: center;
+			width: 100%;
+
+
+			&:nth-child(2n) {
+				margin: 12px 10px 10px $grid-gutter-width*2;
+				@include transform(translateX(-10px));
+			}
+
+			&:nth-child(3n) {
+				margin: 12px 10px 10px $grid-gutter-width;
+				@include transform(translateX(40px));
+			}
+			&:nth-child(4n) { margin: 12px 10px 10px 10px;}
+		}
+
+
+
+	}
+}
+
+
+.bg-abs-1 {
+	background-image: url(images/bg-abs-1.svg);
+	background-repeat: no-repeat;
+}
+
+
+
+.card-style {
+	padding: $grid-gutter-width * .25;
+	background: $_bg-srv-brand;
+
+	@include xash-box-shadow(0 0 25px 10px rgba( $_bg-srv-brand, .25) );
+
+
+	@include desktop {
+		padding: $grid-gutter-width * 1.5;
+	}
+}
+
+
+
+
+
+
+	//// Contains Icon etc
+	//@import "_layout-page-elements-home-partial";
+	// PHONE TESTING ELEMENT
+	.dv-device {
+		display: none;
+
+
+
+		@include phone {
+			display: block;
+		}
+	}
+
+
+	.map-popup {
+		width: 100%;
+		height: 600px;
+	}
+
+
+
+	.ajax-loader {
+		background: url(images/ajax-loader.gif) no-repeat center center;
+		display: none;
+	}
+
+	select.ajax-loader {
+		background-position: 97% center;
+
+
+		.dir-right & {
+			background-position: 2% center;
+		}
+
+	}
+
+
+
+
+
+
+
+	//http://jsbin.com/huyusu/3/edit?html,css,js,output
+
+
+	
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+/// CURRENT 
+
+.heading-cont {
+	// position: absolute;
+	width: 100vw;
+	//height: 100px;
+	//top: 10vh;
+	left: 0;
+
+	.heading-huge{
+		margin-top: -20vh;
+	}
+
+	.sub-heading {
+		padding: 0 $gutter-width;
+
+		h1 {
+			color: map-get($primary-colorkit, "600" );
+			text-transform: uppercase;
+			font-size: 7rem;
+			line-height: 0;
+			margin:0;
+		}
+	}
+
+}
+.heading-huge {
+	color: white;
+	font-size: 16vw;
+	text-transform: uppercase;
+	
+	@include text-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+}
+
+
+
+
+.fancy-bar {
+	position: absolute;
+
+	top: $gutter-width;
+	left: 0;
+	padding: $gutter-width;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+
+
+	&.bottom { 	bottom: $gutter-width; top: auto;	}
+}

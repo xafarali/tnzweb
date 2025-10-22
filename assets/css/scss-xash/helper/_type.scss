@@ -1,0 +1,126 @@
+/**
+All Typography Override of Bootstrap here.
+*/
+
+/**
+	Font Generated
+	@author: xafaR
+	@file: xash-bootstrap
+
+*/
+
+// <editor-fold desc="- - - - [ FONT GENERATOR ] - - - -">
+
+
+
+// --------------------------------------------
+//= Heading Font
+// --------------------------------------------
+
+// Regular
+@include lib-font-face( $font-heading-name, $font-path, "outfit-regular" );
+
+// Regular - Italic
+//@include lib-font-face( $font-heading-name, $font-path, "caviar-dreams-italic", 400, italic );
+
+
+
+
+
+// SEMI-BOLD- -------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+@include lib-font-face( $font-heading-name, $font-path, "outfit-semibold", 500 );
+// Bold-it
+//@include lib-font-face( $font-heading-name, $font-path, "caviar-dreams-bolditalic", 700 , italic );
+
+
+
+
+
+
+// BOLD- -------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+@include lib-font-face( $font-heading-name, $font-path, "outfit-bold", 700 );
+// Bold-it
+//@include lib-font-face( $font-heading-name, $font-path, "caviar-dreams-bolditalic", 700 , italic );
+
+
+
+
+//--------------------------------------------------------------------------------------------------------
+// LIGHT -------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+// Light 300 -- this was used for chrome bug of weight 300
+@include lib-font-face( $font-heading-name-light, $font-path, "outfit-thin");
+
+// Light 300-it
+//@include lib-font-face( $font-heading-name-light, $font-path, "caviar-dreams-italic", 400, italic );
+
+// Regular on 300
+@include lib-font-face( $font-heading-name, $font-path, "montserrat-thin", 300);
+// Regular - on 300 Italic
+//@include lib-font-face( $font-heading-name, $font-path, "caviar-dreams-italic", 300, italic );
+
+
+
+
+
+
+// BOLD- on Light ----------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------
+// Light in bold
+@include lib-font-face( $font-heading-name-light, $font-path, "outfit-bold", 700 );
+//@include lib-font-face( $font-heading-name-light, $font-path, "caviar-dreams-bolditalic", 700, italic );
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------------------------------
+//= Body Font
+// -------------------------------------------------------------------------------
+// Regular
+@include lib-font-face( $font-body-name, $font-path, "roboto-light-wf" );
+
+// Light
+@include lib-font-face( $font-body-name, $font-path, "roboto-thin-wf", 300);
+
+
+// Bold
+@include lib-font-face( $font-body-name, $font-path, "roboto-bold-wf", 700 );
+
+// Light 300
+@include lib-font-face( $font-body-name-light, $font-path, "roboto-thin-wf");
+
+// Light in bold
+@include lib-font-face( $font-body-name-light, $font-path, "roboto-semibold-wf", 500);
+
+// Light in bold
+@include lib-font-face( $font-body-name-light, $font-path, "roboto-bold-wf", 700);
+
+
+
+
+
+
+// 3rd Font
+//-----------------------------------------------------------------------
+@include lib-font-face( $font-heading-secondary-name, $font-path, "antonio-regular-wf");
+@include lib-font-face( $font-heading-secondary-name, $font-path, "antonio-bold-wf", 700);
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+

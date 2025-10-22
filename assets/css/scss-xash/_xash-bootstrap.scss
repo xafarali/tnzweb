@@ -1,0 +1,76 @@
+/*!
+ * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+
+/*/*test*/
+@import "../scss/functions"; //dfdf
+@import "../scss/mixins";
+@import "../scss-xash/helper/functions";
+/**/
+//-------------------------------------------------------------------
+@import "../scss-xash/helper/core";	//	
+@import "../scss/variables";
+@import "helper/variables"; // xash override
+@import "helper/mixins"; // xash override				|
+//-------------------------------------------------------------------
+/*  Font Awesome - update Only Variables
+//--------------------------------------------------*/
+@import '../scss-fa/font-awesome';
+@import '../scss-fa/variables';
+
+@import "../scss/root";
+@import "../scss/print";
+@import "../scss/reboot";
+@import "../scss/type";
+@import "../scss/images";
+@import "../scss/code";
+@import "../scss/grid";
+@import "../scss/tables";
+@import "../scss/forms";
+@import "../scss/buttons";
+@import "../scss/transitions";
+@import "../scss/dropdown";
+@import "../scss/button-group";
+@import "../scss/input-group";
+@import "../scss/custom-forms";
+@import "../scss/nav";
+@import "../scss/navbar";
+@import "../scss/card";
+@import "../scss/breadcrumb";
+@import "../scss/pagination";
+@import "../scss/badge";
+@import "../scss/jumbotron";
+@import "../scss/alert";
+@import "../scss/progress";
+@import "../scss-xash/progress-round";
+@import "../scss/media";
+@import "../scss/list-group";
+@import "../scss/close";
+@import "../scss/modal";
+@import "../scss/tooltip";
+@import "../scss/popover";
+@import "../scss/carousel";
+@import "../scss/utilities";
+
+
+// Imports
+
+// Select 2
+// DISABLED ----
+//@import 'select2.min.scss';
+//@import 'select2.scss';
+@import 'helper/_grid';
+//@import 'utility-class';
+@import 'helper/type';
+@import 'helper/_color-variables-child';
+
+
+// Woo Commerce
+// DISABLED ----
+// @import "product";
+// @import "woocom-styles";
+

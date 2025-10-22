@@ -1,0 +1,885 @@
+/**
+	Header Primary area
+	@author: xafaR
+	@file: header-primary
+
+*/
+
+
+.header-primary {
+
+}
+
+
+
+.sepia_banner-widget {
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+//=========================================================================
+//=========================================================================
+//  Inner Page Solutions
+//=========================================================================
+//=========================================================================
+// Absolute based image
+img.hero {
+	@include make_hero_img();
+
+	&.left {
+		left:-50%;
+	}
+
+
+	&.right {
+		left: 50%;
+	}
+
+
+	&-desktop {
+
+		@media #{$device-desktop} {
+			@include make_hero_img();
+
+			&.left {left:-50%;}
+
+			&.right {left: 50%;}
+		}
+
+	}
+
+
+
+
+	body.right & {
+
+		&.left {
+			left:50%;
+		}
+
+
+		&.right {
+			left: -50%;
+		}
+
+
+		&-desktop {
+			@media #{$device-desktop} {
+				@include make_hero_img();
+
+				&.left {left:50%;}
+
+				&.right {left: -50%;}
+			}
+
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+	Has Header
+ */
+// THis FIXED POSITION
+
+body {
+
+	#wrapper {
+		// padding-top: $nav-height-phone;
+
+
+		@include laptop {
+			// padding-top: $nav-height-laptop + $grid-gutter-width;
+		}
+
+		@include media-lg {
+			// padding-top: $nav-height-desktop;
+		}
+
+
+	}
+
+	#header-wrapper {
+		padding: 0;
+		//@extend %banner-wrapper;
+
+
+		header.top-menu-wrapper {
+			position: absolute;
+			position: fixed;
+			//position: fixed;
+			height: auto;
+			// height: $nav-height-phone;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 5000;
+
+
+
+
+
+
+
+		}
+
+	}
+
+}
+
+
+
+.bounce-arrow {
+	-moz-animation: bounce-arrow 2s infinite;
+	-webkit-animation: bounce-arrow 2s infinite;
+	animation: bounce-arrow 2s infinite;
+}
+
+
+
+
+
+
+
+
+//============================================================
+//============================================================
+// Banner / Header Stuff
+//============================================================
+//============================================================
+//-----------------------------------------------------------
+//  Default Styling for banner
+//-----------------------------------------------------------
+// Main Parent
+// Instead of banner wrapper, using #header-wrapper and has header class
+.slick-slider {
+
+	.slick-track {
+		padding :0;
+	}
+
+}
+
+%banner-wrapper {
+
+
+	// Defaults
+	padding-top: 0;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+
+	@if $header-padding-height == true {
+
+		height: 0;
+		padding-top: $header-padding-default;
+
+	} @else {
+		height: auto;
+	}
+
+
+
+	@include tablet {
+
+		// Padding based.
+		@if $header-padding-height-tb == true {
+
+			height: 0;
+			padding-top: $banner-header-sm-tablet;
+
+		} @else {
+			min-height: $ss-banner-height-tablet-default-min;
+			height: $ss-banner-height-tablet;
+			padding-top: $header-padding-default-tb;
+			padding-bottom: $header-padding-default-tb;
+		}
+
+	}
+
+
+
+
+	@include desktop {
+
+		// Padding based.
+		@if $header-padding-height-md == true {
+
+			height: 0;
+			padding-top: $banner-header-sm-desktop;
+
+		} @else {
+			min-height: $ss-banner-height-desktop-default-min;
+			height: $ss-banner-height-desktop;
+			padding-top: $header-padding-default-md;
+			padding-bottom: $header-padding-default-md;
+		}
+
+	}
+
+
+
+
+	@include laptop {
+
+		// Padding based.
+		@if $header-padding-height-md == true {
+
+			height: 0;
+			padding-top: $banner-header-md-laptop;
+
+		} @else {
+			min-height: $ss-banner-height-desktop-default-min;
+			height: $ss-banner-height-desktop-default;
+			padding-top: $header-padding-default-md;
+			padding-bottom: $header-padding-default-md;
+		}
+
+	}
+
+
+
+
+	@include lg {
+
+		// Padding based.
+		@if $header-padding-height-lg == true {
+
+			height: 0;
+			padding-top: $banner-header-lg-desktop;
+
+		} @else  {
+			min-height: $ss-banner-height-lg-default-min;
+			height: $ss-banner-height-lg-default;
+			padding-top: $header-padding-default-lg;
+			padding-bottom: $header-padding-default-lg;
+		}
+
+	}
+
+
+
+	body.homepage &,
+	body.header-lg & {
+		//padding-top: 100%;
+		padding-top: 110%; // because of large header anim
+
+
+
+
+		@include laptop {
+			padding-top: 76%;
+			padding-top: $banner-header-lg-laptop; // 70% + #{$grid-gutter-width} * 1.5
+
+
+			.banner-content {
+				// margin: 2rem auto;
+				// Margin is disabled because FLEX is implemented
+			}
+
+		}
+
+
+		@include desktop {
+			padding-top: 80%;
+			padding-top: $banner-header-lg-desktop; // 70% + #{$grid-gutter-width} * 1.5
+		}
+	}
+
+
+
+
+	body.header-md & {
+		padding-top: $banner-header-def;
+
+
+		@include tablet {
+			padding-top: $banner-header-md;;
+			padding-top: $banner-header-md-tablet;
+		}
+
+
+		@include laptop {
+			padding-top: 25%;
+			padding-top: $banner-header-md-laptop;
+		}
+
+
+		@include desktop {
+			padding-top: $banner-header-md;
+			padding-top: $banner-header-md-desktop;
+		}
+
+	}
+
+
+
+	body.header-sm & {
+		padding-top: $banner-header-sm;
+
+
+		@include tablet {
+			padding-top: 25%;
+			padding-top: $banner-header-sm-tablet;
+
+			.banner-content {
+				// margin-top: 12rem;
+			}
+		}
+
+
+		@include laptop {
+			padding-top: 25%;
+			padding-top: $banner-header-sm-laptop;
+
+			.banner-content {
+				// margin-top: 12rem;
+			}
+		}
+
+	}
+
+
+
+
+	// Making banner proportional
+	body.header-sm &,
+	body.header-lg &,
+	body.header-md &,
+	body.homepage & {
+		height: 0;
+
+
+		> * {
+			position: absolute!important;
+		}
+	}
+
+
+	body.header-sm &,
+	body.header-lg &,
+	body.header-md &
+	{
+		@include phone {
+			height: auto;
+
+
+			> * {
+				position: relative!important;
+			}
+		}
+	}
+
+
+
+	// Banner height mixing
+	//---------------------------------------
+	//._banner-height();
+
+
+
+
+	.slick-slider button.slick-prev,
+	.slick-slider button.slick-next {
+		// top: 0;
+	}
+
+
+
+	.slick-list {
+		//width: 100%;
+	}
+
+	.slick-current {
+		z-index: 2;
+	}
+;
+}
+
+
+
+.banner-wrapper {
+	//@extend %banner-wrapper; 
+
+	height: 95vh;
+	width: 100%;
+	padding: 2.5vh 0;
+
+
+	.bg-plate {
+		align-items: flex-start;
+	}
+
+
+	> * {
+		height: 100%;
+		width: 100%;
+		position: relative; // slicks implements relative position, but in my case I need absolute.
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		//@include _banner-height;
+		height : 100%;
+
+
+		ul, li {
+			height: 100%;
+			width: 100%;
+		}
+
+
+		li > div {
+			height: 100%;
+		}
+
+
+		//-----------------------------------------------------------
+		//  Default Styling for banner
+		//-----------------------------------------------------------
+		.banner-content-wrapper {
+
+			display: table;
+			vertical-align: middle;
+			display: flex!important; //@todo fix it
+			align-items: center;
+			flex-wrap: wrap;
+			height: 100%;
+			width: 100%;
+			position: relative;
+
+
+
+			img.hero {
+				width: auto;
+				height: 100%;
+				max-width: none;
+				left: 50vw;
+				top: 0;
+				position: absolute;
+				z-index: 0;
+				@include transform(translateX(-50%));
+
+
+
+				@include tablet {
+					width: 100%;
+					height: auto;
+					top: 50%;
+					left: 0;
+					z-index: 0;
+					@include transform(translateY(-50%));
+				}
+			}
+
+
+
+			.banner-content {
+				//position: relative;
+				display: table-cell;
+				vertical-align: middle;
+				//  margin: 11rem auto 2rem; // WIll be center by default, FLEX is implmented
+				z-index: 1;
+				width: 100%;
+			}
+
+
+
+
+			> div {
+				width: 100%;
+			}
+
+
+
+
+
+			.banner-content-wrapper-child {
+				width: 100%;
+			}
+
+			.banner-content {
+				display: block;
+			}
+
+
+			
+			@include phone {
+				overflow: hidden;
+			}
+
+
+
+		}
+		// banner-content-wrapper
+
+
+
+
+
+
+
+
+		// > * (phone)
+		// Mobile 100% stretcj
+		@include phone {
+
+			display: flex;
+			align-items: stretch;
+			align-items: center;
+
+
+			.banner-content-wrapper {
+				height: 100%;
+				padding-top: 100px;
+			}
+		}
+
+
+	}
+
+
+	.header-img {
+
+		max-height: 100%;
+		margin: 0 auto;
+
+
+		.homepage &,
+		.header-lg {
+			max-height: 75vh;
+
+		}
+
+
+		.header-sm & {
+			max-height: 45vh;
+		}
+
+	}
+
+
+	.section-slider {
+
+		.slick-track {
+		//	width: 100%!important;
+		}
+
+		.banner-content-wrapper {
+			width: 100%;
+		}
+
+	}
+
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  PAGER SLICK PAGER
+	//=========================================================================
+	//=========================================================================
+	.slick-pager {
+		height: auto;
+
+		left : 0;
+		bottom: 0;
+		top: auto;
+		align-items: flex-end;
+		align-content: center;
+
+		display: none;
+
+
+		@include desktop {
+			display: block;
+		}
+
+
+		ul {
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.slick-track {
+
+			// @note temp jugarh
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+
+			-webkit-transform: unset!important;
+			-moz-transform: unset!important;
+			-ms-transform: unset!important;
+			-o-transform: unset!important;
+			transform: unset!important;
+		}
+
+
+
+	.ss-thumblink {
+		position: relative;
+		display: inline-block;
+		width:auto;
+		z-index: 1;
+
+
+		span {
+			position: absolute;
+			display: inline-block;
+			background: gainsboro;
+			padding: 4px 20px;
+			font-weight: bold;
+			left: 0;
+			top: 50%;
+		}
+
+
+
+		div {
+			@include transform(translateY(20px));
+			@include transition();
+
+			background:rgba(white,1);
+
+
+			img {
+				@include opacity(.65);
+			}
+
+		}
+
+
+		&.slick-current {
+
+			z-index: 3;
+
+			span {
+				background-color: $brand-secondary;
+				color: white;
+			}
+
+
+			div {
+				@include transform(translateY(0));
+				//@include transition();
+
+
+				img {
+					@include opacity(1);
+					@include xash-box-shadow(0 5px 15px rgba(0,0,0,.25))
+				}
+			}
+		}
+
+	} // ss-thumb
+
+
+
+	}
+
+}
+
+
+
+
+
+
+
+
+//=========================================================================
+//=========================================================================
+//  Phone Setup
+//=========================================================================
+//=========================================================================
+// Initial Setup
+//=========================================================================
+@include device {
+
+	#header-wrapper {
+		padding-top: 70px;
+	}
+
+	.main-body-content {
+		padding-bottom: 0 ; // $grid-gutter-width;
+	}
+}
+
+
+
+
+//=========================================================================
+//=========================================================================
+//=========================================================================
+//  Header Stuff for All Pages
+//=========================================================================
+//=========================================================================
+//=========================================================================
+// <editor-fold desc="- - - - [ Header Individual Stuff ] - - - -">
+
+	.rect-sm { width: 120px; }
+	.rect-md { width: 540px; }
+	.rect-red {
+
+		stop:nth-child(1) {
+			stop-color: lighten($danger, 10%);
+			stop-opacity: 1;
+		}
+		stop:nth-child(2) {
+			stop-color: $danger;
+			stop-opacity: .5;
+		}
+		stop:nth-child(3) {
+			stop-color: $danger;
+			stop-opacity: 0;
+		}
+	}
+
+
+	// Homepage banner
+	.banner-wrapper {
+		overflow: visible;
+
+
+		&.home-banner {
+			padding : 0;
+			background: url( images/home-header-banner.jpg) no-repeat center top;
+			background-size: cover;
+
+
+			.bg-plate {
+				height : 100%;
+				width: 100%;
+			}
+
+
+			.bg-plt-base {
+				> * {
+					position: absolute;
+
+					//border: 1px solid red;
+				}
+
+				.tower-main {
+					left: 50%;
+					top: 14%;
+				}
+
+				.rect-red.r-2 {
+					top: 15%;
+					left: 47%;
+
+					> img {
+						@include opacity(.5)
+					}
+				}
+
+				.tower-front {
+					bottom: 20%;
+					left: 30%;
+				}
+
+				.lyr-cloud.lyr-cld-1 {
+					top: 15%;
+					left: 35%;
+				}
+
+				.lyr-cloud.lyr-cld-2 {
+					bottom: 20%;
+					left: 35%;
+				}
+
+				.r-1 {
+					top: 10%;
+					right: 10%;
+				}
+
+				// BG PLATE
+				img {
+
+
+
+
+
+				}
+
+
+
+
+			}  // bg plate
+
+		}
+
+
+
+
+		.bg-plate-base {
+			height: 100%;
+			width: 100%;
+		}
+
+		.imgFit {
+			object-fit: cover;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+	}
+
+
+
+.lyr-cloud.lyr-cld-1 img,
+.lyr-cloud.lyr-cld-2 img {
+	@include animation(cloud-header-home 30s ease-in infinite alternate-reverse   )
+}
+
+.lyr-cloud.lyr.cld-2 img {
+	animation-direction: alternate;
+	animation-duration: 20s;
+}
+
+
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+@include  keyframes(cloud-header-home) {
+
+	0% {
+		@include transform(translateX(-70%));
+	}
+
+	100% {
+		@include transform(translateX(70%));
+	}
+}
+
+// </editor-fold>
+
+
+
+

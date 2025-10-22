@@ -1,0 +1,868 @@
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    }
+    @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    }
+    @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Icons */
+@if $slick-font-family == "slick" {
+    @font-face {
+        font-family: "slick";
+        src: slick-font-url("slick.eot");
+        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    &:hover, &:focus {
+        outline: none;
+        background: transparent;
+        color: transparent;
+        &:before {
+            opacity: $slick-opacity-on-hover;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+    &:before {
+        font-family: $slick-font-family;
+        font-size: 20px;
+        line-height: 1;
+        color: $slick-arrow-color;
+        opacity: $slick-opacity-default;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: -25px;
+    [dir="rtl"] & {
+        left: auto;
+        right: -25px;
+    }
+    &:before {
+        content: $slick-prev-character;
+        [dir="rtl"] & {
+            content: $slick-next-character;
+        }
+    }
+}
+
+.slick-next {
+    right: -25px;
+    [dir="rtl"] & {
+        left: -25px;
+        right: auto;
+    }
+    &:before {
+        content: $slick-next-character;
+        [dir="rtl"] & {
+            content: $slick-prev-character;
+        }
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 30px;
+}
+.slider-wrapper  .slick-dots {
+    position: absolute;
+    bottom: 5px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 15px;
+
+
+
+    > li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+
+
+        button {
+            border: 0;
+            background: rgba($gray-200, 30%);
+            display: block;
+            height: 15px;
+            min-height: 15px;
+            width: 15px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            opacity:$slick-opacity-default;
+            @include xash-border-radius(50px);
+            @include transition();
+
+
+            &:hover,
+            &:focus {
+                background: $gray-300;
+                outline: none;
+
+                &:before {
+                    opacity: $slick-opacity-on-hover;
+
+                }
+            }
+
+
+
+
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                //content: $slick-dot-character;
+                width: 20px;
+                height: 20px;
+                font-family: $slick-font-family;
+                font-size: $slick-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: $slick-dot-color;
+                opacity: $slick-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        &.slick-active button {
+            //width: 30px;
+            background: $brand-primary-light;
+        }
+
+        &.slick-active button:before {
+            color: $slick-dot-color-active;
+            opacity: $slick-opacity-default;
+        }
+    }
+}
+
+
+
+
+
+
+
+//.banner-wrapper .section-slider,
+.slider-wrapper {
+    height: 100%;
+    width: 100%;
+    // Note abdoluste is only for header in case of center positin, old approch without flex
+    //position: absolute !important; // slicks implements relative position, but in my case I need absolute.
+    top: 0;
+    left: 0;
+
+    @include _banner-height();
+
+
+    ul, li {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    li > div {
+        height: 100%;
+    }
+    //-----------------------------------------------------------
+    //  Default Styling for banner
+    //-----------------------------------------------------------
+    .banner-content-wrapper {
+        display: table;
+        vertical-align: middle;
+        display: flex!important; //@todo fix it
+        align-items: center;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+
+
+        img.hero {
+
+            @include make_hero_img();
+            /*
+			width: auto;
+            height: 100%;
+            max-width: none;
+            left: 50vw;
+            top: 0;
+            position: absolute;
+            z-index: 0;
+            @include transform(translateX(-50%));
+
+
+            @media #{$device-tablet-start} {
+                width: 100%;
+                height: auto;
+                top: 50%;
+                left: 0;
+                z-index: 0;
+                @include transform(translateY(-50%));
+            } */
+        }
+
+
+
+        .banner-content {
+            //position: relative;
+            display: table-cell;
+            vertical-align: middle;
+            margin: auto;
+            width: 100%;
+        }
+
+        /*  Format Based Styling,
+		//--------------------------------------------------*/
+        &.ftr-left,
+        &.ftr-right {
+
+            @media #{$device-tablet-start} {
+            }
+            // thumb Container.
+            .hero-img,
+            .hero,
+            .banner-content {
+                width: 100%;
+                position: relative;
+                display: block;
+                float: left;
+
+
+
+                @media #{$device-tablet-start} {
+                    width: 50%;
+                }
+                // Banner height mixing
+                @include _banner-height();
+            }
+
+
+            // img.
+            .hero-img,
+            .hero {
+                overflow: hidden;
+
+
+                img {
+                    width: 100%;
+                }
+            }
+            // Content area
+            .banner-content {
+                padding: 1rem $grid-gutter-width;
+
+
+                .post-wig-content {
+                    display: table;
+                    height: 100%;
+                    width: 100%;
+
+
+
+                    .container {
+                        // width: 100%;
+                        display: table-cell;
+                        float: none;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        // ftr left
+        &.ftr-right {
+
+            @media #{$device-tablet-start} {
+                .hero-img {
+                    left: 50%;
+                }
+
+                .banner-content {
+                    right: 50%;
+                }
+            }
+        }
+
+
+    }
+    // banner-content-wrapper
+}
+
+
+
+
+//slick slider implementation
+.slick-slider {
+    direction: ltr;
+
+
+    .slick-track {
+        padding: $grid-gutter-width 0;
+    }
+
+
+    button {
+        position: absolute;
+        // text-indent: -10000px;
+        border: 0!important;
+        background: transparent;
+
+
+        &:active,
+        &:hover,
+        &:focus {
+            background:transparent;
+            outline: none!important;
+            @include box-shadow(none);
+        }
+
+
+        &.slick-next,
+        &.slick-prev {
+            border: 1px solid rgba($brand-primary,50%);
+            top: 50%;
+            left: -$grid-gutter-width / 2 ;
+            z-index: 500;
+            text-indent: -100000px;
+            width: $grid-gutter-width + 10;
+            height: 150px;
+            background: white;
+
+            @include transition();
+            @include transform(translateY(-50%));
+            @include opacity(.1);
+
+
+            &:before,
+            &:after {
+                content: none;
+                border: 0!important;
+                font-family: $icon-font-awesome;
+                font-size: $font-size-h2;
+                top: 50%;
+                border: 0;
+                line-height: 0.5;
+                left: 0px;
+                color: rgba($brand-primary,50%);
+                text-indent: 0;
+                height: auto;
+                width: 100%;
+                position: absolute;
+
+                @include transform(translateY(-50%));
+            }
+
+            &:before {
+                content: '\f104';
+                background: transparent;
+            }
+
+
+        }
+
+
+        &.slick-next {
+            right: -$grid-gutter-width / 2;
+            left: auto;
+
+
+            &:before {
+                content: '\f105';
+            }
+        }
+
+    } // button.
+
+
+    .slick-track,
+    .slick-list {
+        height: 100%;
+
+        > div {
+            height: 100%;
+        }
+    }
+
+
+
+    //slick-slider:hover
+    &:hover {
+        .slick-next,
+        .slick-prev {
+            @include opacity(1);
+        }
+    }
+
+
+    .slick-slide img {
+        margin: 0 auto;
+    }
+
+
+}
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Banner /Slider Styles and SLICK Implementation ] - - - -">
+
+.ss-banner-cont {
+    ul {
+        @include reset();
+    }
+}
+
+
+
+/*  Full Page Usage of banner
+//--------------------------------------------------*/
+.xash_page_content-widget {
+    overflow: hidden;
+
+}
+
+.sc-post-content {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.ss-banner-cont {
+    height: 100%;
+    width: 100%;
+
+    @include _banner-height();
+
+
+    ul,li {
+        height: 100%;
+        width: 100%;
+    }
+
+
+    li > div {
+        height: 100%;
+    }
+
+
+
+    @media #{$device-phone} {
+
+        //@todo: need to unify it: currenty banner-content-wrapper is being used as header area
+        // and when used in banner dynamic pose, it acts as center aligned banner, need clean CSS XAFAR!!
+        // Image that is small should flow to full width
+        .hero-img {
+
+            img.img-phone {
+                width: 100vw;
+                height: auto;
+            }
+
+        }
+
+
+
+
+        // Header Banner,
+        //set mobile to be square
+        .header-banner & {
+            padding-top: 100%;
+
+            > ul {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .slick-slide {
+                @media #{$device-phone} {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+
+
+} // ss-banner-cont
+
+
+
+
+.widget.full-width .sc-contnet.container {
+
+    @include  reset();
+
+    width: 100%;
+    //height: 100%;
+    overflow: hidden;
+
+}
+
+
+
+
+
+
+
+
+// @todo rewrite banner class and fn, should call double images if it exist, dont rely on format always
+.page-custom-header {
+    //@include  gradient-y($brand-primary, $brand-primary-dark);
+    //@include gradient-radial(rgba(0,146,203,1), rgba(0,40,119,1))
+    //background: radial-gradient(circle, rgba(0,146,203,1) 0%, rgba(9,38,121,1) 87%, rgba(0,40,119,1) 100%);
+}
+.sepia_banner-widget {
+
+    position: relative;
+    z-index: 5;
+
+
+
+    .slick-slide {
+        @include phone {
+
+            height: $ss-banner-height-phone;
+            z-index: 2;
+            position: relative;
+            overflow: hidden;
+
+
+            &.slick-active,
+            &.slick-current {
+                // z-index: 20;
+            }
+
+            img {
+                height: $ss-banner-height-phone;
+                width: auto;
+                height: 100%;
+                max-width: none;
+                left: 50vw;
+                position: absolute;
+                z-index: 20;
+                @include transform(translateX(-50%));
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+/*  Using with Slick
+//--------------------------------------------------*/
+.slider-banner,
+.slick-banner,
+.slide-banner {
+
+    .sc-contnet.container {
+        height : 100%;
+    }
+
+}
+
+
+
+
+
+
+/*  Responsive Image for slick banners
+//--------------------------------------------------*/
+
+
+.banner-wrapper {
+    overflow: hidden;
+
+
+    @media #{$device} {
+
+        padding-top: 20%;
+        padding-top: 50px;
+
+        .homepage & {
+            padding-top: 100%;
+        }
+    }
+
+
+    // Banner stuff in Homepage
+    .homepage & {
+
+        p.lead {
+            /*
+            font-weight: bold;
+            letter-spacing: 1px;
+            */
+        }
+    }
+
+
+
+    // If banner wrapper has immediate container after hero img,
+    // then it means its inner page, or maybe in future apply class based approach
+
+    > .container {
+        position: relative;
+        top: 0;
+
+        @media #{$media_desktop} {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+
+            display: -ms-flexbox;
+            display: flex;
+
+            @include transform(translateX(-50%));
+        }
+
+
+    }
+
+
+    .light {
+
+        * {
+            color: white;
+            border-color: white;
+
+
+            #{$button-grp} {
+                background-color: transparent;
+            }
+
+        }
+
+        .default form {
+
+            #{$input-grp} {
+                color: $text-color;
+            }
+        }
+
+    }
+
+
+
+    // H1 Styling
+    h1 {
+
+    }
+
+
+
+    @media #{$device} {
+
+        > .hero {
+            left:0;
+            right: auto;
+
+            @include transform(none);
+        }
+
+
+        > .container {
+
+            //top: $grid-gutter-width*2;
+
+
+            > .row {
+                > div:nth-child(2) {
+                    //margin: -$grid-gutter-width/2;
+                    padding: $grid-gutter-width;
+                    background: white;
+
+
+                    *:not(.read-more) {
+                        color: $brand-secondary;
+                    }
+
+
+                    &:after {
+                        content: '';
+                        width: 100px;
+                        height: 4px;
+                        display: block;
+                        margin: 10px auto;
+                        background: $brand-secondary;
+                    }
+                }
+            }
+        }
+
+
+        h1,
+        .h1 {
+            &:after,
+            &:before {
+                height: 30px;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+.arrow-trigger {
+    text-align: center;
+    margin: $grid-gutter-width/2 auto 0;
+    padding-top: 64px;
+    position: relative;
+    height: 0;
+    width: 32px;
+    border:1px solid rgba(white, 60%);
+    cursor: pointer;
+
+    @include xash-border-radius(100px);
+    @include box-model(content-box);
+
+
+
+    > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        @include transform(translateX(-50%));
+
+    }
+
+}
+
+
+
+
+
+.banner-wrapper {
+
+    .img-hero {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+
+        body.right & {
+            right: auto;
+            left: 0;
+        }
+    }
+
+
+}
+
+
+
+
+.slider-wrapper.img-slider {
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+
+    .slick-slide {
+        height: auto;
+
+    }
+}
+
+// </editor-fold>
+
+

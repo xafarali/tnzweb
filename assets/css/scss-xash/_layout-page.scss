@@ -1,0 +1,225 @@
+// Sepia Solutions
+//-----------------------------------------------------------
+// All  Page Layout Structure Style stuff comes Below
+//-----------------------------------------------------------
+// @todo clean up messsed mobile styles here there, and bring to better one roof
+
+/**
+	Layout Page
+	@author: xafaR
+	@file: layout-page
+
+*/
+
+
+
+body,
+html {
+	overflow-x: hidden;
+	//height: 100%;
+	font-family: $font-body;
+
+
+	@media #{$device-phone} {
+		-webkit-overflow-scrolling: touch; // Iphone 6++ scroll lag hack
+	}
+
+}
+
+
+body {
+	height: 100%;
+	min-height: 100vh;
+	width: 100%;
+
+}
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Layout ] - - - -">
+#page-content {
+	background-color: $bg-global;
+}
+
+#wrapper {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+
+	background: url("images/bg-body-l1.svg") no-repeat left 200px;
+	background-size: 100%;
+
+	> * {
+		width: 100%;
+	}
+
+
+	#footer {
+		align-self: flex-end;
+	}
+}
+
+
+#main-wrapper {
+	min-height: 100%;
+	width: 100%;
+
+}
+
+
+
+@media #{$device-desktop} {
+
+	#sidebar + #content-wrapper {
+		margin-left: $sidebar-width;
+	}
+}
+
+
+
+
+
+.entry-content.container,
+#main > article.page {
+	padding: 0;
+	width: 100%;
+}
+
+
+
+
+
+
+#content-wrapper {
+	@extend .col;
+	height: 100%;
+	flex-basis: 100%;
+	width: auto;
+	padding:0;
+
+
+	// Update
+	min-height:100vh;
+
+
+
+	> div {
+		//padding-left:  $grid-gutter-width / 2;
+		//padding-right: $grid-gutter-width / 2;
+	}
+
+}
+
+
+
+.body-content {
+	//background: white /*url(images/bg-white.jpg)*/ repeat left top;
+	padding-top: 1rem;
+
+
+	@include tablet {
+		padding-top: 1rem;
+	}
+
+
+	@include desktop {
+		padding-top: 1.2rem;
+	}
+
+
+	> div > .row > .col  &body.homepage {
+		padding: 0;  // Dont know what is it atm. WP or CMS
+	}
+
+
+
+
+
+	.main-body-content {
+
+
+		@include desktop {
+			//padding: $grid-gutter-width $grid-gutter-width * 2 $grid-gutter-width $grid-gutter-width;
+			padding: $grid-gutter-width $grid-gutter-width $grid-gutter-width * 1.5;
+			background : white;
+			//margin-top: -$grid-gutter-width;
+			@include xash-border-radius(15px 45px);
+
+			.homepage &,
+			.full-width & {
+
+				padding: 0;
+			}
+
+
+
+			/*&.col-md-9,
+			&.col-lg-9{ */
+
+
+			//}
+		}
+
+
+		> .col {
+			padding: 0;
+		}
+
+	}
+
+
+	.inner-page-wrapper {
+		padding-top : 2rem;
+	}
+
+
+}  // body-content
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ General Components] - - - -">
+
+.link-item {
+	padding: .5em .5em .5em 2.5em;
+	border-bottom: 1px solid $text-color;
+	position: relative;
+	//font-weight:bold;
+	text-decoration: none!important;
+	text-transform: uppercase;
+
+	// arrow
+	&:before {
+		position: absolute;
+		font-family: 'FontAwesome';
+		content: "\f178";
+		left: 0;
+		top: 5px;
+	}
+}
+
+
+
+
+
+.modal-open.ajax-loader {
+	background-image: url(images/ajax-loader.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+// </editor-fold>

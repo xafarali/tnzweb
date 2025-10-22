@@ -1,0 +1,2230 @@
+/**
+	All Homepage styles / elements comes here.
+	@author: xafaR
+	@file: page-element
+
+*/
+
+
+// Sepia Solutions
+// <editor-fold desc="- - - - [ Default HTML ELEMENTS & OVERRIDES ] - - - -">
+// @todo Need to make panel bar more accessible and standard
+
+	img {
+		max-width: 100%;
+	}
+
+
+
+	/*  Table
+	//--------------------------------------------------*/
+	.table {
+
+		thead {
+			background: $brand-primary;
+			color: $white;
+		}
+
+
+		tfoot { background: $gray-300; 	}
+	}
+
+
+	table {
+		@extend .table;
+	}
+
+
+
+
+	/*  UL OL
+	//---------------------------------------------------------------------------------*/
+	ul, ol {
+		padding-left: 1rem;
+	}
+
+
+
+
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Page Elements ] - - - -">
+
+
+
+/*  Panels
+//--------------------------------------------------*/
+
+
+
+
+
+
+
+
+.media-grid {
+
+	.thumb-wrap {
+		width: 50px;
+		overflow: hidden;
+	}
+	tr {
+
+		&:nth-child(even) {
+			background: rgba($btn-default-bg, 0.3%);
+		}
+	}
+
+	td {
+		vertical-align: middle;
+
+	}
+
+
+
+	.selector {  width: 30px;  }
+	.thumbnail {  width: 50px;  }
+	.action {
+		text-align: right;
+
+
+		button {  padding: 2px;  }
+	}
+
+
+	.thumb-wrap {
+		@extend %thumb-wrap;
+	}
+
+
+	p { margin-bottom: 0 }
+}
+
+
+
+
+// Section
+.section {
+
+	height: auto;
+	display: inline-block;
+	width: 100%;
+ 	padding-top: $grid-gutter-width * 1.25;
+	padding-bottom: $grid-gutter-width * 1.25;
+	//position: relative;
+
+
+
+	@media #{$device-tablet-start} {
+
+		// padding: 5vh 0;
+		padding-top: $grid-gutter-width * 2.5;
+		padding-bottom: $grid-gutter-width * 2.5;
+		// height: 70vh;
+		min-height: 250px;
+		//display: table;
+
+	}
+
+
+
+	@media #{$device-desktop} {
+		padding-top: $grid-gutter-width * 5;
+		padding-bottom: $grid-gutter-width * 5;
+
+		min-height: 250px;
+	}
+
+
+	@include  clearfix();
+
+
+	&.sm {
+		@media #{$device-tablet-start} {
+			padding-top: $grid-gutter-width * 1.5;
+			padding-bottom: $grid-gutter-width * 1.5;
+		}
+
+
+
+		@media #{$device-desktop} {
+			padding-top: $grid-gutter-width * 2.5;
+			padding-bottom: $grid-gutter-width * 2.5;
+		}
+	}
+
+
+	&.top {
+		padding-bottom : 0;
+	}
+
+	&.bottom {
+		padding-top: 0;
+	}
+
+
+
+
+	&.narrow {
+
+		@include laptop {
+			padding-right: 25%;
+		}
+	}
+
+
+
+}
+
+
+.block {
+	position: relative;
+}
+
+
+.fs {
+
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+
+
+	@include desktop {
+		min-height: 100vh;
+		//padding: 2vh 0;
+	}
+
+
+	&.section {
+
+	}
+
+	&.bg-diag {
+		min-height: 120vh
+	}
+
+}
+
+
+
+
+
+.widget-wrapper {
+	width: 100%;
+}
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Formating/Design Elements ] - - - -">
+
+
+
+//-----------------------------------------------------------
+//  Cards
+//-----------------------------------------------------------
+
+
+// square
+.card {
+	position: relative;
+	background: white;
+	height: 100%;
+
+
+	@include xash-border-radius($border-radius-card);
+	@include animated-shadow($shadow-dialog);
+
+
+	// Square card
+
+	&.square,
+	&.box {
+		@extend .box-square;
+	}
+
+
+	> .content {
+		height: 100%;
+		padding: $grid-gutter-width;
+
+
+		h3,
+		h2 {
+			margin: 1rem 0 0;
+
+
+			span {
+				display: block;
+			}
+		}
+
+
+
+		&.x-2 {
+			padding: $grid-gutter-width * 2;
+
+			> * {
+				margin-bottom: $grid-gutter-width;
+
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+
+	}
+
+	//@note Could be flex`
+	// align content if its Square applied
+	&.align-top {
+
+		@media #{$device-desktop} {
+
+			> .content {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+
+				@include transform(translateY(0));
+			}
+		}
+	}
+
+
+
+	&.dark {
+		background: $brand-primary-dark;
+		color: white;
+
+		> * {
+			color: white !important;
+		}
+	}
+
+
+
+	&.outline {
+		border:1px solid $text-color;
+		@include xash-box-shadow(none);
+
+
+		&:after {
+			content: none;
+		}
+	}
+}
+
+
+
+// simple square to appply on any div
+.box-square {
+
+	@media #{$device-desktop} {
+		height: 0;
+		width: 100%;
+		padding: 100% 0 0;
+		padding-bottom: 0;
+		position: relative;
+
+
+
+		> img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+
+
+
+		}
+
+
+		// in middle by default
+		> .content {
+			position: absolute;
+			top: 50%;
+			height: auto;
+			max-height: 100%;
+			width: 100%;
+			//text-align: center;
+			overflow: hidden;
+			@include transform(translateY(-50%));
+
+
+			&.full {
+				height: 100%;
+			}
+		}
+
+		img.square {
+			left: 100%;
+			margin-top: 50%;
+			height: 100%;
+			width: auto;
+			max-width: unset;
+			position: relative;
+			margin-left: -50%;
+			@include transform(translate(-50%, -50%));
+		}
+
+	}
+}
+
+
+
+
+/*  Tag List
+//--------------------------------------------------*/
+ul.tag-list {
+
+	@include reset();
+	@include make-row();
+	text-align: right;
+
+
+	li {
+
+		@include reset();
+		display: inline-block;
+		margin: 0 0 $grid-gutter-width/3 $grid-gutter-width/3;
+		padding: $grid-gutter-width /  2;
+		border:1px solid rgba($brand-primary, .3);
+		//@extend %font-size-h4;
+		font-size: 1rem;
+		color: $brand-primary;
+		font-weight: bold;
+
+		@include xash-border-radius(120px);
+
+		@include transition();
+
+
+		@include desktop {
+			padding: $grid-gutter-width/2 $grid-gutter-width;
+		}
+
+
+
+		> a {
+
+			font-family: inherit;
+			font-size: inherit;
+			padding: $grid-gutter-width / 2  $grid-gutter-width ;
+			text-align:center;
+			background: white;
+			font-weight: bold;
+			display: block;
+
+
+
+			@include transition();
+			@include xash-box-shadow( 0 );
+			@include xash-border-radius($border-radius-small);
+
+
+
+			&:hover {
+				//@include xash-box-shadow($shadow-dialog);
+				text-decoration: none;
+			}
+
+
+		}
+
+
+		// li:hover
+		&:hover {
+			//border-width: 3px;
+			//outline: 3px solid $brand-primary;
+			@include xash-box-shadow($shadow-dialog , 0 0 0 10px rgba($brand-primary, .3));
+		}
+
+
+	}
+
+
+
+	&.bg {
+
+		li {
+			background-color: $gray-100;
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+/*  Tabs
+//----------------------------------------------------------------------------------*/
+
+.tab-container {
+
+
+	.tab-trigger {
+
+		//border-bottom: 1px solid $brand-primary-light;
+
+
+
+		ul,
+		li {
+			@include reset();
+		}
+
+
+
+		li {
+			display: block;
+			margin-right: $grid-gutter-width / 2;
+			position: relative;
+
+
+			@include desktop {
+				display: inline-block;
+			}
+
+
+
+
+			a {
+				display: inline-block;
+				padding: 10px 3rem;
+				background: $gray-200;
+
+				@include xash-border-radius();
+			}
+
+
+
+
+			&.active {
+
+				a {
+					background: $btn-primary-bg;
+					color: $btn-primary-color;
+				}
+			}
+
+
+			// label based.
+
+
+			input[type="checkbox"],
+			input[type="radio"] {
+				
+				position: absolute;
+				left: 10px;
+				top: 40%;
+
+
+				@include transform(translateY(-50%));
+
+
+
+
+				& + .tab-link {
+					padding-left: 1.5rem;
+					border-left: 2rem solid $gray-300;
+
+
+					&:before {
+
+					}
+				}
+
+
+
+				&:checked + .tab-link {
+					border-left-color: $brand-primary-light;
+				}
+				
+			}
+			
+
+		}  // li
+
+	}
+
+
+
+	.tab-wrapper {}
+
+
+
+	.tab-content {
+		padding-top: 0px;
+	}
+
+
+}
+
+
+
+
+
+.wrap-screen-full,
+.wrap-full-screen {
+	@include full-width-screen();
+
+
+	// false apparch @Note revisit
+	//@media #{$device-tablet-start} {
+	//	width: 50vw;
+	//	height: auto;
+	//	margin-left: 0;
+	//	left: 0;
+	//}
+
+
+	img.cover {
+		// Responsive image.
+		@include img_responsive();
+	}
+}
+
+
+
+
+
+// based on abs position
+.wrap-screen-half {
+	//@include full-width-screen();
+
+	width: 100vw;
+	left: -$grid-gutter-width / 2;
+	right: -$grid-gutter-width / 2;
+	top: 0;
+	height: 100%;
+	z-index: 0;
+	position: absolute;
+	overflow: hidden;
+	background-position: right top;
+	
+	
+	&.right {
+		left: 0;
+		right: auto;
+		background-position: left top;
+	}
+
+
+	@media #{$device-desktop} {
+		width: 50vw;
+		left: auto;
+		right: 0;
+
+
+		&.right {
+			left: 0;
+			right: auto;
+		}
+	}
+
+}
+
+.wrap-screen-third {
+	@extend  .wrap-screen-half;
+
+
+	@media #{$device-desktop} {
+		width: 75vw;
+
+		img.hero {
+			height: 100%;
+			width: auto;
+		}
+	}
+}
+
+
+// Make default
+.wrap-screen-third,
+.wrap-screen-half {
+	& + * {
+
+		position: relative;
+	}
+}
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ General / MISC ELEMENTS] - - - -">
+
+
+	.widget-content {
+		position: relative;
+	}
+
+
+
+
+	.lbl {
+
+		&-primary {
+			@extend .h1;
+		}
+
+		font-family: $font-heading-h2;
+		color: $color-h2;
+
+
+		span {
+			color: $text-color;
+		}
+
+	}
+
+
+
+
+	.bar-fat{
+		max-width: 100px;
+		width: 100%;
+		height: 10px;
+		background: $brand-primary;
+		display: block;
+		margin: $grid-gutter-width / 2 0;
+	}
+	
+
+
+
+	.v-spacer {
+		display: inline-block;
+		vertical-align: middle;
+		border-left: 1px solid $border-color;
+		width: 1px;
+		margin: 0 $grid-gutter-width/2;
+		content: "&#160";
+		min-height: $grid-gutter-width / 2;
+	}
+
+
+
+
+	.box-content {
+		overflow: hidden;
+	}
+
+
+
+
+
+
+	ul.list-index,
+	ul.index,
+	ul.item-list {
+
+		&,
+		li {
+			@include reset;
+		}
+
+
+		li {
+			margin-bottom: 1.5rem;
+			position: relative;
+
+
+			.icon {
+				position: absolute;
+				left: -3.5rem;
+				top: 0;
+			}
+
+
+
+			.title {
+				@include font-size($font-size-h4-list);
+			}
+
+
+			> * {
+				margin-bottom: 0;
+			}
+		}
+
+	}
+
+
+	ul.item-list {
+		padding-left: 2rem;
+
+
+		li {
+
+			&:before {
+				content: "";
+				height: 20px;
+				width: 20px;
+				display: block;
+				position: absolute;
+				top: .25rem; //7px;
+				left: -2rem;
+				background: url(images/icon-list.png) no-repeat center center;
+
+			}
+		}
+
+
+		&.inline {
+			 li {
+				 display: inline-block;
+				 margin: 15px 30px 15px 15px;
+			 }
+		}
+
+
+
+		// Ul phone
+		@include phone {
+			li {
+				&:before {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	ul.tiles {
+		@include reset;
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 1;
+
+		li {
+			@include reset;
+			max-width: 90%;
+		}
+
+
+		li {
+			display: inline-block;
+			text-align: center;
+		}
+	}
+
+
+
+
+// Video Overlays
+.video-hero {
+	@include make_hero_img();
+}
+
+
+
+	.img-overlay,
+	.bg-vid-overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		//z-index: 1;
+
+
+		&.blue {
+			background: url(images/overlay-video-blue.png) repeat;
+
+			@include opacity(.85);
+		}
+
+
+		&.green {
+			background: rgba($brand-primary, .6);
+		}
+	}
+
+
+
+
+
+
+
+/*  Dropzone, Uploader
+//--------------------------------------------------*/
+	.drag-upload {
+		border: 4px dashed $border-color;
+		padding: $grid-gutter-width ;
+		text-align: center;
+
+		#fileupload {
+			display: none;
+		}
+
+	}
+
+
+
+
+	//Legends
+	.legend,
+	legend,
+	h2.heading,
+	h3.heading,
+	h4.heading {
+		@extend .h4;
+
+		margin-bottom: $gutter-width / 3;
+		padding-bottom: $gutter-width / 3;
+		font-weight: bold;
+		//font-size: 1rem;
+		color: $gray-900;
+
+
+
+		&.primary {
+			color: $brand-secondary;
+			border-bottom: 1px solid fade_out($brand-secondary, .3);
+		}
+
+	}
+
+
+
+	.info-wrapper {
+		margin-bottom: $gutter-width;
+
+
+		ul,
+		li {
+			@include  reset;
+
+			padding-left: 10px;
+		}
+
+		strong {
+			color : $gray-light;
+			padding-right: 5px;
+		}
+
+
+	}
+
+
+
+	// Lead Follow up
+	.follow-up-wrapper {
+		height: 100%;
+		margin-top: $gutter-width/2;
+	}
+
+
+	.response-note {
+		@include reset;
+
+		width: 50%;
+		margin-right: 50%;
+		border-right: 2px solid $border-color;
+		height: 100%;
+		text-align: right;
+
+
+		li {
+			@include reset;
+			padding: $gutter-width/3 $gutter-width / 1.5;
+			position: relative;
+
+
+			&:after {
+				content: "";
+				width: 13px;
+				height: 13px;
+				background: $gray-light;
+				@include xash-border-radius(50%);
+				position: absolute;
+				top: 15px;
+				right: -8px;
+			}
+
+
+			&.alt {
+				right: -100%;
+				text-align: left;
+
+				&:after {
+					right:auto;
+					left: -5px;
+				}
+			}
+
+
+			p { margin: 0; }
+
+
+			&.lead-generated {
+				&:after { background: theme-color('warning');
+				}
+			}
+
+
+			&.lead-approved{
+				&:after { background: color('teal') }
+			}
+
+
+			&.lead-disqualified,
+			&.lead-reject {
+				&:after { background: theme-color('danger') }
+			}
+
+
+			&.ead-response {
+				&:after {}
+			}
+
+
+			&.lead-reject{
+				&:after {}
+			}
+
+
+			&.lead-accept {
+				&:after {background: theme-color('success');}
+			}
+
+			&.lead-close{
+				&:after {background: theme-color('secondary');}
+			}
+
+
+			//----------------------------------------
+			.lead-offer {
+				font-weight:bold;
+				color: $gray-light;
+				background: $gray-200;
+				display: inline-block;
+				padding: 2px 5px;
+
+
+				@include xash-border-radius(15px);
+
+				&.accept {
+					border-bottom: 2px solid $gray-light;
+					@include xash-border-radius(50%);
+				}
+
+
+			}
+
+			.date-update {
+				//font-weight: bold;
+				letter-spacing: -0.5px;
+				font-size: 0.95em;
+			}
+
+		} // li
+
+
+
+
+	}
+
+
+	.btn-wrapper {
+		// text-align: right;
+	}
+
+
+	body.show-loading {
+		.loader-wrapper {
+			display: block;
+		}
+	}
+
+
+	.loader-wrapper {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		left:0;
+		top: 0;
+		z-index: $zindex-modal-backdrop;
+		background: rgba(0,0,0, $modal-backdrop-opacity);
+
+		display: none;
+
+
+		.loader {
+
+			display: inline-block;
+			margin: auto;
+			padding: $gutter-width/2;
+			background: $white no-repeat center center;
+			position: relative;
+			top: 50%;
+
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			transform: translateY(-50%);
+
+
+			@include xash-border-radius(10px);
+			@include xash-box-shadow();
+		}
+
+	}
+
+
+
+
+
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  Faded Expander
+	//=========================================================================
+	//=========================================================================
+
+		// Item must be in container
+		// expander button will be added automatically.
+
+		.xash-collapse {
+			
+			//max-height: 400vh;
+			padding-bottom: 70px;
+			position: relative;
+			margin-bottom: 30px;
+			max-height: 400vh;
+			@include transition(all 1s ease-in);
+
+
+
+			.xash-collapse-wrapper {
+				position: relative;
+
+
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height : 0px;
+					background: url(images/expander-bg.png) repeat-x center bottom;
+				}
+			}
+
+
+
+
+
+			.xash-collapse-btn {
+				height: 50px;
+				width: 50px;
+				background: $gray-100;
+				bordeR: 3px solid rgba($gray-400, .5);
+				z-index: 20;
+				position: absolute;
+				bottom: -50px;
+				left: 50%;
+				margin-left: -25px;
+				padding: 0;
+
+				@include transition();
+				@include xash-border-radius(50px);
+
+
+
+				&:after {
+					content:"\f103";
+					font-family: $icon-font-awesome;
+					font-size: 1rem;
+					color: $btn-primary-color;
+				}
+
+			}
+			
+			
+			
+			&.collapsed {
+
+
+				.xash-collapse-wrapper {
+					max-height: 100px;
+					overflow: hidden;
+					//padding-bottom: 30px;
+					//@include transition(all 1s ease-in);
+
+
+					&:after {
+						height: 75px;
+					}
+
+
+				}
+
+
+
+
+
+
+				.xash-collapse-btn {
+					bottom: 0;
+				}
+			}
+
+		}
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="- - - -[ Search Results ]- - - -">
+
+	body.search.search-results {
+		h1.entry-title {
+		}
+	}
+
+
+	.search-result-list {
+		li {
+			padding: 5px 0;
+			border-bottom: 1px solid $border-color-default;
+		}
+	}
+
+
+
+	.search-label {
+		display: block;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+
+	.search-body {
+
+	}
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ Modules ]-------">
+
+//=========================================================================
+//=========================================================================
+//  Widget Defaults
+//=========================================================================
+//=========================================================================
+
+
+
+
+	.widget-title {
+		padding-bottom: 1rem;
+		font-family: $font-heading;
+		line-height:1;
+
+		@include font-resp-singular($font-size-h1-list);
+
+
+		&h2 {
+			border-bottom:2px solid fade($brand-primary-dark, 70%);
+		}
+
+
+
+		.widget & {
+			text-align: center	;
+		}
+
+	}
+
+
+
+
+
+//=====================================================================================
+//=====================================================================================
+// 	News Module
+//=====================================================================================
+//=====================================================================================
+
+
+/*  Modules Global METAs
+//----------------------------------------------------------------------------------*/
+// General Approach , kinda global
+.post-date {
+	@extend .bg-gray;
+	//position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5px;
+	display: inline-block;
+	margin-right: 10px;
+
+	@include xash-border-radius(3px);
+	//@include transform(translateY(-50%));
+}
+
+
+
+.icon-duration,
+.icon-play {
+	@extend .icon-date;
+
+
+	&:before {
+		content : "\f01d";
+	}
+}
+
+.post-author {
+	@include fa-icon-only('\f044');
+}
+
+.post-meta-item,
+.post-author,
+.category-title,
+.post-date,
+.icon-date
+{
+	margin-right: 10px;
+
+	&:before,
+	&:after {
+		color: $brand-primary-light;
+	}
+}
+
+
+
+
+.item-condensed {
+	.post-meta-item {
+		font-size: 12.5px;
+	}
+}
+
+
+.post-title {  }
+// Category
+.category-title {
+	margin-bottom: .5rem;
+	display: inline-block;
+
+	//@include font-size($font-size-h5-list);
+	@include fa-icon-only("\f126");
+
+
+
+	* > {
+		font-size: 1em; // Controling through parent span
+		font-family: $font-body-light;
+		color: inherit;
+	}
+
+
+}
+
+
+
+
+li {
+
+	.post-date {
+		@extend .icon-date;
+	}
+
+
+	.category-title,
+	.post-date {
+		//@include font-size($font-size-h6-list);
+		font-size: 1em;
+	}
+
+}
+
+
+
+ul.news-list,
+.list-archive,
+.archive-list {
+
+	@include reset();
+	// extends row
+	@include  make-row();
+
+	// New flex for now
+	display: flex;
+	flex-wrap: wrap;
+
+
+	li {
+		margin-top: $grid-gutter-width;
+
+		// card style
+		padding: $grid-gutter-width;
+
+
+		.main-body-conten____t & {
+
+			&:before {
+				content: "";
+				background: white;
+				display: block;
+				position: absolute;
+				height: 98%;
+				width: 98%;
+				height: calc( 100% - 30px );
+				width: calc( 100% - 30px );
+				left: 15px;
+				top: 15px;
+
+				@include xash-border-radius();
+				@include xash-box-shadow(0 2px 4px fade(black, .2));
+				@include transition;
+			}
+		}
+
+
+
+		.post-content {
+			padding: $grid-gutter-width / 2 0;
+
+
+			&:hover {
+				// .__animated-shadow();
+			}
+		}
+
+
+		.post-title {
+			@include font-resp-singular($font-size-h4-list);
+			margin-bottom: .5rem;
+			font-weight: bold;
+
+			> * {
+				color: inherit;
+				font-weight: inherit;
+			}
+		}
+
+
+		> div {
+			position: relative;
+		}
+
+
+
+
+		&:hover {
+			&:before {
+				@include xash-box-shadow( 0 20px 20px rgba(0,0,0,.12) );
+			}
+		}
+
+
+
+	}  // li
+
+
+
+
+
+
+
+
+
+	// date-wrap
+	.__date-badge {
+		//background: $brand-primary;
+
+		> * {
+			height: 100%;
+			padding-top: 5px;
+		}
+
+		.date {
+			//@extend %font-size-h2;
+			//font-weight: bold;
+			color: white;
+		}
+
+		.month {
+			position: absolute;
+			background: white;
+			color: $brand-primary-dark;
+			text-align: center;
+			padding: 2px 0;
+			bottom: -5px;
+			height: 20px;
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+
+
+.img-thumb-wrapper {
+
+	height: 0;
+	position: relative;
+	width: 100%;
+	padding: 60% 0 0;
+	overflow: hidden;
+	background: url(images/logo-thumb.jpg) no-repeat center center #eee;
+	background-size: 65% auto;
+
+
+	img,
+	> * {
+		border: 0;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	#image-gallery {
+		height: 100%;
+	}
+
+
+	.video-player {
+		height: 100%;
+	}
+
+
+	&.square {
+		padding: 100% 0 0;
+	}
+
+	&.vertical {
+		padding: 160% 0 0;
+
+		> * {
+			height: 100%;
+			width: 100%;
+		}
+
+		img.thumb  {
+			height: 100%;
+			width: auto;
+			max-width: unset;
+		}
+	}
+
+	.news-primary & {
+		padding: 75% 0 0;
+	}
+
+
+
+
+	.thumb-overlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 3;
+
+		background: url(images/icon-play.png) no-repeat center center;
+
+		@include opacity(.5);
+	}
+
+}
+
+
+
+//=========================================================================
+//=========================================================================
+//  Detail Page related Gallery Slider
+//=========================================================================
+//=========================================================================	
+	   .slider-img-gallery {
+
+		   //.img-thumb-wrapper {
+
+		   .thumb-cont {
+			   img {
+					width: 100%;
+					position: relative;
+					top: 50%;
+				   	@include transform(translateY(-50%));
+			   }
+		   }
+
+		   #image-gallery-thumb {
+			   .thumb-cont .thumb-wrap {
+				   padding-top: 65%;
+				   overflow: hidden;
+				   position: relative;
+				   height: 0;
+
+				   > * {
+					   position: absolute;
+					   top: 50%;
+					   left: 0;
+					   width: 100%;
+
+					   @include transform(translateY(-50%));
+				   }
+			   }
+
+
+			   button.slick-next,
+			   button.slick-prev {
+				   height: 30px;
+				   width: 30px;
+			   }
+		   }
+		   //}
+
+	   }
+
+
+
+
+//=========================================================================
+//=========================================================================
+//  Archive Page
+//=========================================================================
+//=========================================================================
+
+	// Archive Filters right after heading
+	header {
+
+		.archive-filters {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+			@include desktop {
+				justify-content: flex-end;
+				min-width: 40%;
+
+				label {
+					width: 100%;
+					text-align: right;
+					margin: 0;
+				}
+
+				.filter-wrapper {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+
+
+
+	//@todo, better class and markup approach needed.
+	//@note currenty using it as list view archive
+	.view-list {
+		@include reset ();
+
+		li {
+			padding: $grid-gutter-width ;
+			background: white;
+			margin-bottom: 1.5rem;
+			position: relative;
+			border-left: 4px solid $gray-light;
+
+			@include xash-box-shadow();
+			@include xash-border-radius();
+
+
+
+			p {
+				margin: 1rem 0 0;
+			}
+
+
+		}
+
+
+
+
+		.post-thumb {
+
+			@include tablet {
+
+				width: 30%;
+				display: inline-block;
+				padding-right: $grid-gutter-width / 2;
+
+
+
+				& + .post-content {
+					width: 69.5%;
+					display: inline-block;
+					vertical-align: top;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+//=========================================================================
+//=========================================================================
+//  Product
+//=========================================================================
+//=========================================================================
+	.product-list {
+		> * {
+			margin-bottom: $grid-gutter-width;
+		}
+	}
+
+
+
+
+//=====================================================================================
+//=====================================================================================
+// 	Gallery Module
+//=====================================================================================
+//=====================================================================================
+.album-gallery {
+	margin-bottom: $grid-gutter-width * 1.5;
+
+
+	&:nth-child(even) {
+		.media-gallery-wrap {
+			div:first-child {
+				order: 1;
+			}
+		}
+	}
+
+
+
+	p {
+		line-height: 1.24;
+
+
+		&.link {
+			text-align: right;
+		}
+	}
+
+
+	&:after {
+		content: "";
+		display: block;
+		margin: 10px auto;
+		height: 1px;
+		width: 20%;
+		border-bottom: 1px solid $hr-border;
+	}
+}
+
+
+.img-thumbnail {
+	width: 100%;
+}
+
+.media-gallery-wrap {
+	@include make-row();
+	display: flex;
+	align-items: stretch;
+
+
+
+	.desc {
+		width: 100%;
+
+
+		a.btn {
+			float: right;
+		}
+	}
+}
+
+ul.media-gallery {
+	@include reset();
+	@include make-row();
+	display: flex;
+	flex-wrap: wrap;
+
+
+	li {
+		@include reset();
+		margin-bottom:$grid-gutter-width / 2;
+		width: 100%;
+		padding: 0$grid-gutter-width / 2;
+		position: relative;
+		background:$brand-primary;
+		background-clip: content-box;
+
+
+
+		// Media
+		@media #{$device-tablet-start} {
+
+		.media-archive & {
+			width: 50%;
+		}
+	}
+
+
+
+		.post-content {
+			background: $brand-primary;
+			color: white;
+
+
+
+
+			* {
+				color: white;
+
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+/// NEED TO ADD TO VS : VS Additions
+
+// Media gallery
+.gallery-detail {
+
+	&.slick-slider > .slick-list,
+	> li {
+		// With or Without Slider
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+
+
+
+		.img-thumbnail {
+			//	position: static;
+		}
+	}
+}
+
+.img-thumbnail {
+	width: 100%;
+}
+
+body.media-detail {
+
+	.media-gallery-wrap {
+
+		> .col-md-2 {
+			display: flex;
+			align-content: center;
+		}
+	}
+}
+
+
+.gallery-thumb {
+
+	li.active div {
+		outline: 5px solid $brand-primary-light;
+	}
+	// Vertical
+	&.slick-vertical {
+		display: flex;
+		align-content: center;
+
+
+
+		&:after {
+			top: auto;
+			bottom: 0;
+		}
+
+
+		.slick-prev,
+		.slick-next {
+			width: 100%;
+			height: 25px;
+			top: 0;
+			left: 0%;
+			//margin-left: -35px;
+			background: white;
+			@include xash-border-radius(3px);
+			@include opacity(1);
+			@include xash-box-shadow(0 1px 2px rgba(0,0,0,.1));
+
+
+			&::before {
+				font-size: 2rem;
+				content: "\f106";
+			}
+		}
+
+
+		.slick-next {
+			top: auto;
+			bottom: 0;
+
+
+			&:before {
+				content: "\f107";
+			}
+		}
+	}
+}
+
+//------------------------------- GALLERY -----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//============================================================
+//============================================================
+// FAQ MODULE
+//============================================================
+//============================================================
+
+//=====================================================================================
+//=====================================================================================
+// 	FAQ and Collapse
+//=====================================================================================
+//=====================================================================================
+//
+.faq-wrapper {
+	margin: $grid-gutter-width/ 2 0;
+
+
+	.cat-heading {
+		@extend h3;
+		margin: 2.5rem 0 .5rem;
+		font-weight: 300;
+		color: $text-color-light;
+	}
+
+
+
+	.panel {
+		margin-bottom: .5rem;
+		background:white;
+		padding: 1.5rem;
+
+
+
+		@include xash-box-shadow();
+
+
+		.panel-heading {
+			@include  list-view-bg;
+			margin: 0 0 0;// $grid-gutter-width / 3;
+
+			padding-top: .2rem;
+			padding-bottom: .2rem;
+			border-width: 0 0 2px;
+
+
+
+		}
+
+
+
+		.panel-collapse {
+			margin: -$grid-gutter-width/3 0 $grid-gutter-width / 1.5 0;
+			border: 2px solid darken(white, 10%);
+			border-top: 0;
+		}
+
+
+
+
+
+		.faq-content {
+			@include transition(max-height .25s ease-in-out);
+			//height: auto;
+			max-height: 400px;
+
+
+
+			&.collapsed {
+				max-height: 0;
+				overflow: hidden;
+
+
+			}
+		}
+
+	}
+
+
+	.panel-title {
+		padding: .5rem 0;
+		margin: 0;
+
+
+		@include fa-icon-only("\f055",1rem);
+
+
+
+		a,
+		span {
+			//@include font-size($font-size-h4-list);
+			//display: block;
+			@extend .h4;
+			@include font-size($font-size-h5-list);
+			// color: $teal;
+		}
+	}
+}
+
+
+.faq-panel {
+
+	.faq-header {
+		border-bottom: 3px solid $brand-primary;
+	}
+}
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+/// <editor-fold defaultstate="collapsed" desc="-------[ SINGLE PAGE VIEW SEPIA CMS ]-------">
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  USER PROFILE Stuff
+	//=========================================================================
+	//=========================================================================	
+	.tab-profile {
+
+		ul,
+		li {
+			@include reset;
+		}
+
+
+
+		ul {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+
+
+			li {
+
+				flex-grow: 1;
+				text-align: center;
+				margin-bottom: $grid-gutter-width / 2;
+
+
+
+				a {
+					padding: 5px 15px;
+					background: $gray-lighter;
+					display: block;
+
+					@include xash-border-radius(50px);
+				}
+
+
+
+				@include tablet {
+					margin-left: 10px;
+				}
+
+
+			}  // li
+		}
+	}
+
+
+	.profile-detail {
+		.col-md-6 {
+			border-bottom: 1px solid $gray-lighter;
+		}
+
+		label {
+			//@include font-size($font-size-h5-list);
+			font-size: 1rem;
+			font-weight: 500;
+			//font-family: $font-heading;
+			margin: 1rem 0 0;
+
+
+			& + p {
+				margin-bottom: 1.5rem;
+				line-height: 1;
+				color : $gray-light;
+				font-weight: 300;
+				@include font-size($font-size-h3-list)
+			}
+
+		}
+
+	}
+
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  INNER PAGES
+	//=========================================================================
+	//=========================================================================
+
+
+	.inner-page {
+
+
+		.single-content {
+
+			> p:first-child,
+			.view-single-thumb-wrapper + p {
+				body.dir-left & {
+					@extend .letter-large;
+				}
+			}
+
+		}
+
+
+
+		.view-single-thumb-wrapper {
+
+			width: 60%;
+			margin-right: 2rem;
+			float: left;
+			display: inline-block;
+
+
+			.img-thumb-wrapper {
+				padding: 0;
+				height: auto;
+
+
+				img {
+					position: relative;
+				}
+			}
+		}
+
+	}
+
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  search wrapper
+	//=========================================================================
+	//=========================================================================	
+	.filter-wrapper {
+		.quick-search-wrapper {
+			position: relative;
+
+			.btn-qs {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 10px ;
+			}
+
+		}
+	}
+
+
+// </editor-fold>

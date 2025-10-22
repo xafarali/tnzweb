@@ -1,0 +1,300 @@
+// Sepia Solutions
+//-----------------------------------------------------------
+// All Header Style stuff comes Below
+//-----------------------------------------------------------
+/**
+	Headers
+	@author: xafaR
+	@file: layout-header
+
+*/
+
+
+#header {
+	padding: 0 $grid-gutter-width;
+	height: $grid-gutter-width * 2;
+	background: rgba($white, 0.9%);
+
+
+
+
+	@include box-shadow();
+
+
+	> .row {
+		height: 100%;
+
+
+		> div {
+			font-size: $font-size-root;
+			display: flex;
+			align-items: center;
+
+
+
+			&:last-child {
+				justify-content: flex-end;
+			}
+
+		}
+
+	}
+
+}
+
+.area-menu {
+	display: flex;
+	justify-content: flex-end;
+
+
+	.area-menu-button .btn {
+		margin-left: $gutter-width;
+	}
+}
+
+.btn-menu-toggle {
+	position: absolute;
+	height: 100%;
+	width: $grid-gutter-width * 2;
+	margin-left: - $grid-gutter-width;
+	top: 0;
+	//right: -15px;
+
+
+
+	.btn-menu {
+		height : 100%;
+		width: 100%;
+		margin: 0;
+		font-size: 1.5em;
+		color: lighten( $brand-primary, 20% );
+	}
+}
+
+
+
+// Header and Footer
+
+
+
+
+#header-wrapper {
+	position: relative;
+	padding-bottom: 3rem;
+
+
+
+	@include desktop {
+		//padding-bottom:6rem;
+		min-height: 290px;
+		min-height: 180px;
+
+	}
+
+
+	.header-primary {
+		//background: $brand-primary;
+		//border-bottom: 3px solid gold;
+
+
+		@include device {
+			height: 60px;
+		}
+
+
+		@include desktop {
+			padding: .5rem;
+			// margin-top: $grid-gutter-width;
+		}
+	}
+}
+
+
+
+/*  Site Branding
+//--------------------------------------------------*/
+
+.logo-wrapper {
+
+	padding : 5px 0;
+	position: relative;
+	z-index: $zindex-fixed;
+
+
+
+
+}
+
+
+.site-title {
+
+	@include reset();
+	text-align: left;
+	margin-top: 0!important;
+	padding: 0 $gutter-width/2;
+	max-width: 200px;
+	line-height: 0;
+
+
+
+	a {
+		border:none!important;
+		outline: none!important;
+	}
+
+
+	> span,
+	.site-name {
+		display: none;
+	}
+
+
+	svg {
+		pointer-events: none;
+	}
+
+	img {
+		max-width: 220px;
+		height: auto;
+		//max-height: 70px;
+		position: relative;
+		margin-top: 0;
+		@include transition();
+
+
+
+		@include tablet  {
+			max-width: 100%;
+		}
+
+
+		@include phone {
+			max-width: 100px;
+			max-height:50px;
+
+		}
+	}
+
+
+
+	// Sticky Logo
+	body.sticky & {
+
+		.site-title-heading {
+
+			img { margin-top: -250px; }
+
+
+			// Logo is squeezed
+			a {
+				height: 38px;
+			}
+		}
+
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/*  Primary Header Area
+//--------------------------------------------------*/
+#header-wrapper {
+
+
+	@include device {
+
+		.header-primary {
+
+			> .container {
+				width: 100%;
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+	.header-primary-area {
+		margin-bottom: 1rem;
+	}
+}
+
+
+.header-super-menu {
+
+	@include font-size($font-size-h6-list);
+
+
+	@extend .mc;
+
+	> div {
+		width: 100%;
+
+
+		p {
+			margin: 0;
+			font-weight: 500;
+		}
+	}
+
+
+
+
+	// Super Menu
+	//-------------------------------------------------------------
+
+	.super-menu {
+
+		@include tablet {
+
+		}
+	}
+
+
+
+}
+
+
+// <editor-fold desc="- - - - [ Header Elements ] - - - -">
+
+
+
+
+
+
+html {
+	background-color: white;
+}
+.logo-wrapper {
+	mix-blend-mode: difference;
+
+	svg {
+		* {
+			//fill: $text-color;
+			//mix-blend-mode: difference;
+		}
+	}
+
+
+	body.lg-light & {
+
+		svg * {
+			//fill: $white;
+		}
+	}
+
+}

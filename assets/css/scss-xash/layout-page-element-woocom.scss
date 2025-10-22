@@ -1,0 +1,183 @@
+ /**
+  Woocom Related stuff like panel, height etc.
+  like: banner, chits, tag etc.
+*/
+
+// Product overflow hidden for col to wrok!
+.product-wrapper {
+	overflow: hidden;
+}
+
+.panel-box {
+	@media #{$device-tablet-start} {
+		min-height: 330px;
+		height: 100%;
+	}
+}
+
+.color {
+	
+}
+
+.banner-area {
+	@media #{$device-tablet-start} {
+		max-width: 300px;
+		width: 100%;
+	}
+}
+
+@media #{$device-tablet-start} {
+
+	.columns-4 {
+		li.product.type-product {
+			max-width: 220px !important;
+		}
+	}
+
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+	padding: $grid-gutter-width;
+}
+
+
+/*  Woocommerce Stuff
+//--------------------------------------------------*/
+.widget.sc-wrapper {
+	margin: 0;
+}
+
+.cart-btn-col {
+	margin:0;
+
+
+	// Temp work around:-
+	> .custom-html-widget {
+
+		@media #{$device-phone} {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+
+
+		.color-white {
+			color: white!important;
+			* {
+				color: white;
+			}
+		}
+
+	}
+
+	@media #{$device-phone} {
+		position: absolute;
+		top : 5px;
+		right: 0;
+	}
+}
+
+.cart-btn-wrapper {
+	margin-bottom: 0 !important;
+
+
+	@media #{$device-phone} {
+		//position: absolute;
+		//top: 5px;
+		//right: 0;
+		max-width: 60px;
+	}
+}
+
+.sc-cart-btn {
+	position: relative;
+
+	.cart-label,
+	.cart-items,
+	.btn:after {
+		display: none;
+		content: unset;
+	}
+
+	#header-cart-btn {
+
+		height: 45px;
+		// width: 45px;
+		width: 100%;
+		line-height: 1;
+		border-color: $brand-primary-dark;
+		padding-left: 52px;
+		position: relative;
+
+		@include text-shadow();
+	}
+
+
+	span.cart-icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 45px; // Needs variable
+		background: rgba(0, 0, 0, .35);
+		//padding-top: 7%;
+		line-height: 43px;
+
+	}
+	//@todo , implement better minicart popup, BS Sucks!!!
+	@media #{$device-tablet-start} {
+		.cart-label,
+		.cart-items {
+			display: block;
+		}
+
+		.btn {
+			width: auto;
+		}
+	}
+
+
+	.header-mini-cart-popup {
+
+		@media #{$device-phone} {
+
+			width: 90vw;
+			right: 0;
+			left: auto!important;
+			top: 4.5rem!important;
+
+			@include transform(unset!important);
+		}
+
+
+
+
+		@media #{$device-tablet-start} {
+			width:20rem;
+			left: 50%!important;
+			margin-left: -10rem;
+			top: 1.25rem!important;
+		}
+
+
+		padding: $grid-gutter-width / 2;
+
+		@include border-radius(15px);
+	}
+
+
+	.woocommerce-mini-cart__buttons {
+		display: flex;
+		justify-content: space-between;
+
+
+		> a {
+			width: 45%;
+		}
+	}
+
+
+}
+
+// </editor-fold>

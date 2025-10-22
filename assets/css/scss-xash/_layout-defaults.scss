@@ -1,0 +1,208 @@
+/**
+ *  All Default Elements of HTML override here
+ *  Tables, UL A etc.
+ *	@file: layout-default
+*/
+
+
+// Typography Default
+@import "typography-elements";
+
+a {
+	font-size :inherit;
+	font-weight: inherit;
+
+
+	&:hover {
+		text-decoration: none!important;		
+	}
+}
+
+
+
+ul {
+	padding-left: 1rem;
+	margin-bottom: $font-p-margin;
+
+	li {
+
+	}
+
+}
+
+
+
+
+ul.ticks,
+ul.check,
+ul.arrow {
+
+	@include reset();
+
+	margin-bottom: $font-p-margin;
+
+	li {
+		@include reset();
+
+		margin: 0 0 .5rem;
+		padding: 0 0 0 1.75rem;
+		list-style: none;
+		position: relative;
+
+
+		&:before {
+			content: 	"\f058";
+			font-size: 	 .85rem;
+			font-family: $icon-font-awesome;
+			color: 		$brand-secondary;
+			position: 	absolute;
+			left: 		0;
+			top: 		3px;
+		}
+	}
+
+}
+
+
+ul.check {
+	li {
+		&:before {
+			content: 	"\f00c";
+		}
+	}
+}
+
+ul.arrow {
+	li {
+		&:before {
+			content: 	"\f178";
+		}
+	}
+}
+
+
+
+
+blockquote {
+
+	color: $blockquote-color;
+	width: 90%;
+	position: relative;
+	padding-top: $grid-gutter-width * 1.25;
+	padding-bottom: $grid-gutter-width * 1.25;
+	font-family: $font-blockquote;
+	font-size: $blockquote-font-size;
+	line-height: $blockquote-line-height;
+	padding-left: 10%;
+	z-index: 0;
+	letter-spacing:0;
+	//border-left: 4px solid $blockquote-color;
+	font-style: normal;
+	text-align: left;
+
+
+
+
+	&:before {
+		content: "\f10d";
+		display: inline-block;
+		position: absolute;
+		z-index: -1;
+		font-family: $icon-font-awesome;
+		font-size: 7rem;
+		top: -10%;
+		left: $grid-gutter-width / 2;
+		color: darken($gray-100, 5%);
+		//color: $brand-primary;
+
+	}
+
+
+	&.bg {
+		background: $blockquote-bg;
+	}
+
+
+	&.condensed {
+		width: 60%;
+	}
+
+
+
+	&.lg {
+		@extend %font-size-h3;
+		font-weight: bold;
+
+
+
+		&:before {
+			font-size: 5rem;
+		}
+	}
+
+
+
+
+
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+
+}
+
+
+
+/*
+fieldset {
+	padding: $grid-gutter-width;
+	border: 2px solid $border-color-default;
+	margin-top: $grid-gutter-width;
+	margin-bottom: $grid-gutter-width;
+
+	@include xash-border-radius($fieldset-border-radius);
+
+
+	legend {
+		display: inline-block;
+		width: auto;
+		padding: 0 15px 0 5px;
+	}
+}
+*/
+
+
+
+table,
+.table {
+	th {
+		background-color: $table-th-bg;
+		border-bottom: 3px solid $table-border-color;
+		color: $table-head-color;
+	}
+
+
+	th,
+	td {
+		> p:last-child {
+			margin: 0;
+		}
+	}
+}
+
+
+
+
+iframe {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+form {
+	.row {
+		margin-bottom: $grid-gutter-width / 2;
+	}
+}

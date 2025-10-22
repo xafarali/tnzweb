@@ -1,0 +1,104 @@
+// Imported Animate.css as reference, dequeued from WP.
+//@import "../../css/animate.css";
+
+
+//=========================================================================
+//=========================================================================
+//  CUSTOM Animation classes
+//=========================================================================
+//=========================================================================
+
+.move {
+	&-up {}
+	&-down {}
+	&-left {}
+	&-right {}
+}
+
+
+// reset is helper class to reset to normal position
+// for Animate.css usage, try use indivisible for currently state.
+
+
+
+// Reveal Text as style
+// Just class is initial state, adding reset will bring it back to original position
+
+.reveal {
+	&-up,
+	&-down,
+	&-left,
+	&-right {
+		overflow: hidden;
+
+		&.reset {
+			* > {@include transform(translate(0));}
+		}
+
+		//* > {
+		//	display: block;
+		//	.transition(all 0.45s cubic-bezier(.55,.01,.14,1.03));
+		//}
+	}
+
+	&-up {
+		> * {
+			@include transform(translateY(100%))
+		}
+	}
+	&-down {
+		> * {
+			@include transform(translateY(-100%))
+		}
+	}
+	&-left {
+		> * {
+			@include transform(translateX(100%))
+		}
+	}
+	&-right {
+		> * {
+			@include transform(translateX(-100%))
+		}
+	}
+}
+
+
+// Just remove class anim-init, will trigger animation
+// span fixed up
+.do-animate {
+
+	//@include  transition(all 1s cubic-bezier(.55,.01,.14,1.03));
+	//@include opacity(1);
+	//@include transform(none);
+	//
+	//
+	//&.anim-init {
+	//
+	//	&.fadeInLeft {
+	//		opacity: 0;
+	//		transform: translate3d(-100%, 0, 0);
+	//	}
+	//
+	//	&.fadeInRight {
+	//		opacity: 0;
+	//		transform: translate3d(100%, 0, 0);
+	//	}
+	//
+	//	&.fadeInDown {
+	//		opacity: 0;
+	//		transform: translate3d(0, 100%, 0);
+	//	}
+	//
+	//
+	//	&.fadeInUp {
+	//		opacity: 0;
+	//		transform: translate3d(0, -100%, 0);
+	//	}
+	//
+	//}
+	//
+
+
+
+}

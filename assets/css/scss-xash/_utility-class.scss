@@ -1,0 +1,841 @@
+/**
+	Utilities Style
+	@author: xafaR
+	@file: utility-class
+
+*/
+
+
+/*
+  All the utility classes based on Responsive MUST come between
+  @each loop with prefix
+  @TODO, make it dyanmic or with better approach
+
+  @TODO , need to implement this if REQUIRED.
+  https://www.sitepoint.com/cross-media-query-extend-sass/
+ */
+
+// <editor-fold desc="- - - - [ General Classes and Utils ] - - - -">
+
+// Placeholders
+// square icon styles
+%icon-style {
+	display: inline-block;
+	width: $icon-size;
+	height: $icon-size;
+	//padding: 100% 0 0;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 $grid-gutter-width / 3 0 0;
+	font-size: 1em; //$icon-size / 2.5;
+
+
+
+	&.sm {
+		width: $icon-size-sm;
+		height: $icon-size-sm;
+		font-size: $icon-size-sm / 2;
+	}
+
+
+	&.lg {
+		width: $icon-size-lg;
+		height: $icon-size-lg;
+		font-size: $icon-size-lg / 2.5;
+	}
+
+
+	&.xl {
+		width: $icon-size-xl;
+		height: $icon-size-xl;
+		font-size: $icon-size-xl / 2.5;
+	}
+
+
+	> * {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 96%;
+
+		@include transform(translate(-50%, -50%));
+	}
+
+}
+
+
+%tag-style {
+
+	//@extend .btn;
+
+	text-align: center;
+	margin-left: $grid-gutter-width/2;
+	margin-right: $grid-gutter-width/2;
+	margin: 0 $grid-gutter-width/2;
+
+	padding: $input-btn-padding-y $input-btn-padding-x;
+	display: inline-block;
+	vertical-align: middle;
+	background-color: $btn-default-bg;
+	color: $btn-default-color;
+
+
+
+	&:hover,
+	&.active {
+		cursor: auto!important;
+	}
+
+
+
+	&.sqr,
+	&.no-border {
+		@include xash-border-radius(unset);
+	}
+
+
+
+	&.round {
+		@include xash-border-radius(50px);
+	}
+
+
+	&.txt-shadow {
+		@include text-shadow( 1px 10px 0 rgba(0,0,0,.2));
+	}
+
+
+}
+
+
+.tag {
+	@extend %tag-style;
+}
+
+
+
+.icon-inline {
+	@extend %icon-style;
+}
+
+// UL LI set
+@media #{$device-tablet-start} {
+
+	ul.align-right {
+		text-align: right;
+
+		li {
+			display: inline-block;
+		}
+	}
+
+}
+
+
+
+/// Colors and backgrounds
+@each $color-name, $color-val in $essential-colors {
+
+	// bg color
+	//--------------------------------------------------------------
+	.bg-#{$color-name},
+	.btn-#{$color-name},
+	.hl-#{$color-name} {
+		background-color: $color-val!important;
+		color: auto-text-color($color-name);
+		//content:quote(lightness($color-val));
+	}
+
+
+
+
+	.outline.#{$color-name} {
+		background-color: transparent;
+		border: $btn-border-outline $color-val solid;
+		color: $color-val;
+
+
+		&:hover {
+			background-color: $color-val;
+			border-color: $color-val;
+			color: auto-text-color($color-name);
+		}
+	}
+
+
+
+
+	//// badges:
+	////--------------------------------------------------------------------
+	//.badge-#{$color-name} {
+	//
+	//	@extend .badge;
+	//
+	//	font-size: inherit;
+	//	font-weight: normal;
+	//	background-color: $color-val;
+	//	padding-left:  .6em;
+	//	padding-right: .6em;
+	//	color: auto-text-color($color-name);
+	//
+	//
+	//	&.sm {
+	//		font-size: 75%;
+	//	}
+	//
+	//}
+
+
+
+
+
+
+	//.icon-#{$color-name},
+	//.icon.#{$color-name} {
+	//
+	//	@extend %icon-style;
+	//
+	//
+	//	background-color: $color-val;
+	//	color: auto-text-color($color-name);
+	//
+	//
+	//}
+
+
+
+
+	//.tag-#{$color-name},
+	//.tag.#{$color-name} {
+	//
+	//	@extend %tag-style;
+	//
+	//
+	//	background-color: $color-val!important;
+	//	color: auto-text-color($color-name);
+	//
+	//
+	//}
+
+
+
+
+	//.bg-#{$color-name},
+	//.badge-#{$color-name},
+	//.icon-#{$color-name},
+	//.icon.#{$color-name},
+	//.tag.#{$color-name},
+	//.tag-#{$color-name}{
+
+	@if $xash-gradients  == true {
+
+		.bg-#{$color-name} {
+			// Gradient enabled
+
+			&.gradient,
+			&.shaded {
+				@include gradient-x( saturate(darken($color-val, 5%),10%) , saturate(lighten($color-val, 5%), 5%));
+			}
+		}
+
+	}
+
+
+	// text-color
+	//--------------------------------------------------------------
+	.color-#{$color-name} {
+		color: $color-val!important;
+	}
+
+
+
+}  // essential color loop
+	.color-white,
+	.clr-white,
+	.c-w {
+		color: white!important;
+	}
+
+	.color-text,
+	.clr-txt {
+		color: $text-color!important;
+	}
+
+	.clr-txt-light,
+	.clr-light,
+	.color-text-light {
+		color: $text-color-light!important;
+	}
+
+	.clr-p-dull {
+		color: #6e6b6b;
+	}
+
+	.clr-p { color :  $brand-primary; }
+	.clr-pl { color: $brand-primary-light; }
+	.clr-s { color :  $brand-secondary; }
+	.clr-sl { color :  $brand-secondary-light; }
+
+
+
+
+	
+
+//---------------------------------------------------------
+// Primary / Secondary Color Gradation
+//---------------------------------------------------------
+@each $color-name, $color-val in $primary-colorkit {
+	.bg-#{$color-name} { background-color: $color-val; }
+	.color-primary-#{$color-name} { color: $color-val; }
+}
+@each $color-name, $color-val in $secondary-colorkit {
+	.bg-#{$color-name} { background-color: $color-val;}
+	.color-secondary-#{$color-name} { color: $color-val;}
+}
+
+$total-number:10;
+//
+//@for $i from 1 through ( $total-number - 1 ) {
+//	$__current_loop: ( $i * 10% );
+//
+//
+//	.bg-primary-#{$i} {
+//		background-color: lighten($brand-primary, $__current_loop);
+//		color: auto-text-color("primary");
+//	}
+//
+//
+//	.bg-primary-light-#{$i} {
+//		background-color: lighten($brand-primary-light, $__current_loop);
+//		color: auto-text-color("primary-light");
+//	}
+//
+//
+//	.bg-secondary-#{$i} {
+//		background-color: lighten($brand-secondary, $__current_loop);
+//		color: auto-text-color("secondary");
+//	}
+//
+//
+//	.color-primary-#{$i} {
+//		color: lighten($brand-primary, $__current_loop);
+//	}
+//
+//
+//	.color-secondary-#{$i} {
+//		color: lighten($brand-secondary, $__current_loop);
+//	}
+//
+//}
+//
+
+.content-white {
+	* {
+		color: white;
+	}
+}
+
+.bg-gredient {
+	@include gradient-radial(rgba(0,146,203,1), rgba(0,40,119,1));
+	//@include gradient-radial($brand-primary-light, $brand-primary);
+}
+.bg-gredient-dark {
+	@include gradient-radial(rgb(21, 45, 78), #02184E);
+}
+
+.bg-dark-blue {	background-color: #002877; }
+.bg-light-blue { background-color: #DDE6ED; }
+
+.bg-lightgray {
+	background-color: #f3f5f9;
+}
+
+.text-shadow { @include text-shadow($text-shadow) }
+.text-shadow-lg { @include  text-shadow($text-shadow-lg)}
+.shadow {  @include xash-box-shadow($shadow-dialog!important);  }
+
+
+
+
+
+.no-shadow {
+	@include xash-box-shadow(unset!important);
+
+
+	&:after,
+	&:before {
+		@include xash-box-shadow(unset!important);
+	}
+}
+
+
+.condensed {
+
+	@media #{$device-desktop} {
+		width: 70%;
+		display: inline-block;
+	}
+
+}
+
+.round {
+	@include xash-border-radius(300px!important);
+}
+
+
+.font-weight-100 { 	font-weight: 100!important; }
+.font-weight-300 { 	font-weight: 300!important; }
+.font-weight-400 { 	font-weight: 400!important; }
+.font-weight-500 { 	font-weight: 500!important; }
+.font-weight-700 { 	font-weight: 700!important; }
+
+
+
+
+p.lg {
+	font-size: 1.25rem;
+}
+
+
+
+
+
+.pr {
+	position: relative!important;
+
+	&-2 {
+		position: relative;
+		z-index: 2;
+	}
+
+	&-3 {
+		position: relative;
+		z-index: 3;
+	}
+
+	&-4 {
+		position: relative;
+		z-index: 4;
+	}
+
+}
+
+
+
+.z {
+	&-1 { z-index: 1; }
+	&-2 { z-index: 2; }
+	&-3 { z-index: 3; }
+	&-4 { z-index: 4; }
+	&-5 { z-index: 5; }
+	&-6 { z-index: 6; }
+}
+
+
+
+
+.no-border,
+.nb {
+	border:0!important;
+
+	&:focus {
+		//@include xash-box-shadow(none!important);
+		border:0!important;
+	}
+}
+
+.no-outline,
+.no-out {
+	&:focus {
+		@include xash-box-shadow(none !important);
+	}
+}
+
+
+
+
+.em,
+em {
+	font-weight: bold;
+	margin-left: .5rem;
+	margin-right: .5rem;
+	color: $color-em;
+	border-bottom: 3px solid $color-em;
+
+
+
+	&:hover,
+	&:active {
+		color: lighten( $color-em, 10% );
+		border-color: lighten( $color-em, 10% );
+	}
+}
+
+
+
+.txt-large,
+.text-large {
+	font-size: 1.75em;
+}
+
+.txt-small,
+.text-small {
+	font-size: .75em;
+}
+
+
+.opacity-0 {
+	@include opacity(0);
+}
+
+
+
+@include tablet {
+
+	p.column-2,
+	.column-2 p {
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		-ms-column-count: 2;
+		column-count: 2;
+
+		column-gap: $grid-gutter-width * 1.25;
+	}
+
+
+	p.column-3,
+	.column-3 p {
+		-moz-column-count: 3;
+		-webkit-column-count: 3;
+		-ms-column-count: 3;
+		column-count: 3;
+
+		column-gap: $grid-gutter-width * 1.25;
+
+
+	}
+
+
+	.column-2,
+	.column-3 {
+
+		text-align: justify;
+
+
+		br {
+			margin-bottom : $grid-gutter-width * 1.5;
+		}
+	}
+
+
+	.letter-large::first-letter,
+	.letter-large:first-letter {
+		font-size: 8em;
+		float: left;
+		font-family: "Georgia", "Times New Roman", Serif;
+		margin-right: 10px;
+		line-height: 1;
+		margin-top: .5rem;
+		margin-bottom: 0;
+		text-align: justify;
+
+
+
+
+		// implemented RTL within
+
+		body.#{$css-rtl-class} & {
+			color:$text-color;
+		}
+
+	}
+}
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+/// <editor-fold defaultstate="collapsed" desc="-------[ CUSTOM ICON SETS AND MISC ]-------">
+
+	.icon {
+		&-date {
+
+				@include fa-icon-only("\f017");
+
+		}
+	}
+
+
+
+
+	body.hide-title,
+	body.no-title {
+
+		.col > h1.heading {
+			display: none;
+		}
+	}
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Responsive Class in MIXING ] - - - -">
+	// This mthod is being called in _mixing.scss which will make all classses responsive
+	@mixin _resposnive_utilset ( $_pre ) {
+	//-------------------------------------------------------------------
+	//-------------------------------------------------------------------
+	// UTILITIES STARTS HERE ------------------------
+	//-------------------------------------------------------------------
+	//-------------------------------------------------------------------
+		.fr#{$_pre} { float:right; }
+		.fl#{$_pre} { float:left; }
+		.fn#{$_pre} { float: none; }
+		.dp#{$_pre} { display: block;}
+		.df#{$_pre} { display: flex; }
+		.d-flex#{$_pre} {display: flex }
+
+
+		.no-padding#{$_pre} { padding: 0!important; }
+		.padding#{$_pre} { padding: $grid-gutter-width!important; }
+		.padding-left#{$_pre} { padding-left: $grid-gutter-width / 2!important; }
+		.padding-right#{$_pre} { padding-right: $grid-gutter-width / 2!important; }
+		.padding-bottom#{$_pre} { padding-bottom: $grid-gutter-width / 2!important; }
+		.padding-top#{$_pre}   { padding-top: $grid-gutter-width / 2!important; }
+
+		//--- 100x
+		.padding-3x#{$_pre} { padding: $grid-gutter-width*3 !important; }
+		.padding-left-3x#{$_pre} { padding-left: $grid-gutter-width*3 !important; }
+		.padding-right-3x#{$_pre} { padding-right: $grid-gutter-width*3 !important; }
+		.padding-bottom-3x#{$_pre} { padding-bottom: $grid-gutter-width*3 !important; }
+		.padding-top-3x#{$_pre}   { padding-top: $grid-gutter-width*3 !important; }
+
+		//--- 50x
+		.padding-2x#{$_pre} { padding: $grid-gutter-width*2!important; }
+		.padding-left-2x#{$_pre} { padding-left: $grid-gutter-width*2!important; }
+		.padding-right-2x#{$_pre} { padding-right: $grid-gutter-width*2!important; }
+		.padding-bottom-2x#{$_pre} { padding-bottom: $grid-gutter-width*2!important; }
+		.padding-top-2x#{$_pre}   { padding-top: $grid-gutter-width*2!important; }
+
+		//--- 30x
+		.padding-1x#{$_pre} {padding: $grid-gutter-width!important;}
+		.padding-left-1x#{$_pre} { padding-left: $grid-gutter-width!important; }
+		.padding-right-1x#{$_pre} { padding-right: $grid-gutter-width!important; }
+		.padding-bottom-1x#{$_pre} { padding-bottom: $grid-gutter-width!important; }
+		.padding-top-1x#{$_pre}   { padding-top: $grid-gutter-width!important; }
+
+
+
+		//-----------------------------------------------------------------------
+		//Margin
+		.no-margin#{$_pre} { margin: 0!important; }
+		.margin#{$_pre} { margin: $grid-gutter-width!important; }
+		.margin-left#{$_pre} { margin-left: $grid-gutter-width / 2!important; }
+		.margin-right#{$_pre} { margin-right: $grid-gutter-width / 2!important; }
+		.margin-bottom#{$_pre} { margin-bottom: $grid-gutter-width / 2!important; }
+		.margin-top#{$_pre} { margin-top: $grid-gutter-width / 2!important; }
+
+
+		//--- 100x
+		.margin-3x#{$_pre} { margin: $grid-gutter-width*3 !important; }
+		.margin-left-3x#{$_pre} { margin-left: $grid-gutter-width*3 !important; }
+		.margin-right-3x#{$_pre} { margin-right: $grid-gutter-width*3 !important; }
+		.margin-bottom-3x#{$_pre} { margin-bottom: $grid-gutter-width*3 !important; }
+		.margin-top-3x#{$_pre}   { margin-top: $grid-gutter-width*3 !important; }
+
+
+		//--- 50x
+		.margin-2x#{$_pre} { margin: $grid-gutter-width*2!important; }
+		.margin-left-2x#{$_pre} { margin-left: $grid-gutter-width*2!important; }
+		.margin-right-2x#{$_pre} { margin-right: $grid-gutter-width*2!important; }
+		.margin-bottom-2x#{$_pre} { margin-bottom: $grid-gutter-width*2!important; }
+		.margin-top-2x#{$_pre}   { margin-top: $grid-gutter-width*2!important; }
+
+
+		//--- 30x
+		.margin-left-1x#{$_pre} { margin-left: $grid-gutter-width!important; }
+		.margin-right-1x#{$_pre} { margin-right: $grid-gutter-width!important; }
+		.margin-bottom-1x#{$_pre} { margin-bottom: $grid-gutter-width!important; }
+		.margin-top-1x#{$_pre}   { margin-top: $grid-gutter-width!important; }
+
+
+		//--------------------------------------------------*/
+		//--------------------------------------------------*/
+		/*  Negative Margins
+		//--------------------------------------------------*/
+		//--------------------------------------------------*/
+		.margin-n#{$_pre} { margin: -$grid-gutter-width!important;; }
+		.margin-left-n#{$_pre} { margin-left: -$grid-gutter-width / 2!important;; }
+		.margin-right-n#{$_pre} { margin-right: -$grid-gutter-width / 2!important;; }
+		.margin-bottom-n#{$_pre} { margin-bottom: -$grid-gutter-width / 2!important;; }
+		.margin-top-n#{$_pre} { margin-top: -$grid-gutter-width / 2!important;; }
+
+
+		//--- 100x
+		.margin-n-3x#{$_pre} { margin: -$grid-gutter-width*3 !important;; }
+		.margin-left-n-3x#{$_pre} { margin-left: -$grid-gutter-width*3 !important;; }
+		.margin-right-n-3x#{$_pre} { margin-right: -$grid-gutter-width*3 !important;; }
+		.margin-bottom-n-3x#{$_pre} { margin-bottom: -$grid-gutter-width*3 !important;; }
+		.margin-top-n-3x#{$_pre} { margin-top: -$grid-gutter-width*3 !important;; }
+
+
+		//--- 50x
+		.margin-n-2x#{$_pre} { margin: -$grid-gutter-width*2!important;; }
+		.margin-left-n-2x#{$_pre} { margin-left: -$grid-gutter-width*2!important;; }
+		.margin-right-n-2x#{$_pre} { margin-right: -$grid-gutter-width*2!important;; }
+		.margin-bottom-n-2x#{$_pre} { margin-bottom: -$grid-gutter-width*2!important;; }
+		.margin-top-n-2x#{$_pre} { margin-top: -$grid-gutter-width*2!important;; }
+
+
+		//--- 30x
+		.margin-left-n-1x#{$_pre} { margin-left: -$grid-gutter-width!important;; }
+		.margin-right-n-1x#{$_pre} { margin-right: -$grid-gutter-width!important;; }
+		.margin-bottom-n-1x#{$_pre} { margin-bottom: -$grid-gutter-width!important;; }
+		.margin-top-n-1x#{$_pre} { margin-top: -$grid-gutter-width!important;; }
+
+
+
+		//--- NO MARGIN
+		.no-margin-left#{$_pre} { margin-left: 0!important;; }
+		.no-margin-right#{$_pre} { margin-right: 0!important;; }
+		.no-margin-bottom#{$_pre} { margin-bottom:0!important;; }
+		.no-margin-top#{$_pre} { margin-top: 0!important;; }
+
+
+		//--- NO PADDING
+		.no-padding-left#{$_pre} { padding-left: 0!important;; }
+		.no-padding-right#{$_pre} { padding-right: 0!important;; }
+		.no-padding-bottom#{$_pre} { padding-bottom:0!important;; }
+		.no-padding-top#{$_pre} { padding-top: 0!important;; }
+
+
+
+		// Align Text
+
+		.text-left#{$_pre}  { text-align: left!important; }
+
+
+		.text-right#{$_pre} { text-align: right!important; }
+
+
+		.text-center#{$_pre} { text-align: center!important; }
+
+
+		img.align-left#{$_pre} {
+			float:left;
+			margin: 0 $grid-gutter-width $grid-gutter-width 0;
+		}
+
+		img.align-right#{$_pre} {
+			float:right;
+			margin: 0 0 $grid-gutter-width $grid-gutter-width;
+		}
+
+
+		// Display Classes
+		.hide#{$_pre} {
+			display: none;
+		}
+
+
+		.db#{$_pre} {
+			display: block!important;
+		}
+		.di#{$_pre} {
+			display: inline-block!important;
+		}
+
+
+		body.right {
+			// Align Text
+			.align-left#{$_pre},
+			.text-left#{$_pre}  { text-align: right!important; }
+
+			.align-right#{$_pre},
+			.text-right#{$_pre} { text-align: left!important; }
+		}
+
+
+
+	//-------------------------------------------------------------------
+	//-------------------------------------------------------------------
+	// UTILITIES STARTS HERE ------------------------
+	//-------------------------------------------------------------------
+	//-------------------------------------------------------------------
+	//-------------------------------------------------------------------
+	// CLass END---------------------------------------------------------
+	}
+
+
+	// Immediate invoked to generate media classes
+		@include xash_custom_mq_util();
+	//------------------------------------------------------
+
+// </editor-fold>
+
+
+	
+	// Desktop Specific Classes
+	@media #{$device-desktop} {
+
+		.hide-desktop {
+			display: none!important;
+		}
+
+	}
+
+
+
+	// Tablet Specific Classes
+	// ------------------------------------------------
+	@media #{$device-tablet} {
+
+		.hide-tablet {
+			display: none!important;
+		}
+
+	}
+
+
+	// Phone Specific Classes
+	// ------------------------------------------------
+	@media #{$device-phone} {
+
+		.hide-phone {
+			display: none!important;
+		}
+	}
+
+
+	// Hide tablet and Phone
+	@media #{$device-device} {
+
+		.hide-device {
+			display: none!important;
+		}
+	}
+
+
+.full-height {  height: 100%;  }
+.full-widht {  height: 100%;  }
+
+.overflow-hidden {
+	overflow: hidden;
+}

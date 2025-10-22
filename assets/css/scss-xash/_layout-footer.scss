@@ -1,0 +1,248 @@
+/**
+	Footers
+	@author: xafaR
+	@file: layout-footer
+
+*/
+
+
+
+
+#footer {
+	background: transparent ;
+	/*position: fixed;
+	bottom: 0;
+	border-top: 3px solid $sidebar-bg;*/
+	//z-index: $zindex-sticky;
+	padding: 0;
+	text-align: center;
+
+
+	h2,
+	h3,
+	h4{
+		color: white;
+	}
+
+
+	@include desktop {
+		//padding: $grid-gutter-width * 1.5 0;
+	}
+
+
+
+	@include device {
+		width: 100%;
+	}
+
+
+	font-size: $font-size-small;
+	left: 0px;
+	// text-align: center;
+
+
+
+	p { font-size: $font-size-small; }
+
+
+	* {
+		color: $text-color-footer;
+		font-size: inherit;
+	}
+
+
+
+
+
+	.footer-row {
+		@include phone {
+			display: flex;
+			flex-wrap: wrap;
+
+
+			> * {
+				width: 100%;
+			}
+
+
+			.block-address {
+				text-align: center;
+				order:0;
+			}
+
+			.block-newsletter {
+				order: 1;
+			}
+
+			.block-copyright {
+				order: 2;
+			}
+		}
+	}
+
+
+
+	
+	
+	
+
+
+
+	.copyrights {
+		font-size: 10px;
+		font-family: sans-serif;
+
+		//@include transform(rotate(-90deg));
+		//transform-origin: left top;
+
+		p { font-size: inherit }
+	}
+
+
+
+
+		.fs-left,
+		.fs-right {
+			position: fixed;
+			z-index: 5;
+			width: 56px;
+			height: auto;
+			left : 15px;
+			bottom: $grid-gutter-width;
+			//bottom: $grid-gutter-width *2;
+			z-index: 5000;
+
+
+			@include opacity(.75);
+			//@include transform(translateY(50%));
+
+
+			&:hover {
+				//@include opacity(1);
+			}
+		}
+
+
+		.fs-right {
+			left: auto;
+			right: 5px;
+		}
+
+
+
+		.fs-left {
+			width: 280px;
+			transform-origin: left top;
+			@include transform(rotate(-90deg))
+		}
+
+
+		.copyrights {
+			//white-space: nowrap;
+			width: 280px;
+
+		}
+
+
+
+
+
+}  // footer
+
+
+// <editor-fold desc="- - - - [ Loader Stuff ] - - - -">
+
+	.loader-curtain {
+
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background: white;
+		left: 0;
+		top: 0;
+		z-index: 8000;
+
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include opacity(1);
+		@include transition(all .25s);
+		@include transform(translateY(105%));
+
+
+		html.loading-content & {
+			@include transform(translateY(0));
+
+			&:after {
+				@include transform(translateY(0));
+			}
+		}
+
+
+
+		&:after {
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			position: fixed;
+			z-index: 8001;
+			background: rgba(255,255,255,.35) url(images/ajax-loader-sm.gif) no-repeat center center;
+
+			@include opacity(.4);
+			@include transition(all .25s ease-in-out -.5s);
+			@include transform(translateY(105%));
+
+
+		}
+
+	}
+
+	// Loader
+	//---------------------------
+	html.loading-content {
+
+		body #body-wrapper {
+			filter: blur(4px);
+		}
+
+		&, body {
+			overflow: hidden;
+		}
+	}
+
+
+
+	.msg-loading {
+		background: white;
+
+		font-size: 12px;
+
+		> * {
+			display: block;
+		}
+
+		.loader {
+			height : 10px;
+			background: $brand-secondary;
+			clear:both;
+
+		}
+	}
+
+// </editor-fold>
+
+
+
+
+.footer-copyright {
+	font-size: 12.5px;
+	text-align: center;
+
+
+	p a {
+		padding:0 $grid-gutter-width/2;
+	}
+}

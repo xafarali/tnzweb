@@ -1,0 +1,68 @@
+.logo-print {
+  display: block;
+  width: 70mm;
+  margin-bottom: 5mm;
+}
+.for-print {
+  display: block;
+}
+html {
+  font-size: 12px;
+}
+.no-print {
+  display: none!Important;
+}
+@page {
+  size: auto;
+  margin: 5mm;
+}
+h1 {
+  page-break-before: always;
+  font-size: 2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  page-break-after: avoid;
+}
+#header-wrapper,
+#footer {
+  display: none;
+}
+#body-wrapper {
+  padding: 0;
+  margin: 0;
+}
+#body-wrapper:before {
+  display: block;
+  width: 30mm;
+  height: 15mm;
+  margin-bottom: 200px;
+}
+#body-wrapper > .body-content {
+  margin: 0;
+  padding: 0;
+}
+#body-wrapper .tab-flat {
+  display: none;
+}
+#body-wrapper button,
+#body-wrapper input[type='submit'],
+#body-wrapper .btn,
+#body-wrapper a.read-more,
+#body-wrapper a.more {
+  display: none;
+}
+table tbody > tr > th,
+.table tbody > tr > th,
+table thead > tr > th,
+.table thead > tr > th,
+table tfooter > tr > th,
+.table tfooter > tr > th {
+  border-width: 2px 0!important;
+  background-color: #ccc !important;
+  border-top-color: #555 !important;
+  border-bottom-color: #555 !important;
+}

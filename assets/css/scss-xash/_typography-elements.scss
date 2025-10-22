@@ -1,0 +1,721 @@
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+/*
+/*Font size controller for Desktop and Tablet
+  is defined in new file, easier to manage!
+update, Please file variable-media-query */
+
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+/**
+	Typography Elements and stuff
+	@author: xafaR
+	@file: typography-elements
+
+*/
+
+
+/*  RESET ROOT
+//--------------------------------------------------*/
+html {
+	font-size: $font-size-root;
+
+
+
+	@media #{$media-tablet_start} {
+		font-size: $font-size-root-tablet;
+	}
+
+
+	@media #{$media_laptop} {
+		font-size: $font-size-root-laptop;  // named desktop but acatually for new desktops higher than 1366
+	}
+
+
+	@media #{$media_lg} {
+		font-size: $font-size-root-desktop;  // named desktop but acatually for new desktops higher than 1366
+	}
+
+
+	//-------------------------------------------------------
+	// DPI Fixes
+	//-------------------------------------------------------
+	// Dpi fixes
+	@media
+		only screen and (min-width : $_laptop_start  ) and ( -webkit-min-device-pixel-ratio: 1.25 ),
+		only screen and (min-width : $_laptop_start ) and (  min--moz-device-pixel-ratio: 1.25 ),
+		only screen and (min-width : $_laptop_start ) and ( -o-min-device-pixel-ratio: 1.25/1 ),
+		only screen and (min-width :$_laptop_start ) and ( min-device-pixel-ratio: 1.25 ) {
+
+		font-size : $font-size-root-laptop /*/ 1.25*/;
+	}
+
+
+	@media
+		only screen and (min-width : $_desktop_lg_start  ) and ( -webkit-min-device-pixel-ratio: 1.25 ),
+		only screen and (min-width : $_desktop_lg_start ) and (  min--moz-device-pixel-ratio: 1.25 ),
+		only screen and (min-width : $_desktop_lg_start ) and ( -o-min-device-pixel-ratio: 1.25/1 ),
+		only screen and (min-width :$_desktop_lg_start ) and ( min-device-pixel-ratio: 1.25 ) {
+			//font-size : $font-size-root-lg /*/ 1.25*/;
+			font-size: $font-size-root-desktop;
+			
+	}
+
+
+
+	body {
+		font-size: 100%;
+
+		-webkit-font-smoothing: antialiased;
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-smoothing: antialiased;
+		scroll-behavior: smooth;
+		text-rendering: optimizeLegibility;
+
+	}
+}
+// Style Generator
+%font-size-h1 { @include font-size($size-h1); }
+%font-size-h2 { @include font-size($size-h2); }
+%font-size-h3 { @include font-size($size-h3); }
+%font-size-h4 { @include font-size($size-h4); }
+%font-size-h5 { @include font-size($size-h5); }
+%font-size-h6 { @include font-size($size-h6); }
+
+
+h1,
+.h1 {
+  	font-family: $font-heading-h1;
+  	letter-spacing: $heading-letter-spacing;
+  	color: $color-h1;
+	line-height: $headings-line-height;
+	font-weight: $font-heading-h1-weight;
+	margin-bottom: 2rem;
+
+  	// Responsive Font Size
+  	//@include font-resp-singular($font-size-h1-list);
+	@extend %font-size-h1;
+	//@include font-size($size-h1);
+
+
+
+}
+
+h2,
+.h2 {
+  	font-family: $font-heading-h2;
+  	font-weight: $font-heading-h2-weight;
+  	color: $color-h2;
+	margin-bottom: 2rem;
+	line-height: 1.2;
+  // Responsive Font Size
+  //@include font-resp-singular($font-size-h2-list);
+	@extend %font-size-h2;
+}
+
+h3,
+.h3 {
+  	font-family: $font-heading-h3;
+  	font-weight: $font-heading-h3-weight;
+  	color: $color-h3;
+	margin-bottom: 1rem;
+	letter-spacing: -1px;
+  	// Responsive Font Size
+  	//@include font-resp-singular($font-size-h3-list);
+	@extend %font-size-h3;
+
+}
+
+
+
+h4,
+.h4 {
+	font-family: $font-heading-h4;
+	font-weight: $font-heading-h4-weight;
+	color: $color-h4;
+	margin-bottom: 10px;
+
+  // Responsive Font Size
+  @include font-resp-singular($font-size-h4-list);
+}
+
+
+
+h5,
+.h5 {
+	font-family: $font-heading-h5;
+	font-weight: $font-heading-h5-weight;
+	color: $color-h5;
+	margin-bottom: .5rem;
+}
+
+
+h6,
+.h6 {
+	font-family: $font-heading-h6;
+	font-weight: $font-heading-h6-weight;
+	color: $color-h6;
+	margin-bottom: 0;
+
+  // Responsive Font Size
+  @include font-resp-singular($font-size-h6-list);
+}
+
+
+
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+  font-family: $font-heading-h4;
+  font-weight: $font-heading-h4-weight;
+}
+
+
+h1,h2, h3, h4, h5, h6,
+.display-1, .h1, .h2, .h3, .h4, .h5, .h6 {
+  //letter-spacing: 0;
+
+}
+
+/*
+Generating lot of Mess
+ */
+/*
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+*/
+
+	*[data-class*="sm"],
+	*[data-class*="small"],
+	span.sm,
+	span.small {
+		display: block;
+		font-size: .6666em;
+		line-height: 1;
+	}
+
+	*[data-class*="light"],
+	span.light{
+		font-weight: 300;
+	}
+
+
+	*[data-class*="color-secondary"] {
+		color: $brand-secondary;
+	}
+
+/*}*/
+
+
+
+
+.underline {
+	&:after {
+		content: "";
+		height: 2px;
+		background: $border-color-default;
+		width: 80px;
+		margin: 5px auto;
+		display: block;
+	}
+
+}
+
+.bar-sm {
+
+	&:before {
+		content: "";
+		height: 10px;
+		width: 90px;
+		position: absolute;
+		right: 100%;
+		background:$brand-secondary;
+		position: absolute;
+		border-radius: 5px;
+		top: 17px;
+	}
+
+
+
+
+
+
+}
+
+h3,.h3,
+h4, .h4,
+h5, .h5 {
+
+
+	&.bar-sm {
+		position: relative;
+		padding-left: $grid-gutter-width * 1.5;
+
+
+		@extend .bar-sm;
+		&:before {
+			top: 10px;
+			right: auto;
+			left: 0;
+			width: $grid-gutter-width;
+			height: 5px;
+		}
+	}
+
+}
+
+sub,
+sup {
+	font-size: 65%;
+}
+
+
+
+
+
+
+
+.font-size-xl,
+.size-xl {  @include font-size($font-size-xl-list);  }
+
+
+
+//h1-------------------------------------------------------------
+.font-size-h1,
+.size-h1 {  @include font-size($size-h1);  }
+
+
+
+//h2------------------------------------------------------------
+.font-size-h2,
+.size-h2 {  @include font-size($size-h2);  }
+
+
+
+
+
+//h3------------------------------------------------------------
+.font-size-h3,
+.size-h3 {  @include font-size($size-h3);  }
+
+
+
+//h4------------------------------------------------------------
+.font-size-h4,
+.size-h4 {  @include font-size($size-h4);  }
+
+
+
+//h5------------------------------------------------------------
+.font-size-h5,
+.size-h5 {  @include font-size($size-h5);  }
+
+
+
+
+//h6------------------------------------------------------------
+.font-size-h6,
+.size-h6 {  @include font-size($size-h6);  }
+
+
+
+.font-heading {font-family: $font-heading!important;}
+
+.font-heading-light {
+	font-weight: 300;
+	font-family: $font-heading-light!important;
+}
+
+.font-secondary {
+	font-family: $font-heading-secondary;
+}
+
+.font-body {font-family: $font-body;}
+.font-body-light {font-family: $font-body-light;}
+
+.font-light { font-weight: 300; }
+.font-bold { font-weight: bold; }
+
+
+.font-xxl {
+	@include font-size($font-size-xxl-list);
+	font-weight: $font-heading-xxl-weight;
+	color: $color-xxl;
+	line-height: 1;
+	letter-spacing: -2px;
+}
+
+.font-xl {
+	font-size: $display1-size;
+	@include font-size($font-size-xl-list);
+	font-weight: $font-heading-xl-weight;
+	line-height: 1;
+	color: $color-xl;
+}
+
+
+
+
+.display-1,
+.display-2 {
+	letter-spacing: -3px;
+	font-weight: inherit;
+	line-height: 1;
+
+	color: $color-dp;
+}
+
+.display-1 {
+	@include font-size($font-size-d1-list);
+
+
+	&.bar {
+		&:after {
+			content: '';
+
+			height: 10px;
+			width: 200px;
+			background: $brand-secondary;
+			display: block;
+		}
+	}
+}
+
+
+
+h1.heading {
+	//font-size: 3.25rem;
+
+	&:after {
+		content: "";
+		height: 10px;
+		width: 80px;
+		display: block;
+		background : $brand-secondary;
+	}
+}
+
+
+#{$heading-grp} {
+
+	.light {
+		font-weight: 300;
+	}
+
+	.____tag {
+		background: transparent;
+		color: $brand-primary; //$text-color-light;
+		position: relative;
+		z-index: 1;
+
+
+		&:before {
+			content: "";
+			height: 85%;
+			width: 100%;
+			background: $brand-primary-light;
+			display: block;
+			position: absolute;
+			z-index: -1;
+			top: 10px;
+			left: -5px;
+			@include transform(skew(-30deg));
+		}
+	}
+
+}
+
+
+
+.lead {
+	font-weight: $lead-font-weight;
+
+	@include font-size($lead-font-size-ss);
+
+	//font-size: $lead-font-size;
+	margin-bottom: $grid-gutter-width ;
+	line-height: 1.5;
+	font-family: $lead-font;
+
+
+
+	&.lg {
+		font-size: 2rem;
+
+		@include font-size($font-size-h3-list, 1.3);
+
+		@media #{$device-phone} {
+			font-size: 1.1rem;
+		}
+
+	}
+
+	&.xl {
+
+		@extend .h2;
+		color: $text-color;
+		margin: $grid-gutter-width  0;
+		font-family: $font-body-light;
+		font-weight: 300;
+
+
+		@media #{$device-desktop} {
+			margin: $grid-gutter-width * 1.5 0;
+		}
+
+	}
+
+
+
+	&.light {
+		font-weight: 300;
+		font-family: $font-body-light;
+	}
+
+
+
+	&.sm {
+		@extend %font-size-h4;
+		font-weight: 300;
+		line-height: 1.35;
+		font-family: $font-heading;
+		color: $brand-primary;
+
+	}
+
+
+	&.expanded {
+		line-height: 2;
+	}
+
+
+	&.condensed {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+
+
+}
+
+
+.narrow-width {
+	width: 70%;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ MISC PAGE ELEMENTS ]-------">
+
+
+
+
+	.highlight {
+		display: inline-block;
+		color: white;
+		background: $brand-primary;
+		padding: $grid-gutter-width/2;
+		position: relative;
+		margin: 0 2.5% 0 5%;
+		z-index: 2;
+
+
+
+		&:before {
+			width: 116%;
+			height: 100%;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -8%;
+			background: inherit;
+			z-index: -1;
+			@include transform(skew(-18deg));
+		}
+
+
+		&.rev {
+			margin: 0 5% 0 2.5%;
+
+			&:before {
+				left: auto;
+				right: -8%;
+				@include transform(skew(18deg));
+			}
+		}
+
+
+
+		&.txt-shadow {
+			@include text-shadow( 1px 10px 0 rgba(0,0,0,.2));
+			//@include xash-box-shadow(unset);
+		}
+	}
+
+
+
+	a {
+		font-weight: $link-weight;
+
+		@include transition();
+	}
+
+
+
+
+	b,
+	strong,
+	.strong,
+	.bold {
+		font-weight: bold;
+	}
+
+
+
+	.hash-tag {
+		font-weight: 700;
+		color: color("teal");
+		padding-right: .5rem;
+		font-size: 1.125em;
+	}
+
+
+	// Secondary font as number with seoncdary color
+
+	.em-num {
+		font-family: $font-heading-secondary;
+		color: $brand-secondary;
+		font-size: 1.6em;
+		vertical-align: middle;
+		padding: 5px;
+
+	}
+
+
+
+	.tag.white {
+		display: inline-block;
+
+		font-family: $font-heading;
+		//font-weight: bold;
+		letter-spacing: 2px;
+		color: $gray-600;
+		background:white;
+
+		@include xash-box-shadow($shadow-dialog);
+	}
+
+
+	.title {
+
+		@extend .h1;
+		@include font-size($font-size-h1-list, 1.3);
+		color: $brand-primary;
+		font-weight: 300;
+		line-height: .8;
+
+
+		span {
+			display: block;
+			width: 100%;
+			color: $brand-secondary;
+			font-size: .4em;
+			padding-left: 1rem;
+		}
+
+
+		&:after {
+			content: "";
+			display: block;
+
+		}
+
+
+
+		&-lg {
+			@extend  .h1;
+			color: $brand-primary;
+		}
+
+	}
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  RESPOSNIVE OVERRIDES
+	//=========================================================================
+	//=========================================================================
+// Font Sizes Util
+.size-xxl-phone {
+	@include phone {
+		font-size: map_get($font-size-xxl-list, general )
+	}
+}
+
+
+
+.size-xl-phone {
+	@include phone {
+		font-size: map_get($font-size-xl-list, general )
+	}
+}
+
+.size-h1-phone {
+	@include phone {
+		font-size: map_get($font-size-h1-list, general )
+	}
+}
+
+.size-h2-phone {
+	@include phone {
+		font-size: map_get($font-size-h2-list, general )
+	}
+}
+
+.size-h3-phone {
+	@include phone {
+		font-size: map_get($font-size-h3-list, general )
+	}
+}
+
+.size-h4-phone {
+	@include phone {
+		font-size: map_get($font-size-h4-list, general )
+	}
+}
+
+
+.size-h5-phone {
+	@include phone {
+		font-size: map_get($font-size-h5-list, general )
+	}
+}
+
+
+.size-h6-phone {
+	@include phone {
+		font-size: map_get($font-size-h6-list, general )
+	}
+}
+
+
+
+.size-small-phone {
+	@include phone {
+		font-size: $font-size-small;
+	}
+}
+
+
+// </editor-fold>

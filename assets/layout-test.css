@@ -1,0 +1,18 @@
+/* Error: Expected digit.
+ *     ,
+ * 118 |     .fa,
+ *     |      ^
+ *     '
+ *   assets\css\scss-xash\_layout-form-elements.scss 118:3  @import
+ *   assets\xash-theme.scss 26:9                            root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected digit.\a     \2577 \a 118 \2502      .fa,\a     \2502       ^\a     \2575 \a   assets\\css\\scss-xash\\_layout-form-elements.scss 118:3  @import\a   assets\\xash-theme.scss 26:9                            root stylesheet";
+}

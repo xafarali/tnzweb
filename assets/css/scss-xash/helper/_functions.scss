@@ -1,0 +1,78 @@
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+
+
+
+// @todo Less Like functions
+/**
+Function fade like LESS,
+convert color value to alpha
+@uses SASS rgba()
+ */
+@function fade($color, $opacity:100 ) {
+	$_opacity_converted : $opacity; // / 100%;
+
+	@return  rgba($color, $_opacity_converted);
+}
+
+
+
+
+
+
+
+
+// Return Text Color based on Background color
+/**
+Function automatically assign forground color ,
+ in contrast of background.
+ @uses 2 variables
+ $all-colors  -- all merged colors
+ $all-colors-text 
+@uses SASS lightness()
+ */
+@function auto-text-color ( $color-key: null, $deviation: 25.5%, $text-color: $all-colors-text, $all-colors_r: $all-colors ) {
+   $output : null;
+	
+	
+	@if variable-exists( text-color ) {
+
+		@if map-has-key( $text-color, $color-key ) {
+			$output: map-get( $text-color, $color-key);
+		}
+	}
+
+	@if $output == null {
+
+		// if key doesnt exist, make dynamic olor
+		$bg-color : map-get( $all-colors_r, $color-key );
+		
+
+		@if ( lightness( $bg-color ) > 40 ) {
+			// Lighter background, return dark color
+			$output: saturate( darken( $bg-color, $deviation - 5), 29% );
+		
+		} @else {
+			// Darker background, return light color
+			$output:   saturate( lighten( $bg-color, $deviation), 25% ) ;
+		}
+	}
+
+
+	@return $output;
+	
+}

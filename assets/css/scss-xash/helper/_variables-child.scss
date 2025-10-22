@@ -1,0 +1,72 @@
+// --------------------------------------------------
+// Variables, Customized by Xashlabs          |
+// Version : 1;
+// All Core Variables on which rest of variables are relying.
+// Added Variable based on Desktop.
+// --------------------------------------------------
+
+
+@media #{$device-phone} {
+  .hidden-xs {
+    display: none!important;
+  }
+  .visible-xs {
+    display: block!important;
+  }
+
+  @for $i from 1 through $grid-columns {
+
+    .col-xs-#{$i} {
+      width: 100% / $grid-columns * $i !important;
+    }
+
+  }
+}
+
+@media #{$device-tablet} {
+  .visible-sm {
+    display: block!important;
+  }
+
+  .hidden-sm {
+    display: none!important;
+  }
+  @for $i from 1 through $grid-columns {
+
+    .col-sm-#{$i} {
+      width: 100% / $grid-columns * $i !important;
+    }
+
+  }
+}
+
+@media #{$device-device} {
+  .visible-pt {
+    display: block!important;
+  }
+
+  .hidden-pt {
+    display: none!important;
+  }
+}
+
+
+
+@media #{$device-desktop} {
+  .visible-md {
+    display: block!important;
+  }
+  .hidden-md {
+    display: none!important;
+  }
+}
+
+$bg-none:transparent;
+
+
+
+
+
+
+
+

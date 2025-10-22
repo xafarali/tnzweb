@@ -1,0 +1,994 @@
+/**
+	All navigation styles comes here.
+	@author: xafaR
+	@file: layout-navigation
+
+*/
+
+
+
+
+
+
+/*  Menu Header Area
+//--------------------------------------------------*/
+.header-menu-wrapper {
+	height: 50px;
+
+
+	.dropdown,
+	.nav-category,
+	> .container,
+	> .container > .row {
+		height: 100%;
+	}
+
+}
+
+
+
+/*  Navigation
+//--------------------------------------------------*/
+.area-menu {
+
+	@include phone {
+		justify-content: flex-end;
+	}
+
+}
+
+.menu-wrapper {
+
+
+	// Default:: style for phone
+	//-------------------------------------------------------
+
+	display: block;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height : 100vh;
+	background: $bg-menu-curtain;
+
+
+	@include transition();
+	@include transform(translateX(100%));
+
+
+	@include phone {
+		height: calc(100vh );
+		overflow: auto;
+		overflow-x: hidden;
+		padding: 10vh 5vw;
+		z-index: -1;
+	}
+
+
+	// Styles:: Desktop
+	//-------------------------------------------------------
+	@include desktop {
+
+
+		@include transform(translateX(100%));
+
+
+	}
+
+
+
+
+}  // Menu-wrapper
+
+
+
+.main-navigation {
+	padding: 0;
+
+
+	li.lv1 {
+		width: 100%;
+	}
+
+	.top-main-menu {
+
+		.nav {
+			width: 100%;
+			float: 	none;
+			text-align: left;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: left;
+			align-content: center;
+			margin-top: 0; //12vh;
+
+
+
+
+			> li {
+
+				font-size: 		$font-size-nav-lv1;
+				font-family: 	$font-nav-lv1;
+				font-weight: 	$font-nav-lv1-weight;
+				color:	 		$navbar-default-link-color;
+				display: 		flex;
+
+				float:			none;
+				margin:			$nav-item-margin;
+				padding:		$nav-item-padding;
+				background-color:$navbar-default-item-bg;
+				text-align:		left;
+				flex-wrap: 		wrap;
+				//align-content:  flex-start;
+				justify-content: left;
+				width: 100%;
+
+				position: relative;
+				//@include  transition();
+
+
+				/*
+				&.menu-item-has-children > a {
+					padding: $nav-link-padding-child;
+				}
+				*/
+
+
+				@include desktop {
+					margin:			$nav-item-margin-desktop;
+					padding:		$nav-item-padding-desktop;
+					text-align: 	center;
+					width: 50%;
+					width: 40vw;
+					z-index: 1;
+					justify-content: center;
+				}
+
+
+
+				// > LI Hover
+				&:hover {
+					color: $color-nav-lv1-hover;
+					background-color: $navbar-default-item-hover-bg;
+					z-index: 30;
+
+
+
+					> a {
+						color: $color-nav-lv1-hover;
+						z-index: 5;
+					}
+
+
+				} // Hover
+
+
+
+
+
+
+				// > li > a
+				> a {
+					//font-size : 20px!important;
+					font-size: 		$font-size-nav-lv1;
+					font-family: 	inherit; //$font-nav-lv1;
+					font-weight: 	$font-nav-lv1-weight;
+					color: 			$navbar-default-link-color;
+					padding: 		$nav-link-padding;
+					letter-spacing: $nav-lv1-spacing;
+					line-height: 	$nav-lv1-line-height;
+					display: 		inline-block;
+					position: 		relative;
+
+
+
+
+					// Prevent Menu fall
+					@include desktop {
+						font-size: 	$font-size-nav-lv1-desktop;
+						padding: 	$nav-link-padding-desktop;//$nav-link-padding * .5;
+
+
+					}
+				}
+				// a
+
+
+			} // li
+
+
+
+			@include desktop {
+				justify-content: center;
+
+				> li {
+				//	width: auto;
+					text-align: center;
+				}
+			}
+
+		}
+
+		/////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////
+		// Media laptop
+		@media #{$device-laptop} {
+
+			.pull-right {
+				width: 100%;
+			}
+
+			.navbar-toggle { }
+
+		}
+
+	}
+
+
+
+	@include device {
+		padding-bottom : 3rem;
+	}
+
+
+	@include desktop {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+
+
+// <editor-fold desc="- - - - [ Theme Based Navigations ] - - - -">
+
+
+.menu-button {
+	position: relative;
+	width: 100%;
+	text-align: right;
+	// z-index: 5031;
+
+
+
+	@include device {
+		//margin-top: 15px;
+		@include transform(scale(.85));
+	}
+
+
+
+	@include desktop {
+		//display: none;
+	}
+
+}
+
+
+
+
+.menu-burger {
+
+	background: transparent;
+	width: 		70px;
+	height: 	40px;
+	padding: 	0;
+	margin: 	0;
+	position: 	relative;
+	min-height: unset;
+	//background: url(images/menu-bar-bg.svg) repeat-x -5% -5px;
+	//background-size: 90px 50px;
+	@include 	xash-border-radius(0);
+	@include 	transition( background-position .10s ease-in);
+
+
+	&:after,
+	&:before {
+		content : "";
+		display: block;
+		position: absolute;
+		top: 6px;
+		right: -6px; // span margin
+		left:auto;
+		z-index: 2;
+		margin-top: -5px;
+		pointer-events: none;
+
+		@include xash-border-radius(0);
+	}
+
+	&:before {
+		content : "";
+		height: 35px;
+		width: 35px;
+		top: 10px;
+		background: transparent;
+		border: 1px solid $brand-secondary;
+
+		@include transition(all .25s cubic-bezier(0.17, 0.59, 0.51, 0.92));
+		@include opacity(.75);
+		@include transform( rotateZ(135deg) );
+	}
+
+
+	&:after {
+		height: 100%;
+		width: 0;
+		background: $text-color;
+		@include transition(all .15s cubic-bezier(0.17, 0.59, 0.51, 0.92) .26s);
+	}
+
+
+
+
+
+	&:focus {
+		box-shadow: none!important;
+	}
+
+
+	//------------------------------------------------
+	//	HOVER EFFECT
+	//------------------------------------------------
+	&:hover,
+	&:active {
+		background-position: -110% -5px;
+		@include xash-box-shadow(none);
+
+
+		&:before {
+			height: 100%;
+			width: 117%;
+			width: -webkit-calc(100% + 12px);
+			width: -ms-calc(100% + 12px);
+			width: -moz-calc(100% + 12px);
+			width: calc(100% + 12px);
+			//margin-top: -5px;
+			top: 6px;
+			@include transform(rotate(0));
+		}
+
+
+		&:after {
+			width: 117%;
+			width: -webkit-calc(100% + 12px);
+			width: -ms-calc(100% + 12px);
+			width: -moz-calc(100% + 12px);
+			width: calc(100% + 12px);
+			top: 6px;
+		}
+
+
+		span {
+			background-color: $white;
+
+			i {
+				background-color: inherit;
+			}
+		}
+
+	}
+
+
+
+
+	span {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		text-align: center;
+
+
+		i {
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			margin: 17px 2px;
+			background-color: $brand-primary-light; //$text-color;
+			position: relative;
+			z-index: 3;
+			transform-origin: center center;
+			@include xash-border-radius(20px);
+			@include transition(all .25s);
+
+
+
+			&.mbfrst,
+			&.mblast {
+				position: absolute;
+				top : 0;
+				left: 10px; /// width + margin
+			}
+
+			&.mblast {
+				left: auto;
+				right: 10px;
+			}
+		}
+
+
+
+		body.menu-visible & {
+
+			i.mbfrst,
+			i.mblast {
+				width: 42px;
+				height: 3px;
+			}
+
+			i.mbfrst {
+				@include transform(rotate(45deg));
+				left: 14px;
+			}
+
+			i.mblast {
+				@include transform(rotate(-45deg));
+				right: 10px;
+			}
+
+
+			i.mbmid {
+				height: 0;
+				width: 0;
+			}
+			&:active,
+			&:hover {
+				//background-color: transparent;
+			}
+
+		}
+
+
+
+	}
+
+
+	body.menu-visible & {
+
+		&:after,
+		&:before {
+			content : unset;
+		}
+
+	}
+
+
+}
+
+
+
+
+	//=========================================================================
+	//=========================================================================
+	//  MENU OPEN
+	//=========================================================================
+	//=========================================================================
+		body.menu-open {
+
+		}
+
+
+
+// </editor-fold>
+
+
+
+
+
+// Extracted from sub classes, main navigation, to achieve global styling of dropdowns
+
+
+	// INDEPENDENT LI REGARDLESS OF MENU POSITION, IT SHOULD SHOW DROPDOWN ARROW
+	// FOR CHILD AND SUB-CHILD
+	.navbar-nav {
+
+		> li {
+			padding: $nav-item-padding;
+
+			
+			a {
+				position: relative;
+			}
+		}
+
+
+		> li.menu-item-has-children,
+		> li.dropdown {
+
+			> a {
+				padding: $nav-sub-link-padding-child;
+
+			}
+
+
+			.caret {
+				// font-family: $icon-font-awesome;
+				position: absolute;
+				content: $nav-lv1-arrow;
+				font-family: $font-icon;
+				font-size: .5rem;
+				top: 0;
+				right: -30px;
+				height: 5rem;
+				width: 50px;
+
+				//background: rgba(0,0,0,.25);
+				text-align: center;
+
+				//@include xash-border-radius(40px);
+				//@include fa-icon-only("\f178");
+
+
+				&:before {
+					line-height: 5rem; // multiplied by padding top bottom
+					width: 100%;
+					text-align: center;
+					content: "";
+
+				}
+
+
+
+				@include desktop {
+					left:calc( 100% - #{$grid-gutter-width} );
+					height: 2px;
+					width: 2rem;
+					display: block;
+					top: 50%;
+					top: calc(50% - 2px);
+					border:2px solid white;
+					border-width: 2px 0 0;
+					//@include
+					//content: none;
+
+
+				}
+
+			}
+
+
+
+			&:hover {
+
+				@include desktop {
+
+					> a .caret {
+
+						@include animation( submenu-hover-arrow .25s ease-in 0s 1 );
+						animation-fill-mode: forwards;
+
+					}
+
+				}
+
+			}
+
+
+		}
+
+	}
+
+/* 
+//// DISABLED MENU SUB MENU>>> USED IN WP
+	.sub-menu,
+	.dropdown-menu {
+
+	//.sub-menu-wrapper {
+		@include reset();
+
+		background: $nav-sub-container-bg;
+		border:		0;
+		display: 	block;
+		width: 		$nav-sub-container-width;
+		padding: 	0; //$grid-gutter-width;
+
+		@include xash-box-shadow($nav-sub-shadow);
+
+
+		//--------------------------------------------
+		// laptop desktop specific
+		@include desktop {  // turned off currently
+
+			position: absolute;
+			z-index: 5000;
+			visibility: hidden;
+			right: -70px;
+			top: 50%;
+
+			@include transform( 'translateY(-50%) translateX(-30%)' );
+			@include opacity(0);
+			@include xash-box-shadow($nav-sub-shadow);
+			@include transition(all .25s ease);
+
+
+
+			li.lv2 > a {
+
+			}
+
+		}  // media turned off currently
+
+
+			//li:hover
+			&.show-menu,
+			&.show,
+			li.dropdown:hover & {
+
+				@include desktop {
+
+					visibility: visible;
+					@include transform('translateY(-50%) translateX(0)');
+					@include opacity(1);
+
+
+					li.lv2 > a {
+						animation-play-state: running;
+					}
+
+				}
+
+			}
+
+
+			&.dropdown-menu {
+			}
+
+
+
+
+
+
+
+
+
+
+
+		// Reset of padding in dropdown.scss
+		> * {
+			padding: 0;
+		}
+
+
+
+		ul {
+			list-style: none;
+		}
+
+		li {
+
+			font-size: 			$font-size-nav-lv2;
+			color: 				$nav-sub-link-color;
+			background-color: 	$nav-sub-item-bg;
+			padding: 			$nav-sub-item-padding;
+			text-align: 		left;
+			width: 				100%;
+
+
+			a {
+				font-size: inherit;
+				color: inherit;
+				padding: $nav-sub-link-padding-y $nav-sub-link-padding-x;
+				display: block;
+
+
+
+				&:hover {
+					color:		$nav-sub-link-color-hover;
+					background: inherit;
+				}
+			}
+
+
+			// with child
+			&.menu-item-has-children {
+				> a {
+					padding: $nav-sub-link-padding-child;
+				}
+			}
+
+
+
+
+			&:hover,
+			&.current-menu-item,
+			&.current-menu-parent,
+			&.current-page-ancestor {
+				> a {
+					background-color: $nav-sub-item-bg-hover;
+				}
+			}
+
+		} // Li
+
+	}   // submenu
+
+*/
+
+
+	.sub-menu,
+	.dropdown-menu,
+	.navbar-nav.vert,
+	.nav-category {
+
+		> li.menu-item-has-children {
+
+			> a:before {
+				content: $nav-lv2-arrow;
+			}
+		}
+	}
+
+
+
+
+
+
+
+// Unknown atm
+.main-navigation {
+
+	> .container {
+		@include reset;
+	}
+
+}
+
+
+
+//=========================================================================
+//=========================================================================
+//  MENU NAVIGATION EFFECT
+//=========================================================================
+//=========================================================================
+// li hover
+@include keyframes(menuhover) {
+	75% {
+		width: 100%;
+		height: 0;
+	}
+
+	100% {
+		width: 100%;
+		height: 100%;@include opacity(1)
+	}
+}
+
+@include keyframes(menu-hover-child) {
+
+	100% {
+		width: 100%;
+		@include opacity(1);
+
+	}
+
+}
+
+
+
+
+
+
+
+//=========================================================================
+//=========================================================================
+//  Phone Setup
+//=========================================================================
+//=========================================================================
+body.menu-visible {
+
+	.menu-wrapper {
+		@include transform(translateX(0));
+	}
+
+
+	.logo-wrapper .site-title {
+		svg * {
+			fill: $text-color-light;
+		}
+	}
+
+	#footer * ,
+	#footer .fa:before {
+		color: $text-color-light;
+	}
+
+}
+
+
+// submenu container
+//-------------------------------------------------
+.hover-animated {
+
+
+	&.animate {
+
+		> ul > li a {
+
+			@include animation(submenu-hover .18s ease-out .15s  1);
+			-moz-animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+		}
+
+	}
+	> ul > li a {
+
+		line-height: 1.75;
+		padding-top: $navbar-padding-y / 2;
+		padding-bottom: $navbar-padding-y / 2;
+
+		@include transform('translateX(10%)');
+
+
+
+
+		@include desktop {
+
+			line-height: 0;
+			padding-top: $navbar-padding-y / 2;
+			padding-bottom: $navbar-padding-y / 2;
+
+			@include transform('translateX(-60%)');
+			@include opacity(0);
+
+		}
+	}
+
+}
+
+
+@include keyframes(submenu-hover) {
+
+	100% {
+		line-height: 1;
+		padding-top: $nav-sub-link-padding-y;
+		padding-bottom: $nav-sub-link-padding-y;
+		@include transform('translateX(0)');
+		@include opacity(1)
+	}
+}
+
+
+
+// submenu arrow
+//-------------------------------------------------
+@include keyframes( submenu-hover-arrow ) {
+
+	0% {
+		//@include transform(translateX(0) scaleX(1));
+		@include opacity(1);
+	}
+
+
+	100% {
+		//@include transform(translateX(400%) scaleX(3.5));
+		width: 170px;
+		@include opacity(.75);
+	}
+}
+
+
+
+
+
+
+
+/*  Experimental
+//--------------------------------------------------*/
+.x-bub-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	@include transform(translateZ(0));
+	@include opacity(.5);
+
+
+
+	li {
+		position: absolute;
+		list-style: none;
+		display: block;
+		background-color: rgba(255, 255, 255, 0.15);
+		bottom: -100px;
+		animation: circle 15s infinite;
+		transition-timing-function: linear;
+
+
+
+		&:nth-child(1) {
+			width: 40px;
+			height: 40px;
+			left: 20%;
+			background: url(images/element-dot-square.png) repeat;
+		}
+
+		&:nth-child(2) {
+			width: 60px;
+			height: 60px;
+			left: 40%;
+			animation-delay: 2s;
+			animation-duration: 16s;
+			background-color: transparent;
+			border:10px solid rgba(255, 255, 255, 0.15);
+		}
+
+
+		&:nth-child(3) {
+			width: 30px;
+			height: 30px;
+			left: 60%;
+			animation-delay: 4s;
+			animation-duration: 13s;
+			background: url(images/element-x.png) repeat;
+		}
+
+
+		&:nth-child(4) {
+			width: 100px;
+			height: 100px;
+			left: 80%;
+			animation-delay: 1s;
+			animation-duration: 19s;
+			@include opacity(.25);
+			background: url(images/element-dot-square.png) repeat;
+			background-size: 20px 20px;
+		}
+
+		&:nth-child(5) {
+			width: 50px;
+			height: 50px;
+			left: 50%;
+			animation-delay: 5s;
+			animation-duration: 12s;
+			background: url(images/element-x.png) repeat;
+		}
+
+		&:nth-child(6) {
+			width: 25px;
+			height: 25px;
+			left: 10%;
+			animation-delay: 3s;
+			animation-duration: 11s;
+			background: url(images/element-x.png) repeat;
+		}
+
+
+		&:nth-child(7) {
+			width: 55px;
+			height: 55px;
+			left: 70%;
+			animation-delay: 2.5s;
+			animation-duration: 11s;
+
+			background-color: transparent;
+			border:6px solid rgba(255, 255, 255, 0.15);
+		}
+
+
+		&:nth-child(8) {
+			width: 75px;
+			height: 75px;
+			left: 30%;
+			animation-delay: 3.5s;
+			animation-duration: 11s;
+		}
+	}
+}
+
+
+@include keyframes (circle ) {
+	0% {
+		@include transform(translateY(0));
+	}
+	100% {
+		@include transform(translateY(-1080px) rotate(800deg));
+		@include opacity(0)
+	}
+}
+

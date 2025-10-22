@@ -1,0 +1,455 @@
+/*
+All RTL Related Styles and Mods comes here!
+*/
+
+//body.right,
+body.dir-right {
+    text-align: right;
+    direction: rtl;
+    font-family: $font-body-name-rtl;
+    font-family: $rtl_font_1;
+
+
+
+
+    
+    //==============================================================================
+    //==============================================================================
+    // Global HTML Elements
+    //==============================================================================
+    //==============================================================================
+    // grid
+
+    // offset class rotation
+    // offset-md-1
+    @include xash_offset_gen_rtl();
+    //----------------------------------------------
+    blockquote {
+        padding-left: 0;
+        padding-right: 5rem;
+
+        &:before {
+            content: "\f10e";
+            left: auto;
+            right: 0;
+        }
+
+
+        @extend .lead;
+
+    }
+
+
+
+
+
+
+
+    .wrap-screen-full {
+        margin-left: 0;
+        margin-right: -50vw;
+        left: -50%;
+    }
+
+    .wrap-screen-half, 
+    .wrap-screen-third {
+
+        @media #{$device-desktop} {
+            left: 0;
+            right: auto;
+
+
+            &.right {
+                left: auto;
+                right: 0;
+            }
+        }
+
+    }
+
+
+
+    #{$heading-grp} {
+        font-family: $font-heading-name-rtl;
+    }
+
+
+
+
+
+
+
+
+
+    //==============================================================================
+    //==============================================================================
+    // Template Elements
+    //==============================================================================
+    //==============================================================================
+
+
+    
+    // <editor-fold desc="- - - - [ Typography and Forms ] - - - -">
+        #{$h1-grp} {
+            
+            @media #{$device-desktop} {
+                font-size: 3.2rem;
+                font-weight: bold;
+            }
+        }
+    
+    
+        
+            select {
+                background-position: left center;
+                background-size: 44px 44px;
+            }
+    
+    
+    
+    
+        .lead {
+            font-family: $font-heading-name-rtl;
+        }
+    
+    
+    
+        .xl.light {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: #899193;
+        }
+    
+    
+        //-----------------------------------------------------------------------------
+        .read-more,
+        .anchor {
+            &:before,
+            &:after {
+                padding: 0 0 0 10px;
+            }
+        }
+    
+    
+    
+        // project bg
+        .project-tag-line {
+            background: url(images/ship-top-landscape-rtl.jpg) no-repeat 120% center!important;
+        }
+    
+
+    
+    
+    
+    
+    // </editor>
+    
+    
+    
+    
+    
+    
+    // <editor-fold desc="- - - - [ Header ] - - - -">
+
+    #header-wrapper {
+
+        .logo-wrapper {
+            &:before {
+                left: 0;
+                right: auto;
+            }
+        }
+
+
+        .super-menu {
+
+            @include tablet {
+                text-align: left;
+            }
+        }
+
+        ul.lang,
+        ul.cred,
+		ul.search {
+
+            @include reset();
+
+            display: inline-block;
+            margin-left:0;
+            margin-right: 0.15rem;
+            padding-right: 0;
+
+
+
+
+            @include desktop {
+                padding-right: 2.25rem;
+                margin-right: 1.25rem;
+
+                background: url(images/icon-lang.svg) no-repeat right top;
+            }
+
+        }
+
+
+        ul.cred {
+            @include desktop {
+                background: url(images/icon-login.svg) no-repeat right top;
+            }
+        }
+
+
+		ul.search {
+			@include desktop {
+				background-position: right top;
+			}
+		}
+        //---------------------------------------------
+
+
+    }
+
+    .header-primary {
+
+        .super-menu {
+            text-align:left;
+        }
+
+    }
+
+
+    .menu-wrapper
+    {
+        &:before {
+            left: auto;
+            right: 0;
+        }
+    }
+
+
+
+    .main-navigation {
+        //margin-bottom: 30px;
+
+
+        .top-main-menu .nav > {
+            
+            li  {
+                font-family: $font-heading-name-rtl;
+
+
+                a {
+                    font-family: inherit;
+                    font-weight: bold;
+                    text-align: right;
+                }
+
+            }
+
+        }
+
+    }
+
+
+    .menu-curtain ul li {
+        text-align: right;
+    }
+
+
+
+
+    .form-bg {
+        right: auto;
+        left: 0;
+    }
+
+
+    // </editor-fold>
+
+
+
+
+
+
+
+
+
+    // <editor-fold desc="- - - - [ Page Elements ] - - - -">
+
+    // About us
+    //---------------------------------------------------------
+    .about-pro-marine {
+        .item-4 {
+            left:  -5%;
+            right: auto; 
+        }
+    }
+
+
+
+
+
+
+
+    // Service Area
+    //---------------------------------------------------------
+
+    .services-tiles {
+        .icon-wrap > *{
+            //left: -50%;
+            //@include transform(translate(50%, 0));
+        }
+    }
+
+
+
+
+    .area-serve-inline {
+        background: url(images/bg-area-serve.jpg) no-repeat left  top;
+    }
+
+    .services-tiles-detail {
+        
+        .card-sticky {
+
+            .curtain-trigger {
+                right: auto;
+                left: -50px;
+
+            }
+
+
+
+            .card ._content .service-next .svg-import {
+                float: left;
+            }
+
+        }
+
+    }
+
+
+    .xash-pager-dots {
+        left: auto;
+        right: 0;
+
+
+        li {
+
+            &:after {
+                left: auto;
+                right: 2rem;
+            }
+
+
+            a {
+                padding: 4px 30px 4px 4px;
+                text-align: left;
+
+                @include transform(translateX(110%));
+            }
+        }
+    }
+
+    .area-trust-exp {
+
+        .item-drop {
+            right: auto;
+            left: 2.5rem;
+        }
+    }
+
+
+
+
+
+    /*  Board
+    //----------------------------------------------------------------------------------*/
+    .subject-tile {
+        display: flex;
+
+
+        li {
+            .b-view,
+            .s-view,
+            .b-link,
+            .s-link {
+                text-align: right;
+
+                &:before {
+                    margin-right: 0;
+                    margin-left :5px;
+                }
+            }
+        }
+    }
+
+
+
+    // </editor-fold>
+
+
+
+
+
+
+
+
+
+    // <editor-fold desc="- - - - [ Footer ] - - - -">
+    ul.location {
+        li {
+            padding: 8px 2.5rem 8px 0;
+
+            span {
+                left: auto;
+                right: 3px;   
+            }
+        }
+    }
+
+
+
+    #footer {
+        .social-media {
+            text-align: left;
+        }
+    }
+
+
+
+    .newsletter-footer {
+        button {
+            left: 5px;
+            right: auto;
+        }
+    }
+
+
+
+    // </editor-fold>
+
+
+
+
+
+
+
+    // <editor-fold desc="- - - - [ MISCS ] - - - -">
+
+        .lbl-signup,
+        .lbl-signin {
+            padding-left: 0;
+            padding-right: 3.2rem;
+
+            background-position: right top;
+        }
+
+
+    // </editor-fold>
+
+
+
+} // right
+
+

@@ -1,0 +1,1042 @@
+// <editor-fold desc="- - - - [ FUNCTIONS ] - - - -">
+	//-----------------------------------------------------------
+//   Functions
+//-----------------------------------------------------------
+// Return Text Color based on Background color
+/**
+Function automatically assign forground color ,
+ in contrast of background.
+@uses SASS lightness()
+ */
+
+@function add-unit($value, $unit){
+	@return if($value != 0, $value + unquote($unit), 0);
+}
+
+
+@function apply_value( $raw_value, $unit ) {
+	@return ( add-unit( ($raw_value * 100 ), $unit ));
+}
+// </editor-fold>
+
+
+
+
+/*  Mixing
+//--------------------------------------------------*/
+// GRID GENERATOR
+//--------------------------------------------------*/
+
+
+// Simplified classic col maker, extends original props
+// @update, added vw support, flex as well.
+@mixin xash-grid-column ($css: 'span', $columns: $grid-columns, $gutter: $grid-gutter-width, $breaks: $grid-breakpoints, $unit: null , $flex: false) {
+
+	%xash-grid-column {
+		position: relative;
+		min-height: 1px; // Prevent columns from collapsing when empty
+		padding-right: ($gutter / 2);
+		padding-left: ($gutter / 2);
+		float: left;
+	}
+
+
+	@if $unit == null {
+		$unit : "%";
+	}
+
+
+	@each $break in map-keys( $breaks ) {
+
+		// Excluding xs..
+		@if map-get($breaks, $break) != 0 {
+			@for $i from 1 through $columns {
+
+				// extend basic props
+				.#{$css}-#{$break}-#{$i} {
+					@extend %xash-grid-column;
+				}
+			}  // @for
+
+
+
+			// Media Query based Classes
+			@include media-breakpoint-up ($break, $breaks) {
+
+				@for $i from 1 through $columns {
+					//width
+					.#{$css}-#{$break}-#{$i} {
+						//$_tmp_perce : percentage($i / $columns);
+						$_tmp_perce : apply_value(($i / $columns), $unit);
+
+						//@if $unit != null {
+						//	$_tmp_perce: add-unit(($i/ $columns)*100, $unit)
+						//}
+
+						width: $_tmp_perce;
+						flex: 0 0 $_tmp_perce;
+						max-width: $_tmp_perce;
+					}
+
+
+					// Push ------
+					.#{$css}-#{$break}-push-#{$i} {
+						//left: percentage( $i / $columns );
+						left: apply_value( ($i / $columns), $unit );
+					}
+
+
+					// Pull -------
+					.#{$css}-#{$break}-pull-#{$i} {
+						right: apply_value( ($i / $columns), $unit );
+					}
+
+					// Offset
+					.#{$css}-#{$break}-offset-#{$i} {
+						margin-left: apply_value( ($i / $columns), $unit );
+					}
+
+
+
+				}
+
+			} // @media
+
+		} // @if
+
+
+
+
+
+
+	} // @each
+
+}
+
+
+
+@mixin xash_offset_gen_rtl ( $css : '', $breaks: $grid-breakpoints, $columns: $grid-columns) {
+
+
+	@each $break in map-keys( $breaks ) {
+
+		// Excluding xs..
+		@if map-get($breaks, $break) != 0 {
+			// Media Query based Classes
+			@include media-breakpoint-up ($break, $breaks) {
+
+				@for $i from 1 through $columns {
+					// Push ------
+					.#{$css}-#{$break}-push-#{$i} {
+						left: auto;
+						right: percentage( $i / $columns );
+					}
+
+
+					// Pull -------
+					.#{$css}-#{$break}-pull-#{$i} {
+						left: percentage( $i / $columns );
+						right: auto;
+					}
+
+					// Offset
+					.offset#{$css}-#{$break}-#{$i} {
+						margin-left: 0;
+						margin-right: percentage( $i / $columns );
+
+					}
+
+
+
+				}
+
+			} // @media
+		}
+	}
+
+
+}
+
+
+// Sections are for relative mixins
+// eg: less/mixins/button.less is defined in button area below
+
+
+
+// Generate Fonts, inspired fn. mage!
+// $family-name: Font Name
+// $font-path: Installation Path
+// $font-file: Name of Source File
+// $font-weight: Normal|Bold|light
+// $font-style: normal | Italic
+@mixin lib-font-face(
+	$family-name: "Helvetica",
+	$font-path: "./fonts",
+	$font-file: "helvetica",
+	$font-weight: normal,
+	$font-style: normal
+) {
+	@font-face {
+		font-family: $family-name;
+		src: url('#{$font-path}/#{$font-file}.eot');
+		src: url('#{$font-path}/#{$font-file}.eot?#iefix') format('embedded-opentype'),
+			 url('#{$font-path}/#{$font-file}.svg#${family-name}') format('svg'),
+			 //url('#{$font-path}/#{$font-file}.woff2') format('woff2'),
+			 url('#{$font-path}/#{$font-file}.woff') format('woff'),
+			 url('#{$font-path}/#{$font-file}.ttf') format('truetype');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+/*@mixin scrollbars($size, $brand-secondary, $brand-primary: mix($brand-secondary, white, 50%)) {
+	::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $brand-secondary;
+	}
+
+	::-webkit-scrollbar-track {
+		background: $brand-primary;
+	}
+
+	// For Internet Explorer
+	body {
+		scrollbar-face-color: $brand-secondary;
+		scrollbar-track-color: $brand-primary;
+	}
+}
+@include scrollbars(.5em, slategray);*/
+
+@mixin text-shadow ($shadow: 0 1px 1px rgba(0,0,0,.25)) {
+		-moz-text-shadow: $shadow;
+	-webkit-text-shadow: $shadow; // iOS <4.3 & Android <4.1
+			text-shadow: $shadow;
+}
+
+
+
+
+/**
+Instead of overriding box-shadow, creating own,
+because default mixin is deeply interconnected with DEFAULT ON option
+*/
+
+@mixin xash-box-shadow($shadow ...) {
+	@if length($shadow) == 0 {
+		-moz-box-shadow: $shadow-default;
+		-webkit-box-shadow: $shadow-default; // iOS <4.3 & Android <4.1
+		box-shadow: $shadow-default;
+	} @else {
+		-moz-box-shadow: $shadow;
+		-webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+		box-shadow: $shadow;
+	}
+}
+
+
+
+
+// Animate Box's shadow as if card lifts up.
+// Scale optional
+// Animate Box's shadow as if card lifts up.
+// Scale optional
+@mixin animated-shadow (
+	$_shadow-before: 0 1px 2px rgba(0,0,0,0.15),
+	$_shadow-after:  0 10px 25px rgba(0,0,0,0.55),
+	$_opacity:	all 0.35s ease-in-out,
+	$_opacity-after: opacity 0.35s ease-in-out
+	) {
+		display: block;
+		position: relative;
+		@include xash_box-shadow($_shadow-before);
+		@include transition($_opacity);
+
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			top: 0;
+			left: 0;
+
+			@include xash_box-shadow($_shadow-after);
+			@include transition($_opacity-after);
+		}
+
+
+
+		&:hover {
+			&:after { opacity: 1; }
+		}
+	}
+
+
+//
+@mixin  xash-border-radius( $radius: $border-radius )
+{
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	    -ms-border-radius: $radius;
+	     -o-border-radius: $radius;
+	        border-radius: $radius;
+}
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Buttons ] - - - -">
+
+
+/*  Override Default Button, Added Param with Size
+//--------------------------------------------------*/
+// Button sizes
+@mixin  button-size( $padding-y, $padding-x, $font-size, $line-height, $border-radius, $btn-height:$btn-height-base) {
+	padding: $padding-y $padding-x;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $btn-default-color;
+	letter-spacing: $btn-default-letter-spacing;
+	// height: $btn-height;
+
+	@if $enable-rounded {
+		@include xash-border-radius($border-radius);
+	}
+
+}
+
+
+
+
+@mixin btn-primary-color () {
+	background-color: $btn-primary-bg;
+	color: $btn-primary-color;
+
+
+	&:hover {
+		background-color: $btn-primary-bg-hover;
+		color: $btn-primary-color-hover;
+	}
+}
+
+
+// Dynamically set color and bg based on
+// array of default theme provided.
+
+@mixin input-bg-color ( $is-btn : false, $color_r: $all-colors, $bg-dev: $bg-dev, $col-dev: 35.5%, $text-color_r: $all-colors-text ) {
+
+
+	@each $key, $val in $color_r {
+
+
+		// Forwarding Key of arary to fn, 
+		&.#{$key} {
+
+			// Fade background color in input fields a bit!
+			@if $is-btn == false {
+				background-color: desaturate( lighten( $val, 10% ),10%);
+			}
+			@else {
+				background-color: $val;
+			}
+			
+			color: auto-text-color( $key, $col-dev, $text-color_r );
+
+			&:hover,
+			&:focus {
+
+				$_tmp_bg_altered_color: lighten( $val, $bg-dev );
+				background-color: $_tmp_bg_altered_color;
+
+				@if $button-outline == true {
+					@include xash-box-shadow(0 0 0 $outline-size rgba( $_tmp_bg_altered_color, 0.45))
+				}
+
+			} // hover
+
+			@if $is_btn == true {
+
+				&:active {
+					background-color: darken( $val, ( $bg-dev / 1.25 ) );
+					outline: 0;
+				}
+			}
+
+		} // looped item
+	}
+
+} // @mixin
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+@mixin transition( $transition...) {
+
+	@if $enable-transitions {
+
+		@if length( $transition ) == 0 {
+			-webkit-transition: unquote( '#{$transition-base}' );
+			-moz-transition: unquote( '#{$transition-base}');
+			-o-transition: unquote( '#{$transition-base}');
+			-ms-transition: unquote( '#{$transition-base}');
+			transition: unquote( '#{$transition-base}' );
+
+		} @else {
+			-webkit-transition: unquote('#{$transition}');
+			-moz-transition: unquote('#{$transition}');
+			-o-transition: unquote('#{$transition}');
+			-ms-transition: unquote('#{$transition}');
+			transition: unquote('#{$transition}');
+		}
+	}
+}
+
+
+
+@mixin transform($transform : "translateX(50%)") {
+	-webkit-transform: unquote('#{$transform}');
+	-moz-transform: unquote('#{$transform}');
+	-ms-transform: unquote('#{$transform}');
+	-o-transform: unquote('#{$transform}');
+	transform: unquote('#{$transform}');
+}
+
+
+
+
+@mixin img_responsive () {
+	min-width: 100%;
+	max-width: none;
+	height: auto;
+	width: auto!important;
+}
+
+
+
+
+@mixin make_hero_img () {
+
+	width: auto;
+	height: 100%;
+	max-width: none;
+	left: 50vw;
+	top: 0;
+	position: absolute;
+	z-index: 0;
+	@include transform(translateX(-50%));
+
+
+	@media #{$device-tablet-start} {
+		width: 100%;
+		height: auto;
+		top: 50%;
+		left: 0;
+		z-index: 0;
+		@include transform(translateY(-50%));
+	}
+
+}
+
+
+
+// banner Height of slider
+// Temp Height Printer for Banner
+@mixin _banner-height ($fraction: 1) {
+	min-height: $ss-banner-height-phone * $fraction;
+	//height: auto;
+
+	@media #{$device-tablet} {
+		height: $ss-banner-height-tablet * $fraction;
+	}
+
+	@media #{$device-desktop} {
+		height: $ss-banner-height-desktop * $fraction;
+	}
+}
+
+
+
+
+// Full Viewport
+@mixin full-width-screen () {
+	width: 100vw;
+	margin-left: -50vw;
+	position: relative;
+	left: 50%;
+	display: block;
+	max-width: 100vw;
+	overflow: hidden;
+}
+
+
+
+
+
+@mixin reset() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+
+
+@mixin box-model ( $boxmodel: border-box) {
+	-webkit-box-sizing: $boxmodel;
+	-moz-box-sizing: $boxmodel;
+	box-sizing: $boxmodel;
+}
+
+
+
+
+// center pose via mix
+
+
+
+
+// Opacity
+
+@mixin opacity($opacity) {
+
+	@if $opacity != null {
+		opacity: $opacity;
+		// IE8 filter
+		$opacity-ie: ($opacity * 100);
+		filter: unquote("alpha(opacity=#{$opacity-ie})");
+	}
+
+}
+
+
+
+// <editor-fold desc="- - - - [ Responsive Stuff ] - - - -">
+
+	@mixin responsive_class () {
+
+		@each $breakpoint in map-keys($grid-breakpoints) {
+
+			@include media-breakpoint-up($breakpoint) {
+
+				$pre: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+				.text#{$pre}-left   { text-align: left !important; }
+				.text#{$pre}-right  { text-align: right !important; }
+				.text#{$pre}-center { text-align: center !important; }
+
+
+			}
+		}
+	}
+
+
+
+	// Media Phone
+	@mixin media-phone ()  {
+		/*
+		$_ph : breakpoint-max(sm, $grid-breakpoints );
+
+		@include media-breakpoint-down( sm ) {
+			@content;
+		}*/
+
+
+		@media #{$device-phone} {
+			@content;
+		}
+	}
+
+
+
+	// Media Phone < 768
+	@mixin phone-only ()  {
+
+		@include media-phone {
+			@content;
+		}
+	}
+
+
+
+		// Media Phone < 768
+		@mixin phone ()  {
+
+			@include media-phone {
+				@content;
+			}
+		}
+
+
+	// Media device < 1024
+	@mixin device ()  {
+		@media #{$device-device} {
+			@content;
+		}
+	}
+
+	// Media Tablet Start > 768
+	@mixin tablet () {
+		@include media-breakpoint-up( md ) {
+			@content;
+		}
+	}
+
+
+	@mixin media-tablet () {
+		@include tablet {
+			@content;
+		}
+	}
+
+
+	// Media Tablet  768 >< 1024
+	@mixin tablet-only ()  {
+		$_md : map_get($grid-breakpoints, md);
+		$_lg : map_get($grid-breakpoints, lg);
+
+
+		@include media-breakpoint-between( md, lg ) {
+			@content;
+		}
+
+	}
+
+
+	// Media Desktop
+	@mixin media-desktop ()  {
+
+		$_lg : map_get( $grid-breakpoints, lg );
+
+
+		@include media-breakpoint-up(lg) {
+			@content;
+		}
+
+	}
+
+
+	@mixin desktop () {
+		@include media-desktop {
+			@content;
+		}
+	}
+
+
+
+	// Media laptop -- > 1366
+	@mixin media-laptop ()  {
+		$_xl : map_get($grid-breakpoints, xl);
+
+		@include media-breakpoint-up(xl) {
+			@content;
+		}
+	}
+
+
+	@mixin laptop () {
+		@include media-laptop {
+			@content;
+		}
+	}
+
+
+	// Media XL >> 1600
+	@mixin media-lg ()  {
+		$_xl : map_get($grid-breakpoints, xxl);
+
+		@include media-breakpoint-up(xxl) {
+			@content;
+		}
+	}
+
+
+	@mixin lg () {
+		@include media-lg {
+			@content;
+		}
+	}
+
+
+
+
+
+// </editor-fold>
+
+@include responsive_class();
+
+
+
+@mixin transform-origin ($origin: center center) {
+	-webkit-transform-origin: $origin ;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+
+@mixin flexbox() {
+	display: table;  // OLD SUPOORT
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;
+}
+
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+@mixin box-sizing($box: 'border-box') {
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+
+
+
+
+
+
+
+@mixin list-view-bg () {
+// Temp Variable
+$__td-border-color: darken(white, 10%);
+
+	background: darken(white,3%);
+	@include gradient-y (white, darken(white,1%));
+	border: 1px solid $__td-border-color;
+	border-width: 2px 0;
+	padding-top: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
+
+	@include transition(all .35s ease-in-out);
+
+
+
+	&:first-child {
+		border-top: 2px solid $__td-border-color;
+		@include xash-border-radius($border-radius-small 0 0 $border-radius-small);
+	}
+
+
+
+	&:last-child {
+		// vertical-align: middle;
+		//border-right: 2px solid $__td-border-color;
+		@include xash-border-radius (0 $border-radius-small $border-radius-small 0);
+	}
+
+
+
+	&:hover {
+		background-color: white;
+		@include gradient-y (white, white);
+		border-color: $border-color-default; //darken($__td-border-color, 3%);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ RECURSIVE MEDIA QUERY BUILDERS ] - - - -">
+
+//=========================================================================
+//=========================================================================
+//  EXPERIMENTAL | Currently Best approach is implemented.
+//=========================================================================
+//=========================================================================
+// Custom Mediaquery based Utility Class Generator
+// Outputs utiil-phone, util-desktop, util-tablet etc
+
+@mixin xash_custom_mq_util () {
+	@each $mq in map_keys( $custom-grid-bp ) {
+
+		$_cmq : map_get( $custom-grid-bp, $mq );
+
+		// Pre-fixer
+		// Made it global , for use in external mixing as @content or normal CSS
+		$var: -#{$mq} !global;
+
+		@if $mq == screen  {
+			$var: '';
+			//@content;
+			@include _resposnive_utilset($var);
+		}
+
+		@else {
+			@media #{$_cmq} {
+				// Will try with Mixing eg: printClass($Prefix),
+				@include _resposnive_utilset($var);
+				//@content;
+
+			}
+		}
+
+	}
+}
+
+
+
+
+/**
+	Generate Responsive font size property,
+	@param list of font.
+	eg: $font:(desktop:20px, laptop: 60px )
+	this is based on recursive approach,
+	@update: adding multiply Factor
+*/
+@mixin font-resp-singular( $font_r:(), $custom_grid: $custom-grid-bp, $factor : 1 ) {
+
+	@each $_font in map-keys( $font_r ) {
+
+		$_cur_mq : map-get( $custom_grid, $_font );
+
+		@if $_cur_mq != null {
+			@media #{$_cur_mq} {
+				font-size: map-get($font_r, $_font) * $factor;
+			}
+		}
+
+		@else {
+			font-size: map-get($font_r, $_font) * $factor;
+		}
+
+	}
+
+}
+
+
+
+@mixin font-resp-media( $font_r:(), $class:"size",  $custom_grid: $custom-grid-bp, $factor : 1 ) {
+
+	@each $_font in map-keys( $font_r ) {
+
+		// Getting Media name
+		$_cur_mq : map-get( $custom_grid, $_font );
+
+		@if $_cur_mq != null {
+			@media #{$_cur_mq} {
+				font-size: map-get($font_r, $_font) * $factor;
+			}
+		}
+
+		@else {
+			font-size: map-get($font_r, $_font) * $factor;
+		}
+
+	}
+
+}
+
+
+
+
+// Easy Interface to use in css
+/**
+@uses font-resp-singular
+ */
+@mixin font-size ( $font_r:(), $factor:1, $custom_grid: $custom-grid-bp ) {
+	@include font-resp-singular( $font_r, $custom_grid , $factor );
+}
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin fade-menu ($direction: left, $mode:hide , $transition: $transition-base ) {
+
+	@if $mode != show {
+
+		@if $direction == left {
+			@include transform( translateX( -100% ) );
+		}
+
+		@else if $direction == right {
+			@include transform( translateX(100%) );
+		}
+
+		@else if $direction == bottom {
+			@include transform( translateY( -100% ) );
+		}
+
+		@else if $direction == top {
+			@include transform( translateY( 100% ) );
+		}
+
+		@include opacity(0);
+	}
+
+	@else  {
+		@include transform( translateX(0%) translateY(0%) );
+		@include opacity(1);
+	}
+
+	@include transition($transition);
+}
+
+
+
+
+
+/// Flat General Menu for UL Li
+@mixin make-flat-menu ( $margin: 5px, $padding: 0 5px ) {
+
+	@include reset();
+	width: 100%;
+	li {
+		@include reset();
+
+		display: inline-block;
+		padding: $padding;
+		margin: $margin;
+	}
+
+
+
+}
+
+
+
+
+
+
+// Font Awesome
+@mixin fa-icon-gen($glyph: "\f0c9" , $font-size: 1rem ) {
+
+	display: inline-block;
+	font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+	font-size: inherit; // can't have font-size inherit on line above, so need to override
+	text-rendering: auto; // optimizelegibility throws things off #1094
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+
+	&:before {
+		content : $glyph;
+		font-size: $font-size;
+	}
+}
+
+
+
+
+@mixin fa-icon-only ($glyph: "\f0c9", $font-size: 1.25em, $tag: before ) {
+
+	&:#{$tag} {
+		content: $glyph;
+		font-size: $font-size;
+		display: inline-block;
+		font: normal normal normal #{$font-size}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+		font-size: #{$font-size}; // can't have font-size inherit on line above, so need to override
+		text-rendering: auto; // optimizelegibility throws things off #1094
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		margin-right: 0.25em;
+	}
+}
+
+
+
+//  Xash Gradient
+@mixin xash-gradient__ ($raw_value: $bg-global , $deg: 90deg) {
+	background: $raw_value;
+	background: -moz-linear-gradient($deg, #{$raw_value});
+	background: -webkit-linear-gradient($deg, #{$raw_value});
+	background: linear-gradient($deg, #{$raw_value});
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{$raw_value}",endColorstr="#{$raw_value}",GradientType=1);
+}
+
+// https://www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/  Argument list
+@mixin xash-gradient($deg:90deg, $raw-value...) {
+	background: $raw_value;
+	background: -moz-linear-gradient($deg, #{$raw_value});
+	background: -webkit-linear-gradient($deg, #{$raw_value});
+	background: linear-gradient($deg, #{$raw_value});
+}
+
+// <editor-fold desc="- - - - [ Animation ] - - - -">
+
+//----------------------------------------
+// Keyframe animation
+//----------------------------------------
+
+// animation-name: bounce;
+// animation-duration: 4s; /* or: Xms */
+// animation-iteration-count: 10;
+// animation-direction: alternate; /* or: normal */
+// animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+// animation-fill-mode: forwards; /* or: backwards, both, none */
+// animation-delay: 2s; /* or: Xms */
+
+
+@mixin keyframes( $name:anim-default ) {
+		@-moz-keyframes #{$name} {
+			@content
+		}
+		@-webkit-keyframes #{$name} {
+			@content
+		}
+		@-ms-keyframes #{$name} {
+			@content
+		}
+		@keyframes #{$name} {
+			@content
+		}
+}
+
+@mixin animation( $argument : anim-default 1s linear ) {
+	-webkit-animation: $argument;
+	-moz-animation: $argument;
+	-ms-animation: $argument;
+	animation: $argument;
+}
+
+
+
+// </editor-fold>	

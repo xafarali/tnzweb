@@ -1,0 +1,1048 @@
+// --------------------------------------------------
+// Variables, Customized by xafaR|
+// Version : 1;
+// All Core Variables on which rest of variables are relying.
+// Added Variable based on Desktop.
+// --------------------------------------------------
+
+
+// <editor-fold desc="- - - - [ Secondary Color Vars ] - - - -">
+$dark : #002877;
+$__base-color: #4a5c81; //$gray-900;
+//-----------------------------------------------------------
+// All colors
+// Merged all colors for util
+$all-colors: ();
+
+// @change, this is creating Huge chunk of css,
+// need to summarize it, based on
+// few colors for theme CALLED $essential colors
+ $all-colors: map-merge( $theme-colors, $colors );
+
+
+$theme-colors: map_merge(
+
+	$theme-colors, (
+		"error":	$danger,
+		'dark'  : $dark,
+		'def' : $__base-color
+	)
+);
+
+
+
+// Explicit Color for text as contrast
+// Should contain same key as master color,
+// will assign appropriate/theme color to text
+//$all-colors-contrast: ();
+$all-colors-text : (
+	'success' : yellowgreen,
+	'gold': rgb(56, 6, 6),
+	'primary': #b5e4e8,
+	'primary-light': $primary,
+	'primary-dark': #b5e4e8,
+	'secondary': white,
+	'danger': white,
+		'def': white
+
+);
+// Color deviation for looped auto color variance
+// used in input-bg-color mixin
+$bg-dev: 2.50%;
+
+
+// Old Convention------------------------------------------------
+$brand-primary: 		$primary;
+$brand-secondary: 		$secondary;
+$brand-success: 		theme-color('success');
+$brand-info:    		theme-color('info');
+$brand-warning:     	theme-color('warning');
+$brand-danger:        	theme-color('danger');
+$brand-primary-light:  	$primary-light;
+$brand-primary-dark: 	$primary-dark;
+
+$brand-secondary-light: $secondary-light;
+$brand-secondary-dark:	$secondary-dark;
+
+$text-color:            $__base-color; //$gray-900; // Base color
+$gray-light: 			$gray-200;
+$text-color-light:      $gray-light;
+$gray-lighter:			$gray-200;
+
+$border-color-default:  $gray-lighter;
+$hr-border:				$border-color-default;
+
+
+/***
+$all-colors-text must match Keys, to work properly
+@todo, fix auto color bug
+ */
+$essential-colors: (
+	"primary": 		$brand-primary,
+	"primary-light": $brand-primary-light,
+	"secondary": 	$brand-secondary,
+	"success":  	$success,
+	"info":			$info,
+	"warning":		$warning,
+	"danger":	    $danger,
+	'teal': 		$teal,
+	'def':			$text-color
+);
+
+
+//$body-bg: 	smokewhite;
+
+// Input Groups
+$input-group-addon-color:               $white ;
+$input-group-addon-bg:                  $brand-primary;
+$input-group-addon-border-color:    	$input-group-addon-bg;
+
+
+
+
+// Footer
+$text-color-footer : $text-color;
+$footer-bg : $gray-300;
+$footer-link: $text-color;
+
+
+// Heading Colors
+$color-dp: map-get($primary-colorkit, "700");;
+$color-h1: $color-dp; //$brand-primary-light;
+$color-h2: $brand-secondary;
+$color-h3: $gray-800; //$brand-primary-light;
+$color-h4: $gray-800;
+$color-h5: $text-color; //$text-color;
+$color-h6: $text-color;
+
+$color-xl: $color-dp;
+$color-xxl: map-get($primary-colorkit, "600");;
+
+$link-color:  $brand-primary;
+$link-weight : 400;
+
+
+
+// WooCom
+$insColor:  theme-color('info');
+$delColor: theme-color('danger');
+
+
+
+// BG
+$bg-global: #fff; //#f7f0ed;
+$bg-light: $bg-global;
+$bg-dark: #131519 ; //#08192b;
+$bg-menu-curtain: $bg-dark;
+
+
+// </editor-fold>	
+
+
+
+
+// Yearly Text Color
+$yearly-income: #0cd2a4;
+$yearly-expense: #ff7c67;
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ TYPOGRAPHY ]-------">
+//## Font, line-height, and color for body text, headings, and more.
+
+
+$font-heading-name: "Outfit";
+$font-heading-name-light: "Outfit Light";
+$font-heading-secondary-name: "Alumni Sans";
+
+$headings-font-family : $font-heading-name;  // BS Default
+
+$font-body-name: "Roboto";
+$font-body-name-light: "Roboto Light";
+
+$font-path: "./fonts";
+$font-file-heading: ""; // It will be dynamic
+$font-file-body: "";
+$font-blockquote: $font-heading-secondary-name;
+
+
+// RTL Fonts
+$font-heading-name-rtl : "Droid Kufi";
+$font-body-name-rtl : $font-heading-name-rtl, "Arial, Helvetica, sans-serif";
+
+
+
+$font-icon: 'Fontawesome';
+$icon-font-awesome: $font-icon;
+
+
+
+$headings-font-weight:   700;
+$font-heading-h1-weight: $headings-font-weight;
+$font-heading-h2-weight: 700;
+$font-heading-h3-weight: bold;
+$font-heading-h4-weight: 700;
+$font-heading-h5-weight: bold;
+$font-heading-h6-weight: bold;
+$headings-line-height:   1.0;
+$line-height-base: 		 1.6;
+$heading-letter-spacing: -0.032rem;
+
+$font-heading-xl-weight:  300;
+$font-heading-xxl-weight: 300;
+
+// Margin
+$headings-margin-bottom: 1.5rem;
+
+
+//--------------------------------------------------------------
+//= Application
+//-----------------------------------------------------------------------
+$font-family-sans-serif: "#{$font-body-name}", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, "Times New Roman", Times, serif;
+
+$font-body: $font-family-sans-serif;
+$font-body-light: "#{$font-body-name-light}", $font-body;
+
+$font-heading: "#{$font-heading-name}", $font-body;
+$font-heading-light: "#{$font-heading-name-light}", $font-heading;
+$font-heading-secondary: "#{$font-heading-secondary-name}", $font-heading;
+
+$font-family-base : $font-body;
+
+
+
+// Heading font overrides.
+//---------------------------------------------
+$font-heading-h1: $font-heading;
+$font-heading-h2: $font-heading;
+$font-heading-h3: $font-heading;
+$font-heading-h4: $font-heading;
+$font-heading-h5: $font-body;
+$font-heading-h6: $font-body;
+
+
+
+
+//= Font Sizes
+$font-size-root: 		 13px;
+$font-size-root-tablet:	 14px;
+$font-size-root-laptop:	 16px; //15.5px;
+$font-size-root-desktop: 18px;
+$font-size-root-lg: 	$font-size-root-desktop;
+$font-size-base:        1rem;
+$font-size-base-large:	1.25rem;
+$font-size-large:       ($font-size-base * 1.25) ;			//ceil(($font-size-base * 4)); 	    // ~32px
+$font-size-small:       ($font-size-base * .8); 		// ~12px
+$font-size-lg: 			$font-size-large;
+$font-size-sm: 			$font-size-small;
+
+
+// As MFA, multiplying with decimal.. will revert in media min query
+// No more wooshoo methodology keep it simple.
+$h1-font-size: 	3rem;
+$h2-font-size:  2.25rem;
+$h3-font-size:  1.65rem;
+$h4-font-size:  1.35rem;
+$h5-font-size:  1.125rem;
+$h6-font-size:  $font-size-small;
+
+//----------------------------------------
+// DISPLAY
+$font-xl-size:  5rem;
+$display1-size: 4.25rem; // 4.5rem;
+$display2-size: 3.5rem;
+$display3-size: 2.5rem;
+$display4-size: 1.5rem;
+$display1-weight: 700;
+
+$font-p-margin: 2rem;
+
+
+
+
+// Reversing as Less implementation
+//----------------------------------------------------------
+$font-size-h1: $h1-font-size;
+$font-size-h2: $h2-font-size;
+$font-size-h3: $h3-font-size;
+$font-size-h4: $h4-font-size;
+$font-size-h5: $h5-font-size;
+$font-size-h6: $h6-font-size;
+
+
+// line heights
+$h1-line-height: $headings-line-height;
+$h2-line-height: 1.2;
+$h3-line-height: $h2-line-height;
+
+
+
+
+/*  Responsive Font Size Vars
+//---------------------------------------------------------*/
+$font-size-xl-list: (
+		general: $font-xl-size,
+		tablet:  5.5rem,
+		desktop: 9rem,
+		large:   10rem,
+);
+
+
+$font-size-xxl-list: (
+		general: $font-xl-size * 1.5,
+		tablet:  5.5rem * 1.2,
+		desktop: 9rem  * 1.2,
+		large:   10rem * 1.2,
+);
+
+
+
+
+$font-size-d1-list: (
+		general: $display1-size,
+		tablet:  5.5rem, 	//4rem,
+		desktop: 9rem, 		// 5.5rem,
+		large:   10rem, 	//7.25rem,
+		
+);
+
+
+
+
+$font-size-h1-list: (
+	general: $h1-font-size,
+	tablet:  $h1-font-size,
+	desktop:  5.5rem,
+	large:    6.5rem,
+);
+
+
+$font-size-h2-list: (
+	general: $h2-font-size,
+	tablet:  $h2-font-size,
+	desktop: 2.8rem,
+    large: 	 3.35rem
+);
+
+$font-size-h3-list: (
+	general: $h3-font-size,
+	tablet:  $h3-font-size,
+	desktop: 1.8rem,
+	large: 1.8rem
+);
+
+$font-size-h4-list: (
+	general: $h4-font-size,
+	tablet:  $h4-font-size,
+	desktop: $h4-font-size,
+	large:   $h4-font-size
+);
+
+$font-size-h5-list: (
+	general: $h5-font-size,
+	tablet:  $h5-font-size,
+	desktop: $h5-font-size,
+	large:   $h5-font-size
+);
+
+$font-size-h6-list: (
+	general: $h6-font-size,
+	tablet:  $h6-font-size,
+	desktop: $h6-font-size,
+	large:   $h6-font-size
+);
+
+// Mapping for ease | Will be used with mixing, font-size()
+$size-h1: $font-size-h1-list;
+$size-h2: $font-size-h2-list;
+$size-h3: $font-size-h3-list;
+$size-h4: $font-size-h4-list;
+$size-h5: $font-size-h5-list;
+$size-h6: $font-size-h6-list;
+
+
+
+// Lead Fontsize
+$lead-font: $font-body;
+$lead-font-size: 1.5rem;
+$lead-font-size-ss: $font-size-h3-list;
+$lead-font-weight: 400;
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ FONT GENERATOR ]-------">
+
+ /**
+  MOVED TO helper/type.scss
+ */
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Effects ] - - - -">
+
+$shadow-default: 	0 2px 4px rgba(black, .15);
+$shadow-dialog: 	0 15px 50px 0 rgba($blue, 0.15), 0 5px 15px 0 rgba(0, 0, 0, 0.15);//0 2px 35px rgba(black, .35);
+
+$text-shadow: 0 1px 4px rgba(white, .25);
+$text-shadow-lg: 0 2px 3px rgba(0,0,0,.2), 0 10px 20px rgba(black, .25);
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Navigation , Drop down ] - - - -">
+
+
+
+// @todo, fix variables , currenty adopted 3.x variables but I like it..
+$font-size-nav-lv1:     2rem; //$font-size-h4;
+$font-size-nav-lv2:     1.25rem;
+
+$font-size-nav-lv1-desktop:  3rem;
+$font-size-nav-lv2-desktop:  $font-size-nav-lv1 * 0.9;
+
+$font-nav-lv1: $font-heading;
+$font-nav-lv2 : $font-nav-lv1;
+
+$font-nav-lv1-weight: 700;
+$font-nav-lv2-weight : 400;
+
+
+
+// Navbar links
+
+// Menu Colors
+$color-nav-lv1:  $text-color-light ;
+$color-nav-lv1-hover: $brand-secondary;
+
+$navbar-default-link-color:                $color-nav-lv1;
+$navbar-default-link-hover-color:          $brand-primary;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         $brand-primary;
+$navbar-default-link-active-bg:            transparent; // darken($navbar-default-bg, 6.5%);
+
+
+// > li lv1
+$navbar-default-item-color:                $color-nav-lv1;
+$navbar-default-item-hover-color:          $navbar-default-item-color;
+$navbar-default-item-bg:				   transparent;
+$navbar-default-item-hover-bg:             transparent;
+$navbar-default-item-active-color:         $brand-primary;
+$navbar-default-item-active-bg:			   transparent;
+
+
+
+$color-nav-lv2: $color-nav-lv1;
+$color-nav-lv2-hover: $color-nav-lv2;
+
+
+//=== Shared nav styles
+$nav-item-margin:							0;
+$nav-item-margin-desktop:					0 ;
+$nav-item-padding-desktop:					0;
+$nav-item-padding:							0;
+$nav-link-padding:                          1.5rem 2rem;
+$nav-link-padding-phone:					$nav-link-padding;//2rem 1.2rem;
+$nav-link-padding-desktop:					1rem 2rem ; //1.0rem 0; //1.5rem 2vw;
+$nav-link-padding-child:					1rem 2rem 1rem 1rem;
+$nav-link-hover-bg:                         $gray-light;
+
+$nav-disabled-link-color:                   $gray-light;
+$nav-disabled-link-hover-color:             $gray-light;
+
+$nav-lv1-line-height :						1;
+$nav-lv1-spacing: 							.75px;
+
+//=== Sub Menu Items  ======================================
+$nav-sub-container-bg:					$bg-dark; //transparent;
+$nav-sub-container-width: 				280px;
+$nav-sub-item-bg:						transparent;
+$nav-sub-item-bg-hover:					$nav-sub-item-bg;
+$nav-sub-link-color:					white;
+$nav-sub-link-color-hover:				$blue; //$brand-primary;
+
+$nav-sub-item-padding:					0;
+$nav-sub-link-padding:					20px; // 8px 20px
+$nav-sub-link-padding-x:				$nav-sub-link-padding;
+$nav-sub-link-padding-y:				$nav-sub-link-padding;
+
+$nav-sub-link-padding-child:			8px 40px 8px 20px;
+
+// SUb menu border radius
+$nav-sub-border-radius:					0 0 10px 10px;
+$nav-sub-shadow:						unset; //0 0 20px 10px $bg-dark; //unset!important; //$shadow-dialog;
+$nav-border-color: 						transparent; //$gray-light;
+$dropdown-link-active-bg:				transparent;
+$dropdown-link-hover-bg: 				$dropdown-link-active-bg;
+$nav-lv1-arrow: 						""; //"\f078";
+$nav-lv2-arrow:  						"\f054";
+
+
+// NAVIGATION HEIGHT
+//-----------------------------------------------------------------
+$nav-height-desktop: 94px;
+$nav-height-laptop:  70px;
+$nav-height-tablet:  50px;
+$nav-height-phone: $nav-height-tablet;
+
+
+// Phone Menu
+//-------------------------------------------------------------------
+$nav-phone-bg : rgba($brand-primary-dark, .23);
+
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Navs ] - - - -">
+
+.dropdown-menu {
+	> .active > a,
+	> .active > a:hover,
+	> .active > a:focus {
+		background: fade($primary, 0.4);
+	}
+}
+
+
+$nav-link-hover-bg: fade(white, 0.65);
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Tables ] - - - -">
+
+	$table-head-color:          $brand-primary;
+	$table-th-bg:				$gray-light;
+
+	$table-border-color: $border-color-default;
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Buttons ] - - - -">
+$btn-font-size:                  1rem;
+$btn-font-size-sm:				.75rem;
+$btn-font-size-lg:				1.25rem;
+
+
+$btn-font-weight:                500;
+$btn-font-weight-sm:			 400;
+$btn-font-weight-lg:			 400;
+
+// Button Font
+$btn-font-family: 				$headings-font-family;
+
+
+$btn-height-base:				 35px;
+
+
+$btn-default-color:              map-get($primary-colorkit,"800" );
+$btn-default-bg:                 $brand-primary;
+$btn-default-bg-hover:           lighten($btn-default-bg, 20%);
+$btn-default-border:             darken($btn-default-color, 3%);
+
+$btn-default-color-hover:		 white;
+
+$btn-default-text-color:         $btn-default-color;
+
+$btn-primary-color:              white; //auto-text-color('primary');
+$btn-primary-color-hover:        white; //auto-text-color('primary');
+$btn-primary-bg:                 $brand-secondary;
+$btn-primary-bg-hover:           saturate( lighten( $btn-primary-bg, 5%), 30% ) ;
+$btn-primary-border:             $btn-primary-bg-hover; //darken($btn-primary-bg, 3%);
+
+
+$btn-success-color:              #fff;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             darken($btn-success-bg, 3%);
+
+$btn-info-color:                 #fff;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                darken($btn-info-bg, 3%);
+
+$btn-warning-color:              #fff;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             darken($btn-warning-bg, 3%);
+
+$btn-danger-color:               #fff;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              darken($btn-danger-bg, 3%);
+
+$btn-link-disabled-color:        $gray-light;
+
+// Allows for customizing button radius independently from global border radius
+
+
+$border-radius:               	5px; //.15rem;
+$border-radius-lg:            	10px; //5px;
+$border-radius-sm:            	0; //.2rem;
+
+$border-radius-base:        	$border-radius;
+$border-radius-large:       	$border-radius-lg; //6px;
+$border-radius-small:       	$border-radius-sm; // 3px;
+
+
+$btn-border-radius-base:         200px; //3px;
+$btn-border-radius-large:        200px; //3px; //$border-radius-large;
+$btn-border-radius-small:        0; // $border-radius-small;
+
+
+$btn-border-radius: 			$btn-border-radius-base;
+
+$fieldset-border-radius: 		 $border-radius;
+
+$btn-default-letter-spacing: 	1px;
+
+$btn-border-width:					0px;
+$input-border:						$gray-light;
+$outline-size: 						.25rem;
+$btn-border-outline:				3px;
+$btn-border-color: 					transparent;
+// Button Padding (MAPPING) --------------
+// BS using same value for button and input, to maintain heights
+
+$input-btn-padding-y:				0.6rem; //0.4rem;
+$input-btn-padding-x:				2.5rem;
+
+$input-btn-padding-y-lg:			0.75rem;
+$input-btn-padding-x-lg:			2rem;
+
+
+$input-btn-padding-y-sm:			.25rem;
+$input-btn-padding-x-sm:			1.5rem;
+$btn-padding-y:               		$input-btn-padding-y;
+$btn-padding-x:               		$input-btn-padding-x;
+
+$btn-padding-y-sm:            		$input-btn-padding-y-sm;
+$btn-padding-x-sm:            		$input-btn-padding-x-sm;
+
+$btn-padding-y-lg:            		$input-btn-padding-y-lg;
+$btn-padding-x-lg:					$input-btn-padding-x-lg;
+
+
+
+
+
+// Border radius
+$input-border-radius:                  0;
+$input-border-radius-lg:                $input-border-radius;
+$input-border-radius-sm:				$input-border-radius;
+$input-border-style:					2px solid $input-border;
+$input-border-style-width:				0 0 2px;
+
+// 24/4/18
+//@Note: these variables arent in use.
+// @Note: these are being used in button.scss inhertired one, which is off in this repo
+
+$padding-base-vertical:				$input-btn-padding-y;
+$padding-base-horizontal:           $input-btn-padding-x;
+
+$padding-large-vertical:    		$input-btn-padding-y-lg;
+$padding-large-horizontal:  		$input-btn-padding-x-lg;
+
+
+$padding-small-vertical:  			$input-btn-padding-y-sm;
+$padding-small-horizontal:  		$input-btn-padding-x-sm;
+
+$padding-xs-vertical:       		1px;
+$padding-xs-horizontal:				5px;
+
+
+// #end note.
+$btn-line-height:					1.84rem; //1.75;
+$line-height-large:         		1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         		1.5;
+
+
+$input-height-lg: 					3.5rem;
+$input-height-sm: 					1.8rem;
+$input-height: 						3.0rem;// 2.5rem;
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Forms ] - - - -">
+
+//** Default `.form-control` height
+ //$input-height-base:   	 $btn-height-base;           //(@line-height-computed + (@padding-base-vertical * 2) + 2);
+
+//** Large `.form-control` height
+ //$input-height-large:     $btn-height-large;        //(ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+
+//** Small `.form-control` height
+ //$input-height-small:     $btn-height-small;       //(floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+
+
+
+//$custom-select-padding-y:           1rem; !default;
+//$custom-select-padding-x:          .25rem;
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Selection Groups ] - - - -">
+
+// button
+$button-grp : '.btn', 'button','.button', 'submit', 'input[type="submit"]' , 'input[type="button"]', 'a.btn';
+$button-grp-secondary: 'a.button', '.button.alt', '.button', 'input.button', 'button.button', 'a.comment-reply-link', '#commentform #submit', '#featured-products ul.products .button', '.wpcf7-submit', '.button.add_to_cart_button';
+
+// Input
+//$input-grp: '.select-box', 'select', 'textarea', 'input[type="text"]', 'input[type="password"]', 'input[type="datetime"]', 'input[type="datetime-local"]', 'input[type="date"]', 'input[type="month"]', 'input[type="time"]', 'input[type="week"]', 'input[type="number"]', 'input[type="email"]', 'input[type="url"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="color"]';
+$input-grp: '.select-box', 'select', 'textarea', 'input';
+
+
+
+
+// Heading Groups
+$display-grp : ".display-1", ".display-2", ".font-xl", ".font-xxl";
+$h1-grp 	 : "h1", ".h1", ".lbl-primary";
+$h2-grp 	 : "h2", ".h2";
+$h3-grp 	 : "h3", ".h3";
+$h4-grp 	 : "h4", ".h4";
+$h5-grp 	 : "h5", ".h5";
+$h6-grp 	 : "h6", ".h6";
+
+
+// Heading Group
+$heading-grp : $display-grp, $h1-grp, $h2-grp, $h3-grp, $h4-grp, $h5-grp, $h6-grp;
+
+// typo elements
+$text-grp : $heading-grp, p, a, span, em, b , strong, ".lead", ".lead.xl" ul, li, ol;
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ MODAL ] - - - -">
+$modal-header-bg-color:				#fff;
+$modal-header-border-color:         darken($modal-header-bg-color, 20%);
+$modal-header-border-width:         2px;
+$modal-modal-shadow:				0 0 30px rgba(0,0,0,.65), 0 2px 6px rgba(0,0,0,.15);
+$modal-title-color:					$brand-primary;
+$modal-lg:                          820px;
+$modal-md:                          600px;
+$modal-sm:                          320px;
+$modal-backdrop-opacity:			.75;
+
+$modal-transition: 					transform .15s ease-out;
+
+
+
+
+//$zindex-dropdown:                 1000 !default;
+$zindex-sticky:                     5020;
+$zindex-fixed:                      5030;
+$zindex-modal-backdrop:             5040;
+$zindex-modal:                      5050;
+$zindex-popover:                    5060;
+$zindex-tooltip:                    5070;
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ MISC MAPPING ]-------">
+// Blockquoute
+$blockquote-color : #394e69;
+$blockquote-bg: $gray-100;
+$blockquote-font: $font-blockquote;
+$blockquote-font-size: 1.25rem;
+$blockquote-line-height: 2;
+
+
+// Cards
+$border-radius-card: $grid-gutter-width / 5;
+
+
+
+
+
+$gutter-width: $grid-gutter-width;
+
+$icon-size: 40px;
+$icon-size-sm: 24px;
+$icon-size-lg: 64px;
+$icon-size-xl : 100px;
+
+
+
+
+$css-rtl-class : 'dir-right';
+
+$color-em : $brand-primary-light;
+
+
+// Read More
+$more-bg : transparent;
+$more-color: $brand-primary;
+
+$more-bg-hover : $brand-primary;
+$more-color-hover: white;
+$more-icon: "\f141";
+
+
+
+
+$print-body-min-width : 992px;
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ Sidebar ]-------">
+
+$sidebar-width: 		100%;//110px;
+$submenu_sidebar-width: 210px;
+$right_sidebar-width: 	250px;
+$sidebar-bg: 			gray("200");
+$sidebar-bg-hover : 	fade($brand-primary-dark, .2); // li bg
+$sidebar-secondary-color:#BDF1FF;
+$sidebar-color: 		white;
+$sidebar-color-hover : 	$sidebar-color;
+$background_white: 		rgba($white, .9);
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Footer ] - - - -">
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ MISC SWITCHES ] - - - -">
+
+$button-outline: 	true;
+$input-outline: 	true;
+$enable-gradients: 	false;
+$enable-rounded : 	true;
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+
+
+///// <editor-fold defaultstate="collapsed" desc="-------[PAGE ELEMENT RELATED ]-------">
+
+
+
+
+
+	// Local Variables for fancy input
+	$__check_large : $grid-gutter-width;
+	$__check_normal: 18px;
+	$__check_small : 12px;
+
+
+
+	// Banner Height;
+	// Banner Height with 2 tricks, Proportional or Fixed, proportional has  padding based.
+
+	// Bool to use header padding based. or height based.
+	$header-padding-height: 	true;
+	$header-padding-height-tb:  false;    // tblet
+	$header-padding-height-md: 	false;    // small desk and laptop
+	$header-padding-height-lg: 	false;	 // Large display
+
+	$header-padding-default: 1rem;
+	$header-padding-default-tb: 1rem;
+	$header-padding-default-md: 2rem;
+	$header-padding-default-lg: 2.5rem;
+	//--------------------------------------------------
+
+
+	// :: Pixel based Height for banners
+	$ss-banner-height-phone:  320px; // which is kind of default
+	$ss-banner-height-tablet: 100%;
+	$ss-banner-height-desktop: 670px;
+	$ss-banner-height-lg: 800px;
+
+	// Defaults HEIGHT without anything.------
+	$ss-banner-height-phone-default: 320px; // which is kind of default
+	$ss-banner-height-tablet-default: 100%;
+	$ss-banner-height-desktop-default: 95vh; // auto;
+	$ss-banner-height-lg-default: 95vh; // auto;
+
+	// Minimum Height ---
+	$ss-banner-height-phone-default-min:  320px; // which is kind of default
+	$ss-banner-height-tablet-default-min: $grid-gutter-width * 2.5;
+	$ss-banner-height-desktop-default-min: $grid-gutter-width * 4;
+	$ss-banner-height-lg-default-min: $grid-gutter-width * 5;
+
+
+	// header-md height based padding.
+	$banner-header-md-h-padding: $grid-gutter-width;
+	$banner-header-md-h-height: 0;
+
+
+
+	// Header Default;
+	$banner-header-def: 10px;
+
+	// Header sizes
+	$banner-header-md: 			65% ; // Not using square trick, letting it to be auto on phone.
+	$banner-header-md-tablet: 	$banner-header-md;
+	$banner-header-md-laptop: 	calc( ( #{$banner-header-md} / 1.67 ) - #{$nav-height-laptop} );
+	$banner-header-md-desktop:  calc( ( #{$banner-header-md} / 1.67 ) - #{$nav-height-desktop} );
+
+
+
+
+
+
+	// Header Larger --
+	$banner-header-lg: 			100%;
+	$banner-header-lg-tablet: 	$banner-header-lg;
+	$banner-header-lg-laptop: 	calc( ( 85% / 1.67 ) - #{$nav-height-laptop} );
+	$banner-header-lg-desktop: 	calc( ( 85% / 1.67 ) - #{$nav-height-desktop} );
+
+
+	// Header smaller -- OR Default
+	$banner-header-sm: 		15%;
+	$banner-header-sm-tablet: 	$banner-header-sm;
+	$banner-header-sm-laptop: 	calc( ( 20% / 1.67 ) - #{$nav-height-laptop} );
+	$banner-header-sm-desktop: 	calc( ( 20% / 1.67 ) - #{$nav-height-desktop} );
+
+// </editor-fold>
+
+

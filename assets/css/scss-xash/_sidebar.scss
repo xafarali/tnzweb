@@ -1,0 +1,391 @@
+/**
+	Sidebar
+	@author: xafaR
+	@file: sidebar
+
+*/
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ SIDEBAR ]-------">
+
+// Basic Icon Setup
+%li-icon {
+	font-family: $font-icon;
+	//position: absolute;
+	//left: $gutter-width / 3;
+	//top: ( $gutter-width / 3 ) - 2px;
+	//top: 50%;
+	@include transform(translateY(-50%));
+	color: inherit;
+	font-size: 0.8em;
+}
+
+
+
+#sidebar {
+
+
+
+	//position: fixed;
+	height: 100%;
+	width: 100%;
+
+
+	/*padding-top: $grid-gutter-width;*/
+	padding-bottom: $grid-gutter-width * 2;
+	//border-left: 3px solid $sidebar-bg;
+	font-size: $font-size-small;
+	width: $sidebar-width;
+	//z-index: $zindex-sticky;
+
+
+
+	.menu-wrapper {
+		max-height: 90vh;
+		overflow: auto;
+		display: block;
+		background: lighten( $sidebar-bg, 30%);
+
+	}
+
+
+
+	h3.title,
+	h3.widget-title	{
+		font-family: $font-heading;
+		@include font-size($font-size-h3-list);
+
+		padding: .25em 0 1.5rem;
+		color: wheat;
+		font-weight: 700;
+		margin: 1rem 0;
+		position: relative;
+
+
+
+		&:before_turned_off {
+			content: "";
+			width: 1000px;
+			height: 100%;
+			background: lighten( $sidebar-secondary-color, 8.5%);
+			display: block;
+			position: absolute;
+			right: 100%;
+			top: -10px;
+
+			//@include xash-border-radius(50px);
+			@include xash-box-shadow( -20px 0 15px -20px fade($brand-primary-dark, .35) inset );
+		}
+	}
+
+
+
+
+	div.menu-wrapper {
+		padding: $grid-gutter-width / 2;
+		padding-top: 0;
+
+
+		ul.sidebar-menu,
+		> ul,
+		> ul li,
+		ul.sidebar-menu li {
+			@include reset();
+		}
+
+
+	}  /// menu-wrapper
+
+	/// #sidebar
+	@include desktop {
+		position: relative;
+		top : $grid-gutter-width * 2;
+
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -$grid-gutter-width;
+			height: 100%;
+			width: 100%;
+			background: $brand-primary-light;
+
+			//@include xash-box-shadow(0 0 25px rgba($brand-primary-dark, .4) inset);
+			@include xash-border-radius(0 30px 30px 0);
+			@include transform(rotate(7deg));
+		}
+
+	}
+
+
+
+
+	@include phone {
+		background-color: $brand-primary-light
+	}
+}
+
+
+
+
+.sidebar-wrapper {
+
+
+	> div {
+		margin-bottom: 3rem;
+	}
+
+
+	ul,
+	li {
+		@include reset();
+	}
+
+	ul {
+
+		padding: .5rem 1.5rem;
+
+
+
+		li {
+			//border-left: 3px solid transparent;
+			@include transition();
+
+
+			a {
+				padding: .5rem;
+				display: block;
+				color: $sidebar-color;
+			}
+
+
+
+
+
+			&:hover {
+				background-color: $sidebar-bg-hover;
+				border-color: $brand-primary-light;
+
+				a {
+					color: $sidebar-color-hover;
+				}
+			}
+		}
+	}
+
+
+	//-----------------------------------------
+	// Course Links
+	.course-list-wrapper {
+
+		ul {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+
+
+
+		li {
+			// border-left: 3px solid $sidebar-secondary-color;
+			position: relative;
+
+
+			&:before {
+				content: "";
+				width: 40px;
+				position: absolute;
+				top: 1.5rem;
+				left: -1rem;// 100%;
+				height: 1px;
+				display: block;
+				background-color: white;
+			}
+
+
+
+			a {
+				line-height: 1;
+				padding: 1rem 2rem;
+
+
+				&:before {
+					content: ""	;
+					height: .75rem;
+					width: .75rem;
+					display: block;
+					background: white;
+					position: absolute;
+					top: 1.15rem;
+					left: .5rem;
+					@include xash-border-radius(15px);
+
+				}
+
+			}
+
+
+
+			&:hover {
+				background-color: $sidebar-bg-hover;
+				border-color: $brand-primary-light;
+
+
+				&:before,
+				a:before {
+					//background-color: $brand-primary-light;
+				}
+			}
+		}
+
+
+
+	}  // course-list-wrapper
+
+
+
+
+	//-----------------------------------------
+	// News and General
+	.list-news,
+	.news-list,
+	.news-archive {
+
+		&,
+		li,
+		a {
+			@include reset();
+		}
+
+
+		li {
+
+			background-color: $sidebar-bg-hover;
+			border-color: $brand-secondary;
+
+			a {
+				color: $sidebar-color-hover;
+			}
+
+			//background: white;
+			margin: 0 0 1rem;
+			padding: $grid-gutter-width / 2;
+
+			@include xash-box-shadow();
+
+
+			a {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+
+
+		.post-data {
+			@include make-row();
+		}
+
+
+		.post-thumb,
+		.post-content {	}
+
+
+		.post-thumb {
+			width: 25%;
+			padding-left: $grid-gutter-width / 2;
+
+
+			& + .post-content {
+				width: 75% ;
+			}
+		}
+
+
+
+
+		.post-content {
+
+			padding: 0;
+		}
+
+
+
+		.post-title {
+			color: $brand-primary-dark;
+			margin-bottom: 1rem;
+
+
+			a {
+				font-weight: inherit;
+				margin: 0;
+				padding: 0;
+			}
+
+		}
+
+
+		.icon-date
+		{
+			&:before {
+				color: $sidebar-secondary-color;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+
+	@include desktop {
+		.sidebar-wrapper {
+			padding: 0 2rem 0 0;
+		}
+
+
+		&-right {
+			.sidebar-wrapper {
+				padding: 0 0 0 2rem;
+			}
+		}
+	}
+
+
+
+
+
+	.container {
+		width: 100%;
+	}
+
+
+	.form-wrapper {
+		width: 100%;
+		padding: 0;
+
+		@include xash-box-shadow(none);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// </editor-fold>

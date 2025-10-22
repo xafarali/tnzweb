@@ -1,0 +1,782 @@
+//=========================================================================
+//=========================================================================
+//  ALL FORM Elements custom implementation comes here
+// 	Custom Buttons and Input based on Locations etc.
+//=========================================================================
+//=========================================================================	
+
+/**
+	Form elements
+	@author: xafaR
+	@file: layout-form-elements
+
+*/
+
+
+
+// <editor-fold desc="- - - - [ Buttons ] - - - -">
+
+
+	// Cloned from Bootstrap CSS
+	.btn {
+		display: inline-block;
+		font-weight: $btn-font-weight;
+		color: $btn-default-color;
+		text-align: center;
+		vertical-align: middle;
+		user-select: none;
+		background-color: transparent;
+		border: $btn-border-width solid $btn-border-color;
+		//text-transform: uppercase;
+
+
+		@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+		@include transition($btn-transition);
+
+		@include hover {
+			color: $btn-default-color-hover;
+			text-decoration: none;
+		}
+
+
+
+
+				&.icon {
+					padding-right: $gutter-width * 2;
+		
+					> span {
+
+						@include border-radius(200px);
+						// background-color: $btn-default-text-color;
+						color: $btn-default-text-color;
+						
+		
+						height: 2.5rem; // 45px;
+						width: 2.5rem; // 45px;
+						
+						text-align: center;
+						display: inline-flex;
+						align-items: center;
+						justify-content: center;
+						position: absolute;
+						top: .255rem; //5px;
+						right: 4px;
+
+
+
+						svg {
+							fill: $btn-default-text-color;
+						}
+						
+					}
+
+					&.primary > span {
+						color: $btn-default-bg;
+						background: white;
+					}
+				}
+
+
+	}
+
+
+
+
+
+	#{$button-grp}{
+
+		@include input-bg-color(true);
+		min-height: $input-height;
+		line-height: $btn-line-height;
+		font-weight:$btn-font-weight;
+
+
+
+
+		//-----------------------------------------------------------
+		// THEME STYLES
+		//-----------------------------------------------------------
+		&:before {
+
+			//content: '';
+			position: absolute;
+			height: 100%;
+			width: 50px;
+			top: 0;
+			left: -7px;
+			background: darken( $brand-primary-dark , 10%);
+			z-index: -1;
+
+			@include xash-border-radius($btn-border-radius);
+
+		}
+
+	}
+
+
+	#{$input-grp} {
+		@include input-bg-color();
+	}
+
+	//.button {
+	//	@extend .btn;
+	//}
+
+
+
+
+
+button,
+input[type="submit"],
+input[type="button"]
+{
+	//color : $btn-default-color;
+	//background-color: $btn-default-bg;
+
+	&:hover {
+		cursor: pointer;
+		//background-color: $btn-default-bg-hover;
+
+		@include xash-box-shadow(0 0 0 0.1rem rgba(32, 18, 47, 0.15));
+	}
+
+}
+
+#{$button-grp} {
+
+	@extend .btn !optional;
+
+	// style theme ma ka lorha
+	background-color: $btn-default-bg;
+	position: relative;
+	font-family: $btn-font-family;
+	
+
+	.fa,
+	*:before {
+		font-size: inherit;
+	}
+
+
+
+	&.arrow {
+
+		&:after {
+			display: inline-block;
+			color: white;
+			font-family: $icon-font-awesome;
+			padding: 0 10px 0 0;
+			font-size: .9rem;
+			content: '\f178';
+			padding: 0 0 0 15px;
+
+
+			.right & {
+				content: "\f177";
+				padding: 0 15px 0 0;
+			}
+
+		}
+	}
+
+
+
+
+	&.simple {
+		&:after,
+		&:before {
+			content: none;
+		}
+	}
+
+
+
+
+
+	&.btn-icon {
+		background: transparent;
+		color: $brand-secondary;
+		border:0;
+		padding: inherit $grid-gutter-width;
+
+
+
+		&:active,
+		&:focus {
+			@include xash-box-shadow(none);
+		}
+
+	}
+
+
+
+
+
+	.fa {
+		font-size: 1.25em; //$font-size-h2;
+		// vertical-align: text-top;
+
+
+		&:before {
+			color : $brand-primary;
+			color: inherit;
+			margin-right: 5px;
+			margin-left:  5px;
+			top: 0;
+			position: relative;
+		}
+	}
+
+
+
+
+
+	&.wide {
+		padding-left : 3rem;
+		padding-right: 3rem;
+	}
+
+
+
+	&.narrow {
+		padding-left: .5rem;
+		padding-right: .5rem;
+	}
+
+
+
+	&.full,
+	&.full-width {
+		width: 100%;
+	}
+
+
+
+	// Delete
+	&.del {
+		@extend .btn-danger;
+	}
+
+
+
+	// Button with outline
+	&.outline {
+		background-color: transparent;
+		color: $btn-default-bg;
+		border:$btn-border-outline $btn-default-bg solid;
+
+
+		&:hover {
+			background-color: $btn-default-bg;
+			border-color: $btn-default-bg;
+			color: $btn-default-color;
+		}
+	}
+
+
+}
+
+
+
+
+.btn-primary,
+.btn.primary {
+
+	//@extend .btn;
+
+	color: $btn-primary-color!Important;
+	background: $btn-primary-bg!important;
+
+
+	&:hover {
+		background: $btn-primary-bg-hover!important;
+	}
+}
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ INPUT ] - - - -">
+
+	.row-form {
+		//margin-bottom: $grid-gutter-width;
+
+		@extend .form-group !optional;
+	}
+
+
+	/**
+
+	@Note: 23-4-18, Implemented small and large classic classes as well
+	*/
+	#{$input-grp} {
+
+		@extend .form-control  !optional;
+
+		min-height: $input-height;
+		color: $text-color;
+		padding: $input-padding-y $input-padding-x;
+		width: 100%;
+		border: $input-border-style;
+		border-width: $input-border-style-width;
+
+		// @todo Need to apply standard height
+
+
+		&.lg,
+		&.large {
+			@extend .form-control-lg  !optional;
+			min-height: $input-height-lg;
+		}
+
+
+
+		&.sm,
+		&.small {
+			@extend .form-control-sm  !optional;
+			//height: $input-height-sm;
+			// implemented for Alpine, small textbox
+			display: inline-block;
+
+		}
+
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+
+
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: textfield;
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+
+
+	
+	input.flat {
+		border-width: 0 0 3px;
+		padding-left: 0;
+
+		@include border-radius(0);
+
+
+		&:focus,
+		&:hover,
+		&:active {
+
+			border-color: $gray-700;
+			@include xash-box-shadow(none);
+		}
+	}
+
+
+
+
+// </editor-fold>
+
+
+textarea {
+	color : $text-color;
+}
+
+
+
+
+select {
+	cursor: pointer;
+	background-image: url('images/dropdown-bg.svg');
+	background-repeat: no-repeat;
+	background-position: right center ;
+	background-size: 32px 48px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	appearence: none;
+
+	option {
+		padding: 5px $grid-gutter-width/2;
+	}
+}
+
+
+
+
+
+#{$input-grp}, #{$button-grp} {
+	&.auto {
+		display: inline-block;
+		width: auto;
+		vertical-align: middle;
+	}
+}
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="- - - -[ BUTTON  ]- - - -">
+
+	.btn.small,
+	.btn.sm,
+	.btn-sm {
+
+		@extend .btn-sm;
+
+		min-height: $input-height-sm;
+		height: $input-height-sm;
+		letter-spacing: 0;
+		padding: 	 $btn-padding-y-sm	$btn-padding-x-sm;
+		font-size: 	 $btn-font-size-sm;
+		font-weight: $btn-font-weight-sm;
+
+	}
+
+
+
+
+
+	.btn.large,
+	.btn.lg {
+		@extend  .btn-lg;
+	}
+
+
+	.btn {
+		&.large,
+		&.lg,
+		&-lg {
+			height: $input-height-lg;
+			min-height: $input-height-lg;
+		}
+	}
+
+
+
+/*  Fancy Input and Checkboxs
+	//--------------------------------------------------*/
+//  ------------------------------------------------------
+//  Check
+//  ------------------------------------------------------
+// Check box stuff;
+.input-fancy {
+
+	display: inline-block;
+	text-align: left;
+
+
+
+	input[type="checkbox"],
+	input[type='radio'] {
+		display: none;
+
+
+		&:checked + .checkbox,
+		&:checked + label,
+		&.checked + .checkbox,
+		&.checked + label
+		{
+
+			color : $text-color ;
+			border-color: $border-color;
+
+
+			&:after,
+			&::after {
+				content:"\f00c";
+				font-family:$font-icon;
+				color: white;
+				background: $brand-primary;
+				padding-top: 1px;
+
+
+				@include transform(translateY(-50%) scale(1));
+			}
+
+
+
+			// before font size in Large
+			&.large {
+				&:after,
+				&::after {
+					font-size: $__check_large;
+				}
+			}
+
+
+			// before font size in Small
+			&.small {
+				&:after,
+				&::after {
+					font-size: $__check_small;
+				}
+			}
+
+
+		}
+	}
+
+
+
+	.checkbox,
+	.radio-btn,
+	input[type="radio"] + label,
+	input[type="checkbox"] + label {
+
+		position: relative;
+		padding: 0 0 0 calc(1.8em + 8px);
+		display: block;
+		transition : all .15s;
+		cursor: pointer;
+		line-height: $line-height-base // 1.15;
+
+
+		span {
+			display: inline-block;
+			overflow: hidden;
+			padding: 0;   // .77em 0;
+		}
+
+
+		// Fontsize base 20px;
+		&:before,
+		&::before,
+		&:after,
+		&::after {
+			content: "";
+			position: absolute;
+			font-family: $font-icon;
+			//font-size: $__check_normal;
+			color: $link-color;
+			//top: 16px;
+			top: 50%;
+			left: 0;
+			display: inline-block;
+			//font-size:0;
+			line-height: 1.5em; 	/*30px;*/
+			height: 1.6em; 			/*30px;*/
+			padding-left:0px;
+			width: 1.6em; 			/*30px;*/
+			text-align: center;
+			border-radius: 2px;
+			vertical-align: text-bottom;
+			//margin: -.85em 10px 10px 0;
+			margin: 0 10px 10px 0;
+			background: $input-bg;
+			//font-size: $__check_normal;
+
+
+			@include box-model();
+			@include transform(translateY(-50%));
+			@include transition( all 0.1s cubic-bezier(.55,.06,.68,.19) );
+
+		}
+
+
+		&:before,
+		&::before {
+			// without border looking cool
+			//border:2px solid $border-color;
+			background: $gray-400;
+		}
+
+
+		&:after,
+		&::after {
+			@include transform(translateY(-50%) scale(.3));
+		}
+
+
+		// Large Label {extended manualy for contact form}
+		// font-size is inherited 24px
+		&.large {
+			padding: 0 0 0 calc(1.8em + 15px);
+
+
+			&:before,
+			&::before {
+				// top:0.625em;	/*15px;*/
+				line-height: 1.6em; 	/*40px;*/
+				height: 1.66667em; 	/*40px;*/
+				width: 1.66667em; 	/*40px;*/
+				padding-left:2px;
+				font-size: $__check_large;
+			}
+		}
+
+
+		// Fontsize base 18px;
+		&.small {
+			&:before,
+			&::before {
+				width: 1.112em; 	/*20px;*/
+				height: 1.1125em; 	/*20px;*/
+				line-height: 1.2223em; /*22px;*/
+				top:.333334em; /*6px;*/
+				font-size: $__check_small;
+			}
+		}
+
+	} // checkbox  -------------
+
+
+	//  ------------------------------------------------------
+	//  RADIO BUTTON
+	//  ------------------------------------------------------
+	input[type="radio"] {
+
+		&:checked + label:after,
+		&.checked + label:after {
+			content: "";
+			border: .5rem solid $brand-primary;
+			background: $input-bg;
+
+		}
+	}
+
+	.radio-btn,
+	input[type="radio"] + label {
+
+		&:before,
+		&::before,
+		&:after{
+			border-radius: 50px;
+			padding:0;
+		}
+
+
+
+		&:after,
+		&::after {
+			content: "";
+			border-width: 0 solid $brand-primary;
+			background: $input-bg;
+		}
+	}
+
+	//  RADIO BUTTON  ---------------
+
+
+}  // fancy input
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Links ] - - - -">
+
+	a.read-more,
+	.anchor {
+
+		@extend .btn;
+
+		//display: inline-block;
+		//background-color: $more-bg;//$btn-default-bg;
+		//color: $more-color;
+		//padding: .8rem 1.5rem .5rem;
+		//border: 3px solid $more-bg-hover;
+		//line-height: $btn-line-height;
+		//
+		////@include font-size($size-h6);
+		//
+		//
+		//
+		//
+		//&:hover {
+		//	background-color: $more-bg-hover;
+		//	color: $more-color-hover;
+		//}
+		//
+		//
+		//
+		//&:after,
+		//&:before {
+		//	display: inline-block;
+		//	//color: white;
+		//	font-family: $icon-font-awesome;
+		//	padding: 0 0 0 $gutter-width;
+		//	//font-size: .9rem;
+		//}
+		//
+		//
+		//
+		//&:after {
+		//	content: $more-icon;
+		//}
+		//
+		//
+		//&.alt {
+		//	background-color: $brand-secondary;
+		//	color: $brand-primary;
+		//	border: 0;
+		//}
+		//
+		//
+		//
+		//&.anim {
+		//
+		//	+ span.rm-anim-bar {
+		//		content: "";
+		//		height :100%;
+		//		width: 100%;
+		//		background: $brand-primary;
+		//		display: block;
+		//		position: absolute;
+		//		top : 0;
+		//		left:0;
+		//
+		//		@include transform(translateX(-200%));
+		//
+		//
+		//
+		//
+		//	}
+		//
+		//	&.left + span.rm-anim-bar {
+		//		@include transform(translateX(200%))
+		//	}
+		//
+		//}
+
+
+
+	} // Read more
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Error Classes ] - - - -">
+	.has-error {
+
+		@include xash-box-shadow(0 0 20px rgba($danger, 20%));
+		background-color: rgba($danger , 40%);
+	}
+
+
+// </editor-fold>
+
+
+
+
+
+

@@ -1,0 +1,264 @@
+/**
+	Bootstrap Overrides
+	@author: xafaR
+	@file: bootstrap-override
+
+*/
+
+
+
+// <editor-fold desc="- - - - [ Modal ] - - - -">
+
+// lund
+
+// Modals
+.modal-dialog {
+	min-height: calc(100vh - 60px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: visible;
+
+
+	@media(max-width: 768px) {
+		min-height: calc(100vh - 20px);
+	}
+
+
+	.modal-content {
+		@include xash-box-shadow($modal-modal-shadow);
+		border:0;
+	}
+
+
+	.modal-title {
+		color: $modal-title-color;
+	}
+
+	.modal-header {
+		background: $modal-header-bg-color;
+	}
+
+
+	.lbl-icon {
+
+		.fa:before {
+			color: $gray-400;
+			font-size: 4em;
+		}
+
+	}
+
+
+	.modal-body {
+		iframe {
+			width: 100%;
+		}
+	}
+
+
+}
+
+
+
+.modal {
+
+	&.fade .modal-dialog {
+		@include transform(/*translateY(-20%)*/ scale(.75));
+		//transform: scale(0.85);
+		@include opacity(.65);
+	}
+	&.show .modal-dialog {
+		@include transform(translateY(0) scale(1));
+		@include opacity(1);
+	}
+}
+
+
+
+body.modal-open {
+
+	padding: 0!important;
+
+
+	#header-wrapper,
+	#body-wrapper,
+	#footer {
+		filter: blur(4px);
+	}
+
+}
+
+
+// </editor-fold>
+
+
+
+
+
+// <editor-fold desc="- - - - [ Alert ] - - - -">
+
+// Inherit Alert's padding
+@each $color, $value in $theme-colors {
+
+	.alert-#{$color},
+	.alert.#{$color} {
+		//@extend .alert;
+
+		@include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+		
+		a {
+			@extend  .alert-link;
+		}
+	}
+}
+
+// </editor-fold>
+
+
+
+
+
+// <editor-fold desc="- - - - [ Cards ] - - - -">
+
+/*  Cards
+//----------------------------------------------------------------------------------*/
+	%thumb-wrap {
+		position: relative;
+		overflow: hidden;
+		height: 1px;
+		padding-top: 100%;
+
+
+		@include box-model(content-box);
+
+
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+
+	.row-card {
+		margin-left: 0;
+	}
+
+
+	.card {
+		background: transparent;
+		border: 0;
+		//padding: $grid-gutter-width / 3;
+		//padding-left: 0;
+		//padding-bottom: $grid-gutter-width / 2;
+
+
+		.card-wrap {
+			padding: $grid-gutter-width / 2;
+			border:1px solid $border-color;
+			background: $body-bg;
+		}
+
+		> div {
+			height: 100%;
+			position: relative;
+
+		}
+
+
+
+		.thumb-wrap {
+			@extend %thumb-wrap;
+
+			width: calc( 100% + #{$grid-gutter-width} );
+			margin: -($grid-gutter-width / 2 ) ;
+			margin-bottom: $grid-gutter-width / 2;
+
+		}
+
+
+		
+
+
+
+		.action-panel {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+
+
+	}
+
+
+
+// </editor-fold>
+
+
+
+
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="- - - -[ Dropdown and Menus ]- - - -">
+
+.dropdown-menu {
+
+	@include xash-box-shadow($shadow-dialog);
+
+
+	> * {  @extend .dropdown-item !optional;  }
+
+
+	&.menu-right {  @extend .dropdown-menu-right  !optional;  }
+
+
+}
+
+
+
+
+
+
+// </editor-fold>
+
+
+
+
+
+//// <editor-fold defaultstate="collapsed" desc="-------[ Pagination ]-------">
+	ul.pagination {
+		border:1px solid rgba($brand-primary, 20%);
+
+		.active span,
+		a {
+			display: inline-block;
+			padding: 5px 10px;
+		}
+
+
+		.active span {
+			background-color: $brand-primary-light;
+			color: $brand-primary-dark;
+			font-weight: bold;
+		}
+
+
+		li {
+			border-left:1px solid rgba($brand-primary, 20%);
+
+
+			&:first-child {
+				border:0;
+			}
+		}
+	}
+
+
+
+// </editor-fold>

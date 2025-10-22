@@ -1,0 +1,350 @@
+// @todo , Import new grid layout from PQA
+// <editor-fold desc="- - - - [ Grid ] - - - -">
+
+%table-common-props {
+	vertical-align: middle;
+	display: table-cell;
+	float: none;
+
+
+}
+
+
+@mixin table_com_prop() {
+
+	vertical-align: middle;
+	display: table-cell;
+	float: none;
+	//@extend %table-common-props;
+}
+
+
+// Grid Columns for table
+/* Disabled, Obsolete !!*/
+//div[class*="row-table"] {
+//
+//	// Order is considered.
+//	> div {
+//		width: 100%;
+//		@extend %table-common-props;
+//
+//	}
+//
+//
+//	@include  xash-grid-column(phone);
+//	@include  xash-grid-column(xs);
+//
+//
+//	> div[class*='-phone'],
+//	> div[class*='-xs'] {
+//		@include table_com_prop();
+//		//@extend %table-common-props;
+//	}
+//
+//
+//	//@media @device-phone {
+//	//} phone disabled , by default its on
+//
+//
+//
+//	@media #{$device-tablet-start} {
+//	@include  xash-grid-column(tablet);
+//	@include  xash-grid-column(sm);
+//
+//	> div[class*='-tablet'],
+//	> div[class*='-sm']{
+//		@include table_com_prop();
+//		//@extend %table-common-props;
+//	}
+//}
+//
+//
+//
+//	@media #{$device-desktop}  {
+//	@include  xash-grid-column(md);
+//
+//	> div[class*='-md'] {
+//		@include table_com_prop();
+//		//@extend %table-common-props;
+//	}
+//
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//	// Generalized Columns, always with same width
+//	@include  xash-grid-column(col-fixed);
+//
+//
+//}
+
+
+// </editor-fold>
+
+
+// Override
+//-----------------------------------------
+//.container {
+//
+//	width: 100%;
+//
+//
+//	@include media-lg {
+//
+//		max-width: 1580px;
+//	}
+//
+//
+//	@include desktop {
+//		//width: calc( 96% - 15px );
+//
+//
+//		&.condensed {
+//			width: 70%;
+//			display: block;
+//		}
+//	}
+//}
+
+//.container {
+//	@include make-container();
+//	@include make-container-max-widths();
+//}
+
+// Override
+//-----------------------------------------
+.container {
+	width: 100%;
+	max-width: 1580px;
+
+
+	@include desktop {
+		width: calc( 92% - 15px );
+		max-width: calc( 92% - 15px );
+	}
+
+
+
+	&.condensed {
+		padding-left: 20%;
+		padding-left: 15vw;
+
+		padding-right: 20%;
+		padding-right: 15vw;
+	}
+
+}
+
+
+
+
+
+
+
+// <editor-fold desc="- - - - [ Utilities ] - - - -">
+
+.row {
+	&.align-bottom {
+		align-items: flex-end;
+	}
+
+}
+
+
+@mixin xash-row () {
+	margin-left:  ceil(($grid-gutter-width / -2));
+	margin-right: floor(($grid-gutter-width / -2));
+
+	@include clearfix;
+
+	@include make-row();
+}
+
+
+
+
+// Middle Content
+.mc,
+.flex-vc {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	flex-grow: 1;
+	flex-wrap: wrap;
+}
+
+
+.flex-vc {
+	flex-direction: column;
+	justify-content: space-around;
+	align-content: normal;
+}
+
+.flex-hc {
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: normal;
+	width: 100%;
+}
+
+
+.align-right {}
+
+.self-stretch,
+.str{
+	align-self: stretch;
+}
+
+.self-center {
+	align-self: center;
+}
+.justify-end {
+	justify-content: flex-end;
+}
+
+
+.v-container {
+	align-items: stretch;
+	display: flex;
+	height: 100%;
+	width: auto;
+	max-width: unset;
+
+
+
+	// child with midle conntent
+	 > div {
+		 display: flex;
+		 align-items: center;
+	 }
+
+
+	&.full {
+		 > div {
+			 align-items: stretch;
+		 }
+	}
+
+
+	@include phone {
+		flex-wrap: wrap;
+	}
+
+}
+
+.v-direction {
+	flex-direction: column;
+}
+
+
+.grid-order {
+	&-0 { order:0; }
+	&-1 { order:1; }
+	&-2 { order:2; }
+	&-3 { order:3; }
+	&-4 { order:4; }
+
+
+	@include phone {
+		&-0-phone { order:0; }
+		&-1-phone { order:1; }
+		&-2-phone { order:2; }
+		&-3-phone { order:3; }
+		&-4-phone { order:4; }
+	}
+
+
+	@include tablet {
+		&-0-tablet { order:0; }
+		&-1-tablet { order:1; }
+		&-2-tablet { order:2; }
+		&-3-tablet { order:3; }
+		&-4-tablet { order:4; }
+	}
+
+
+
+	@include desktop {
+		&-0-desktop { order:0; }
+		&-1-desktop { order:1; }
+		&-2-desktop { order:2; }
+		&-3-desktop { order:3; }
+		&-4-desktop { order:4; }
+	}
+
+}
+
+
+// </editor-fold>
+
+
+
+
+
+// GENERATE Grids
+/* Grid Dissabled */
+// @include xash-grid-column();
+
+
+//.row-span,
+//.row-table {
+//
+//	@include xash-row();
+//
+//	align-items: center;
+//}
+
+
+.row-flex.fixed {
+	display: flex;
+	flex-wrap: nowrap;
+
+
+	> * {
+		flex: 1 1 auto;
+	}
+}
+
+.row-sm {
+	// Row with paddng 10 if column has
+}
+
+
+
+// Panel Cards, Vertical Cards
+//------------------------------------------------------
+@include xash-grid-column('v-panel', $grid-columns, $grid-gutter-width, $grid-breakpoints, vw, true );
+
+
+
+// Dynamic Container Based on breaksizes defined
+@each $item_name, $item_width in $container-max-widths {
+
+	.container-#{$item_name} {
+		@include make-container();
+		max-width: $item_width;
+
+	}
+}
+
+.row-table {
+	@include make-row();
+}
+
+
+
+//@mixin make_custom_col ( $class: panel, $col: $grid-columns, $unit: vw) {
+//	@for $i from 1 through $col {
+//
+//		$width: percentage(1 / $i) * 1$unit;
+//
+//		.#{$class}-#{$i}{
+//			width: $width;
+//		}
+//	}
+//}

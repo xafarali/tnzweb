@@ -1,0 +1,115 @@
+// --------------------------------------------------
+// Buttons Override, of Boot
+// --------------------------------------------------
+
+// Normal Button.
+.btn {
+	//border: $btn-border-width solid $btn-default-border;
+	//height: $btn-height-base;
+	position: relative;
+	background-color: $btn-default-bg;
+	color: $btn-default-text-color;
+	font-size: $btn-font-size;
+	font-family: $btn-font-family;
+
+	@include transition( background-color .25s);
+
+
+	&:hover {
+		background-color: $btn-default-bg-hover;
+	}
+
+
+
+
+	&.wide {
+		width: 20rem;
+		max-width: 100%;
+	}
+
+
+	
+	
+
+
+}
+
+
+
+
+
+
+
+// Button Sizes
+// --------------------------------------------------
+
+	.btn-lg,
+	.btn.large,
+	.btn.lg {
+		// line-height: ensure even-numbered height of button next to large input
+		@include button-size(
+				$padding-large-vertical,
+				$padding-large-horizontal,
+				$font-size-large,
+				$line-height-large,
+				$btn-border-radius-large,
+				$btn-height-large
+		);
+	}
+
+	.btn-sm,
+	.btn.small,
+	.btn-small{
+		// line-height: ensure proper height of button next to small input
+		@include button-size(
+				$padding-small-vertical,
+				$padding-small-horizontal,
+				$font-size-small,
+				$line-height-small,
+				$btn-border-radius-small,
+				$btn-height-small
+		);
+	}
+	.btn-xs,
+	.btn.xs {
+		@include button-size(
+				$padding-xs-vertical,
+				$padding-xs-horizontal,
+				$font-size-small,
+				$line-height-small,
+				$btn-border-radius-small,
+				$btn-height-xsmall
+		);
+	}
+
+
+
+
+
+
+
+
+/// <editor-fold desc="- - - - [ INPUTS/TEXT ] - - - -">
+
+	#{$input-grp} {
+	 	@extend .form-control;
+
+	 	// @todo Need to apply standard height
+	 	height : $btn-height-base;
+		//color:lightgoldenrodyellow;
+		font-family: $btn-font-family;
+	}
+
+
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+input::-webkit-inner-spin-button {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearence: textfield;
+
+}
+
+// </editor-fold>
