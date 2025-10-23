@@ -77,7 +77,7 @@
 	padding: $input-btn-padding-y $input-btn-padding-x;
 	display: inline-block;
 	vertical-align: middle;
-	background-color: $btn-default-bg;
+	background-color: white;
 	color: $btn-default-color;
 
 
@@ -111,6 +111,7 @@
 
 .tag {
 	@extend %tag-style;
+	@include box-shadow();
 }
 
 
@@ -384,10 +385,25 @@ $total-number:10;
 }
 
 
-.font-weight-100 { 	font-weight: 100!important; }
-.font-weight-300 { 	font-weight: 300!important; }
-.font-weight-400 { 	font-weight: 400!important; }
-.font-weight-500 { 	font-weight: 500!important; }
+.font-weight-100,
+.font-thin	{ 	
+	font-weight: 100!important; 
+}
+
+.font-weight-300,
+.font-light { 	
+	font-weight: 300!important; 
+}
+
+.font-weight-400,
+.font-regular { 
+	font-weight: 400!important; 
+}
+
+.font-weight-500,
+.font-medium { 	
+	font-weight: 500!important; 
+}
 .font-weight-700 { 	font-weight: 700!important; }
 
 

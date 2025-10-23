@@ -224,7 +224,8 @@ $font-heading-h3: $font-heading;
 $font-heading-h4: $font-heading;
 $font-heading-h5: $font-body;
 $font-heading-h6: $font-body;
-
+$font-display-1 : $font-heading-secondary;
+$font-display-2 : $font-heading-secondary;
 
 
 
@@ -311,14 +312,21 @@ $font-size-d1-list: (
 		
 );
 
+$font-size-d2-list: (
+		general: $h1-font-size,
+		tablet: $h1-font-size,
+		desktop: 6rem,
+		large: 7.5rem,
+	
 
+);
 
 
 $font-size-h1-list: (
 	general: $h1-font-size,
 	tablet:  $h1-font-size,
-	desktop:  5.5rem,
-	large:    6.5rem,
+	desktop:  6rem,
+	large:    7rem,
 );
 
 
@@ -332,8 +340,8 @@ $font-size-h2-list: (
 $font-size-h3-list: (
 	general: $h3-font-size,
 	tablet:  $h3-font-size,
-	desktop: 1.8rem,
-	large: 1.8rem
+	desktop: 2.4rem,
+	large: 2.6rem
 );
 
 $font-size-h4-list: (
@@ -368,10 +376,11 @@ $size-h6: $font-size-h6-list;
 
 
 // Lead Fontsize
-$lead-font: $font-body;
-$lead-font-size: 1.5rem;
+$lead-font: $font-heading;
+$lead-font-size: 2.6rem;
 $lead-font-size-ss: $font-size-h3-list;
-$lead-font-weight: 400;
+$lead-font-weight: 100;
+
 
 
 // </editor-fold>

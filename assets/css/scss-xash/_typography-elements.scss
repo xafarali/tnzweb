@@ -178,6 +178,12 @@ h1,h2, h3, h4, h5, h6,
 
 }
 
+.display-1,
+.display-2 {
+	font-family: $font-heading-secondary;
+}
+
+
 /*
 Generating lot of Mess
  */
@@ -366,10 +372,16 @@ sup {
 	letter-spacing: -3px;
 	font-weight: inherit;
 	line-height: 1;
-
+	font-family: $font-display-1;
 	color: $color-dp;
 }
+.display-2 { 
+	
+	font-family: $font-display-2;
 
+	@include font-size($font-size-d2-list)
+	
+}
 .display-1 {
 	@include font-size($font-size-d1-list);
 
@@ -433,19 +445,20 @@ h1.heading {
 
 
 .lead {
-	font-weight: $lead-font-weight;
+	
 
 	@include font-size($lead-font-size-ss);
 
 	//font-size: $lead-font-size;
 	margin-bottom: $grid-gutter-width ;
-	line-height: 1.5;
+	line-height: 1.25;
 	font-family: $lead-font;
-
+	font-weight: $lead-font-weight;
+	color: map-get( $primary-colorkit, "800" );
 
 
 	&.lg {
-		font-size: 2rem;
+		font-size: 2.5rem;
 
 		@include font-size($font-size-h3-list, 1.3);
 
@@ -455,12 +468,13 @@ h1.heading {
 
 	}
 
+
 	&.xl {
 
 		@extend .h2;
 		color: $text-color;
 		margin: $grid-gutter-width  0;
-		font-family: $font-body-light;
+		font-family: $font-heading-secondary;
 		font-weight: 300;
 
 

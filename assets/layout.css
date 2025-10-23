@@ -3493,8 +3493,8 @@ h6, .h6 {
 }
 
 .lead {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 2.6rem;
+  font-weight: 100;
 }
 
 .display-1 {
@@ -16339,16 +16339,23 @@ All Typography Override of Bootstrap here.
   font-style: normal;
 }
 @font-face {
-  font-family: "Outfit Light";
+  font-family: "Outfit";
   src: url("./fonts/outfit-thin.eot");
   src: url("./fonts/outfit-thin.eot?#iefix") format("embedded-opentype"), url("./fonts/outfit-thin.svg#${family-name}") format("svg"), url("./fonts/outfit-thin.woff") format("woff"), url("./fonts/outfit-thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit Light";
+  src: url("./fonts/outfit-light.eot");
+  src: url("./fonts/outfit-light.eot?#iefix") format("embedded-opentype"), url("./fonts/outfit-light.svg#${family-name}") format("svg"), url("./fonts/outfit-light.woff") format("woff"), url("./fonts/outfit-light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Outfit";
-  src: url("./fonts/montserrat-thin.eot");
-  src: url("./fonts/montserrat-thin.eot?#iefix") format("embedded-opentype"), url("./fonts/montserrat-thin.svg#${family-name}") format("svg"), url("./fonts/montserrat-thin.woff") format("woff"), url("./fonts/montserrat-thin.ttf") format("truetype");
+  src: url("./fonts/outfit-light.eot");
+  src: url("./fonts/outfit-light.eot?#iefix") format("embedded-opentype"), url("./fonts/outfit-light.svg#${family-name}") format("svg"), url("./fonts/outfit-light.woff") format("woff"), url("./fonts/outfit-light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -16370,6 +16377,13 @@ All Typography Override of Bootstrap here.
   font-family: "Roboto";
   src: url("./fonts/roboto-thin-wf.eot");
   src: url("./fonts/roboto-thin-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/roboto-thin-wf.svg#${family-name}") format("svg"), url("./fonts/roboto-thin-wf.woff") format("woff"), url("./fonts/roboto-thin-wf.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/roboto-light-wf.eot");
+  src: url("./fonts/roboto-light-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/roboto-light-wf.svg#${family-name}") format("svg"), url("./fonts/roboto-light-wf.woff") format("woff"), url("./fonts/roboto-light-wf.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -16382,8 +16396,8 @@ All Typography Override of Bootstrap here.
 }
 @font-face {
   font-family: "Roboto Light";
-  src: url("./fonts/roboto-thin-wf.eot");
-  src: url("./fonts/roboto-thin-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/roboto-thin-wf.svg#${family-name}") format("svg"), url("./fonts/roboto-thin-wf.woff") format("woff"), url("./fonts/roboto-thin-wf.ttf") format("truetype");
+  src: url("./fonts/roboto-light-wf.eot");
+  src: url("./fonts/roboto-light-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/roboto-light-wf.svg#${family-name}") format("svg"), url("./fonts/roboto-light-wf.woff") format("woff"), url("./fonts/roboto-light-wf.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -16403,15 +16417,36 @@ All Typography Override of Bootstrap here.
 }
 @font-face {
   font-family: "Alumni Sans";
-  src: url("./fonts/antonio-regular-wf.eot");
-  src: url("./fonts/antonio-regular-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/antonio-regular-wf.svg#${family-name}") format("svg"), url("./fonts/antonio-regular-wf.woff") format("woff"), url("./fonts/antonio-regular-wf.ttf") format("truetype");
+  src: url("./fonts/Alumni-Sans-Regular.eot");
+  src: url("./fonts/Alumni-Sans-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/Alumni-Sans-Regular.svg#${family-name}") format("svg"), url("./fonts/Alumni-Sans-Regular.woff") format("woff"), url("./fonts/Alumni-Sans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Alumni Sans";
-  src: url("./fonts/antonio-bold-wf.eot");
-  src: url("./fonts/antonio-bold-wf.eot?#iefix") format("embedded-opentype"), url("./fonts/antonio-bold-wf.svg#${family-name}") format("svg"), url("./fonts/antonio-bold-wf.woff") format("woff"), url("./fonts/antonio-bold-wf.ttf") format("truetype");
+  src: url("./fonts/Alumni-Sans-Thin.eot");
+  src: url("./fonts/Alumni-Sans-Thin.eot?#iefix") format("embedded-opentype"), url("./fonts/Alumni-Sans-Thin.svg#${family-name}") format("svg"), url("./fonts/Alumni-Sans-Thin.woff") format("woff"), url("./fonts/Alumni-Sans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alumni Sans";
+  src: url("./fonts/Alumni-Sans-Light.eot");
+  src: url("./fonts/Alumni-Sans-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/Alumni-Sans-Light.svg#${family-name}") format("svg"), url("./fonts/Alumni-Sans-Light.woff") format("woff"), url("./fonts/Alumni-Sans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alumni Sans";
+  src: url("./fonts/Alumni-Sans-Medium.eot");
+  src: url("./fonts/Alumni-Sans-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/Alumni-Sans-Medium.svg#${family-name}") format("svg"), url("./fonts/Alumni-Sans-Medium.woff") format("woff"), url("./fonts/Alumni-Sans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alumni Sans";
+  src: url("./fonts/Alumni-Sans-Bold.eot");
+  src: url("./fonts/Alumni-Sans-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Alumni-Sans-Bold.svg#${family-name}") format("svg"), url("./fonts/Alumni-Sans-Bold.woff") format("woff"), url("./fonts/Alumni-Sans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -16495,7 +16530,7 @@ h1,
   .lbl-primary,
   .title-lg,
   .title {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1680px) {
@@ -16504,7 +16539,7 @@ h1,
   .lbl-primary,
   .title-lg,
   .title {
-    font-size: 6.5rem;
+    font-size: 7rem;
   }
 }
 
@@ -16548,13 +16583,13 @@ blockquote.lg, h3, .faq-wrapper .cat-heading,
 @media only screen and (min-width:992px) {
   blockquote.lg, h3, .faq-wrapper .cat-heading,
   .h3 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   blockquote.lg, h3, .faq-wrapper .cat-heading,
   .h3 {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -16760,6 +16795,11 @@ h4.heading, .h5, .h6 {
   font-weight: 700;
 }
 
+.display-1,
+.display-2 {
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /*
 Generating lot of Mess
  */
@@ -16875,13 +16915,13 @@ sup {
 @media only screen and (min-width:992px) {
   .font-size-h1,
   .size-h1 {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .font-size-h1,
   .size-h1 {
-    font-size: 6.5rem;
+    font-size: 7rem;
   }
 }
 
@@ -16921,13 +16961,13 @@ sup {
 @media only screen and (min-width:992px) {
   .font-size-h3,
   .size-h3 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .font-size-h3,
   .size-h3 {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -17084,7 +17124,28 @@ sup {
   letter-spacing: -3px;
   font-weight: inherit;
   line-height: 1;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #303F69;
+}
+
+.display-2 {
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .display-2 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .display-2 {
+    font-size: 6rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .display-2 {
+    font-size: 7.5rem;
+  }
 }
 
 .display-1 {
@@ -17154,7 +17215,6 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 
 .lead {
-  font-weight: 400;
   font-size: 1.65rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -17164,21 +17224,23 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 @media only screen and (min-width:992px) {
   .lead {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .lead {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 .lead {
   margin-bottom: 30px;
-  line-height: 1.5;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+  font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #202A46;
 }
 .lead.lg {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-size: 2.145rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -17188,12 +17250,12 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 @media only screen and (min-width:992px) {
   .lead.lg {
-    font-size: 2.34rem;
+    font-size: 3.12rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .lead.lg {
-    font-size: 2.34rem;
+    font-size: 3.38rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -17204,7 +17266,7 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 .lead.xl {
   color: #4a5c81;
   margin: 30px 0;
-  font-family: "Roboto Light", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 @media only screen and (min-width:992px) {
@@ -17334,12 +17396,12 @@ strong,
 }
 @media only screen and (min-width:992px) {
   .title {
-    font-size: 7.15rem;
+    font-size: 7.8rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .title {
-    font-size: 8.45rem;
+    font-size: 9.1rem;
   }
 }
 .title {
@@ -18981,7 +19043,7 @@ h1,
   .lbl-primary,
   .title,
   .title-lg {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1680px) {
@@ -18990,7 +19052,7 @@ h1,
   .lbl-primary,
   .title,
   .title-lg {
-    font-size: 6.5rem;
+    font-size: 7rem;
   }
 }
 
@@ -19034,13 +19096,13 @@ h3, .faq-wrapper .cat-heading,
 @media only screen and (min-width:992px) {
   h3, .faq-wrapper .cat-heading,
   .h3, blockquote.lg {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   h3, .faq-wrapper .cat-heading,
   .h3, blockquote.lg {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -19246,6 +19308,11 @@ h4.heading, .h5, .h6 {
   font-weight: 700;
 }
 
+.display-1,
+.display-2 {
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /*
 Generating lot of Mess
  */
@@ -19361,13 +19428,13 @@ sup {
 @media only screen and (min-width:992px) {
   .font-size-h1,
   .size-h1 {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .font-size-h1,
   .size-h1 {
-    font-size: 6.5rem;
+    font-size: 7rem;
   }
 }
 
@@ -19407,13 +19474,13 @@ sup {
 @media only screen and (min-width:992px) {
   .font-size-h3,
   .size-h3 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .font-size-h3,
   .size-h3 {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -19570,7 +19637,28 @@ sup {
   letter-spacing: -3px;
   font-weight: inherit;
   line-height: 1;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #303F69;
+}
+
+.display-2 {
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .display-2 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .display-2 {
+    font-size: 6rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .display-2 {
+    font-size: 7.5rem;
+  }
 }
 
 .display-1 {
@@ -19640,7 +19728,6 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 
 .lead {
-  font-weight: 400;
   font-size: 1.65rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -19650,21 +19737,23 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 @media only screen and (min-width:992px) {
   .lead {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .lead {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 .lead {
   margin-bottom: 30px;
-  line-height: 1.5;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+  font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: #202A46;
 }
 .lead.lg {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-size: 2.145rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -19674,12 +19763,12 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 }
 @media only screen and (min-width:992px) {
   .lead.lg {
-    font-size: 2.34rem;
+    font-size: 3.12rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .lead.lg {
-    font-size: 2.34rem;
+    font-size: 3.38rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -19690,7 +19779,7 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
 .lead.xl {
   color: #4a5c81;
   margin: 30px 0;
-  font-family: "Roboto Light", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 @media only screen and (min-width:992px) {
@@ -19820,12 +19909,12 @@ strong,
 }
 @media only screen and (min-width:992px) {
   .title {
-    font-size: 7.15rem;
+    font-size: 7.8rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .title {
-    font-size: 8.45rem;
+    font-size: 9.1rem;
   }
 }
 .title {
@@ -23440,6 +23529,18 @@ ul, ol {
     padding-bottom: 75px;
   }
 }
+@media only screen and (min-width:768px) {
+  .section.lg {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+@media only screen and (min-width:992px) {
+  .section.lg {
+    padding-top: 300px;
+    padding-bottom: 300px;
+  }
+}
 .section.top {
   padding-bottom: 0;
 }
@@ -24249,12 +24350,12 @@ body.show-loading .loader-wrapper {
 }
 @media only screen and (min-width:992px) {
   .widget-title {
-    font-size: 5.5rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .widget-title {
-    font-size: 6.5rem;
+    font-size: 7rem;
   }
 }
 .widget-titleh2 {
@@ -24926,12 +25027,12 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
 }
 @media only screen and (min-width:992px) {
   .profile-detail label + p {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 @media only screen and (min-width: 1680px) {
   .profile-detail label + p {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -25016,6 +25117,78 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
 .layer-wrap {
   position: relative;
   padding-top: 80%;
+}
+
+.glossy {
+  padding: 60px;
+  background: rgba(86, 110, 177, 0.1);
+  backdrop-filter: blur(30px);
+  -moz-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15), 0 1px 2px white inset;
+  -webkit-box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15), 0 1px 2px white inset;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15), 0 1px 2px white inset;
+  border-radius: 24px;
+}
+.glossy .client-logo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  filter: saturate(0);
+}
+.glossy .client-logo-wrapper > * {
+  max-width: 130px;
+}
+
+.body-content .inner-page-wrapper {
+  padding: 0;
+}
+
+#sec-about-home {
+  background: #DCE1EF url(./images/bg-about-cloud.png) no-repeat center center fixed;
+}
+#sec-about-home .highlight {
+  background: transparent;
+  padding-right: 0;
+  margin-right: 0;
+}
+#sec-about-home .highlight:before {
+  background-color: #CB2026;
+  left: auto;
+  right: 0;
+  width: 70vw;
+}
+
+#sec-client-home {
+  background: #DCE1EF;
+  position: relative;
+}
+#sec-client-home .bg-illus {
+  position: absolute;
+  top: 10vh;
+  right: -2vw;
+}
+#sec-client-home .bg-illus .tag {
+  position: absolute;
+  top: 3vh;
+  right: 20vw;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  color: #40548C;
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+#sec-client-home .bg-illus .tag.has-icon {
+  padding: 1rem 1.5rem 1rem 0.75rem;
+}
+#sec-client-home .bg-illus .tag .fa.badge {
+  padding: 5px;
+  font-size: 110% !important;
+  color: white;
+  background-color: #40548C;
+  margin-right: 10px;
+}
+#sec-client-home .bg-illus .tag .fa.badge:empty {
+  display: unset;
 }
 
 .service-area {
@@ -27599,7 +27772,7 @@ body {
   padding: 0.6rem 2.5rem;
   display: inline-block;
   vertical-align: middle;
-  background-color: #566EB1;
+  background-color: white;
   color: #202A46;
 }
 .tag:hover, .active.tag {
@@ -28106,19 +28279,23 @@ a.del.read-more,
   border-radius: 300px !important;
 }
 
-.font-weight-100 {
+.font-weight-100,
+.font-thin {
   font-weight: 100 !important;
 }
 
-.font-weight-300 {
+.font-weight-300,
+.font-light {
   font-weight: 300 !important;
 }
 
-.font-weight-400 {
+.font-weight-400,
+.font-regular {
   font-weight: 400 !important;
 }
 
-.font-weight-500 {
+.font-weight-500,
+.font-medium {
   font-weight: 500 !important;
 }
 

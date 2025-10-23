@@ -50,14 +50,18 @@ All Typography Override of Bootstrap here.
 //--------------------------------------------------------------------------------------------------------
 // LIGHT -------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
+
+// 100
+@include lib-font-face($font-heading-name, $font-path, "outfit-thin", 100);
+
 // Light 300 -- this was used for chrome bug of weight 300
-@include lib-font-face( $font-heading-name-light, $font-path, "outfit-thin");
+@include lib-font-face( $font-heading-name-light, $font-path, "outfit-light");
 
 // Light 300-it
 //@include lib-font-face( $font-heading-name-light, $font-path, "caviar-dreams-italic", 400, italic );
 
 // Regular on 300
-@include lib-font-face( $font-heading-name, $font-path, "montserrat-thin", 300);
+@include lib-font-face( $font-heading-name, $font-path, "outfit-light", 300);
 // Regular - on 300 Italic
 //@include lib-font-face( $font-heading-name, $font-path, "caviar-dreams-italic", 300, italic );
 
@@ -87,15 +91,18 @@ All Typography Override of Bootstrap here.
 // Regular
 @include lib-font-face( $font-body-name, $font-path, "roboto-light-wf" );
 
+// Thin
+@include lib-font-face( $font-body-name, $font-path, "roboto-thin-wf", 100);
+
 // Light
-@include lib-font-face( $font-body-name, $font-path, "roboto-thin-wf", 300);
+@include lib-font-face( $font-body-name, $font-path, "roboto-light-wf", 300);
 
 
 // Bold
 @include lib-font-face( $font-body-name, $font-path, "roboto-bold-wf", 700 );
 
 // Light 300
-@include lib-font-face( $font-body-name-light, $font-path, "roboto-thin-wf");
+@include lib-font-face( $font-body-name-light, $font-path, "roboto-light-wf");
 
 // Light in bold
 @include lib-font-face( $font-body-name-light, $font-path, "roboto-semibold-wf", 500);
@@ -110,8 +117,11 @@ All Typography Override of Bootstrap here.
 
 // 3rd Font
 //-----------------------------------------------------------------------
-@include lib-font-face( $font-heading-secondary-name, $font-path, "antonio-regular-wf");
-@include lib-font-face( $font-heading-secondary-name, $font-path, "antonio-bold-wf", 700);
+@include lib-font-face( $font-heading-secondary-name, $font-path, "Alumni-Sans-Regular");
+@include lib-font-face( $font-heading-secondary-name, $font-path, "Alumni-Sans-Thin", 100);
+@include lib-font-face( $font-heading-secondary-name, $font-path, "Alumni-Sans-Light", 300);
+@include lib-font-face( $font-heading-secondary-name, $font-path, "Alumni-Sans-Medium",  500);
+@include lib-font-face( $font-heading-secondary-name, $font-path, "Alumni-Sans-Bold", 700);
 
 
 
