@@ -129,7 +129,12 @@
 
 
 
-
+	.svg-import {
+		path,
+		circle {
+			stroke-linecap: round;
+		}
+	}
 
 
 
@@ -138,8 +143,8 @@
 	.glossy {
 		padding: $gutter-width * 2;
 		background:rgba($brand-primary,.10);
+		backdrop-filter: blur(13px);
 
-		backdrop-filter: blur(30px);
 
 		@include xash-box-shadow(0 10px 24px rgba(0, 0, 0, 0.15),
 			0 1px 2px white inset);
@@ -148,13 +153,32 @@
 
 		.client-logo-wrapper  {
 			display: flex;
-			justify-content: space-between;
+			filter: saturate(.5);
+			
+			&:hover .logo-set {
+				animation-play-state: paused;
+			}
+			
+			//animated markquee
+			.logo-set {
+				animation: marquee-content 30s linear infinite;
 
-			filter: saturate(0);
+				
 
-			> * {
-					max-width: 130px;
+				&.reverse {
+					animation: marquee-content 30s linear reverse infinite;
 				}
+			}
+
+
+			@keyframes marquee-content {
+			from {
+				transform: translateX( 0% );
+			}
+			to {
+				transform: translateX( -100% );
+			}
+		}
 
 		}
 	}
@@ -168,7 +192,7 @@
 	
 	
 	#sec-about-home {
-		background: map-get($primary-colorkit, "100") url(./images/bg-about-cloud.png) no-repeat center center fixed;
+		// background: map-get($primary-colorkit, "100") url(./images/bg-about-cloud.png) no-repeat center center fixed;
 
 
 		.highlight {
@@ -185,19 +209,91 @@
 			}
 		}
 
+
+
+		.illus-wrapper {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+
+
+			svg {
+				width: 100%;
+				margin-top: -10vh;			
+			}
+		}
+
+
+		.slide-cont {
+			@media #{$media_laptop} {
+				// margin-top: -20vh;
+			}
+
+			.side-slide-wrapper {
+
+				@media #{$media_laptop} {
+
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					width: 310%;
+
+
+					> * {
+						width: 60vw;
+					}
+
+				}
+				
+			}
+
+
+			
+		}
+
+		.garnish {
+				position: relative;
+
+				.img-1 {
+					position: absolute;
+					top: -10em;
+					transform : scale(.65)
+				}
+
+
+				.img-2 {
+					position: absolute;
+					top: -15em;
+					right: 40vw;
+					transform : scale(.45);
+				}
+				
+			}
 	}
 
 
 	// CLIENT STRIpE
 	#sec-client-home {
-		background: map-get($primary-colorkit, "100");
+		// background: map-get($primary-colorkit, "100");
 		position: relative;
-
+		z-index: 10;
 
 		.bg-illus {
 			position: absolute;
-			top: 10vh;
+			top: 0;
+			width: 100vw;
 			right: -2vw;
+
+
+			.svg-ribbon {
+				position: absolute;
+				top: -30vh;
+				width: 100%;
+			}
+
 
 
 			.tag {
@@ -208,6 +304,20 @@
 				text-transform: uppercase;
 				color: map-get($primary-colorkit, "600" );
 
+
+
+				&.tag-2 {
+					top: -6vh;
+					right: 57vw;
+				}
+
+
+
+
+				&.tag-3 {
+					top: 14vh;
+					right: 77vw;
+				}
 
 				@include xash-box-shadow( 0 10px 20px rgba(0,0,0,.15));
 				@include border-radius(5px);
@@ -242,15 +352,262 @@
 	}
 
 
+	.client-list {
+		padding: 0 $grid-gutter-width;
+		overflow: hidden;
+	}
+
+
+	.client-logo-wrapper {
+    	display: flex;
+    	justify-content: start;
+    	white-space: nowrap;
+    	align-items: start;
+    	overflow: hidden;
+    	width: 200vw;
+	}
+
+	.logo-set {
+		display: flex;
+    	flex-direction: row;
+    	white-space: nowrap;
+    	flex-basis: 100%;
+    	// width: 5000px;
+    	// transform: translate(-89%, 10px);
+
+
+		img {
+			max-width: 130px;
+			object-fit: contain;
+			margin : 0 $grid-gutter-width 0 0;
+		}
+	}
+
+	///-----------------------------------------------------------------
+	///-----------------------------------------------------------------
+	// Tag Line
+	///-----------------------------------------------------------------
+	///-----------------------------------------------------------------
+	#tagline-home {
+
+		background-color: $brand-primary;
+		@include gradient-y(map-get($primary-colorkit, "400"), #122f83);
+		// clip-path: circle(50.0% at 50% 50%);
+		clip-path: ellipse(75% 68% at 50% 29%);
+		padding: 10vh 0 30vh;
+		position: relative;
+		z-index: 11;
+		// Temp , need to rmve after GSAP
+		margin-bottom: -20vh;
+
+
+
+		.bg-abstract-illus {
+			position: absolute;
+			bottom : -35vh;
+			left : 50%;
+			transform: translate(-50%,0);
+			width: 150%;
+			opacity: .55;
+			max-width: unset;
+			pointer-events: none;
+		}
+
+
+
+		.display-1.tag-heading {
+			color: white;
+			font-weight: bold;
+			font-size: 19vw;
+			// letter-spacing: -20em;
+
+
+
+			> span {
+				display: block;
+				width: 100;
+				line-height: .8;
+				/*
+				background-clip: text;
+				background-color: blueviolet;
+				@include gradient-y(map-get($primary-colorkit,"100"), map-get($primary-colorkit,"300"));
+				-webkit-text-fill-color: transparent;
+				*/
+			}
+		}
+
+	}
+
 	// </editor-fold>
 
 
 
+		//=========================================================================
+		//=========================================================================
+		//  SERVICE SECTIONS        -----------------------------------------------
+		//=========================================================================
+		//=========================================================================
+		.service-area {
+	
+			.service-card {
+				width: 100%;
+				min-height: 50vh;
+				overflow: hidden;
+				//height: 40vh;
+				background-color: white;
+				aspect-ratio: 16/9;
+				align-items: stretch;
+				display: flex;
+				position: relative;
+				top: 10px;
+				z-index: 12;
+				margin-bottom: $grid-gutter-width;
+				@include border-radius(50px);
+
+				box-shadow: 0 10px 30px rgba($brand-primary, .20)
+
+	
+			}
+
+
+			.service-card-container {
+				position : relative;
+				min-height: 90vh;
+				width: 100%;
+			}
+	
+	
+
+			.thumb-side {
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+
+				img {
+					max-width: unset;
+					height: 100%;
+					float: left;
+				}
+			}
+
+			.content-side-wrapper {
+				@extend .mc;
+
+
+				.content-side {
+
+				}
+
+				.title-tag,
+				.title-heading {
+					letter-spacing: .025em;
+				}
+
+				.title-tag {
+					color: lighten($body-color, 20%);
+					text-transform: uppercase;
+					font-weight: 300;
+					font-size: 20px;
+				}
+
+				.title-heading {
+					color: $brand-secondary;					
+				}
+
+				.title-heading,
+				.title-tag,
+				p,
+				a.read-more {
+					margin-bottom : $gutter-width;
+				}
+
+
+				a.read-more {
+					text-transform: uppercase;
+				}
+			}
 
 
 
+			@include desktop {
+	
+	
+				.title-wrap {
+					padding: 40px;
+					width: auto;
+					margin-bottom: 10vh;
+					text-align: left;
+	
+	
+					@include transform(translateX(-10%));
+					@include xash-box-shadow(0 0 30px rgba($brand-primary, .20));
+	
+	
+	
+				}
+	
+	
+	
+				.srv-container {
+					height: 100vh;
+					width: auto;
+					display: flex;
+					flex-wrap: wrap;
+					padding-left: $grid-gutter-width * 1.5;
+	
+					//@TEST
+					///background: rgba(0,0,0,.15);
+	
+	
+	
+					.srv-card {
+						height: 100%;
+						width: auto;
+						display: flex;
+						align-items: center;
+					}
+	
+	
+				}
+	
+	
+	
+	
+	
+			}
+	
+			// media : desktop
+	
+	
+			.misc.back {
+				position: absolute;
+				top: 50%;
+				left: 10%;
+				width: 100%;
+				height: 100%;
+	
+				@include transform(translateY(-50%));
+	
+			}
+	
+	
+			.sm-item-plx {
+				//@include transition(transform .5s linear )
+			}
+	
+			.srv-circle-wrap {
+				width: 100%;
+			}
+	
+		}
+	
+		// service area
 
 
+
+.blurred {
+	filter:blur(6px);
+}
 
 
 // </editor-fold>
@@ -269,95 +626,7 @@
 //// <editor-fold defaultstate="collapsed" desc="-------[ Theme Sections HOMEPAGE ]-------">
 
 
-						//=========================================================================
-			//=========================================================================
-			//  SERVICE SECTIONS        -----------------------------------------------
-			//=========================================================================
-			//=========================================================================
-				.service-area {
-					
-					background-size: 100%;
-
-
-
-					.srv-card {
-						width: 100%;
-						min-height: 50vh;
-						overflow: hidden;
-						position: relative;						
-					}
-
-
-					@include desktop {
-
-
-						.title-wrap {
-							padding: 40px;
-							width: auto;
-							margin-bottom: 10vh;
-							text-align: left;
-
-
-							@include transform(translateX(-10%));
-							@include xash-box-shadow(0 0 30px rgba($brand-primary,.20));
-
-
-
-						}
-
-
-
-						.srv-container {
-							height : 100vh;
-							width: auto;
-							display: flex;
-							flex-wrap: wrap;
-							padding-left: $grid-gutter-width * 1.5;
-
-							//@TEST
-							///background: rgba(0,0,0,.15);
-
-
-
-							.srv-card {
-								height: 100%;
-								width: auto;
-								display: flex;
-								align-items: center;
-							}
-	
-
-						}
-
-
-
-
-
-					} // media : desktop
-
-
-					.misc.back {
-						position : absolute;
-						top: 50%;
-						left: 10%;
-						width: 100%;
-						height: 100%;
-
-						@include transform(translateY(-50%));
-					
-					}
-
-
-					.sm-item-plx {
-						//@include transition(transform .5s linear )
-					}
-
-					.srv-circle-wrap {
-						width: 100%;
-					}				
-
-				} // service area
-
+			
 
 
 
@@ -428,31 +697,7 @@
 
 	/// <editor-fold defaultstate="collapsed" desc="-------[ PAGES ]-------">
 
-		//=========================================================================
-		//=========================================================================
-		// About Us
-		//=========================================================================
-		//=========================================================================
-		.anim-circle-wrap {
-
-
-			@include desktop {
-				margin-top: 10vh;
-
-			}
-
-			.circle-pt {
-				margin: auto;
-			}
-
-
-		}   // anim-wrap
-
-	
-
-
-		// ------------------------------------------------------------------------
-		// About Us Ends  ---------------------------------------------------------
+		
 
 
 
@@ -1114,9 +1359,13 @@
 	//height: 100px;
 	//top: 10vh;
 	left: 0;
+	white-space: nowrap;
+
+
 
 	.heading-huge{
 		margin-top: -20vh;
+		margin-left: 20px;
 	}
 
 	.sub-heading {
@@ -1136,10 +1385,15 @@
 	color: white;
 	font-size: 16vw;
 	text-transform: uppercase;
+	transform-origin: 35% center;
 	
 	@include text-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
 }
 
+
+.header-tagline {
+	
+}
 
 
 
@@ -1157,3 +1411,34 @@
 
 	&.bottom { 	bottom: $gutter-width; top: auto;	}
 }
+
+
+
+.canvas-container {
+	position: fixed;
+	top: 0;
+	left: 35vw;
+	height: 100vh;
+	width: 100vw;
+	pointer-events: none;
+	z-index: 4;
+	//background: rgba(0,0,0,.2);
+
+
+	canvas {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+
+
+
+
+	.home-main-slider,
+	#sec-about-home,
+	#sec-client-home,
+	#tagline-home,
+	#service-home{ 
+		border:1px solid red;
+	}

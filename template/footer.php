@@ -37,7 +37,7 @@
         <span class="dv-device"></span>
 	</div>
 <div class="cursor-ovl hide-device"></div>
-<div class="loader-curtain">
+<div class="loader-curtain hide">
     <div class="msg-loading">
         <p>content ... <span class="ldr-total">%</span></p>
         <span class="loader"></span>

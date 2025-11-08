@@ -878,6 +878,15 @@ span {
 	.anim-bubble {
 		@include animation(anim-bubble 15s ease-in-out infinite );
 	}
+	
+	.anim-bubble-xl {
+		@include animation(anim-bubble-xl 15s ease-in-out infinite );
+	}
+
+
+	.anim-bubble-rotate {
+		@include animation( anim-bubble-rotate 15s ease-in-out infinite alternate );
+	}
 
 	.fadeInUpSm {
 		@include animation(fadeInUpSm .1s cubic-bezier(0, 0.77, 0.48, 1.01))
@@ -1021,6 +1030,44 @@ span {
 
 
 
+	@include keyframes(anim-bubble-xl ) {
+		0% {
+			@include transform(translateY(0))
+		}
+
+		50% {
+			@include transform(translateY(20%))
+		}
+
+		70% {
+			@include transform(translateY(-10%))
+		}
+
+		100% {
+			@include transform(translateY(0))
+		}
+	}
+
+
+
+
+
+	@include keyframes(anim-bubble-rotate ) {
+		0% {
+			@include transform(translateY(0) rotate(0deg))
+		}
+
+		50% {
+			@include transform(translateY(10%) rotate(45deg))
+		}
+
+		100% {
+			@include transform(translateY(0) rotate(10deg))
+		}
+	}
+
+
+
 	@include keyframes (scaleSide) {
 		0% {
 			@include transform(scaleX(0));
@@ -1055,6 +1102,11 @@ span {
 	}
 
 
+
+	.item-blur-1 { filter: blur(5px) }
+	.item-blur-2 { filter: blur(12px) }
+	.item-blur-3 { filter: blur(17px) }
+	.item-blur-4 { filter: blur(25px) }
 
 .scaleSide {
 	animation-duration: .05s;
@@ -1095,16 +1147,18 @@ _body,h_tml {
 	background: rgba($brand-secondary,.15);
 	top: 0;
 	left: 0;
-	@include transform(translate(-50%,-50%));
+	@include transform(translate(-50%,-50%) scale(1));
 	@include xash-border-radius(400px);
-	@include transition(width height .15s ease-in);
+	@include transition(transform .15s ease-in);
 	z-index: 0;
+	will-change: height;
 
 
 
 	&.xpanded {
-		width: 130px;
-		height: 130px;
+		@include transform(translate(-50%, -50%) scale(3));
+		// width: 130px;
+		// height: 130px;
 	}
 
 }

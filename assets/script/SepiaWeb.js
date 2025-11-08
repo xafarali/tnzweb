@@ -1,34 +1,11 @@
 ﻿(function ($) {
     $(document).ready(function () {
-        $(".UpdateHits").click(function () {
-            //alert($(this).data("id"));
-            Update($(this).data("id"), "Hit", false);
-        });
-
-        $(".subscribe").click(function () {
-            Update($(this).data("id"), "Subscribe", true);
-            $(this).val("UnSubscribe");
-            $(this).removeClass('subscribe').addClass('unsubscribe');
-        });
-
-        $(".unsubscribe").click(function () {
-            Update($(this).data("id"), "Subscribe", false);
-            $(this).val("Subscribe");
-            $(this).removeClass('unsubscribe').addClass('subscribe');
-        });
-
-        $(".interest").click(function () {
-            Update($(this).data("id"), "Interest", true);
-            $(this).val("Interest Submitted");
-            $(this).removeClass('interest').addClass('hide');
-        });
-
-        $(".nologin").click(function () {
-            $('#modal-login').modal('show')
-        });
+        
+        
     });
 
     function Update(RecId, Action, Subscribe) {
+
         $.ajax({
             url: "/Update/",
             data: { RecId: RecId, Act: Action, Flag: Subscribe },
@@ -171,34 +148,6 @@ jQuery(document).ready(function ($) {
 
 
 
-    //=============================================================================
-    // Date Time Objects
-
-    if (typeof jQuery().datepicker == "function") {
-
-
-        $('.range-date[name="from"]').datepicker({
-
-            dateFormat: "dd-mm-yy",
-            onClose: function (selectedDate) {
-
-                $('.range-date[name="to"]').datepicker("option", "minDate", selectedDate);
-            }
-        });
-
-        $('.range-date[name="to"]').datepicker({
-            dateFormat: "dd-mm-yy",
-            onClose: function (selectedDate) {
-
-                $('.range-date[name="from"]').datepicker("option", "maxDate", selectedDate);
-            }
-        });
-
-        $('input.txt-date').datepicker({
-            dateFormat: "dd-mm-yy"
-        });
-
-    }
 
     //=============================================================================
     // Select/Input Navigation
@@ -218,35 +167,6 @@ jQuery(document).ready(function ($) {
     });
 
 
-    //=====================================================================
-    // Specific to Tender Form
-    //=====================================================================
-    $('button.apply-range-filter').on('click', function (e) {
-
-        var _crit = $('input[name="Criteria"]').val() + "/",
-            _from = $.trim($('.range-date[name="from"]').val()) != "" ? $.trim($('.range-date[name="from"]').val()) + "/" : '',
-            _to = $.trim($('.range-date[name="to"]').val()) != "" ? $.trim($('.range-date[name="to"]').val()) + "/" : '',
-            _host = nav_host + "/";
-
-        e.preventDefault();
-
-        var path = nav_host + "/en/tender/range/" + _crit + _from + _to;
-
-        //console.log(path);
-
-        window.location.href = path;
-
-
-    });
-
-    // search tender
-    $('#btn-search-tender').on('click', function (e) {
-        var searchQuery = $.trim($('.tender-search-q').val()),
-            path = nav_host + "/en/tender/?q=" + searchQuery;
-        e.preventDefault();
-
-        window.location.href = path;
-    })
 
     //---------------------------------------------------
 
@@ -569,71 +489,7 @@ jQuery(document).ready(function ($) {
 
 
 
-
-    //============================================================================
-    // MODAL CLICK UTIL
-    //============================================================================
-    if( $('.modal-trigger').length && $('.modal-dialog').length === 0 ) {
-
-        var $js_modal  = '<div class="modal fade" id="modalPopUpJS" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">';
-        $js_modal += '<div class="modal-dialog modal-lg " role="document">'
-        $js_modal += '<div class="modal-content">';
-        $js_modal += '<div class="modal-header">';
-        $js_modal += '<h5 class="modal-title" >Modal title</h5>';
-        $js_modal += '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
-        $js_modal += '<span aria-hidden="true">&times;</span>';
-        $js_modal += '</button>';
-        $js_modal += '</div>';
-        $js_modal += '<div class="modal-body"></div>';
-        $js_modal += '</div> </div> </div>';
-
-
-        $($js_modal).appendTo('body');
-
-    }
-
-
-    if ( $('.modal-dialog').length ) {
-
-        var m_diag = $('.modal-dialog'),
-            m_title = $('.modal-title', m_diag),
-            m_content = $('.modal-body', m_diag);
-
-
-        $('.modal-trigger').on('click', function (e) {
-
-            e.preventDefault();
-
-            var $t = $(this),
-                p_tgt = $t.attr('data-target'),
-                p_content = $('.detail-content', p_tgt),
-                p_title = $('.detail-title', p_tgt);
-
-
-
-            m_title.text('');
-            m_title.text(p_title.text());
-            m_content.html(p_content.html());
-            $('body').addClass(p_tgt.substr(1));
-            $('.modal[role="dialog"]').modal('show');
-
-            $('body').on('hide.bs.modal', function () {
-                $('body').removeClass(p_tgt.substr(1));
-            })
-        });
-
-
-
-
-    }
-
-
-
-
-
-
-
-    //--------------------------------------------------------------------------
+   //--------------------------------------------------------------------------
     //--------------------------------------------------------------------------
     // NEWSLETTER SUBMISSION ---------------------------------------------------
     //--------------------------------------------------------------------------
@@ -693,66 +549,7 @@ jQuery(document).ready(function ($) {
 
 
 
-    // Show response
-    /**
-     *
-     * @param {int} type  1:success, 2:error, 3: info
-     * @param {string} msg
-     * @param {dom} target
-     */
-    function showResponse(type, msg, target) {
-
-        var target = target || $('.notify-box'),
-            css_class = '';
-
-
-
-        switch (type) {
-
-            case 1:
-                css_class = 'alert-success';
-                break;
-
-
-            case 2:
-                css_class = 'alert-danger';
-                break;
-
-
-            default:
-                css_class = 'alert-primary';
-
-        }
-
-
-
-        target.removeClass('alert-success alert-danger alert-primary').addClass(css_class).html(msg);
-        target.fadeIn();
-
-        if (type == 1) {
-            setTimeout(function () {
-                target.fadeOut();
-            }, 3000);
-        }
-
-        target.bind('click', function () {
-            target.fadeOut('fast');
-
-            target.unbind('click');
-        });
-
-
-
-    }
-
-
-
-
-
-
-
-
-
+    
 
     function validate_field(element) {
 

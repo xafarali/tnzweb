@@ -110,3 +110,17 @@
 		echo "<a href='${url}' class=\"more-fancy ${css}\"><span>${text}</span></a>";
 		
 	}
+
+
+
+
+
+	// Anchor printer
+	function print_anchor_btn($url='#' , $css='read-more', $text='Link Name', $icon='') {
+		if ($icon != "" ) {
+			$icon_text = "<span class='fa fa-${icon}'></span>"; 
+			$css  = $css . " has-icon";
+		}
+		else { $icon_text = '';}
+		echo "<a href='${url}' class=\"${css}\" >${text} ${icon_text}</a>";
+	}

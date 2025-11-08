@@ -682,6 +682,8 @@ select {
 
 		@extend .btn;
 
+		//background-color: map-get($primary-colorkit, "300" );
+
 		//display: inline-block;
 		//background-color: $more-bg;//$btn-default-bg;
 		//color: $more-color;
@@ -694,10 +696,7 @@ select {
 		//
 		//
 		//
-		//&:hover {
-		//	background-color: $more-bg-hover;
-		//	color: $more-color-hover;
-		//}
+		
 		//
 		//
 		//
@@ -754,6 +753,55 @@ select {
 
 	} // Read more
 
+	a.read-more,
+	.anchor {
+		background-color: map-get($primary-colorkit, "300");
+		transition: all .25s ease-in-out;
+
+		&:hover {
+			background-color: $more-bg-hover;
+			color: $more-color-hover;
+		}
+
+
+		&.has-icon {
+			padding-right: $grid-gutter-width * 2.5;
+
+
+			span.fa {
+				position: absolute;
+				top: 3px;
+				right: 3px;
+				// transform : translate(-50%, -50%);
+				height: 37px;
+				width: 37px;
+				border-radius: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+
+				@media #{$media_laptop} {
+					
+					top: 4px;
+					right: 4px;
+					height: 41px;
+					width: 41px;
+				}
+
+
+				@media #{$media_lg} {
+					
+					top: 4px;
+					right: 4px;
+					// transform : translate(-50%, -50%);
+					height: 47px;
+					width: 47px;
+				}
+
+			}
+		}
+	}
 
 
 
