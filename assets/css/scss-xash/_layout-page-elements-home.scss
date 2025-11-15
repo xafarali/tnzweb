@@ -302,6 +302,7 @@
 				right:  20vw;
 				padding : 1rem 1.5rem;
 				text-transform: uppercase;
+				border-left : 5px solid $brand-secondary;
 				color: map-get($primary-colorkit, "600" );
 
 
@@ -334,7 +335,7 @@
 					font-size: 110%!important;
 					color: white;
 					// background: $body-color;
-					background-color: map-get($primary-colorkit, "600");
+					background-color: map-get($secondary-colorkit, "600");
 					margin-right: 10px;
 
 					&:before {
@@ -364,22 +365,29 @@
     	white-space: nowrap;
     	align-items: start;
     	overflow: hidden;
-    	width: 200vw;
+    	width: 300vw;
 	}
 
 	.logo-set {
 		display: flex;
     	flex-direction: row;
     	white-space: nowrap;
-    	flex-basis: 100%;
+    	flex-basis: auto;
     	// width: 5000px;
     	// transform: translate(-89%, 10px);
 
 
 		img {
-			max-width: 130px;
+			width: 150px;
+			max-width: 300px;
 			object-fit: contain;
-			margin : 0 $grid-gutter-width 0 0;
+			margin : 0 $grid-gutter-width*2.5 0 0;
+
+
+
+			&.adj-lw {
+				width: 240px;
+			}
 		}
 	}
 
@@ -698,7 +706,30 @@
 	/// <editor-fold defaultstate="collapsed" desc="-------[ PAGES ]-------">
 
 		
+		//=========================================================================
+		//=========================================================================
+		//=========================================================================
+		//  About Us
+		//=========================================================================
+		//=========================================================================
+		.page-about-us {
 
+			#page-content {
+				background:url(images/bg-about-us-1.jpg) no-repeat top center;
+			}
+
+
+						.abstract-line-svg {
+							polygon {
+								filter: drop-shadow(3px 8px 10px rgba($brand-secondary, .2))
+							}
+
+							text,tspan {
+								color: map-get($primary-colorkit, "700" )
+							}
+						}
+			
+						}
 
 
 
@@ -1440,5 +1471,5 @@
 	#sec-client-home,
 	#tagline-home,
 	#service-home{ 
-		border:1px solid red;
+		//border:1px solid red;
 	}

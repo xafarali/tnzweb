@@ -41,7 +41,7 @@ global $images;
 
                 <div class="row">                   
                      <div class="col-md-8 text-center offset-md-2">
-                        <p class="lead xl prime-heading">
+                        <p class="lead xl prime-heading em-focus">
                             Trusted by leading companies in various industries. Small to enterprise.
                         </p>
                      </div>
@@ -52,31 +52,49 @@ global $images;
             <div class="container-fluid">
                 <div class="glossy client-list">
                     <div class="client-logo-wrapper">
-                        <div class="logo-set">
+                        <div class="logo-set" class="item-js-clone">
                             <img src="images/logo-client/blistex-logo.png" alt="" title="Blistex"/>
                             <img src="images/logo-client/BoldT-Logo-White.svg" alt="" title="BoldT"/>
                             <img src="images/logo-client/cdw-logo-no-tag.svg" alt=""/>
                             <img src="images/logo-client/chuys-logo-png.png" alt=""/>
-                            <img src="images/logo-client/kitocrossbay.svg" alt=""/>
+                            <img src="images/logo-client/kitocrossbay.svg" alt="" class="adj-lw"/>
                             <img src="images/logo-client/mather_logo_mather_color.svg" alt=""/>
+                            <img src="images/logo-client/owc-logo.svg" alt=""/>
+                            <img src="images/logo-client/iwi-logo.svg" alt="" class="adj-lw"/>
+                            <img src="images/logo-client/fresenius-logo.svg" alt="" />
+                            <img src="images/logo-client/ncsbn-logo.svg" alt="" />
+                            <img src="images/logo-client/pillr-health.svg" alt="" />
                             <img src="images/logo-client/mesirow-logo-full.svg" alt=""/>
+                            <img src="images/logo-client/campbell-logo.svg" alt=""/>
+                            <img src="images/logo-client/lazard.svg" alt=""/>
+                            <img src="images/logo-client/tumi-logo.svg" alt=""/>
+                            <img src="images/logo-client/ascm-logo.svg" alt="" class="adj-lw"/>
                             <img src="images/logo-client/reward-network-logo.svg " alt=""/>
-                            <img src="images/logo-client/RPHI Logo.svg " alt=""/>
+                            <img src="images/logo-client/university-of-chicago.svg " alt="" class="adj-lw"/>
                             <img src="images/logo-client/Samsonite-Logo.png " alt=""/>
                             <img src="images/logo-client/TrexinLogo_r1_vector_rgb.svg " alt=""/>
                             <img src="images/logo-client/AmeriPro_New-Logo.webp " alt=""/>
                         </div>
 
-                        <div class="logo-set">
-                            <img src="images/logo-client/blistex-logo.png" alt=""/>
-                            <img src="images/logo-client/BoldT-Logo-White.svg" alt=""/>
+                       <div class="logo-set" class="item-js-clone">
+                            <img src="images/logo-client/blistex-logo.png" alt="" title="Blistex"/>
+                            <img src="images/logo-client/BoldT-Logo-White.svg" alt="" title="BoldT"/>
                             <img src="images/logo-client/cdw-logo-no-tag.svg" alt=""/>
                             <img src="images/logo-client/chuys-logo-png.png" alt=""/>
-                            <img src="images/logo-client/kitocrossbay.svg" alt=""/>
+                            <img src="images/logo-client/kitocrossbay.svg" alt="" class="adj-lw"/>
                             <img src="images/logo-client/mather_logo_mather_color.svg" alt=""/>
+                            <img src="images/logo-client/owc-logo.svg" alt=""/>
+                            <img src="images/logo-client/iwi-logo.svg" alt="" class="adj-lw"/>
+                            <img src="images/logo-client/fresenius-logo.svg" alt="" />
+                            <img src="images/logo-client/ncsbn-logo.svg" alt="" />
+                            <img src="images/logo-client/pillr-health.svg" alt="" />
                             <img src="images/logo-client/mesirow-logo-full.svg" alt=""/>
+                            <img src="images/logo-client/campbell-logo.svg" alt=""/>
+                            <img src="images/logo-client/lazard.svg" alt=""/>
+                            <img src="images/logo-client/tumi-logo.svg" alt=""/>
+                            <img src="images/logo-client/ascm-logo.svg" alt="" class="adj-lw"/>
                             <img src="images/logo-client/reward-network-logo.svg " alt=""/>
-                            <img src="images/logo-client/RPHI Logo.svg " alt=""/>
+                            <img src="images/logo-client/university-of-chicago.svg " alt="" class="adj-lw"/>
                             <img src="images/logo-client/Samsonite-Logo.png " alt=""/>
                             <img src="images/logo-client/TrexinLogo_r1_vector_rgb.svg " alt=""/>
                             <img src="images/logo-client/AmeriPro_New-Logo.webp " alt=""/>

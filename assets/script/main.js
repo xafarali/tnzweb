@@ -969,6 +969,7 @@ jQuery(document).ready(function ($) {
                     "+=1.5"
                 );
 
+            /*    
             var $sc_abt_us = new ScrollMagic.Scene({
                 triggerElement: $(g_setting.banner_wrapper),
                 triggerHook: 0,
@@ -976,6 +977,7 @@ jQuery(document).ready(function ($) {
             })
                 .setTween($_anim_box)
                 .addTo(controller);
+            */
         }
         // </editor-fold>
         // Page About Ends ---------------------------------------------------
@@ -1813,7 +1815,7 @@ jQuery(document).ready(function ($) {
             left: e.pageX,
         });
 
-        if ($(e.target).is("a")) {
+        if ($(e.target).is("a") || $(e.target).hasClass('em-focus')) {
             $(".cursor-ovl").addClass("xpanded");
         } else {
             $(".cursor-ovl").removeClass("xpanded");
@@ -2358,7 +2360,8 @@ jQuery(document).ready(function ($) {
      * @param {#svg object} $el
      * @returns length of curve defined in svg
      */
-    function svg_getLength($el) {
+    //function svg_getLength($el) {
+    window.svg_getLength = function ($el) {
         // error handing
         // if ( $el[0] ) {
         //console.log("Item is being ass ::", $el);
@@ -2386,7 +2389,7 @@ jQuery(document).ready(function ($) {
     window.svg_pathPrepare = function ($elm, $inv, $length) {
         if ($elm.length > 0) {
             $($elm).each(function (i, v) {
-                var $el = $(this);
+                var $el = $(v);
 
                 //                 console.log( $el + "\n");
 

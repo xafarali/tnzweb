@@ -33,6 +33,7 @@
 
                 
                 <div class="garnish plx-container">
+                    <div class="spacer"></div>
                     <div class="itm-plx" data-parallex="-60">
                         <div class="img-1" >
                             <img src="images/diamond-diether.png" alt="" class="anim-bubble item-blur-1">

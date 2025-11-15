@@ -667,7 +667,8 @@ a {
 
 .svg-import {
 	// text node
-	text {
+	text,
+	tspan {
 		font-family:$font-heading!important;
 		font-weight: 500;
 
@@ -729,7 +730,20 @@ span.svg-import {
 //=========================================================================
 //=========================================================================
 
+.page-about-us {
 
+
+	.svg-cont {
+		width: 100vw;
+		height: 100vh;
+		transform: translate(-15%,10%);
+
+
+		svg {
+			height: 100%;
+		}
+	}
+}
 
 //=========================================================================
 //=========================================================================
@@ -1036,7 +1050,7 @@ span {
 		}
 
 		50% {
-			@include transform(translateY(20%))
+			@include transform(translateY(10%))
 		}
 
 		70% {
@@ -1150,15 +1164,19 @@ _body,h_tml {
 	@include transform(translate(-50%,-50%) scale(1));
 	@include xash-border-radius(400px);
 	@include transition(transform .15s ease-in);
-	z-index: 0;
+	z-index: 2;
 	will-change: height;
+
+	
 
 
 
 	&.xpanded {
 		@include transform(translate(-50%, -50%) scale(3));
+		backdrop-filter: invert(.8);
 		// width: 130px;
 		// height: 130px;
+		z-index: 5001;
 	}
 
 }

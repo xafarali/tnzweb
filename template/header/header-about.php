@@ -8,11 +8,14 @@
 	global $images;
 	?>
 <div class="auto-scroll-wrapper">
-    <div class="banner-wrapper section fs home-banner auto-scroll">
+    <div class="banner-wrapper section fs auto-scroll">
 
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
-            <img src="/images/header-about-us.jpg" alt="">
+            <div class="svg-cont">
+                <img src="/images/abstract-lines.svg" alt="" class="svg-import abstract-line-svg">
+            </div>
+            <img src="/images/header-about-us-bg.jpg" alt="">
 
         </div>
         <div>
@@ -35,7 +38,7 @@
                                 <div class="row wow fadeInUp" data-wow-delay=".75s">
                                     <div class="col-md-5 offset-md-2">
                                         <p class="lead light">
-                                            Sepia Solutions is an infotech firm that started its journey as a small startup company. Now, after gaining valuable experience in this course of time
+                                           
                                         </p>
                                     </div>
                                 </div>
@@ -47,6 +50,7 @@
 
                             
                             <div class="container-xl">
+                                <?php /*
                                 <div class="anim-circle-wrap row mc ">
                                     <div class="col-md-4 box-1">
                                         <div class="line-box-wrap">
@@ -61,11 +65,13 @@
                                     </div>
 
                                     <div class="col-md-4 box-2">
+                                        
                                         <div class="line-box-wrap">
                                             <div class="box-anim">
                                                 <img src="/images/line-abt-us-2.svg" alt="">
                                             </div>
                                         </div>
+                                        
                                         <div class="anim-fl---oat">
                                             <div class="circle-pt auto  lg inv itm-plx  wow fadeInUp" data-parallex="15" data-wow-delay="1.75s">
                                                 <span class="fill"></span>
@@ -89,6 +95,7 @@
                                     
                                 </div>
                                 
+                                */?>
                             </div>
 
                         </div>
