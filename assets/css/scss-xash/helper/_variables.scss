@@ -183,9 +183,9 @@ $icon-font-awesome: $font-icon;
 
 $headings-font-weight:   700;
 $font-heading-h1-weight: $headings-font-weight;
-$font-heading-h2-weight: 700;
+$font-heading-h2-weight: 500;
 $font-heading-h3-weight: bold;
-$font-heading-h4-weight: 700;
+$font-heading-h4-weight: 500;
 $font-heading-h5-weight: bold;
 $font-heading-h6-weight: bold;
 $headings-line-height:   1.0;
@@ -861,8 +861,8 @@ $blockquote-line-height: 2;
 
 
 // Cards
-$border-radius-card: $grid-gutter-width / 5;
-
+$border-radius-card: $grid-gutter-width * 1.5;
+$card-padding: $grid-gutter-width * 1.5;
 
 
 

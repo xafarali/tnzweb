@@ -264,7 +264,7 @@
 	position: relative;
 	background: white;
 	height: 100%;
-
+	padding: $card-padding;
 
 	@include xash-border-radius($border-radius-card);
 	@include animated-shadow($shadow-dialog);
@@ -275,6 +275,10 @@
 	&.square,
 	&.box {
 		@extend .box-square;
+	}
+
+	&.rect {
+		aspect-ratio: 1.5;
 	}
 
 
@@ -353,6 +357,17 @@
 	}
 }
 
+
+.grid-square {
+	> div {
+		margin-bottom: $grid-gutter-width;
+		
+	}
+
+	.rect {
+		aspect-ratio: 1.5;
+	}
+}
 
 
 // simple square to appply on any div

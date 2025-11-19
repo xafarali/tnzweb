@@ -960,14 +960,16 @@ jQuery(document).ready(function ($) {
         // Page About us
         // ---------------------------------------------------------------------------------------------
         if ($("body").hasClass("page-about-us")) {
-            var $_anim_box = $("body .anim-circle-wrap .box-anim"),
-                $_tw_box = new TimelineMax().staggerTo(
+            let $_anim_box = $("body .anim-circle-wrap .box-anim");
+            if ($_anim_box) {
+                let $_tw_box = new TimelineMax().staggerTo(
                     $_anim_box,
                     2,
                     { width: "100%", ease: Power0.easeIn },
                     1.5,
                     "+=1.5"
                 );
+            }
 
             /*    
             var $sc_abt_us = new ScrollMagic.Scene({

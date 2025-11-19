@@ -30,14 +30,15 @@
                             
 
                             <div class="col-md-10 text-center-phone offset-md-1">
-                                <div class="wow fadeInRight">
-                                    <h1 class="color-white font-light">
-                                        <strong class="color-secondary">Leading</strong> cloud solutionsfrom a single space
+                                <div class="">
+                                    <h1 class="color-white wow fadeInUp">
+                                       <span class="color-secondary">Power BI</span> Services
                                     </h1>
                                    
-                                    <p class="lead xl light color-white text-center-phone">
-                                        Get the right stuff from a partner you trust. Feel confident in any sales scenario with business-critical products
+                                    <p class="lead xl light color-white text-center-phone wow fadeInUp" data-wow-delay="1s">
+                                       Transform Your Data into Insightful Reports and Dashboards
                                     </p>
+                                    <p class="wow fadeInUp text-light" data-wow-delay="2s">Power BI is a tool that helps you understand your data better. It takes your data and turns it into easy-to-read visual reports and dashboards. This way, you can make better decisions for your business. Power BI works in many areas like healthcare, finance, and retail, helping different industries make sense of their data.</p>
 
                                 </div>
                             </div>  <!-- col-6 -->

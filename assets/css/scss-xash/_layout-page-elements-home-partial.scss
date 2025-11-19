@@ -425,21 +425,23 @@ a {
 		border: 1px solid rgba($brand-primary, 75%);
 		background-color: rgba($brand-primary, 20%);
 		display: block;
-		height: 32px;
-		width: 32px;
+		height: 24px;
+		width: 24px;
 		position: absolute;
-		right: -15px;
-		top :25px;
+		right: -25px;
+		top :15px;
 		
 
-		@include transform(rotate(45deg));
+		@include transform(translate(0,0) rotate(45deg));
 	}
 
 	&:after {
 		border-color: rgba($brand-secondary, 75%);
 		background-color: rgba($brand-secondary, 25%);
 
-		right: -38px;
+		animation: fancy-more-anim 2s infinite  ;
+
+		// right: -38px;
 	}
 
 	&.horz {
@@ -453,6 +455,15 @@ a {
 		}
 	}
 
+	@keyframes fancy-more-anim {
+		from {
+			@include transform(translate(0,-50%) rotate(45deg));
+		}
+
+		to {
+			@include transform(translate(0,50%) rotate(45deg));
+		}
+	}
 
 
 	span {
@@ -698,6 +709,14 @@ a {
 	}
 
 
+	&.font-secondary {
+		text,
+		tspan {
+			font-family: $font-heading-secondary!important;
+		}
+	}
+
+
 
 }
 
@@ -723,6 +742,10 @@ span.svg-import {
 }
 
 
+.fx-spin-text {
+	perspective: 500px;
+	transform-style: preserve-3d;
+}
 
 //=========================================================================
 //=========================================================================

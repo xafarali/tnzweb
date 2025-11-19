@@ -13,9 +13,12 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="svg-cont">
-                <img src="/images/abstract-lines.svg" alt="" class="svg-import abstract-line-svg">
+                <img src="/images/abstract-lines.svg" alt="" class="svg-import abstract-line-svg">  
             </div>
-            <img src="/images/header-about-us-bg.jpg" alt="">
+            <div class="svg-red"> <img src="/images/abstract-lines-about-red-1.svg" alt="" class="svg-import abstract-line-red"></div>
+
+
+            <!-- <img src="/images/header-about-us-bg.jpg" alt=""> -->
 
         </div>
         <div>
@@ -28,21 +31,12 @@
 
                         <div class="row mc">
 
-                            <div class="col-md-8 offset-md-2">
-                                
-                                <h2 class="h1 margin-left-desktop-3x margin-bottom-2x-desktop color-primary-light _itm-plx wow fadeInUp" data-parallex="20"  data-wow-delay=".25s">
-                                    <strong class="">We are an Adaptive<br />
-                                        Digital Organization</strong>
-                                </h2>
-
-                                <div class="row wow fadeInUp" data-wow-delay=".75s">
-                                    <div class="col-md-5 offset-md-2">
-                                        <p class="lead light">
-                                           
-                                        </p>
-                                    </div>
-                                </div>
-
+                            <div class="col-md-12 offset-mdk-2 text-center">
+                                <div class="ev-scrolltrigger">
+                                    <h1 class="font-size-xl no-margin text=capatilize heading fx-spin-text _itm-plx _wow _fadeInUp" data-parallex="20"  data-wow-delay=".25s">
+                                        Welcome to TnZ
+                                    </h1>
+                                </div>                          
 
 
 
@@ -50,6 +44,10 @@
 
                             
                             <div class="container-xl">
+
+                                <p class="lead xl fx-split-row-text">
+                                    Imagine being partnered with a specialist IT team who can analyze your current data trends, manage all your application development needs!
+                                </p>
                                 <?php /*
                                 <div class="anim-circle-wrap row mc ">
                                     <div class="col-md-4 box-1">

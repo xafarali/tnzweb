@@ -38,9 +38,10 @@
 
         <hr>
         <div class="container-xl">
-            <h2 class=" size_-h1 font-light padding  text-center">Cloud computing with <strong>SepiaSolutions</strong></h2>
-            <p class="lead">At Sepia we understand and recognise the needs and requirements of a modern IT department while it responsibly manages and maintain company data and other assets, taking care of security, compliance, privacy as well as reliablity , availablity and accessibility benchmarks.</p>
-            <p>When you decide to trust our expertise, you become our partners, and the purpose of the project becomes to deliver the best results. We don't just suggest solutions for you, we study and assess the current scenario, making a complete analysis of what woudl be best for the growth of yoru enterprises as well as your pocket.</p>
+            <h2 class=" size_-h1 font-light padding  text-center">Why Choose <strong>Power BI?</strong></h2>
+            <p class="lead">There are many reasons to choose Power BI. It helps automate your reports, saves you time, and lets you focus on important tasks. The reports are interactive, meaning you can click on parts of the report to see more details. Power BI also gives you real-time data, so you always see the most recent information.
+            </p>
+            <p>Using Power BI helps you make data-driven decisions. Instead of guessing, you can look at the data and know what actions to take. Plus, Power BI is very user-friendly. It's easy to create reports and share them with your team. Everyone can stay on the same page.</p>
         </div>
 
 
@@ -57,14 +58,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mc text-right-desktop">
-                    <h2 class="font-size-h1 font-light wow fadeInUp">Your <strong>Business</strong> Matters</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".15s">
+                    <h2 class="font-size-h1 font-light wow fadeInUp" style="line-height:.9"><span class="h3 font-light">Key Features of</span> <strong class="no-wrap">Power BI</strong></h2>
+                    <!-- <p class="wow fadeInUp" data-wow-delay=".15s">
                         Apart from the Azure packages that are sure to meet your requirements, Sepia Solutions provides you with value added services throughout the progression of the project.
                         Starting from a free assessment, Sepia's team makes a detailed analysis of the existing environment and submits a complete impact report, suggesting a solution accordingly.
-                    </p>
+                    </p> -->
                 </div>
                 <div class="col-md-8 offset-md-1">
-                    <img src="/images/cloud/illus-business-matter.svg" alt="" class="wow fadeInUp" data-wow-delay=".35s">
+                    <div class="row grid-square text-center content-middle">
+                        <div class="col-md-6">
+                            <div class="card rect mc">
+                                <h4>Data Integration</h4>
+                                <p class="small">Power BI can bring data from many different sources into one place. This is called data integration. It doesn't matter if your data is in Excel, a database, or online - Power BI can blend them all together. It uses connectors to make this process smooth and easy.</p>
+                            </div> 
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card rect mc">
+                                <h4>Real-time Analytics</h4>
+                                <p class="small">With Power BI, you get real-time analytics. This means you can see data as it happens. If something changes in your data, it shows up right away in your reports. This is very important for making quick decisions based on the most up-to-date information.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6"> 
+                            <div class="card rect mc">
+                                <h4>Customizable Reports</h4>
+                                <p class="small">Power BI allows you to create reports and dashboards that fit your needs. You can customize them to show the data that is important to you. There are many options for different charts, graphs, and tables. You can make your dashboard look just the way you want it.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card rect mc">
+                                <h4>Interactive Visualizations</h4>
+                                <p class="small">
+                                    The visual elements in Power BI are interactive. For example, you can click on a part of a chart to see more details. This helps you explore your data deeper and find the insights you need. There are many types of visuals you can use such as bar charts, line graphs, and maps.
+                                </p>
+                            </div>  
+                        </div>
+                    </div>
+                    <!-- <img src="/images/cloud/illus-business-matter.svg" alt="" class="wow fadeInUp" data-wow-delay=".35s"> -->
                 </div>
             </div>
 

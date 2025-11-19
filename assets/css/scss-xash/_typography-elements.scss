@@ -65,6 +65,7 @@ html {
 
 	body {
 		font-size: 100%;
+		font-size: 1.25em;
 
 		-webkit-font-smoothing: antialiased;
 		-webkit-font-smoothing: subpixel-antialiased;
@@ -283,7 +284,9 @@ sup {
 
 
 
-
+.font-size-diplay-1 {
+	@include font-size($font-size-xl-list);
+}
 
 
 .font-size-xl,
@@ -402,14 +405,14 @@ sup {
 
 h1.heading {
 	//font-size: 3.25rem;
-
-	&:after {
-		content: "";
-		height: 10px;
-		width: 80px;
-		display: block;
-		background : $brand-secondary;
-	}
+	text-transform: uppercase;
+	// &:after {
+	// 	content: "";
+	// 	height: 10px;
+	// 	width: 80px;
+	// 	display: block;
+	// 	background : $brand-secondary;
+	// }
 }
 
 

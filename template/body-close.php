@@ -1,8 +1,8 @@
 <?php
 	/**
 	 * Author : xafaR
-	 * Created at: 14 01, 2020
-	 * Description : File belongs to sepiasol2
+	 * Created at: 14 10, 2025
+	 * Description : File belongs to xafaR
 	 */
 ?>
 

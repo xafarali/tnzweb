@@ -16500,6 +16500,7 @@ html {
 }
 html body {
   font-size: 100%;
+  font-size: 1.25em;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16667,7 +16668,7 @@ h2,
 .h2,
 .lead.xl {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #CB2026;
   margin-bottom: 2rem;
   line-height: 1.2;
@@ -16694,7 +16695,7 @@ h3.heading,
 .faq-wrapper .heading.cat-heading,
 h4.heading {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #273548;
   margin-bottom: 10px;
   font-size: 1.35rem;
@@ -16792,7 +16793,7 @@ h3.heading,
 .faq-wrapper .heading.cat-heading,
 h4.heading, .h5, .h6 {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .display-1,
@@ -16877,6 +16878,25 @@ h5.bar-sm:before, .h5.bar-sm:before {
 sub,
 sup {
   font-size: 65%;
+}
+
+.font-size-diplay-1 {
+  font-size: 5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-diplay-1 {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-diplay-1 {
+    font-size: 9rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-diplay-1 {
+    font-size: 10rem;
+  }
 }
 
 .font-size-xl,
@@ -17174,12 +17194,8 @@ sup {
   display: block;
 }
 
-h1.heading:after {
-  content: "";
-  height: 10px;
-  width: 80px;
-  display: block;
-  background: #CB2026;
+h1.heading {
+  text-transform: uppercase;
 }
 
 .display-1 .light, .display-2 .light, .font-xl .light, .font-xxl .light, h1 .light, .h1 .light, .title-lg .light, .title .light, .lbl-primary .light, h2 .light, .h2 .light, .lead.xl .light, h3 .light, .faq-wrapper .cat-heading .light, .h3 .light, h4 .light, .h4 .light, .h-tag .light, .faq-wrapper .panel-title a .light,
@@ -17586,7 +17602,7 @@ ul.ticks li:before,
 ul.check li:before,
 ul.arrow li:before {
   content: "\f058";
-  font-size: 0.85rem;
+  font-size: 1em;
   font-family: "Fontawesome";
   color: #CB2026;
   position: absolute;
@@ -19059,6 +19075,7 @@ html {
 }
 html body {
   font-size: 100%;
+  font-size: 1.25em;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19226,7 +19243,7 @@ h2,
 .h2,
 .lead.xl {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #CB2026;
   margin-bottom: 2rem;
   line-height: 1.2;
@@ -19253,7 +19270,7 @@ h3.heading,
 .faq-wrapper .heading.cat-heading,
 h4.heading {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #273548;
   margin-bottom: 10px;
   font-size: 1.35rem;
@@ -19351,7 +19368,7 @@ h3.heading,
 .faq-wrapper .heading.cat-heading,
 h4.heading, .h5, .h6 {
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .display-1,
@@ -19436,6 +19453,25 @@ h5.bar-sm:before, .h5.bar-sm:before {
 sub,
 sup {
   font-size: 65%;
+}
+
+.font-size-diplay-1 {
+  font-size: 5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-diplay-1 {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-diplay-1 {
+    font-size: 9rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-diplay-1 {
+    font-size: 10rem;
+  }
 }
 
 .font-size-xl,
@@ -19733,12 +19769,8 @@ sup {
   display: block;
 }
 
-h1.heading:after {
-  content: "";
-  height: 10px;
-  width: 80px;
-  display: block;
-  background: #CB2026;
+h1.heading {
+  text-transform: uppercase;
 }
 
 .display-1 .light, .display-2 .light, .font-xl .light, .font-xxl .light, h1 .light, .h1 .light, .title .light, .title-lg .light, .lbl-primary .light, h2 .light, .h2 .light, .lead.xl .light, h3 .light, .faq-wrapper .cat-heading .light, .h3 .light, h4 .light, .h4 .light, .h-tag .light, .faq-wrapper .panel-title a .light,
@@ -20145,7 +20177,7 @@ ul.ticks li:before,
 ul.check li:before,
 ul.arrow li:before {
   content: "\f058";
-  font-size: 0.85rem;
+  font-size: 1em;
   font-family: "Fontawesome";
   color: #CB2026;
   position: absolute;
@@ -23625,11 +23657,12 @@ ul, ol {
   position: relative;
   background: white;
   height: 100%;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
-  border-radius: 6px;
+  padding: 45px;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  -ms-border-radius: 45px;
+  -o-border-radius: 45px;
+  border-radius: 45px;
   display: block;
   position: relative;
   -moz-box-shadow: 0 15px 50px 0 rgba(0, 123, 255, 0.15), 0 5px 15px 0 rgba(0, 0, 0, 0.15);
@@ -23661,6 +23694,9 @@ ul, ol {
 }
 .card:hover:after {
   opacity: 1;
+}
+.card.rect {
+  aspect-ratio: 1.5;
 }
 .card > .content {
   height: 100%;
@@ -23712,6 +23748,13 @@ ul, ol {
 }
 .card.outline:after {
   content: none;
+}
+
+.grid-square > div {
+  margin-bottom: 30px;
+}
+.grid-square .rect {
+  aspect-ratio: 1.5;
 }
 
 @media only screen and (min-width:992px) {
@@ -25510,13 +25553,100 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
 }
 
 .page-about-us #page-content {
-  background: url(images/bg-about-us-1.jpg) no-repeat top center;
+  background: url(images/bg-about-us-1.jpg) repeat-y top center;
 }
 .page-about-us .abstract-line-svg polygon {
   filter: drop-shadow(3px 8px 10px rgba(203, 32, 38, 0.2));
 }
 .page-about-us .abstract-line-svg text, .page-about-us .abstract-line-svg tspan {
   color: #303F69;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 2rem;
+}
+.page-about-us .svg-red {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 65vh;
+}
+.page-about-us .svg-red text {
+  color: white;
+  font-family: "Outfit";
+  font-weight: 100;
+  font-size: 7px;
+}
+.page-about-us .ai-robot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -10%);
+}
+.page-about-us .service-infographic {
+  width: 100%;
+}
+.page-about-us .service-infographic svg {
+  width: 100%;
+}
+.page-about-us .card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: stretch;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.page-about-us .card-wrapper .cards-cont {
+  aspect-ratio: 0.75;
+  width: 25%;
+  transform: rotateY(0);
+  position: relative;
+  transform-style: preserve-3d;
+}
+.page-about-us .card-wrapper .cards-cont:nth-child(2) {
+  z-index: 2;
+}
+.page-about-us .card-wrapper .cards,
+.page-about-us .card-wrapper .cards-back {
+  position: absolute;
+  border-radius: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #566EB1;
+  background: linear-gradient(180deg, #C4D0EA 0%, #fefefe 100%);
+  box-shadow: 0 10px 20px rgba(86, 110, 177, 0.3);
+  transform: rotateY(0);
+  text-align: center;
+  padding: 30px;
+  color: #DCE1EF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+  backface-visibility: hidden;
+  outline: 15px solid rgba(86, 110, 177, 0.1);
+  z-index: 1;
+}
+.page-about-us .card-wrapper .cards img,
+.page-about-us .card-wrapper .cards-back img {
+  margin-bottom: 20px;
+}
+.page-about-us .card-wrapper .cards h4 {
+  font-size: 2.25rem;
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #303F69;
+}
+.page-about-us .card-wrapper .cards-back {
+  background: #DCE1EF;
+  transform: rotateY(-180deg);
+  color: #303F69;
+  font-size: 1rem;
+}
+.page-about-us .card-wrapper .cards-back img {
+  max-width: 100px;
 }
 
 .v-masonary-grid .row.vt {
@@ -26514,21 +26644,21 @@ select.ajax-loader {
   border: 1px solid rgba(86, 110, 177, 0.75);
   background-color: rgba(86, 110, 177, 0.2);
   display: block;
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
   position: absolute;
-  right: -15px;
-  top: 25px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  right: -25px;
+  top: 15px;
+  -webkit-transform: translate(0, 0) rotate(45deg);
+  -moz-transform: translate(0, 0) rotate(45deg);
+  -ms-transform: translate(0, 0) rotate(45deg);
+  -o-transform: translate(0, 0) rotate(45deg);
+  transform: translate(0, 0) rotate(45deg);
 }
 .more-fancy:after {
   border-color: rgba(203, 32, 38, 0.75);
   background-color: rgba(203, 32, 38, 0.25);
-  right: -38px;
+  animation: fancy-more-anim 2s infinite;
 }
 .more-fancy.horz {
   -webkit-transform: rotate(0deg);
@@ -26543,6 +26673,22 @@ select.ajax-loader {
   -ms-transform: translatex(11.5%);
   -o-transform: translatex(11.5%);
   transform: translatex(11.5%);
+}
+@keyframes fancy-more-anim {
+  from {
+    -webkit-transform: translate(0, -50%) rotate(45deg);
+    -moz-transform: translate(0, -50%) rotate(45deg);
+    -ms-transform: translate(0, -50%) rotate(45deg);
+    -o-transform: translate(0, -50%) rotate(45deg);
+    transform: translate(0, -50%) rotate(45deg);
+  }
+  to {
+    -webkit-transform: translate(0, 50%) rotate(45deg);
+    -moz-transform: translate(0, 50%) rotate(45deg);
+    -ms-transform: translate(0, 50%) rotate(45deg);
+    -o-transform: translate(0, 50%) rotate(45deg);
+    transform: translate(0, 50%) rotate(45deg);
+  }
 }
 .more-fancy span {
   -webkit-transition: all 0.2s ease-in-out;
@@ -26730,6 +26876,10 @@ select.ajax-loader {
 .svg-import #Tag * {
   letter-spacing: 0;
 }
+.svg-import.font-secondary text,
+.svg-import.font-secondary tspan {
+  font-family: "Alumni Sans", "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
 
 div.svg-import:before,
 span.svg-import:before {
@@ -26755,6 +26905,11 @@ span.svg-import {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+}
+
+.fx-spin-text {
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
 
 .page-about-us .svg-cont {
@@ -28758,6 +28913,11 @@ a.del.read-more,
   box-shadow: 0 15px 50px 0 rgba(0, 123, 255, 0.15), 0 5px 15px 0 rgba(0, 0, 0, 0.15) !important;
 }
 
+.no-wrap,
+.nowrap {
+  white-space: nowrap;
+}
+
 .no-shadow {
   -moz-box-shadow: unset !important;
   -webkit-box-shadow: unset !important;
@@ -28782,6 +28942,12 @@ a.del.read-more,
   -ms-border-radius: 300px !important;
   -o-border-radius: 300px !important;
   border-radius: 300px !important;
+}
+
+.content-middle,
+.content-center {
+  justify-content: center;
+  align-items: center;
 }
 
 .font-weight-100,

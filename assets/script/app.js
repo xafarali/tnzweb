@@ -154,7 +154,27 @@ jQuery(document).ready(function ($) {
     //  About US
     //=======================================================================
     if ($("body").hasClass("page-about-us")) {
+
         $("html").on("data-loading-done", function () {
+
+			//heading text
+			let heading_text =  SplitText.create( $('h1.fx-spin-text'), {type: 'chars'});
+			let para_text =  SplitText.create( $('p.fx-split-row-text'), {type: 'lines'});
+			let red_line	= $('.svg-red svg polyline');
+			let red_line_text = $('.svg-red svg text')
+
+
+			gsap.set( heading_text.chars, {
+				rotationX:-90,
+				autoAlpha:0,
+				transformOrigin: "50% 50% -60"
+			})
+			gsap.set(para_text.lines, {
+				autoAlpha:0,
+				yPercent:100,
+			})
+
+
             const svg_ele = document.querySelector(".abstract-line-svg");
             if (svg_ele) {
                 // lines
@@ -162,13 +182,15 @@ jQuery(document).ready(function ($) {
                 const circles = $("#about-lines circle", svg_ele);
                 const boxes = $("#about-text > g", svg_ele);
 
-				console.log(lines);
+				
 				svg_pathPrepare(lines);
-
+				svg_pathPrepare(red_line);
+				
                 const tl_svg_line = gsap.timeline();
-				gsap.set([lines,circles,boxes], {autoAlpha:0})
+				gsap.set([lines,boxes], {autoAlpha:0})
                 
 				gsap.utils.toArray(lines).forEach( item => {
+
 					tl_svg_line.to( item , {
 						strokeDasharray: window.svg_getLength(item),
 						strokeDashoffset: 0,
@@ -177,38 +199,146 @@ jQuery(document).ready(function ($) {
 						stagger: 2,
 						autoAlpha: 1,
 					},0 )
+					.from(item.nextElementSibling, {
+						x:gsap.utils.random(-500,1500, 10),
+						y:gsap.utils.random(-1500,1500, 10),
+						autoAlpha:0,
+						duration:4,
+						scale:.25,
+						stagger:0.1,
+						ease:"power3.out"
+					},1)
+					/*
 					.fromTo(item.nextElementSibling, {transformOrigin: "50% 50%",scale: 0, autoAlpha:0}, {
 						autoAlpha:1,
 						scale:1.25,
 						duration: .5,
 						stagger: .0261,
 						ease:"power3.out"
-					},.2)
+					},.1)*/
 							
 							
 			});
-
+			// Box Pop UP
 			tl_svg_line.fromTo( boxes,{
 						autoAlpha:0, 
-						yPercent: 30,
+						yPercent: 70,
 						
 					},{ 
 						autoAlpha: 1, 
 						yPercent: 0,
 						duration: 1,
-						stagger : .51,
-					}, "=-70%"
+						stagger : .5,
+						ease: "back.out(4)"
+					}, ">-50%"
 				)
- 
+				// blurout for heading
 				.to('.svg-cont', {
-					filter: "blur(20px)",
-					duration : 1,
+					filter: "blur(10px)",
+					duration : .65,
 					
-				}, 6)
+				}, 6.5)
 				.to('.svg-cont', {
-					filter: "blur(0px)",
-					duration : 1,
+					//filter: "blur(0px)",
+					//duration : 1,
 				})
+
+				//text reveal
+				.to( heading_text.chars, {
+					rotationX:0,
+					autoAlpha:1,
+					stagger:0.1,
+					duration:.5,
+					ease:"power3.out"
+				})
+				.to( para_text.lines, {
+					autoAlpha:1,
+					yPercent:0,
+					duration:.5,
+					stagger:.2
+				})
+				// red line
+				.to(red_line,{
+					strokeDasharray: window.svg_getLength(red_line),
+					strokeDashoffset: 0,
+					duration: 1.5,
+					ease: "power2.in",					
+					autoAlpha: 1,
+				})
+				.from(red_line_text, {
+					autoAlpha:0,
+					yPercent:100,
+					duration: .75
+				}) // tl_svg_line timeline endss
+
+                //---------------------------------------------------------
+                // services info graphics
+                //---------------------------------------------------------
+                if ( $('.service-infographic').length ) {
+                   let info_gfx = $('.service-infographic svg path');
+                   let info_txt = $('.service-infographic svg text');
+
+                   let tl_info_gfx = new gsap.timeline({
+                        scrollTrigger: {
+                            trigger: '.ev-scrolltrigger.service-infographic',
+                            start: 'top 70%',
+                            //markers: true,
+                            scrub:true,
+                            end:'70% 50%'
+                        }
+                   }).from([info_gfx,info_txt], {
+                        autoAlpha:0,
+                        yPercent:100,
+                        duration: .75,
+                        stagger: 0.25
+                   })
+                }
+
+                //---------------------------------------------------------
+                /// About Us Card 
+                //---------------------------------------------------------
+                if($('.card-wrapper').length ) {
+                    let card_flip = $('.cards-cont');
+                    let tl_card_abt = new gsap.timeline({
+                        scrollTrigger: {
+                            trigger: '.card-wrapper',
+                            start: 'top 20%',
+                            end : '150%',
+                            pin: true,
+                            //markers: true,
+                            scrub : true,
+                           ///pinSpacing: true,
+                        }
+                    })
+                    gsap.set(card_flip[0], {
+                        xPercent:100,
+                        // autoAlpha:.3
+                    })
+                    gsap.set(card_flip[2], {
+                        xPercent:-100,
+                        // autoAlpha:.3
+                    })
+
+                    tl_card_abt.to(card_flip[0], {
+                        xPercent:-20,
+                        duration : 2,
+                        ease:'power2.in'
+                    }, 0 )
+                    .to(card_flip[2], {
+                        xPercent:20,
+                        duration : 2,
+                        ease:'power2.in'
+                    }, 0 )
+
+                    .to(card_flip, {
+                        rotateY:180,
+                        duration: 2,
+                        stagger: 0.15,
+                    }, ">+2")
+                    
+
+                } // if cards
+
 
             } // Data Loading
         });

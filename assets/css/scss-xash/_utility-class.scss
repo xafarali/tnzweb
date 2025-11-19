@@ -358,7 +358,10 @@ $total-number:10;
 
 
 
-
+.no-wrap,
+.nowrap {
+	white-space: nowrap;
+}
 
 .no-shadow {
 	@include xash-box-shadow(unset!important);
@@ -384,6 +387,12 @@ $total-number:10;
 	@include xash-border-radius(300px!important);
 }
 
+
+.content-middle,
+.content-center {
+	justify-content: center;
+	align-items: center;
+}
 
 .font-weight-100,
 .font-thin	{ 	
@@ -412,6 +421,7 @@ $total-number:10;
 p.lg {
 	font-size: 1.25rem;
 }
+
 
 
 
