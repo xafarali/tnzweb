@@ -252,6 +252,37 @@
 
 
 }  // essential color loop
+
+
+//========================================================================
+// Based on Design System
+//========================================================================
+/// Colors and backgrounds
+@each $color-name, $color-val in $primary-colorkit { 
+	.color-primary-#{$color-name} {
+		color: $color-val;
+	}
+
+	.bg-primary-#{$color-name} {
+		background-color: $color-val;
+	}
+}
+
+
+@each $color-name, $color-val in $secondary-colorkit { 
+	.color-secondary-#{$color-name}, 
+	.color-sec-#{$color-name} {
+		color: $color-val;
+	}
+
+	.bg-secondary-#{$color-name},
+	.bg-sec-#{$color-name} {
+		background-color: $color-val;
+	}
+}
+
+
+
 	.color-white,
 	.clr-white,
 	.c-w {

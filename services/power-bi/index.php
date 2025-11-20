@@ -2,7 +2,7 @@
 	include('../../include/config.php');
 	global $root_path;
 	
-	$page_title = "Clouds";
+	$page_title = "Power BI";
 	
 	//https://dcnetworks.ie/cloud-solutions/benefits-of-a-bespoke-cloud-solutions-partner-vs-azure-or-aws-for-irish-development-companies/
 	get_head();
@@ -54,11 +54,14 @@
 
 
     <!-- Business Matters -->
-    <div class="auto-scroll-wrapper section fs" id="area-cloud-info">
+    <div class="auto-scroll-wrapper section dark-bg fs" id="area-bi-info">
+        <div class="illus-cont">
+            <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 mc text-right-desktop">
-                    <h2 class="font-size-h1 font-light wow fadeInUp" style="line-height:.9"><span class="h3 font-light">Key Features of</span> <strong class="no-wrap">Power BI</strong></h2>
+                    <h2 class="font-size-h1 font-light wow fadeInUp" style="line-height:.9"><span class="h3 font-light color-sec-50">Key Features of</span> <strong class="no-wrap">Power BI</strong></h2>
                     <!-- <p class="wow fadeInUp" data-wow-delay=".15s">
                         Apart from the Azure packages that are sure to meet your requirements, Sepia Solutions provides you with value added services throughout the progression of the project.
                         Starting from a free assessment, Sepia's team makes a detailed analysis of the existing environment and submits a complete impact report, suggesting a solution accordingly.
@@ -104,251 +107,82 @@
     
     
     <!-- WHY CLOUD 2 -->
-    <div class="auto-scroll-wrapper section fs theme-dark _bg-light-blue area-cloud-info" >
+    <div class="auto-scroll-wrapper section fs __bg-sec-400 area-why-tnz" >
+
+        <div class="illus-cont">
+            <img src="/images/tnz-logo.svg" alt="" class="illus-img">
+        </div>
         
         <div class="container">
-            
-            <h2 class="text-center h1 font-light color-light c-w text-shadow-lg wow fadeInUp">Why <strong>Cloud</strong> After All?</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 class="text-center h2 font-light color-light  color-secondary wow fadeInUp">About <strong>TnZ International</strong></h2>
+                    <p class="lfead">
+                        We are TnZ International, a company that helps businesses understand and use their data. We offer services in business intelligence, data integration, and cloud migration. Our goal is to help your business succeed by making the most of your data. We work with businesses in many different industries, providing the tools they need to grow. By using our services, you can make better decisions and achieve your goals.
+                    </p>
+                </div>
+            </div>
+           
             
             <div class="row">
                 
-                <div class="col-md-3 mc _offset-md-1 gri_d-order-1-desktop wow fadeInUp" data-wow-delay=".35s">
-                    
-                    <div class="text-right-desktop">
-                      
-                        <h3 class="font-size-h2">Deploy and scale seamlessly</h3>
-                        <p>
-                            Our optimized configuration process saves your team time when running and scaling distributed applications, AI & machine learning workloads, hosted services, client websites, or CI/CD environments.
-                        </p>
-                        
-                        <div class="spacer hide-phone"></div>
-                       
-                        
-                        <div class="text-center fl ab s c-w sm hide-phone">
-							<?php print_read_fancy('#area-why-sepia', 'x-scroll-to c-w') ?>
-                        </div>
+              <div class="col-md-7 offset-md-3">
+                <ul class="check sm">
+                    <li>Navigate More Services Internal links to other services provided by TnZ International.</li>
+                    <li>Real-World Applications of Power BI</li>
+                    <li>Power BI is used in many industries. In finance, it helps keep track of expenses, revenues, and investments. In healthcare, it monitors patient data, helping doctors make better decisions. In retail, it tracks sales and inventories, making it easy to manage stock.</li>
+                    <li>Imagine a finance company that needs to keep an eye on its investments. With Power BI, this company can see all investment data in one place. They can spot trends quickly and decide where to invest next.</li>
+                    <li>Or think about a healthcare clinic. They can use Power BI to track patient visits and lab results. This way, doctors can see a full picture of a patient's health quickly. This makes it easier to give the right treatment fast.</li>
+                    <li>Retail stores can also benefit. They can track what products sell the most and when. This helps them keep the right amount of stock and plan for busy times.</li>
+                    <li>Types of insights businesses can extract from data include customer behavior, sales trends, and operational efficiency. Power BI turns raw data into useful information. This helps businesses understand what they are doing well and where they can improve.</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
 
-                        <h4 class="h3 color-light font-light">Why to choose <br><strong>Sepia</strong> for Cloud?</h4>
-                    </div>
-                </div>
-                
-                
-                
-                <div class="col-md-8 offset-md-1 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="container">
-
-                        <div class="cloud-desc-wrap">
-
-                            <div class="row">
-
-                                <div class="col-md-12 hide-phone">
-                                    <div class="pager-cloud-feature _v2">
-                                        <ul>
-                                            <li class="active"><span>Deploy</span></li>
-                                            <li><span>Scale</span></li>
-                                            <li><span>Store</span></li>
-                                            <li><span>Secure</span></li>
-                                            <li><span>Monitor</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 -offset-md-1">
-
-                                    <div class="cloud-features section-slider" data-slide="1" data-slide-pager-static=".pager-cloud-feature > ul" data-slide-parent=".section-slider.cloud-features" data-slide="1">
-
-                                        <div class="cf-row">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/icon-config.svg" alt="" class="srv-ico">
-                                                    <h4>Virtual Machine in minutes</h4>
-                                                    <p>Spin up a managed Kubernetes cluster in just a few clicks. Simply specify the size and location of your worker nodes.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/icon-cpu.svg" alt="" class="srv-ico">
-                                                    <h4>Flexible compute range</h4>
-                                                    <p>Spin up a managed VM cluster in just a few clicks. Simply specify the size and location of your worker nodes.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/icon-marketplace.svg" alt="" class="srv-ico">
-                                                    <h4>1-Click App Marketplace</h4>
-                                                    <p>Quickly deploy projects using one of our preconfigured 1-Click Apps, like LAMP, Docker, and WordPress.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/icon-global.svg" alt="" class="srv-ico">
-                                                    <h4>Global availability</h4>
-                                                    <p>Deploy to any of our data center locations – New York, SF, London, Amsterdam, Bangalore, and more.</p>
-                                                </div>
-                                            </div>
-                                        </div> <!-- cf row -->
-
-
-                                        <div class="cf-row">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/icon-resize.svg" alt="" class="srv-ico">
-                                                    <h4>Resize</h4>
-                                                    <p>Quickly scale up, scale down, or migrate to different Droplet types to meet the demands of your customers.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-load-balance.svg" alt="" class="srv-ico">
-                                                    <h4>Load Balancers</h4>
-                                                    <p>Keep your application up and running smoothly by distributing traffic across Droplets, including those running as Kubernetes worker nodes.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-ip.svg" alt="" class="srv-ico">
-                                                    <h4>Floating IPs</h4>
-                                                    <p>Redirect network traffic between your VM using a Floating IP.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-payment.svg" alt="" class="srv-ico">
-                                                    <h4>Pay for what you use</h4>
-                                                    <p>With hourly billing, only pay for the resources that you actually use.</p>
-                                                </div>
-
-                                            </div>
-
-                                        </div> <!-- cf row -->
-
-
-                                        <div class="cf-row">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-database.svg" alt="" class="srv-ico">
-                                                    <h4>Managed Databases</h4>
-                                                    <p>Provision MySQL, Redis, and PostgreSQL databases in just a few clicks. We’ll handle setting up, backing up, and updating – so you can focus on building great apps.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-store-download.svg" alt="" class="srv-ico">
-                                                    <h4>Object Storage</h4>
-                                                    <p>Store and retrieve any amount of data, including audio, video, images, and log files using DigitalOcean Spaces.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-ssd.svg" alt="" class="srv-ico">
-                                                    <h4>Block Storage</h4>
-                                                    <p>Attach additional SSD-based storage to your Droplets for your databases or file storage.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-snapshot.svg" alt="" class="srv-ico">
-                                                    <h4>Backups &amp; Snapshots</h4>
-                                                    <p>Capture backups and snapshots of your Droplets to store server images or automatically scale your system.</p>
-                                                </div>
-
-                                            </div>
-
-                                        </div> <!-- cf row -->
-
-
-                                        <div class="cf-row">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-firewall.svg" alt="" class="srv-ico">
-                                                    <h4>Cloud Firewalls</h4>
-                                                    <p>Easily secure your infrastructure and instantly define what services are visible on all of your Droplets.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-networking.svg" alt="" class="srv-ico">
-                                                    <h4>Private Networking</h4>
-                                                    <p>Enable communication between VM in the same datacenter.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-team.svg" alt="" class="srv-ico">
-                                                    <h4>Team management</h4>
-                                                    <p>Invite team members to collaborate, ensure security with two-factor auth, and control your resources with centralized billing.</p>
-                                                </div>
-
-                                            </div>
-
-                                        </div> <!-- cf row -->
-
-
-                                        <div class="cf-row">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-integrate.svg" alt="" class="srv-ico">
-                                                    <h4>Natively integrated</h4>
-                                                    <p>Monitor system-level metrics in the same place you manage your infrastructure – at no additional cost.</p>
-                                                </div>
-
-                                                <div class="col-md-4 offset-md-2">
-                                                    <img src="/images/cloud/ico-resource.svg" alt="" class="srv-ico">
-                                                    <h4>Resource metrics</h4>
-                                                    <p>View summary stats and time series graphs of resource usage for your VM cluster, database, or individual VM nodes.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <img src="/images/cloud/ico-alert.svg" alt="" class="srv-ico">
-                                                    <h4>Real-time alerts</h4>
-                                                    <p>Receive alerts via Slack or email whenever a metric crosses your specified threshold and critical issues arise in your infrastructure.</p>
-                                                </div>
-
-                                            </div>
-
-                                        </div> <!-- cf row -->
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                </div>
+              </div>
                 
             </div>
             
         </div>
         
         <div class="spacer hide-phone"></div>
-    
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <h3 class="h2 font-light color-light text-center-desktop">
-                        Azure geography <br>that meets your needs
-                    </h3>
-                    <p>Get all of the information you need to get started on Azure in the geography that best fits your needs, from compliance to resiliency features</p>
-                    <img src="/images/world-location.svg" alt="">
-                </div>
-            </div>
-            
-        </div>
+        
+
+        
         
 
 
     </div>
     
     
+
+    <!-- WHY POWER BI -->
+     <div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you">
+             <div class="illus-cont">
+                <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
+            </div>
+            <div class="container">
+                <div class="row mc">
+                    <div class="col-md-4">
+                        <h3 class="h2 font-light color-primary text-right-desktop">
+                            How <br/><strong class="h1 color-primary-700">Power BI</strong> <br/>Can Help Your Business
+                        </h3>
+                        
+                        <!-- <img src="/images/world-location.svg" alt=""> -->
+                    </div>
+
+                    <div class="col-md-7">
+                        <ul class="check sm">
+                            <li>Power BI can automate many business tasks, saving you time and effort. For example, you can set up regular reports that update automatically. This means you don't have to manually create reports every time you need them.</li>
+                            <li>The main idea behind Power BI is data-driven decision-making. This means you use data to guide your choices. Instead of going with your gut feeling, you look at the data and see what it tells you. This leads to better results and helps your business grow.</li>
+                            <li>Sharing reports within your team is easy with Power BI. You can make sure everyone has access to the same information. This helps everyone stay informed and make decisions together.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        
+     </div>
 
     
    

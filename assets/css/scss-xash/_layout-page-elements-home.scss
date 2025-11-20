@@ -34,7 +34,7 @@
 } // homepage
 
 #body-wrapper {
-	overflow: hidden;
+	overflow: clip;
 }
 
 
@@ -852,7 +852,7 @@
 		}
 
 
-		
+
 
 
 
@@ -1282,12 +1282,70 @@
 				top: 0;
 				left: 0;
 			}
+
+
+			// #region PAGES SERVICES
 			//=========================================================================
 			//=========================================================================
 			//  MAIN SERVICES Area
 			//=========================================================================
 			//=========================================================================
+			// page Power BI
+			#area-bi-info {
+				position: relative;
+				//overflow: hidden;
 				
+				
+			}
+
+			
+				.illus-cont {
+						position: absolute;
+						width: 60%;
+						top:0;
+						
+
+					.illus-img {
+						height: 100%;
+						opacity: .2;
+
+						animation: img-parallex linear both ;
+						//animation-timeline-name:scroll;
+    					 animation-timeline: View();
+						 animation-range: entry 0% cover 80%;
+
+						
+					};
+
+
+					#area-bi-info & {
+						
+					}
+
+
+					.area-why-tnz  & {
+						right: -100px;
+						left: auto;
+
+
+						.illus-img {
+							width: 100%;
+							filter:saturate(0);
+							animation: img-parallex linear both ;
+							//animation-timeline-name:scroll;
+							animation-timeline: View();
+							animation-range: entry 0% cover 80%;
+						}
+					}
+
+				} // ilus cont
+				
+				.area-why-tnz {
+					position: relative;
+					overflow:clip;
+					background: url(images/bg-about-us-1.jpg) repeat-y top center
+				}
+
 
 
 				// Header ---
@@ -1295,9 +1353,16 @@
 
 
 		// </editor-fold>
+		//#endRegion
 
-
-
+@keyframes img-parallex {
+	from{
+		transform: translateY(-20%)
+	}
+	to{
+		transform: translateY(20%)
+	}
+}
 
 		// <editor-fold desc="- - - - [ PAGE WEB HOSTING ] - - - -">
 
@@ -1365,6 +1430,11 @@
 
 }
 
+
+.bg-dark,
+.dark-bg {
+	background-color: $bg-dark;
+}
 
 
 
