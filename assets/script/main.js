@@ -490,11 +490,12 @@ jQuery(document).ready(function ($) {
         if ($(".faq-wrapper").length) {
             var _fq_parent = $(".faq-wrapper");
 
-            $("body").on("click", ".panel-title span", function (e) {
+            $("body").on("click", ".panel", function (e) {
                 e.preventDefault();
 
-                var _panel = $(this).parents(".faq-heading").next();
-                $(_panel).toggleClass("collapsed");
+               // var _panel = $(this).find(".faq-heading").next();
+                //$(_panel).toggleClass("collapsed");
+                $(this).toggleClass('collapsed')
             });
         }
     }
@@ -1214,9 +1215,9 @@ jQuery(document).ready(function ($) {
                 // offset: 100
             })
                 // .addIndicators({name: "Scroll Horizon::" + _crv_cst_max_scroll})
-                .setPin(_crv_cst_text, { pushFollowers: true })
-                .setTween(tw__crv_cst_)
-                .addTo(controller);
+  //              .setPin(_crv_cst_text, { pushFollowers: true })
+//                .setTween(tw__crv_cst_)
+               // .addTo(controller);
         }
 
         // </editor-fold>
@@ -1325,8 +1326,8 @@ jQuery(document).ready(function ($) {
                 triggerHook: 0.75,
             })
 
-                .setTween($_tw_p_swe)
-                .addTo(controller);
+             //   .setTween($_tw_p_swe)
+             //   .addTo(controller);
 
             ////////////////////////////////////////
             // Interactivity

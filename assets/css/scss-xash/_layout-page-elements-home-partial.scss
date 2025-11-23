@@ -5,6 +5,38 @@
 
 */
 
+
+// ANIMATED EFFECT CLASSES CUSTOM
+div {
+	font-size:inherit;
+	color: inherit;
+
+}
+
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+//	SPINT TEXT
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+.fx-spin-wrapper {
+	position: relative;
+}
+.xs-fx-spin-text {
+	transform-style: preserve-3d;
+	perspective: 500px;
+	
+}
+
+.xs-fx-spin-text.shadow-clone {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	color: gold!important;
+}
+
+
+
 /// <editor-fold defaultstate="collapsed" desc="-------[ Misc Items / Page Elements ]-------">
 
 

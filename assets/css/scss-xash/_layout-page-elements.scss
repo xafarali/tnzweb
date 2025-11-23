@@ -2025,9 +2025,8 @@ body.media-detail {
 	.panel {
 		margin-bottom: .5rem;
 		background:white;
-		padding: 1.5rem;
-
-
+		padding: 1rem 1rem 1rem 2rem;
+		border-radius: $border-radius-card / 2;
 
 		@include xash-box-shadow();
 
@@ -2039,9 +2038,7 @@ body.media-detail {
 			padding-top: .2rem;
 			padding-bottom: .2rem;
 			border-width: 0 0 2px;
-
-
-
+			cursor: pointer;
 		}
 
 
@@ -2057,19 +2054,29 @@ body.media-detail {
 
 
 		.faq-content {
-			@include transition(max-height .25s ease-in-out);
+			@include transition(max-height .35s ease-in-out);
 			//height: auto;
 			max-height: 400px;
+			color: $body-color;
+			font-size: 1rem;			
+		}
 
 
-
-			&.collapsed {
+		&.collapsed  {
+			
+			.faq-content {
 				max-height: 0;
 				overflow: hidden;
+			}
 
 
+			.panel-title:before {
+				transform: rotate(0deg);
 			}
 		}
+
+
+
 
 	}
 
@@ -2077,9 +2084,21 @@ body.media-detail {
 	.panel-title {
 		padding: .5rem 0;
 		margin: 0;
+		position: relative;
 
 
-		@include fa-icon-only("\f055",1rem);
+		// @include fa-icon-only("\f055",2rem);
+		@include fa-icon-only('\f107', 2rem);
+
+			&:before {
+				position: absolute;
+				right:0;
+				top: 10px;
+				color: $body-color;
+				transition:transform .25s ease-in-out;
+				will-change: transform;
+				transform:rotate(180deg);
+		}
 
 
 

@@ -17139,6 +17139,45 @@ sup {
   color: #303F69;
 }
 
+.font-size-xxl {
+  font-size: 7.5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-xxl {
+    font-size: 6.6rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-xxl {
+    font-size: 10.8rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-xxl {
+    font-size: 12rem;
+  }
+}
+
+.font-size-xl {
+  font-size: 4.25rem;
+  font-size: 5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-xl {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-xl {
+    font-size: 9rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-xl {
+    font-size: 10rem;
+  }
+}
+
 .display-1,
 .display-2 {
   letter-spacing: -3px;
@@ -19717,6 +19756,45 @@ sup {
   font-weight: 300;
   line-height: 1;
   color: #303F69;
+}
+
+.font-size-xxl {
+  font-size: 7.5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-xxl {
+    font-size: 6.6rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-xxl {
+    font-size: 10.8rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-xxl {
+    font-size: 12rem;
+  }
+}
+
+.font-size-xl {
+  font-size: 4.25rem;
+  font-size: 5rem;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .font-size-xl {
+    font-size: 5.5rem;
+  }
+}
+@media only screen and (min-width:992px) {
+  .font-size-xl {
+    font-size: 9rem;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  .font-size-xl {
+    font-size: 10rem;
+  }
 }
 
 .display-1,
@@ -24969,7 +25047,8 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
 .faq-wrapper .panel {
   margin-bottom: 0.5rem;
   background: white;
-  padding: 1.5rem;
+  padding: 1rem 1rem 1rem 2rem;
+  border-radius: 22.5px;
   -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -25014,6 +25093,7 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
   border-width: 0 0 2px;
+  cursor: pointer;
 }
 .faq-wrapper .panel .panel-collapse {
   margin: -10px 0 20px 0;
@@ -25021,31 +25101,46 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
   border-top: 0;
 }
 .faq-wrapper .panel .faq-content {
-  -webkit-transition: max-height 0.25s ease-in-out;
-  -moz-transition: max-height 0.25s ease-in-out;
-  -o-transition: max-height 0.25s ease-in-out;
-  -ms-transition: max-height 0.25s ease-in-out;
-  transition: max-height 0.25s ease-in-out;
+  -webkit-transition: max-height 0.35s ease-in-out;
+  -moz-transition: max-height 0.35s ease-in-out;
+  -o-transition: max-height 0.35s ease-in-out;
+  -ms-transition: max-height 0.35s ease-in-out;
+  transition: max-height 0.35s ease-in-out;
   max-height: 400px;
+  color: #272f48;
+  font-size: 1rem;
 }
-.faq-wrapper .panel .faq-content.collapsed {
+.faq-wrapper .panel.collapsed .faq-content {
   max-height: 0;
   overflow: hidden;
+}
+.faq-wrapper .panel.collapsed .panel-title:before {
+  transform: rotate(0deg);
 }
 .faq-wrapper .panel-title {
   padding: 0.5rem 0;
   margin: 0;
+  position: relative;
 }
 .faq-wrapper .panel-title:before {
-  content: "\f055";
-  font-size: 1rem;
+  content: "\f107";
+  font-size: 2rem;
   display: inline-block;
-  font: normal normal normal 1rem/1 FontAwesome;
-  font-size: 1rem;
+  font: normal normal normal 2rem/1 FontAwesome;
+  font-size: 2rem;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-right: 0.25em;
+}
+.faq-wrapper .panel-title:before {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: #272f48;
+  transition: transform 0.25s ease-in-out;
+  will-change: transform;
+  transform: rotate(180deg);
 }
 .faq-wrapper .panel-title a,
 .faq-wrapper .panel-title span {
@@ -26325,6 +26420,28 @@ select.ajax-loader {
 	@file: layout-page-elements-home-partial
 
 */
+div {
+  font-size: inherit;
+  color: inherit;
+}
+
+.fx-spin-wrapper {
+  position: relative;
+}
+
+.xs-fx-spin-text {
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.xs-fx-spin-text.shadow-clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: gold !important;
+}
+
 .v-panel section {
   padding: 30px 0;
 }
