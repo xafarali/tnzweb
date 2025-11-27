@@ -6,7 +6,7 @@
 */
 
 
-// Sepia Solutions
+// Xafar
 // <editor-fold desc="- - - - [ Default HTML ELEMENTS & OVERRIDES ] - - - -">
 // @todo Need to make panel bar more accessible and standard
 
@@ -257,7 +257,11 @@
 //-----------------------------------------------------------
 //  Cards
 //-----------------------------------------------------------
-
+.sticky-panel {
+	position: sticky!important;
+	top: 29vh;
+	
+}
 
 // square
 .card {
@@ -267,14 +271,22 @@
 	padding: $card-padding;
 
 	@include xash-border-radius($border-radius-card);
-	@include animated-shadow($shadow-dialog);
+	//@include animated-shadow($shadow-dialog);
+	@include xash-box-shadow($shadow-dialog);
 
+
+	@media #{$media_small_device} {
+		padding: $card-padding-sm;
+		
+	}
 
 	// Square card
 
 	&.square,
 	&.box {
-		@extend .box-square;
+		// @extend .box-square;
+		aspect-ratio: 1;
+
 	}
 
 	&.rect {
@@ -284,7 +296,9 @@
 
 	> .content {
 		height: 100%;
-		padding: $grid-gutter-width;
+		padding: 1.25vw;
+
+		@media 
 
 
 		h3,

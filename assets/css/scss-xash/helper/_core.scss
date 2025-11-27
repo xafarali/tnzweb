@@ -69,6 +69,8 @@ $_desktop_lg_start: breakpoint-min(xxl);
 $media_phone: 		'only screen and (max-width: #{$_phone_})';
 $media_tablet: 		'only screen and (min-width: #{$_tablet_start_}) and (max-width: #{$_tablet_end_})';
 $media_device: 		'only screen and (max-width:#{$_tablet_end_})';
+// added device till laptop
+$media_small_device: 'only screen and (max-width: #{$_laptop_start})';
 
 $media_tablet_start:'only screen and (min-width:#{$_tablet_start_})';
 $media_desktop: 	'only screen and (min-width:#{$_desktop_start})';

@@ -748,7 +748,7 @@ jQuery(document).ready(function ($) {
                     scrollTrigger: {
                         trigger: '#service-home',
                         duration :2,
-                        start: 'top s',
+                        start: 'top 0',
                         toggleActions:'play reverse play reset',
                         pin: '#tagline-home',
                         pinSpacing: false,
@@ -2406,6 +2406,9 @@ jQuery(document).ready(function ($) {
 
                 $el.css("stroke-dasharray", lineLength);
                 $el.css("stroke-dashoffset", lineLength * fac);
+
+                // experimental
+                $el.attr('data-dasharray', lineLength);
             });
         }
     };

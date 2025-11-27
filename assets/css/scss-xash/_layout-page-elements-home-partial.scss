@@ -32,9 +32,67 @@ div {
 	left: 0;
 	top: 0;
 	width: 100%;
-	color: gold!important;
+	color: white;
 }
 
+
+// STICKY ELEMENTS
+@mixin _resposnive_utilset ( $_pre ) {
+
+	
+	.sticky-panel#{$_pre} {
+		position: sticky;	
+		margin-bottom: 10vh;
+		top: 30vh;
+	}
+
+	
+	.sticky-area#{$_pre} {
+		position: sticky!important;
+		top: 10vh;
+	}
+
+	
+	.sticky-area-middle#{$_pre} {
+		position: sticky!important;
+		top: 50vh;
+		transform:translate(0,-50%)
+	}
+
+}
+
+// Immediate invoked to generate media classes
+	@include xash_custom_mq_util();
+	//------------------------------------------------------
+
+
+
+
+ul.reset,
+.no-style {
+	list-style: none;
+	padding:0;
+	margin: 0;
+
+
+	li { list-style: none;
+	}
+}
+
+.bg-clip-left {
+	clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+}
+
+.bg-clip {
+	clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+} 
+
+.bg-clip,
+.bg-clip-left {
+	margin-top: -20vh;
+    margin-bottom: -20vh;
+    padding: 30vh 0;
+}
 
 
 /// <editor-fold defaultstate="collapsed" desc="-------[ Misc Items / Page Elements ]-------">

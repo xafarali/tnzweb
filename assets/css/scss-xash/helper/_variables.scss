@@ -607,7 +607,7 @@ $btn-font-family: 				$headings-font-family;
 $btn-height-base:				 35px;
 
 
-$btn-default-color:              map-get($primary-colorkit,"800" );
+$btn-default-color:              map-get($primary-colorkit,"50" );
 $btn-default-bg:                 $brand-primary;
 $btn-default-bg-hover:           lighten($btn-default-bg, 20%);
 $btn-default-border:             darken($btn-default-color, 3%);
@@ -862,7 +862,8 @@ $blockquote-line-height: 2;
 
 // Cards
 $border-radius-card: $grid-gutter-width * 1.5;
-$card-padding: $grid-gutter-width * 1.5;
+$card-padding: 2vw;
+$card-padding-sm: 1vw;
 
 
 

@@ -364,211 +364,351 @@ jQuery(document).ready(function ($) {
 	////////////////////////////////////////////////////
 	////////////////////////////////////////////////////
 	////////////////////////////////////////////////////
-	
-    // Rotating TEXT effect 3d
-    if ( $(".xs-fx-spin-text").length ) {
+	$("html").on("data-loading-done", function () {
+
+    
+        // Rotating TEXT effect 3d
+        if ( $(".xs-fx-spin-text").length ) {
+            /**
+             * parent container, which will trigger it's animation
+             * location of trigger
+             * length of trigger
+             * speed of animation
+             * stagger
+             */
+
+            let spinText = $('.xs-fx-spin-text');
+
+            spinText.each( function(i,v) {
+
+                // basic setup
+                
+                let $this = $(v);
+                let evTrigger =     $this.data('trigger')       != undefined ? $this.data('trigger') : $this.parent();
+                let triggerStart =  $this.data('trigger-start') != undefined ? $this.data('trigger-start') : "0% 20%";
+                let triggerEnd =    $this.data('trigger-end')   != undefined ? $this.data('trigger-end') : "100% 20%";
+                let itemStagger  =  $this.data('stagger')       != undefined ? $this.data('stagger') : .15;
+                let speed        =  $this.data('duration')      != undefined ? $this.data('duration') : 1;
+                let type         =  $this.data('type')          != undefined ? $this.data('type') : "chars";
+                let delay        =  $this.data('delay')         != undefined ? $this.data('delay') : 0;
+                let pin          =  $this.data('pin')           != undefined ? $this.data('pin') : false;
+                let scrub        =  $this.data('scrub')         != undefined ? $this.data('scrub') : false;
+                let animation    =  $this.data('style')         != undefined ? $this.data('style') : 'spin';
+                
+
+
+                // Clone Text 
+                let positions = $this.position();
+                let width   = $this.width();
+                let cloneText = $this.clone().insertAfter($this);
+                cloneText.addClass('shadow-clone');
+                cloneText.css({'left': positions.left, 'top': positions.top, 'width': width})
+                $this.addClass('txt-flipped');
+            
+                // Split it
+                let origText =      SplitText.create( $this, { type:type, smartWrap:true });
+                let shadowText =    SplitText.create(cloneText, { type:type, smartWrap:true});
+
+
+                // Early Setup
+                if ( animation == 'spin') {
+                    
+
+                    gsap.set( origText[type], {
+                        rotationX:-90,
+                        autoAlpha:0,
+                        transformOrigin: "50% 50% -70"
+                    })
+
+                    gsap.set(shadowText[type], {
+                        rotationX:0,
+                        autoAlpha:1,
+                        transformOrigin: "50% 50% -70"
+                    })
+                }  else {
+                    gsap.set( origText[type], {
+                        yPercent:100,
+                        autoAlpha:0,
+                        filter:'blur(5px)'
+                    })
+
+                    gsap.set( shadowText[type], {
+                        yPercent:230,
+                        autoAlpha:0,
+                        
+                    })
+                    
+                }
+
+
+                //animate 
+                let autoR = new gsap.timeline({
+                    scrollTrigger: {
+                        trigger: evTrigger,
+                        start:  triggerStart,
+                        end:  triggerEnd,
+                        scrub: scrub,
+                    //markers: true
+                    }
+
+                })
+
+                if ( animation == "spin" ) {
+
+                    autoR.to(origText[type], {
+                        rotationX: 0,
+                        autoAlpha:1,
+                        duration: speed,
+                        stagger: itemStagger,
+                        ease:"power4.out",
+                        delay: delay
+                    }, 0 )
+                    .to(shadowText[type], {
+                        rotationX:90,
+                        autoAlpha:0,
+                        duration: speed,
+                        stagger: itemStagger,
+                        ease:"power4.out",
+                        delay: delay
+                    }, 0 )
+
+                } else {               
+
+                    autoR.to( origText[type], {
+                        yPercent:0,
+                        autoAlpha:1,
+                        duration: speed,
+                        stagger: itemStagger,
+                        ease:"power4.in",
+                        delay: delay,
+                        filter: 'blur(0px)'
+                    }, 0 )
+
+                    // .to( shadowText[type], {
+                    //     yPercent:-100,
+                    //     autoAlpha:0,
+                    //     duration: speed,
+                    //     stagger: itemStagger,
+                    //     ease:"power4.in",
+                    //     delay: delay
+                    // }, 0 )
+                }
+                
+                
+            })
+        }
+
+        
+        // Grow / Shrink Container based on Scroll
+        if ( $('.xs-fx-grow').length ) {
+
+            let container = $('.xs-fx-grow');
+            container.each(function(i,v) {
+                
+                let $this = $(v);
+                let mode =          $this.data('mode')          != undefined ? $this.data('mode') : 'grow';
+                let scale =         $this.data('scale')         != undefined ? $this.data('scale') :  .75; 
+                let evTrigger =     $this.data('trigger')       != undefined ? $this.data('trigger') : $this.parent();
+                let triggerStart =  $this.data('trigger-start') != undefined ? $this.data('trigger-start') : "0% 0%";
+                let triggerEnd =    $this.data('trigger-end')   != undefined ? $this.data('trigger-end') : "100% 20%";
+                let itemStagger  =  $this.data('stagger')       != undefined ? $this.data('stagger') : .15;
+                let speed        =  $this.data('duration')      != undefined ? $this.data('duration') : 1;
+                let delay        =  $this.data('delay')         != undefined ? $this.data('delay') : 0;
+                let pin          =  $this.data('pin')           != undefined ? $this.data('pin') : true;
+                let scrub        =  $this.data('scrub')         != undefined ? $this.data('scrub') : true;
+                let marker        =  $this.data('debug')         != undefined ? $this.data('debug') : false;
+                let radius      =   $this.data('corner')        !=  undefined ? $this.data('corner') : 0;
+
+                let scale_tl    = new gsap.timeline({
+                    scrollTrigger: {
+                        trigger: evTrigger,
+                        start:  triggerStart,
+                        end:  triggerEnd,
+                        scrub: scrub,
+                        markers: marker,
+                        pin:pin
+                    }
+                })
+
+                if( mode == 'grow') {
+
+                    gsap.set( $this, {
+                        scale:scale,
+                        //rotationX:30,
+                        // autoAlpha: .25,
+                        //filter: 'blur(1px)'
+                        borderRadius:radius
+                    })
+
+
+                    scale_tl.to( $this, {
+                        scale: 1,
+                        duration: speed,
+                        delay: delay,
+                        borderRadius:"0px"
+                    },0)
+
+                }
+
+                else {
+                    gsap.set( $this, {
+                        scale:1,
+                        borderRadius:"0px"
+                    })
+
+
+                    scale_tl.to( $this, {
+                        scale: scale,
+                        duration: speed,
+                        delay: delay,
+                        borderRadius:radius
+                    },0)
+
+                }
+            
+
+                
+
+            })
+        }
+
+
+
+        // Animate SVG Lines as whole
         /**
-         * parent container, which will trigger it's animation
-         * location of trigger
-         * length of trigger
-         * speed of animation
-         * stagger
+         * SVG lines which should be animated MUST have class fx-animate
+         */
+        if( $('.xs-fx-draw-line').length ) {
+
+            let svgItem = $('.xs-fx-draw-line');
+
+            
+
+            svgItem.each(function (i,v) {
+
+                let $item   = $(v);
+
+                let evTrigger =     $item.data('trigger')       != undefined ? $item.data('trigger') : $item.parent();
+                let triggerStart =  $item.data('trigger-start') != undefined ? $item.data('trigger-start') : "0% 20%";
+                let triggerEnd =    $item.data('trigger-end')   != undefined ? $item.data('trigger-end') : "100% 20%";
+                let speed =         $item.data('speed')         != undefined ? $item.data('speed') : 1;
+                let itemStagger =   $item.data('stagger')       != undefined ? $item.data('stagger') : .1;
+                let delay =         $item.data('delay')         != undefined ? $item.data('delay') : .5;
+                let marker =        $item.data('debug')         != undefined ? $item.data('debug') : false;
+                let scrub        =  $item.data('scrub')         != undefined ? $item.data('scrub') : false;
+                
+                let $svgEle = $('.fx-animate' , $item );
+                
+                
+                let _svg_line_tl = gsap.timeline( {
+                    scrollTrigger: {
+                        trigger: evTrigger,
+                        start:  triggerStart,
+                        end:  triggerEnd,
+                        scrub: scrub,
+                        markers: marker
+                    } 
+                });
+                
+                //prepare path
+                svg_pathPrepare($svgEle);
+
+
+                // process
+                gsap.utils.toArray($svgEle).forEach( item => {
+                    
+                    _svg_line_tl.to( item, {
+
+                        strokeDasharray: window.svg_getLength(item),
+                        strokeDashoffset: 0,
+                        duration: speed,
+                        ease: "power2.inOut",
+                        stagger: itemStagger,
+                        //autoAlpha: 1,
+                        delay: delay,
+                        markers: marker
+
+                    }, ">-100%" )
+                
+                }) // gsapforeach
+                
+            
+
+            }) // svg Item
+
+
+
+        }
+
+
+
+        // Animate SVG Lines as whole
+        /**
+         * Sticky Card--
+         * xs-fs-sticky-card is a container
+         * sticky-card
          */
 
-        let spinText = $('.xs-fx-spin-text');
+        if( $('.xs-fx-sticky-wrap').length ) {
 
-        spinText.each( function(i,v) {
+            let stickyWrap = $('.xs-fx-sticky-wrap');
 
-            // basic setup
-            
-            let $this = $(v);
-            let evTrigger =     $this.data('trigger')       != undefined ? $this.data('trigger') : $this.parent();
-            let triggerStart =  $this.data('trigger-start') != undefined ? $this.data('trigger-start') : "0% 20%";
-            let triggerEnd =    $this.data('trigger-end')   != undefined ? $this.data('trigger-end') : "100% 20%";
-            let itemStagger  =  $this.data('stagger')       != undefined ? $this.data('stagger') : .15;
-            let speed        =  $this.data('duration')      != undefined ? $this.data('duration') : 1;
-            let type         =  $this.data('type')          != undefined ? $this.data('type') : "chars";
-            let delay        =  $this.data('delay')         != undefined ? $this.data('delay') : 0;
-            let pin          =  $this.data('pin')           != undefined ? $this.data('pin') : false;
-            let scrub        =  $this.data('scrub')         != undefined ? $this.data('scrub') : false;
-            let animation    =  $this.data('style')         != undefined ? $this.data('style') : 'spin';
-            
-
-
-            // Clone Text 
-            let positions = $this.position();
-            let width   = $this.width();
-            let cloneText = $this.clone().insertAfter($this);
-            cloneText.addClass('shadow-clone');
-            cloneText.css({'left': positions.left, 'top': positions.top, 'width': width})
-            $this.addClass('txt-flipped');
-           
-            // Split it
-            let origText =      SplitText.create( $this, { type:type, smartWrap:true });
-            let shadowText =    SplitText.create(cloneText, { type:type, smartWrap:true});
-
-
-            // Early Setup
-            if ( animation == 'spin') {
-                 
-
-                 gsap.set( origText[type], {
-                    rotationX:-90,
-                    autoAlpha:0,
-                    transformOrigin: "50% 50% -70"
-                })
-
-                gsap.set(shadowText[type], {
-                    rotationX:0,
-                    autoAlpha:1,
-                    transformOrigin: "50% 50% -70"
-                })
-            }  else {
-                gsap.set( origText[type], {
-                    yPercent:100,
-                    autoAlpha:0,
-                    filter:'blur(5px)'
-                })
-
-                 gsap.set( shadowText[type], {
-                    yPercent:230,
-                    autoAlpha:0,
+            // gsap.timeline({
+            //     scrollTrigger : {
+            //         trigger : stickyWrap,
+            //         start: 'top top' ,
+            //         end: '100%',
+            //         scrub: 1,
+            //         pin:true , 
+            //         markers:true,
                     
-                })
+            //     }
+            // })
+
+            if ($('.sticky-panel' , stickyWrap).length ) {
                 
-            }
+                let $panels = gsap.utils.toArray($('.sticky-panel', stickyWrap))
 
+                $panels.forEach(( panel,index) => {
+                    let isLast = index === $panels.length - 1;
+                    
+                    
+                    gsap.timeline({
+                        scrollTrigger : {
+                            trigger : panel,
+                            start: 'top ' + (20 + (50 * index) ) ,
+                            end: '100%',
+                            scrub:1,
+                            //pin:panel, 
+                            
+                            //
+                        }
+                         })
+                        // animation of card
+                        .to( panel, {
+                            ease: 'none',
+                            startAt : {
+                                filter: 'blur(0px)',
+                                autoAlpha: 1
+                            },
+                            filter : isLast ? 'none' : 'blur(4px)',
+                           scale:.9,
+                           autoAlpha: .5,
+                           yPercent:-5
 
-            //animate 
-            let autoR = new gsap.timeline({
-                scrollTrigger: {
-                    trigger: evTrigger,
-                    start:  triggerStart,
-                    end:  triggerEnd,
-                    scrub: scrub,
-                  //markers: true
-                }
-
-            })
-
-            if ( animation == "spin" ) {
-
-                autoR.to(origText[type], {
-                    rotationX: 0,
-                    autoAlpha:1,
-                    duration: speed,
-                    stagger: itemStagger,
-                    ease:"power4.out",
-                    delay: delay
-                }, 0 )
-                .to(shadowText[type], {
-                    rotationX:90,
-                    autoAlpha:0,
-                    duration: speed,
-                    stagger: itemStagger,
-                    ease:"power4.out",
-                    delay: delay
-                }, 0 )
-
-            } else {               
-
-                autoR.to( origText[type], {
-                    yPercent:0,
-                    autoAlpha:1,
-                    duration: speed,
-                    stagger: itemStagger,
-                    ease:"power4.in",
-                    delay: delay,
-                    filter: 'blur(0px)'
-                }, 0 )
-
-                // .to( shadowText[type], {
-                //     yPercent:-100,
-                //     autoAlpha:0,
-                //     duration: speed,
-                //     stagger: itemStagger,
-                //     ease:"power4.in",
-                //     delay: delay
-                // }, 0 )
-            }
-            
-            
-        })
-    }
-
-	
-    // Grow / Shrink Container based on Scroll
-    if ( $('.xs-fx-grow').length ) {
-
-        let container = $('.xs-fx-grow');
-        container.each(function(i,v) {
-            
-            let $this = $(v);
-            let mode =          $this.data('mode')          != undefined ? $this.data('mode') : 'grow';
-            let scale =         $this.data('scale')         != undefined ? $this.data('scale') :  .75; 
-            let evTrigger =     $this.data('trigger')       != undefined ? $this.data('trigger') : $this.parent();
-            let triggerStart =  $this.data('trigger-start') != undefined ? $this.data('trigger-start') : "0% 0%";
-            let triggerEnd =    $this.data('trigger-end')   != undefined ? $this.data('trigger-end') : "100% 20%";
-            let itemStagger  =  $this.data('stagger')       != undefined ? $this.data('stagger') : .15;
-            let speed        =  $this.data('duration')      != undefined ? $this.data('duration') : 1;
-            let delay        =  $this.data('delay')         != undefined ? $this.data('delay') : 0;
-            let pin          =  $this.data('pin')           != undefined ? $this.data('pin') : false;
-            let scrub        =  $this.data('scrub')         != undefined ? $this.data('scrub') : true;
-
-            let scale_tl    = new gsap.timeline({
-                scrollTrigger: {
-                    trigger: evTrigger,
-                    start:  triggerStart,
-                    end:  triggerEnd,
-                    scrub: scrub,
-                    markers: true,
-                    pin:true
-                }
-            })
-
-            if( mode == 'grow') {
-
-                gsap.set( $this, {
-                    scale:scale,
-                    //rotationX:30,
-                    // autoAlpha: .25,
-                    //filter: 'blur(1px)'
+                        }, "<")
+                  
                 })
-
-
-                scale_tl.to( $this, {
-                    scale: 1,
-                    duration: speed,
-                    delay: delay
-                },0)
-
             }
 
-            else {
-                gsap.set( $this, {
-                scale:1
-                })
 
-
-                scale_tl.to( $this, {
-                    scale: scale,
-                    duration: speed,
-                    delay: delay
-                },0)
-
-            }
-           
-
-            
-
-        })
-    }
+        }
 
 
 	//--------------------------------------------------------------------
 	//#endregion
 
-
+        }) // On Trigger Ends
 
 
 
