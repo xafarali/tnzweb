@@ -653,6 +653,10 @@ jQuery(document).ready(function ($) {
 
             let stickyWrap = $('.xs-fx-sticky-wrap');
 
+            let $stickyArr = gsap.utils.toArray(stickyWrap);
+
+            $stickyArr.forEach(( wrapper, j) => {
+
             // gsap.timeline({
             //     scrollTrigger : {
             //         trigger : stickyWrap,
@@ -665,42 +669,77 @@ jQuery(document).ready(function ($) {
             //     }
             // })
 
-            if ($('.sticky-panel' , stickyWrap).length ) {
+                if ($('.sticky-panel' , wrapper).length ) {
+
                 
-                let $panels = gsap.utils.toArray($('.sticky-panel', stickyWrap))
-
-                $panels.forEach(( panel,index) => {
-                    let isLast = index === $panels.length - 1;
                     
+                    let $panels = gsap.utils.toArray($('.sticky-panel', wrapper ))
+
+                    $panels.forEach(( panel, index) => {
+                        let isLast = index === $panels.length - 1;
+                        console.log(index, "\nindex\n")
+                        
+                        gsap.timeline({
+                            scrollTrigger : {
+                                trigger : panel,
+                                start: 'top ' + (20 + (50 * index) ) ,
+                                end: '100%',
+                                scrub:1,
+                                //pin:panel,                             
+                                //
+                            }
+                            })
+
+                            // animation of card
+                            .to( panel, {
+                                ease: 'none',
+                                startAt : {
+                                    filter: 'blur(0px)',
+                                    autoAlpha: 1
+                                },
+                                filter : isLast ? 'none' : 'blur(4px)',
+                                scale: isLast ? 1 : .9,
+                                autoAlpha: isLast ? 1 : .5,
+                                yPercent:-5
+
+                            }, "<")
                     
-                    gsap.timeline({
-                        scrollTrigger : {
-                            trigger : panel,
-                            start: 'top ' + (20 + (50 * index) ) ,
-                            end: '100%',
-                            scrub:1,
-                            //pin:panel, 
-                            
-                            //
-                        }
-                         })
-                        // animation of card
-                        .to( panel, {
-                            ease: 'none',
-                            startAt : {
-                                filter: 'blur(0px)',
-                                autoAlpha: 1
-                            },
-                            filter : isLast ? 'none' : 'blur(4px)',
-                           scale:.9,
-                           autoAlpha: .5,
-                           yPercent:-5
+                    })
 
-                        }, "<")
-                  
-                })
-            }
+                }  // if sticky-panel
 
+
+                if ($('.pin-panel' , wrapper).length ) {
+
+                    let pinned = gsap.utils.toArray($('.pin-panel', wrapper ));
+
+                    pinned.forEach(( pinItem, k ) =>  {
+                        let $item   = $(pinItem);
+                        let evTrigger =     $item.data('trigger')       != undefined ? $item.data('trigger') : $item.parent();
+                        let triggerStart =  $item.data('trigger-start') != undefined ? $item.data('trigger-start') : "0% 10%";
+                        let triggerEnd =    $item.data('trigger-end')   != undefined ? $item.data('trigger-end') : "100% 90%";
+                        let triggerEndEl =  $item.data('trigger-end-element')   != undefined ? $item.data('trigger-end-element') : evTrigger;
+                        let speed =         $item.data('speed')         != undefined ? $item.data('speed') : 1;
+                        
+                        
+                        let marker =        $item.data('debug')         != undefined ? $item.data('debug') : false;
+                        let scrub        =  $item.data('scrub')         != undefined ? $item.data('scrub') : false;  
+
+                        let stickyTimeline = gsap.timeline ({
+                            scrollTrigger : {
+                                trigger: evTrigger,
+                                start: triggerStart,
+                                end: triggerEnd,
+                                endTrigger : triggerEndEl,
+                                pin: pinItem,
+                                markers: marker,
+                                 pinSpacing : false,
+                            }
+                        })
+                    })
+                }
+
+            }) // loop stickyArr
 
         }
 

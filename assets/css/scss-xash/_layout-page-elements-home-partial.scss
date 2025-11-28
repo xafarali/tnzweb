@@ -79,18 +79,20 @@ ul.reset,
 	}
 }
 
-.bg-clip-left {
-	clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
-}
+.bc-inv,
+.bg-clip-left { clip-path: polygon(0 6vh, 100% 0, 100% 100%, 0 94%);}
+.bc,
+.bg-clip { clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);} 
+.bc-diamond { clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);}
+.bc-diamond-inv { clip-path:polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%) }
 
-.bg-clip {
-	clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
-} 
 
+.bc-diamond,
+.bc-diamond-inv,
 .bg-clip,
 .bg-clip-left {
-	margin-top: -20vh;
-    margin-bottom: -20vh;
+	margin-top: -10vh;
+    margin-bottom: -10vh;
     padding: 30vh 0;
 }
 

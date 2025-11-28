@@ -3494,7 +3494,7 @@ h6, .h6 {
 
 .lead {
   font-size: 2.6rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .display-1 {
@@ -17291,7 +17291,7 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
   margin-bottom: 30px;
   line-height: 1.25;
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: #202A46;
 }
 .lead.lg {
@@ -19910,7 +19910,7 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
   margin-bottom: 30px;
   line-height: 1.25;
   font-family: "Outfit", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: #202A46;
 }
 .lead.lg {
@@ -23777,13 +23777,17 @@ ul, ol {
   height: 100%;
   padding: 1.25vw;
 }
-@media h3, h2 {
-  .card > .content {
-    margin: 1rem 0 0;
-  }
-  .card > .content span {
-    display: block;
-  }
+.card > .content h3, .card > .content .faq-wrapper .cat-heading, .faq-wrapper .card > .content .cat-heading {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.card > .content h3, .card > .content .faq-wrapper .cat-heading, .faq-wrapper .card > .content .cat-heading,
+.card > .content h2 {
+  margin: 0 0 1rem;
+}
+.card > .content h3 span, .card > .content .faq-wrapper .cat-heading span, .faq-wrapper .card > .content .cat-heading span,
+.card > .content h2 span {
+  display: block;
 }
 .card > .content.x-2 {
   padding: 60px;
@@ -26519,18 +26523,30 @@ ul.reset li,
   list-style: none;
 }
 
+.bc-inv,
 .bg-clip-left {
   clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
 }
 
+.bc,
 .bg-clip {
   clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
 }
 
+.bc-diamond {
+  clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);
+}
+
+.bc-diamond-inv {
+  clip-path: polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%);
+}
+
+.bc-diamond,
+.bc-diamond-inv,
 .bg-clip,
 .bg-clip-left {
-  margin-top: -20vh;
-  margin-bottom: -20vh;
+  margin-top: -10vh;
+  margin-bottom: -10vh;
   padding: 30vh 0;
 }
 
@@ -29346,9 +29362,15 @@ a.del.read-more,
 }
 
 .text-shadow {
-  -moz-text-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
-  -webkit-text-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
-  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
+  -moz-text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  -webkit-text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.text-glow {
+  -moz-text-shadow: 0 4px 8px rgba(255, 255, 255, 0.25);
+  -webkit-text-shadow: 0 4px 8px rgba(255, 255, 255, 0.25);
+  text-shadow: 0 4px 8px rgba(255, 255, 255, 0.25);
 }
 
 .text-shadow-lg {
@@ -29444,23 +29466,41 @@ p.lg {
   z-index: 4;
 }
 
-.z-1 {
+.z-1,
+.zi-1 {
   z-index: 1;
 }
-.z-2 {
+.z-2,
+.zi-2 {
   z-index: 2;
 }
-.z-3 {
+.z-3,
+.zi-3 {
   z-index: 3;
 }
-.z-4 {
+.z-4,
+.zi-4 {
   z-index: 4;
 }
-.z-5 {
+.z-5,
+.zi-5 {
   z-index: 5;
 }
-.z-6 {
+.z-6,
+.zi-6 {
   z-index: 6;
+}
+.z-7,
+.zi-7 {
+  z-index: 7;
+}
+.z-8,
+.zi-8 {
+  z-index: 8;
+}
+.z-9,
+.zi-9 {
+  z-index: 9;
 }
 
 .no-border,

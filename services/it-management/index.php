@@ -54,56 +54,94 @@
 
 
     <!-- Business Matters -->
-    <div class="auto-scroll-wrapper section bg-primary-200 fs overflow-clip" id="area-bi-info">
+    <div class="auto-scroll-wrapper pr section bg-primary-200 fs overflow-clip xs-fx-sticky-wrap" id="it-detail-service-info">
         <div class="illus-cont">
             <img src="/images/srv/circle-test.svg" class="illus-img" alt=""> 
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 mc text-right-desktop">
-                    <h2 class="font-size-h1 font-light wow fadeInUp" style="line-height:.9"><div class="h3 font-light color-primary-600 no-margin">Detailed</div><strong>Service</strong> <div class="h3 text-left font-light color-primary-600">Descriptions</div></h2>
+                <div class="col-md-4  text-right-desktop">
+                    <div class="content sticky-area-middle-desktop">
+                         <h2 class="font-size-h1 font-light wow fadeInUp" style="line-height:.9">
+                            <div class="h3 font-light color-primary-600 no-margin text-left ">Detailed</div>
+                            <strong>Service</strong> 
+                            <div class="h3 font-light color-primary-600">Descriptions</div>
+                        </h2>
+                         <p>Our services extend beyond the basics, providing comprehensive solutions tailored to enhance every facet of your IT environment.</p>
+                    </div>
+                   
                     <!-- <p class="wow fadeInUp" data-wow-delay=".15s">
                         Apart from the Azure packages that are sure to meet your requirements, Sepia Solutions provides you with value added services throughout the progression of the project.
                         Starting from a free assessment, Sepia's team makes a detailed analysis of the existing environment and submits a complete impact report, suggesting a solution accordingly.
                     </p> -->
                 </div>
-                <div class="col-md-8 offset-md-1">
+                <div class="col-md-6 offset-md-2">
                     <div class="row grid-square text-center content-middle">
-                        <div class="col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                            <div class="card rect mc">
-                                <div class="content">
-                                    <h4>Network Maintenance</h4>
-                                    <p class="small">Power BI can bring data from many different sources into one place. This is called data integration. It doesn't matter if your data is in Excel, a database, or online - Power BI can blend them all together. It uses connectors to make this process smooth and easy.</p>
+                        <ul class="no-style">                    
+                            
+
+                             <li class="sticky-panel">
+                                <div class="card text-left">
+                                    <div class="content mc">
+                                        <h3 class="font-light">Network Maintenance</h3>
+                                        <ul class="check no-margin">
+                                            <li><strong>Overview:</strong> A seamless and efficient network is vital to business productivity. We ensure that your network connections deliver the speed and reliability necessary to meet the demands of modern business operations.</li>
+                                            <li><strong>Key Tasks:</strong> We take a hands-on approach, monitoring network speeds regularly, updating critical firmware components to improve functionality, and troubleshooting connectivity issues to maintain continuous network uptime.</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div> 
-                        </div>
-                       <div class="col-md-6 ">
-                            <div class="card rect mc wow fadeInUp"  data-wow-delay=".75s">
-                                <div class="content">
-                                    <h4>Hardware &amp; Software Upkeep</h4>                                
-                                    <p class="small">With Power BI, you get real-time analytics. This means you can see data as it happens. If something changes in your data, it shows up right away in your reports. This is very important for making quick decisions based on the most up-to-date information.</p>
-                                </div>                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card rect mc wow fadeInUp" data-wow-delay="1s">
-                                <div class="content">
-                                    <h4>Threat Detection</h4>
-                                    <p class="small">Power BI allows you to create reports and dashboards that fit your needs. You can customize them to show the data that is important to you. There are many options for different charts, graphs, and tables. You can make your dashboard look just the way you want it.</p>
-                                </div>                                
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeInUp" data-wow-delay="1.25s">
-                            <div class="card rect mc">
-                                <div class="content">
-                                    <h4>Disaster Recovery</h4>
-                                    <p class="small">
-                                        The visual elements in Power BI are interactive. For example, you can click on a part of a chart to see more details. This helps you explore your data deeper and find the insights you need. There are many types of visuals you can use such as bar charts, line graphs, and maps.
-                                    </p>
+                            </li>
+
+                            <li class="sticky-panel">
+                                <div class="card text-left">
+                                    <div class="content mc">
+                                        <h3 class="font-light">Hardware and Software Upkeep</h3>
+                                        <ul class="check no-margin">
+                                            <li><strong>Overview:</strong> The performance of your computers, tablets, and software systems directly impacts your workflow. We ensure they remain in top working condition to prevent any operational inefficiencies.</li>
+                                            <li><strong>Key Tasks:</strong> Regular software updates, which include security patches and performance enhancements, are our staple. Additionally, we handle repairs or replacements of malfunctioning parts and install robust antivirus programs to guard against malicious threats.</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                
-                            </div>  
-                        </div>
+                            </li>
+
+
+                            <li class="sticky-panel">
+                                <div class="card text-left">
+                                    <div class="content mc">
+                                        <h3 class="font-light">Threat Detection and Prevention</h3>
+                                        <ul class="check no-margin">
+                                            <li><strong>Overview:</strong> Data security is paramount. We proactively shield your business against potential breaches from malicious entities.</li>
+                                            <li><strong>Key Tasks:</strong> Our preventive measures include the establishment of comprehensive firewalls, conducting thorough security testing, and round-the-clock monitoring of your systems for any signs of suspicious or unauthorized activity.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                              <li class="sticky-panel">
+                                <div class="card text-left">
+                                    <div class="content mc">
+                                        <h3 class="font-light">Disaster Recovery</h3>
+                                        <ul class="check no-margin">
+                                            <li><strong>Overview:</strong> Preparedness is the cornerstone of resilience. Our disaster recovery strategies are designed to quickly restore your systems following any unforeseen events, minimizing data loss and downtime.</li>
+                                            <li><strong>Key Tasks:</strong> Regular backups of crucial data, detailed data recovery plans, and well-practiced emergency response protocols are all integral to our disaster recovery services.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                              <li class="sticky-panel">
+                                <div class="card text-left">
+                                    <div class="content mc">
+                                        <h3 class="font-light">System Upgrades</h3>
+                                        <ul class="check no-margin">
+                                            <li><strong>Overview:</strong> Stagnation in technology can lead to inefficiencies. We ensure that your systems boast the latest technology, enhancing both performance and security</li>
+                                            <li><strong>Key Tasks:</strong> This includes installing new servers that provide more power and versatility, upgrading existing software applications for better functionality, and replacing old computer systems with state-of-the-art alternatives to future-proof your operations.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
                     </div>
                     <!-- <img src="/images/cloud/illus-business-matter.svg" alt="" class="wow fadeInUp" data-wow-delay=".35s"> -->
                 </div>
@@ -158,33 +196,103 @@
     
 
     <!-- WHY POWER BI -->
-     <div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you xs-fx-sticky-wrap bg-clip">
+     <div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you xs-fx-sticky-wrap bg-clip" id="tailored-solution">
             <div class="sticky-area">             
                 <div class="illus-cont">
                     <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
                 </div>
             </div>
-            <div class="container">
+            <div class="container container-end-2x">
                 <div class="row m c">
-                    <div class="col-md-4">
-                        <div class="sticky-area-middle">
-                            <h3 class="h2 font-light color-primary text-right-desktop">
-                                How <br/><strong class="h1 color-primary-700">Power BI</strong> <br/>Can Help Your Business
-                            </h3>
+                    <div class="col-md-12">
+                        <div class="content pin-panel sticky-heading-x12" data-trigger=".sticky-heading-x12" data-trigger-end-element="#tailored-solution .sticky-panel-x">
+                            <h3 class="h2 font-light color-primary text-center">
+                                <span class="color-primary-700 font-light">Cloud Versus On-Premises Solutions:</span> 
+                                <div><strong>Tailored to Your Needs</strong></div>
+                            </h3>                      
                         </div>
-                        
-                        <!-- <img src="/images/world-location.svg" alt=""> -->
                     </div>
 
-                    <div class="col-md-5 offset-md-3">
-                        <ul class="no-style sm card-wrapper square">
-                            <li class="sticky-panel"><div class="card rect">Power BI can automate many business tasks, saving you time and effort. For example, you can set up regular reports that update automatically. This means you don't have to manually create reports every time you need them.</div></li>
-                            <li class="sticky-panel"><div class="card rect">The main idea behind Power BI is data-driven decision-making. This means you use data to guide your choices. Instead of going with your gut feeling, you look at the data and see what it tells you. This leads to better results and helps your business grow.</div></li>
-                            <li class="sticky-panel"><div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure everyone has access to the same information. This helps everyone stay informed and make decisions together.</div></li>
-                            <li class="sticky-panel"><div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure everyone has access to the same information. This helps everyone stay informed and make decisions together.</div></li>
-                            <li class="sticky-panel"><div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure everyone has access to the same information. This helps everyone stay informed and make decisions together.</div></li>
+                    <div class="col-md-12">
+                        <ul class="no-style no-margin card-wrapper">
+                            
+                            <li class="sticky-panel col-md-6 offset-md-3">
+                                <div class="card">
+                                    <div class="content">
+                                        <h3>Cloud Solutions</h3>
+                                        <ul class="check no-margin small">
+                                            <li><strong>Overview:</strong> Cloud solutions offer unparalleled convenience by allowing data storage online, accessible from virtually anywhere.</li>
+                                            <li><strong>Benefits:</strong> Prominent benefits include easy access from multiple locations, scalability to grow alongside your business requirements without hardware limitations, and significantly reduced maintenance costs since infrastructure is managed off-site.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="sticky-panel col-md-6 offset-md-3">
+                                <div class="card">
+                                    <div class="content">
+                                        <h3>On-Premises Solutions</h3>
+                                        <ul class="check no-margin small">
+                                            <li><strong>Overview:</strong> On-premises solutions involve physical servers kept at your business location, providing tangible control over your data.</li>
+                                            <li><strong>Benefits:</strong> This setup offers greater control over your information, enhanced security protocols given the physical presence of servers, and faster local access for operations requiring immediate computing power.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="sticky-panel col-md-8 offset-md-2">
+                                <div class="card">
+                                    <div class="content">
+                                        <h3>Our Proven Process</h3>
+                                        <p class="small">Our methodology for implementing services is designed to integrate seamlessly into your business environment, ensuring minimal disruption and maximum efficiency.  </p>
+                                        <ul class="check no-margin small">
+                                            <li><strong>Assessment:</strong> We begin by analyzing your existing IT infrastructure, identifying its strengths and areas needing improvement.</li>
+                                            <li><strong>Planning:</strong> Following the assessment, our experts craft a custom plan that directly addresses your business's unique needs and aspirations.Prominent benefits include easy access from multiple locations, scalability to grow alongside your business requirements without hardware limitations, and significantly reduced maintenance costs since infrastructure is managed off-site.</li>
+                                            <li><strong>Implementation:</strong> Our team executes the planned strategies with precision, striving to integrate with minimal disruption to your daily operations.</li>
+                                            <li><strong>Monitoring:</strong> After implementation, we remain vigilant, continually monitoring your systems to ensure everything functions correctly and efficiently.</li>
+                                            <li><strong>Support:</strong> Problems can arise unexpectedly, which is why we offer continuous support, solving any technical issues promptly to keep your operations smooth and uninterrupted.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="sticky-panel col-md-8 offset-md-2">
+                                <div class="card">
+                                    <div class="content">
+                                        <h3>Catalyzing Business Growth</h3>
+                                        <p class="small">Beyond maintaining your IT systems, our tailored solutions act as a catalyst for business growth, empowering you through:</p>
+                                        <ul class="check no-margin small">
+                                            <li><strong>Increased Efficiency:</strong> Well-optimized systems lead to enhanced productivity, enabling your business to achieve more in less time.</li>
+                                            <li><strong>Enhanced Security:</strong> Solid data protection measures foster client trust, safeguarding sensitive information against unauthorized access.</li>
+                                            <li><strong>Cost-efficiency:</strong> By minimizing downtime, we help redirect resources towards growth initiatives, optimizing your investment returns.</li>
+                                            <li><strong>Scalability:</strong> Our flexible solutions allow for seamless expansion as your business flourishes, accommodating new users and systems effortlessly.</li>
+                                            <li><strong>Competitive Advantage:</strong> Staying current with industry trends and technological updates positions your business advantageously in the marketplace.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="sticky-panel col-md-8 offset-md-2 sticky-panel-x">
+                                <div class="card">
+                                    <div class="content">
+                                        <h3>Your Trusted IT Partner</h3>
+                                        <p class="small">At TnZ International, we are committed to elevating your IT systems to unparalleled levels of reliability and efficiency. Partnering with us provides you with:</p>
+                                        <ul class="check no-margin small">
+                                            <li><strong>Reliability:</strong> Our steadfast commitment to service excellence means we are always available whenever you need support.</li>
+                                            <li><strong>Transparency:</strong> We maintain open and clear communication channels to ensure understanding and alignment with your goals at every step.</li>
+                                            <li><strong>Quality:</strong> Our pursuit of excellence is reflected in the superior services and unwavering support we deliver.</li>
+                                            <li><strong>Innovation:</strong> By eagerly adopting the latest technological advancements, we keep your business at the cutting edge.</li>
+                                            <li><strong>Satisfaction:</strong> Your complete satisfaction and peace of mind are our ultimate objectives, achieved through continuous improvement and a client-focused service ethos.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            
                         </ul>
                     </div>
+
+
                 </div>
                 
             </div>
@@ -196,200 +304,22 @@
     
     
     <!-- Sepia Offers -->
-    <div class="auto-scroll-wrapper section fs bg-light-blue cloud-why-tnz" id="area-why-tnz">
+    <div class="auto-scroll-wrapper section fs cloud-why-tnz" id="contact-journey">
        
-        
-        <div class="container-fluid">
-            
-            <div class="row">
-                <div class="col-md-3 hide-device">
-                
-                </div>
-                <div class="col-md-9">
-                    <div class="container-lg no-margin">
-                        <h3 class="wow fadeInUp">Why to Choose</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".25s">TnZ Internationals for Power BI</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".5s">After you have made the decision that would change your business forever, we provide you with our full technical support, giving you full deployment assistance, and taking you successfully to the last step.</p>
-                    </div>
-                    
-                   
-                </div>
-            </div>
-                <div class="container">
-                <div class="row">
-                        <div class="col-md-4">
-                            <div class="card rect mc wow fadeInUp" data-wow-delay=".75s">
-                                <h4>Expertise</h4>
-                                <p class="small">Our team at TnZ International knows a lot about business intelligence and data integration. We have the skills to make sure Power BI works perfectly for you.</p>
-                            </div>                           
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rect mc wow fadeInUp" data-wow-delay="1s">
-                                <h4>Experience</h4>
-                                <p class="small">We have been working in this field for many years. Our experience helps us understand different business needs and provide the best solutions.</p>
-                            </div>                           
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rect mc wow fadeInUp" data-wow-delay="1.25s">
-                                <h4>Results-Driven</h4>
-                                <p class="small">We focus on delivering results that matter. We aim to help your business grow and succeed by using Power BI effectively.</p>
-                            </div>                           
-                        </div>
-
-                    </div> <!-- row -->
-            </div>
-            
-          
-            
-        </div>
-        
+         <?php get_contact('journey') ?>
     </div>
 
 
-    <!--   FAQ PRICES-->
-    <div class="auto-scroll-wrapper section isvs-price bg-secondary">
-        <div class="container-xl">
-            <div class="_text-center-desktop">
-                 <div class="container-xl">
-            
-            <h2 class="h1_ text-center color-white">Frequently Asked Questions</h2>
-            
-            <div class="faq-wrapper">
-                
-                
-                <div class="panel collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>What is Power BI?</span>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-content"><p>
-                        Power BI is a tool that turns data into visual reports and dashboards. This helps businesses understand their data and make better decisions.
-                    </p></div>
-                </div>
-
-                
-                <div class="panel collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>How does Power BI integrate data?</span>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-content"><p>
-                        Power BI uses connectors to bring data from different sources into one place. This makes it easy to see all your data together.
-                    </p></div>
-                </div>
-
-                
-                <div class="panel collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>Can Power BI show real-time data?</span>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-content"><p>Yes, Power BI can show real-time data. This means your reports always show the most recent information.</p></div>
-                </div>
-                
-                
-                <div class="panel collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>Is Power BI hard to use?</span>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-content"><p>No, Power BI is user-friendly. It's designed to be easy for anyone to create and share reports.</p></div>
-                </div>
-                
-                
-                
-                <div class="panel  collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>How customizable are Power BI reports?</span>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-content"><p>
-                        Power BI reports are very customizable. You can choose what data to show and how it looks with different charts and visuals.
-                    </p></div>
-                </div>
-                <div class="panel  collapsed">
-                    <div class="faq-heading">
-                        <div class="panel-title">
-                            <span>What kind of support does TnZ International offer?</span>
-                        </div>
-
-                    </div>
-
-                    <div class="faq-content"><p>
-                        We offer ongoing support to help you with any issues you might face. This ensures you get the best out of Power BI at all times.
-                    </p></div>
-                </div>
-                
-                
-            </div>
-            
-        </div>
-            </div>
-
-        </div>
-
-    </div>
     
     
     
 
-    <!--  CUSTOMER ENGAGEMENT-->
-      <?php
-      /*
-    <div class="auto-scroll-wrapper fs section customer-flow">
-        
-        <div class="container">
-            
-            <div class="row">
-                
-                <div class="col-md-3 text-right-desktop">
-                    
-                    <div class="text-area">
-                        <h2 class="font-size-h 3 font-light">Customer Engagement Flow</h2>
-                        <p>Moving to the cloud may sound intimidating. But it becomes very easy when all you have to do is make the decision, while we do all the major work. Trust is our expertise as we skillfully guide you from the first step to the last, starting from professional advice, tailoring a solution for your business and giving it a competent completion.</p>
-                    </div>
-                    
-                </div>
-                
-                
-                <div class="col-md-9 illus-custom-eng">
-                    
-                    <div class="content">                        
-                        <div class="area-illus">
-                            <img src="/images/cloud/illus-customer-engage.svg" alt="" class="svg-import illus-custom-eng-img" style="width: 100%">
-                        </div>   
-                    </div>
-                  
-                    
-                </div>
-                
-                
-            </div>
-           
-        </div>
-    </div>
-    */
-    ?>
     
 
     
     
     
-<?php get_contact() ?>
+
     
 <?php
  

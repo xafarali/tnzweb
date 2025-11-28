@@ -387,6 +387,7 @@ $total-number:10;
 }
 
 .text-shadow { @include text-shadow($text-shadow) }
+.text-glow { @include text-shadow($text-glow) }
 .text-shadow-lg { @include  text-shadow($text-shadow-lg)}
 .shadow {  @include xash-box-shadow($shadow-dialog!important);  }
 
@@ -483,13 +484,17 @@ p.lg {
 
 
 
-.z {
+.z,
+.zi {
 	&-1 { z-index: 1; }
 	&-2 { z-index: 2; }
 	&-3 { z-index: 3; }
 	&-4 { z-index: 4; }
 	&-5 { z-index: 5; }
 	&-6 { z-index: 6; }
+	&-7 { z-index: 7; }
+	&-8 { z-index: 8; }
+	&-9 { z-index: 9; }
 }
 
 

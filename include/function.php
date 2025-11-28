@@ -82,9 +82,9 @@
 	}
 	
 	
-	function get_contact ($num = 1) {
+	function get_contact ($name = 1) {
 		global $root_path;
-		include ( $root_path . 'template/contact-us-'.$num.'.php');
+		include ( $root_path . 'template/contact-us-'.$name.'.php');
 	}
 	
 	

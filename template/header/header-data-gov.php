@@ -33,10 +33,9 @@
                                 <div class="">
                                     <div class="fx-spin-wrapper">
                                         <h1 class="color-white text-center">
-                                       <span class="h2">Comprehensive</span><br> 
-                                       <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
+                                           <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
                                         data-mod = "rev"                                   
-                                        > IT Infrastructure </div><div class="h2">Management</div>
+                                        > Data Governance</div><div class="h2 wow fadeInUp" data-wow-delay="1s">and Best Practices</div>
                                     </h1>
                                     </div>
                                    
@@ -47,11 +46,11 @@
                                         data-style="fd" 
                                         data-trigger=".banner-content"
                                         data-trigger-start="top 60%"
-                                        data-delay="2"
-                                        data-stagger="0.05"
+                                        data-delay="2",
+                                        data-stagger=".05"
                                         >
                                         <br>
-                                       Enhance and Safeguard Your IT Systems with <strong>TnZ International</strong>
+                                       <strong>At TnZ International</strong>, we deeply value the importance of safeguarding your data. Our primary goal is to ensure that your data is not only secure but also accurate and easily accessible. 
                                     </p>
                                     </div>
                                     <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">
