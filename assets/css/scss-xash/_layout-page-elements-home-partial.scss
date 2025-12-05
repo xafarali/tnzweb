@@ -80,7 +80,7 @@ ul.reset,
 }
 
 .bc-inv,
-.bg-clip-left { clip-path: polygon(0 6vh, 100% 0, 100% 100%, 0 94%);}
+.bg-clip-left { clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);}
 .bc,
 .bg-clip { clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);} 
 .bc-diamond { clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);}
@@ -342,6 +342,19 @@ a {
 
 }
 
+
+.area-middle 
+{
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+
+	> div {
+		display: flex;
+		align-content: space-between;
+		height: 100%;
+	}
+}
 
 
 	// square etc elements
@@ -857,6 +870,12 @@ span.svg-import {
 		svg {
 			height: 100%;
 		}
+	}
+}
+
+.logo-solutions {
+	img {
+		max-width: 190px;
 	}
 }
 

@@ -45,6 +45,7 @@
 .area-menu {
 	display: flex;
 	justify-content: flex-end;
+	margin-top: 10px;
 
 
 	.area-menu-button .btn {
@@ -140,6 +141,8 @@
 	a {
 		border:none!important;
 		outline: none!important;
+		margin-top: 10px;
+		display: block;
 	}
 
 

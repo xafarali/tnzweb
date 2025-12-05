@@ -196,7 +196,8 @@
     
 
     <!-- WHY POWER BI -->
-     <div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you xs-fx-sticky-wrap bg-clip" id="tailored-solution">
+     <div class="auto-scroll-wrapper section bg-white fs pr  power-bi-for-you xs-fx-sticky-wrap" id="tailored-solution">
+        <div class="">
             <div class="sticky-area">             
                 <div class="illus-cont">
                     <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
@@ -204,8 +205,16 @@
             </div>
             <div class="container container-end-2x">
                 <div class="row m c">
-                    <div class="col-md-12">
-                        <div class="content pin-panel sticky-heading-x12" data-trigger=".sticky-heading-x12" data-trigger-end-element="#tailored-solution .sticky-panel-x">
+                    <div class="col-md-12" id="pinpanel-trigger">
+                        <br><br><br>
+                        <div class="content pin-panel" 
+                            data-trigger="#pinpanel-trigger" 
+                            data-trigger-end-element="#tailored-solution .sticky-panel-x"
+                            data-trigger-start="0 0"
+                           
+                            data-spacing = false
+                            
+                            >
                             <h3 class="h2 font-light color-primary text-center">
                                 <span class="color-primary-700 font-light">Cloud Versus On-Premises Solutions:</span> 
                                 <div><strong>Tailored to Your Needs</strong></div>
@@ -213,7 +222,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-12 sticky-heading-x12">
                         <ul class="no-style no-margin card-wrapper">
                             
                             <li class="sticky-panel col-md-6 offset-md-3">
@@ -297,16 +306,17 @@
                 
             </div>
         
-     </div>
+     
+        </div>    
+      </div>
 
     
    
     
     
-    <!-- Sepia Offers -->
+    <!--  -->
     <div class="auto-scroll-wrapper section fs cloud-why-tnz" id="contact-journey">
-       
-         <?php get_contact('journey') ?>
+        <?php get_contact('journey') ?>
     </div>
 
 

@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-it-management-2.jpg" alt="" class="imgFit" style="filter:blur(2px) hue-rotate(45deg)">
+                <img src="<?php echo $images ?>/srv/header-opt-performance-v2.jpg" alt="" class="imgFit" style="filter:blur(1px)">
             </div>
             
         </div>
@@ -32,14 +32,16 @@
                             <div class="col-md-10 text-center-phone offset-md-1">
                                 <div class="">
                                     <div class="fx-spin-wrapper">
-                                        <h1 class="color-white text-center">
-                                       <span class="h2">Comprehensive</span><br> 
-                                       <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
-                                        data-mod = "rev"                                   
-                                        > IT Infrastructure </div><div class="h2">Management</div>
+                                        <h1 class="color-white text-center text-shadow">
+                                            <div class="h2 wow fadeInUp">Enhance Your </div>
+                                            <div class="xs-fx-spin-text dp  fonbt-size-xl" 
+                                                data-trigger=".banner-content" 
+                                                data-mod = "rev">                                   
+                                            System Performance </div>
+                                            
                                     </h1>
                                     </div>
-                                   
+                                    
                                    
                                    <div class="fx-spin-wrapper">
                                     <p class=" xs-fx-spin-text lead xl light color-white text-center-phone "  
@@ -47,11 +49,12 @@
                                         data-style="fd" 
                                         data-trigger=".banner-content"
                                         data-trigger-start="top 60%"
-                                        data-delay="2"
-                                        data-stagger="0.05"
+                                        data-delay="2",
+                                        data-stagger=".05"
                                         >
                                         <br>
-                                       Enhance and Safeguard Your IT Systems with <strong>TnZ International</strong>
+                                       <!-- <strong>At TnZ International</strong>, we deeply value the importance of safeguarding your data. Our primary goal is to ensure that your data is not only secure but also accurate and easily accessible.  -->
+                                        Without optimal performance, operations slow down, productivity wanes and valuable time is wasted!.
                                     </p>
                                     </div>
                                     <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">

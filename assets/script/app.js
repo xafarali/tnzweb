@@ -677,14 +677,14 @@ jQuery(document).ready(function ($) {
 
                     $panels.forEach(( panel, index) => {
                         let isLast = index === $panels.length - 1;
-                        console.log(index, "\nindex\n")
+                        // console.log(index, "\nindex\n")
                         
                         gsap.timeline({
                             scrollTrigger : {
                                 trigger : panel,
                                 start: 'top ' + (20 + (50 * index) ) ,
                                 end: '100%',
-                                scrub:1,
+                                scrub:.25,
                                 //pin:panel,                             
                                 //
                             }
@@ -710,22 +710,34 @@ jQuery(document).ready(function ($) {
 
 
                 if ($('.pin-panel' , wrapper).length ) {
-
+                    console.log('PINNED PANEL FOUND')
                     let pinned = gsap.utils.toArray($('.pin-panel', wrapper ));
 
                     pinned.forEach(( pinItem, k ) =>  {
                         let $item   = $(pinItem);
                         let evTrigger =     $item.data('trigger')       != undefined ? $item.data('trigger') : $item.parent();
-                        let triggerStart =  $item.data('trigger-start') != undefined ? $item.data('trigger-start') : "0% 10%";
-                        let triggerEnd =    $item.data('trigger-end')   != undefined ? $item.data('trigger-end') : "100% 90%";
+                        let triggerStart =  $item.data('trigger-start') != undefined ? $item.data('trigger-start') : "0% 60%";
+                        let triggerEnd =    $item.data('trigger-end')   != undefined ? $item.data('trigger-end') : "100% 0%";
                         let triggerEndEl =  $item.data('trigger-end-element')   != undefined ? $item.data('trigger-end-element') : evTrigger;
-                        let speed =         $item.data('speed')         != undefined ? $item.data('speed') : 1;
+                        let speed =         $item.data('speed')                 != undefined ? $item.data('speed') : 1;
+                        let spacing =       $item.data('spacing')               != undefined ? $item.data('spacing') : true;
                         
-                        
-                        let marker =        $item.data('debug')         != undefined ? $item.data('debug') : false;
-                        let scrub        =  $item.data('scrub')         != undefined ? $item.data('scrub') : false;  
+                        let marker =        $item.data('debug')                 != undefined ? $item.data('debug') : false;
+                        let scrub        =  $item.data('scrub')                 != undefined ? $item.data('scrub') : false;  
 
-                        let stickyTimeline = gsap.timeline ({
+                         
+                        let st = ScrollTrigger.create({
+                            trigger: evTrigger,
+                            start: triggerStart,
+                            end: triggerEnd,
+                            endTrigger : triggerEndEl,
+                            pin: pinItem,
+                            markers: marker,
+                            pinSpacing : spacing,
+                        })
+                        
+                        /*
+                        gsap.timeline ({
                             scrollTrigger : {
                                 trigger: evTrigger,
                                 start: triggerStart,
@@ -733,9 +745,10 @@ jQuery(document).ready(function ($) {
                                 endTrigger : triggerEndEl,
                                 pin: pinItem,
                                 markers: marker,
-                                 pinSpacing : false,
+                                pinSpacing : false,
                             }
                         })
+                        */
                     })
                 }
 

@@ -1,8 +1,8 @@
 <?php
 	/**
 	 * Author : xafaR
-	 * Created at: 25 01, 2020
-	 * Description : File belongs to sepiasol2
+	 * Created at: 25 10, 2025
+	 * Description : File belongs to xafaR
 	 * header of homepage
 	 */
 	global $images;
@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-it-management-2.jpg" alt="" class="imgFit" style="filter:blur(2px) hue-rotate(45deg)">
+                <img src="<?php echo $images ?>/srv/header-data-gov.jpg" alt="" class="imgFit" style="filter:blur(2px)">
             </div>
             
         </div>
@@ -32,11 +32,10 @@
                             <div class="col-md-10 text-center-phone offset-md-1">
                                 <div class="">
                                     <div class="fx-spin-wrapper">
-                                        <h1 class="color-white text-center">
-                                       <span class="h2">Comprehensive</span><br> 
-                                       <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
+                                        <h1 class="color-white text-center text-shadow">
+                                           <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" 
                                         data-mod = "rev"                                   
-                                        > IT Infrastructure </div><div class="h2">Management</div>
+                                        > Innovative Application</div><div class="h2 color-white wow fadeInUp" data-wow-delay="1s">Development</div>
                                     </h1>
                                     </div>
                                    
@@ -47,11 +46,10 @@
                                         data-style="fd" 
                                         data-trigger=".banner-content"
                                         data-trigger-start="top 60%"
-                                        data-delay="2"
-                                        data-stagger="0.05"
+                                        data-delay="2",
+                                        data-stagger=".05"
                                         >
-                                        <br>
-                                       Enhance and Safeguard Your IT Systems with <strong>TnZ International</strong>
+                                        To stay ahead of the curve is not just an advantage, it's a necessity
                                     </p>
                                     </div>
                                     <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">

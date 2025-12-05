@@ -854,6 +854,26 @@
 
 
 
+		//=========================================================================
+		//=========================================================================
+		//=========================================================================
+		//  App -dev
+		//=========================================================================
+		//=========================================================================
+		.page-app-dev {
+			#sec-dev-steps {
+				background: $primary-200 url('/assets/images/bg-app-dev.png') center top fixed;
+			}
+
+			.illus-cont {
+
+				.illus-img {
+					top: 0;
+					height: auto;
+				}
+				
+			}
+		}
 
 
 		//=========================================================================
@@ -1299,46 +1319,6 @@
 			}
 
 			
-				.illus-cont {
-						position: absolute;
-						width: 60%;
-						top:0;
-						
-
-					.illus-img {
-						height: 100%;
-						opacity: .2;
-
-						animation: img-parallex linear both ;
-						//animation-timeline-name:scroll;
-    					 animation-timeline: View();
-						 animation-range: entry 0% cover 80%;
-
-						
-					};
-
-
-					#area-bi-info & {
-						
-					}
-
-
-					.area-why-tnz  & {
-						right: -100px;
-						left: auto;
-
-
-						.illus-img {
-							width: 100%;
-							filter:saturate(0);
-							animation: img-parallex linear both ;
-							//animation-timeline-name:scroll;
-							animation-timeline: View();
-							animation-range: entry 0% cover 80%;
-						}
-					}
-
-				} // ilus cont
 				
 				.area-why-tnz {
 					position: relative;
@@ -1347,6 +1327,84 @@
 				}
 
 
+.illus-cont {
+		position: absolute;
+		width: 60%;
+		top:0;
+		height: 100%;
+		
+
+
+	.illus-img {
+		height: 100%;
+		opacity: .2;
+
+		animation: img-parallex linear both ;
+		//animation-timeline-name:scroll;
+		animation-timeline: View();
+		animation-range: entry 0% cover 80%;		
+
+
+		// positions
+		&.top-left {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&.top-right {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		
+		&.bottom-left {
+			position: absolute;
+			bottom: 0;
+			left: 0;	
+		}
+
+		&.bottom-right {
+			position: absolute;
+			bottom: 0;
+			right: 0;	
+		}
+
+
+
+
+	};
+
+
+	#area-bi-info & {}
+
+
+	.area-why-tnz & {
+		right: -100px;
+		left: auto;
+
+
+		.illus-img {
+			width: 100%;
+			filter:saturate(0);
+			animation: img-parallex linear both ;
+			//animation-timeline-name:scroll;
+			animation-timeline: View();
+			animation-range: entry 0% cover 80%;
+		}
+
+	}
+
+	&.style-lg {
+		width: 100%;
+
+
+		.illus-img {
+			width: 120%;
+		}
+	}
+
+} // ilus cont
 
 				// Header ---
 				//-------------------------------------------------------------------

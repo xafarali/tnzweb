@@ -533,6 +533,15 @@ h1.heading {
 }
 
 
+.heading-caption,
+.h-caption {
+	color:$brand-primary;
+	font-weight: $font-weight-light;
+	display: block;
+	line-height: 1;
+	margin:0 .25em 0 0;
+}
+
 .narrow-width {
 	width: 70%;
 }

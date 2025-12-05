@@ -231,6 +231,11 @@
 		min-height: 120vh
 	}
 
+
+	&.fh {
+		max-height: 120vh;
+	}
+
 }
 
 
@@ -275,13 +280,22 @@
 	@include xash-box-shadow($shadow-dialog);
 
 
+	
+
 	@media #{$media_small_device} {
 		padding: $card-padding-sm;
-		
+		@include xash-border-radius($border-radius-card/2);
 	}
 
 	// Square card
+	&.auto {
+		height: auto;				
+	}
 
+	&.has-gap { 
+		margin-bottom: $grid-gutter-width;
+	}
+	
 	&.square,
 	&.box {
 		// @extend .box-square;
@@ -303,6 +317,11 @@
 			margin-bottom: $grid-gutter-width;
 		}
 
+		h3,
+		h4 {
+			display: block;
+			width: 100%;
+		}
 
 		h3,
 		h2 {
@@ -364,14 +383,23 @@
 
 
 	&.outline {
-		border:1px solid $text-color;
-		@include xash-box-shadow(none);
+		outline:5px solid rgba($brand-secondary, .25) !important;;
+		//@include xash-box-shadow(none);
 
 
 		&:after {
 			content: none;
 		}
 	}
+
+
+	&.border{
+		border-left:6px solid $brand-secondary !important;
+	}
+
+
+	
+
 }
 
 

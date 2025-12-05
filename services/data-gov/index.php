@@ -7,7 +7,7 @@ $page_title = "Data Governance";
 //https://dcnetworks.ie/cloud-solutions/benefits-of-a-bespoke-cloud-solutions-partner-vs-azure-or-aws-for-irish-development-companies/
 get_head();
 //---------------------------------------------------------------------------------------------------------------------//
-body_open('page-srv-cloud full-width ', $root_path . 'template/header/header-data-gov.php');
+body_open('page-data-gov full-width ', $root_path . 'template/header/header-data-gov.php');
 
 ?>
 
@@ -114,7 +114,7 @@ body_open('page-srv-cloud full-width ', $root_path . 'template/header/header-dat
             <div class="col-md-6">
                 <div class="card wow fadeInUp" data-wow-delay="1.5s">
                     <div class="content mc no-margin">
-                        <h3><span class="font-size-h4 dp font-light">What is </span>BI Governance?</h3>
+                        <h3><span class="h4 h-caption">What is </span>BI Governance?</h3>
                         <p>Business Intelligence (BI) governance involves directing and overseeing the data utilized in reports and dashboards, ensuring its accuracy and reliability. It provides a structured approach to effectively managing BI processes and outcomes.</p>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ body_open('page-srv-cloud full-width ', $root_path . 'template/header/header-dat
             <div class="col-md-6">
                 <div class="card wow fadeInUp" data-wow-delay="2s">
                     <div class="content mc no-margin">
-                        <h3><span class="font-size-h4 dp font-light">Importance of</span> BI Governance</h3>
+                        <h3><span class="h4 h-caption">Importance of</span> BI Governance</h3>
                         <p>BI governance is crucial as it fosters smart business decisions driven by accurate, consistent, and reliable data. This governance ensures that business intelligence reports provide true insights, enabling informed strategic decisions.  </p>
                     </div>
                 </div>
@@ -189,239 +189,113 @@ body_open('page-srv-cloud full-width ', $root_path . 'template/header/header-dat
 
 
 
-<!-- WHY POWER BI -->
-<div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you xs-fx-sticky-wrap bg-clip">
-    <div class="sticky-area">
-        <div class="illus-cont">
-            <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
+<!-- Data governance -->
+<div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you bg-clip">
+    <div class="sticky-are[a">
+        <div class="illus-cont style-lg">
+            <img src="/images/bg-circle-dotted.svg" class="illus-img" alt="">
         </div>
     </div>
     <div class="container">
         <div class="row m c">
-            <div class="col-md-12">
-
-                <h3 class="h2 font-light color-primary text-right-desktop">
-                    <span class="h1 color-primary-700 font-light">Cloud Versus On-Premises Solutions:</span>
-                    <strong>Tailored to Your Needs</strong>
-                </h3>
-
-
+            <div class="col-md-12 wow fadeInUp">
+                <h2 class="font-light color-primary text-center-desktop">
+                    Data Integration &amp; Cloud Migration                    
+                </h2>
                 <!-- <img src="/images/world-location.svg" alt=""> -->
             </div>
 
             <div class="col-md-12">
-                <ul class="no-style sm card-wrapper">
-                    <li class="sticky-panel">
-                        <div class="card rect">
-                            Power BI can automate many business tasks, saving you time and effort. For example, you can
+                <ul class="no-style row sm card-wrapper">
+                    <li class="col-md-4 wow fadeInUp" data-wow-delay=".75s">
+                        <div class="card mc">
+                            <div class="content ">
+                                <h3><span class="h4 h-caption">Introduction to </span>Data Integration</h3>
+                                <p>Power BI can automate many business tasks, saving you time and effort. For example, you can
                             set up regular reports that update automatically. This means you don't have to manually
-                            create reports every time you need them.
+                            create reports every time you need them.</p>
+                            </div>                            
                         </div>
                     </li>
-                    <li class="sticky-panel">
-                        <div class="card rect">The main idea behind Power BI is data-driven decision-making. This means
-                            you use data to guide your choices. Instead of going with your gut feeling, you look at the
-                            data and see what it tells you. This leads to better results and helps your business grow.
+
+                    <li class="col-md-4 wow fadeInUp" data-wow-delay="1.5s">
+                        <div class="card ">
+                            <div class="content">
+                                <h3><span class="h4 h-caption">Importance of </span>Cloud Migration</h3>
+                                <p>Migrating data to the cloud is a significant step in modernizing business operations, offering numerous advantages such as enhanced accessibility, improved security measures, and cost reductions.</p>
+                            </div>                            
                         </div>
                     </li>
-                    <li class="sticky-panel">
-                        <div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure
-                            everyone has access to the same information. This helps everyone stay informed and make
-                            decisions together.</div>
+
+                    <li class="col-md-4 wow fadeInUp" data-wow-delay="1.7s">
+                        <div class="card ">
+                            <div class="content">
+                                <h3><span class="h4 h-caption">TnZ's Expertise in </span>Seamless Integration</h3>
+                                <p>At TnZ International, our expertise ensures the seamless integration of all your data sources. Our professional team guarantees your data systems function harmoniously, free of errors and disruptions.</p>
+                            </div>                            
+                        </div>
                     </li>
-                    <li class="sticky-panel">
-                        <div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure
-                            everyone has access to the same information. This helps everyone stay informed and make
-                            decisions together.</div>
-                    </li>
-                    <li class="sticky-panel">
-                        <div class="card rect">Sharing reports within your team is easy with Power BI. You can make sure
-                            everyone has access to the same information. This helps everyone stay informed and make
-                            decisions together.</div>
-                    </li>
+                    
+                    
                 </ul>
             </div>
         </div>
-
-    </div>
-
-</div>
-
-
-
-
-
-<!-- Sepia Offers -->
-<div class="auto-scroll-wrapper section fs bg-light-blue cloud-why-tnz" id="area-why-tnz">
-
-
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-3 hide-device">
-
-            </div>
-            <div class="col-md-9">
-                <div class="container-lg no-margin">
-                    <h3 class="wow fadeInUp">Why to Choose</h3>
-                    <h2 class="wow fadeInUp" data-wow-delay=".25s">TnZ Internationals for Power BI</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">After you have made the decision that would change your
-                        business forever, we provide you with our full technical support, giving you full deployment
-                        assistance, and taking you successfully to the last step.</p>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="container">
+        <div class="spacer"></div>
+       
+        <div class="row col-md-10 offset-md-1">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card rect mc wow fadeInUp" data-wow-delay=".75s">
-                        <h4>Expertise</h4>
-                        <p class="small">Our team at TnZ International knows a lot about business intelligence and data
-                            integration. We have the skills to make sure Power BI works perfectly for you.</p>
+            <div class="col-md-5  wow fadeInUp" data-wow-delay="1s">
+                <div class="content">
+                    <h3 class="font-light"><span class="h4 h-caption">Best Practices for </span>Data Governance</h3>
+                    <p>To uphold effective data governance, we adhere to the following best practices:</p>
+                </div>
+                
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="check  small">
+                            <li><strong>Establish Clear Policies:</strong> We create distinct and understandable policies that everyone in the organization follows.</li>
+                            <li><strong>Define Roles and Responsibilities:</strong> Clarifying who is responsible for different parts of data governance ensures accountability and smoother operations.</li>
+                            <li><strong>Regular Training and Education:</strong> Ensuring that all employees understand data governance principles through continuous training is vital for compliance.</li>
+                            <li><strong>Continuous Monitoring and Improvement:</strong> Data governance is an evolving practice; hence, regular monitoring and iterative improvements are necessary.</li>
+                            <li><strong>Utilizing the Latest Features and Technologies:</strong> By adopting cutting-edge tools, we ensure maximum efficiency and effectiveness in data governance.</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card rect mc wow fadeInUp" data-wow-delay="1s">
-                        <h4>Experience</h4>
-                        <p class="small">We have been working in this field for many years. Our experience helps us
-                            understand different business needs and provide the best solutions.</p>
+                
+            </div>
+
+            <div class="col-md-5 offset-md-1 wow fadeInUp" data-wow-delay="1.5s">
+                <div class="content">
+                    <h3 class="font-light"><span class="h4 h-caption">Implementing Data Governance</span>with TnZ International</h3>
+                    <p>Here's how TnZ International assists in the implementation of data governance:</p>
+                </div>
+                
+               
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="check  small">
+                            <li><strong>Step-by-Step Process:</strong> We guide you through each phase of the journey—from planning to execution, ensuring a smooth transition.</li>
+                            <li><strong>Tailoring Solutions to Your Needs:</strong> Our services are not one-size-fits-all; we customize them to meet the specific requirements of your business.</li>
+                            <li><strong>Ensuring Sustainable Growth:</strong> Our data governance plans are crafted to support your business's steady and sustainable growth over time.</li>                            
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card rect mc wow fadeInUp" data-wow-delay="1.25s">
-                        <h4>Results-Driven</h4>
-                        <p class="small">We focus on delivering results that matter. We aim to help your business grow
-                            and succeed by using Power BI effectively.</p>
-                    </div>
-                </div>
-
-            </div> <!-- row -->
-        </div>
-
-
-
-    </div>
-
-</div>
-
-
-<!--   FAQ PRICES-->
-<div class="auto-scroll-wrapper section isvs-price bg-secondary">
-    <div class="container-xl">
-        <div class="_text-center-desktop">
-            <div class="container-xl">
-
-                <h2 class="h1_ text-center color-white">Frequently Asked Questions</h2>
-
-                <div class="faq-wrapper">
-
-
-                    <div class="panel collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>What is Power BI?</span>
-                            </div>
-                        </div>
-
-                        <div class="faq-content">
-                            <p>
-                                Power BI is a tool that turns data into visual reports and dashboards. This helps
-                                businesses understand their data and make better decisions.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="panel collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>How does Power BI integrate data?</span>
-                            </div>
-
-                        </div>
-
-                        <div class="faq-content">
-                            <p>
-                                Power BI uses connectors to bring data from different sources into one place. This makes
-                                it easy to see all your data together.
-                            </p>
-                        </div>
-                    </div>
-
-
-                    <div class="panel collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>Can Power BI show real-time data?</span>
-                            </div>
-
-                        </div>
-
-                        <div class="faq-content">
-                            <p>Yes, Power BI can show real-time data. This means your reports always show the most
-                                recent information.</p>
-                        </div>
-                    </div>
-
-
-                    <div class="panel collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>Is Power BI hard to use?</span>
-                            </div>
-
-                        </div>
-
-                        <div class="faq-content">
-                            <p>No, Power BI is user-friendly. It's designed to be easy for anyone to create and share
-                                reports.</p>
-                        </div>
-                    </div>
-
-
-
-                    <div class="panel  collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>How customizable are Power BI reports?</span>
-                            </div>
-
-                        </div>
-
-                        <div class="faq-content">
-                            <p>
-                                Power BI reports are very customizable. You can choose what data to show and how it
-                                looks with different charts and visuals.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="panel  collapsed">
-                        <div class="faq-heading">
-                            <div class="panel-title">
-                                <span>What kind of support does TnZ International offer?</span>
-                            </div>
-
-                        </div>
-
-                        <div class="faq-content">
-                            <p>
-                                We offer ongoing support to help you with any issues you might face. This ensures you
-                                get the best out of Power BI at all times.
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-
+                
             </div>
         </div>
+        </div>
+        
 
     </div>
 
 </div>
+
+
+
+
+
+
 
 
 
@@ -468,7 +342,10 @@ body_open('page-srv-cloud full-width ', $root_path . 'template/header/header-dat
 
 
 
-<?php get_contact() ?>
+<!--  -->
+    <div class="auto-scroll-wrapper section fs cloud-why-tnz" id="contact-journey">
+        <?php get_contact('journey') ?>
+    </div>
 
 <?php
 

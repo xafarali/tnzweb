@@ -23,7 +23,7 @@
        
         <div class="container-xl">
             <div class="section sm">
-                <div class="row mc text-center section-slider-phone  srv-logo-wrapper ">                    
+                <div class="row mc text-center logo-solutions section-slider-phone  srv-logo-wrapper ">                    
                     <div class="col-md-3 offset-md-1"><img src="/images/logo-googlecloud.svg" alt="" /></div>
                     <div class="col-md-3"><img src="/images/logo-microsoft.svg" alt="" /></div>
                     <div class="col-md-3"><img src="/images/logo-azure.svg" alt="" /></div>                    
@@ -43,7 +43,7 @@
 
 
         <div class="text-center section read-more-down ab s c-w sm hide-phone">
-			<?php print_read_fancy('#area-cloud-info', 'x-scroll-to', "keep reading...") ?>
+			<?php print_read_fancy('#area-cloud-info', 'x-scroll-to', "keep scrolling...") ?>
         </div>
         
 	</div>
@@ -236,12 +236,15 @@
 
 
     <!--   FAQ PRICES-->
-    <div class="auto-scroll-wrapper section isvs-price bg-secondary">
+    <div class="auto-scroll-wrapper section isvs-price bc-diamond-inv bg-secondary-400">
+        <div class="illus-cont">
+            <img src="/images/srv/illus-graph.svg" class="illus-img" alt="">
+        </div>
         <div class="container-xl">
             <div class="_text-center-desktop">
                  <div class="container-xl">
             
-            <h2 class="h1_ text-center color-white">Frequently Asked Questions</h2>
+            <h2 class="h1_ text-center text-shadow color-white">Frequently Asked Questions</h2>
             
             <div class="faq-wrapper">
                 

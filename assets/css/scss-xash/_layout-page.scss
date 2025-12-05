@@ -45,7 +45,20 @@ body {
 	background-color: $bg-global;
 	background: map-get($primary-colorkit, "100") url(./images/bg-about-cloud.png) no-repeat center center fixed;
 	overflow: clip;
+	animation: page-cont-animated 100s linear infinite;
 }
+
+
+@keyframes page-cont-animated {
+	from {
+		background-position: -10% center ;
+	}
+
+	to {
+		background-position: 180% center;
+	}
+}
+
 
 #wrapper {
 	position: relative;

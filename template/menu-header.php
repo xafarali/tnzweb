@@ -17,15 +17,15 @@
                 <li class="lv1 home"><a href="/" rel="bookmark"><span class="icon-home"></span>Home</a></li>
                 <li class="lv1"><a href="/about/" class="_dropdown-toggle" rel="bookmark">About Us</a></li>
                 <li class="lv1 dropdown">
-                    <a href="/services/cloud" rel="bookmark">Services <span class="caret"></span></a>
+                    <a href="/services/" rel="bookmark">Services <span class="caret"></span></a>
                    
                     <div class="sub-menu hover-animated">
                         <ul class="">
-                            <li class="lv2"><a href="/services/cloud/" rel="bookmark">Lorem Solutions</a></li>
-                            <li class="lv2"><a href="/services/cloud/" rel="bookmark">Lorem Solutions</a></li>
-                            <li class="lv2"><a href="/services/cloud/" rel="bookmark">Lorem Solutions</a></li>
-                            <li class="lv2"><a href="/services/cloud/" rel="bookmark">Lorem Solutions</a></li>
-                            <li class="lv2"><a href="/services/cloud/" rel="bookmark">Lorem Solutions</a></li>                            
+                            <li class="lv2"><a href="/services/power-bi/" rel="bookmark">Business Intelligence</a></li>
+                            <li class="lv2"><a href="/services/data-gov/" rel="bookmark">Data Governance</a></li>
+                            <li class="lv2"><a href="/services/it-management/" rel="bookmark">IT Management</a></li>
+                            <li class="lv2"><a href="/services/data-integration/" rel="bookmark">Data Integration|Cloud Migration</a></li>
+                            <li class="lv2"><a href="/services/data-warehouse/" rel="bookmark">Data Warehouse</a></li>                            
                         </ul>
                     </div>
                 </li>

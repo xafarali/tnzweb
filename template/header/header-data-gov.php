@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-it-management-2.jpg" alt="" class="imgFit" style="filter:blur(2px)">
+                <img src="<?php echo $images ?>/srv/header-data-gov.jpg" alt="" class="imgFit" style="filter:blur(2px)">
             </div>
             
         </div>
@@ -32,10 +32,10 @@
                             <div class="col-md-10 text-center-phone offset-md-1">
                                 <div class="">
                                     <div class="fx-spin-wrapper">
-                                        <h1 class="color-white text-center">
+                                        <h1 class="color-white text-center text-shadow">
                                            <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
                                         data-mod = "rev"                                   
-                                        > Data Governance</div><div class="h2 wow fadeInUp" data-wow-delay="1s">and Best Practices</div>
+                                        > Data Governance</div><div class="h2 color-white wow fadeInUp" data-wow-delay="1s">and Best Practices</div>
                                     </h1>
                                     </div>
                                    
@@ -50,7 +50,8 @@
                                         data-stagger=".05"
                                         >
                                         <br>
-                                       <strong>At TnZ International</strong>, we deeply value the importance of safeguarding your data. Our primary goal is to ensure that your data is not only secure but also accurate and easily accessible. 
+                                       <!-- <strong>At TnZ International</strong>, we deeply value the importance of safeguarding your data. Our primary goal is to ensure that your data is not only secure but also accurate and easily accessible.  -->
+                                        We deeply value the importance of safeguarding your data. 
                                     </p>
                                     </div>
                                     <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">

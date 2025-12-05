@@ -2,6 +2,7 @@
   "name": "TnZInternationals",
   "version": "0.1.0",
   "devDependencies": {
+    "@adamlui/scss-to-css": "^1.10.45",
     "acorn": "^5.1.2",
     "ansi-regex": "^3.0.0",
     "ansi-styles": "^3.2.0",
@@ -21,7 +22,7 @@
     "watch": "^1.0.2"
   },
   "scripts": {
-    "build:scss": "sass ./assets/xash-theme.scss:./assets/layout-test.css",
+    "build:scss": "sass ./assets/xash-theme.scss:./assets/layout.css",
     "watch:scss": "npm-watch build:scss",
     "watch": "npm-watch build:scss"
   },
@@ -48,6 +49,8 @@
     ]
   },
   "dependencies": {
-    "npm-watch": "^0.13.0"
+    "npm-watch": "^0.13.0",
+    "sass": "^1.94.2",
+    "scss": "^0.2.4"
   }
 }

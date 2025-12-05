@@ -17349,6 +17349,14 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
   margin-right: auto;
 }
 
+.heading-caption,
+.h-caption {
+  color: #566EB1;
+  font-weight: 300;
+  display: block;
+  line-height: 1;
+}
+
 .narrow-width {
   width: 70%;
 }
@@ -19966,6 +19974,14 @@ legend .____tag:before, h5 .____tag:before, .h5 .____tag:before, h6 .____tag:bef
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.heading-caption,
+.h-caption {
+  color: #566EB1;
+  font-weight: 300;
+  display: block;
+  line-height: 1;
 }
 
 .narrow-width {
@@ -31364,4 +31380,4 @@ body.right .text-right {
   overflow: hidden;
 }
 
-/*# sourceMappingURL=layout-test.css.map */
+/*# sourceMappingURL=layout.css.map */

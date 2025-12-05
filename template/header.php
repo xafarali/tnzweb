@@ -15,7 +15,7 @@
 
             <div class="container-fluid">
 
-                <div class="row  mc">
+                <div class="row  _mc">
 
                     <div class="col-6 logo-wrapper">
                         <div class="logo-wr_apper">
@@ -33,7 +33,7 @@
                     <div class="col-6 ">
                        
 
-                        <div class="col-md-12  area-menu">
+                        <div class="col-md-12_  area-menu">
                              <div class="area-menu-button">
                                 <a href="#" class="btn">MENU</a>
                                 <a href="#" class="btn primary text-uppercase icon">Lets Talk <span>
