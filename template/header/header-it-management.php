@@ -33,7 +33,7 @@
                                 <div class="">
                                     <div class="fx-spin-wrapper">
                                         <h1 class="color-white text-center">
-                                       <span class="h2">Comprehensive</span><br> 
+                                       <!-- <span class="h2">Comprehensive</span><br>  -->
                                        <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
                                         data-mod = "rev"                                   
                                         > IT Infrastructure </div><div class="h2">Management</div>

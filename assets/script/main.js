@@ -378,10 +378,74 @@ jQuery(document).ready(function ($) {
     //-----------------------------------------------------------------------------------
     // for bind and re-initiate purpose
     function bind_page_menu() {
+
+
+
+         // #region MENU SYSTEM WITH LOADER
+        // MENU SYSTEM-------------------------------------------------------------    
+        if( $('.top-main-menu').length > 0 ) {
+
+            // Initial Setup
+            let $menu_cont   = $('.top-main-menu');
+            let lv1       = $('li.lv1', $menu_cont );
+            let lv2        = $('li.lv2', $menu_cont )
+
+            gsap.set([lv1], {
+                autoAlpha:0,
+                x: 200
+            })
+
+            // EVENT OPEN
+            $('body').on('event-menu-open', function (e) {
+                $('body').addClass('menu-visible')
+                gsap.to( lv1, {
+                    x:-100,
+                    autoAlpha:1,
+                    stagger: 0.1,
+                    delay:.5,
+                    duration: 1,
+                    ease: "back.out(1)",
+                })
+             })
+
+
+            $('body').on('event-menu-close', function (e) {
+              // alert('menu got closed')
+                gsap.to( lv1, {
+                    x:200,
+                    autoAlpha:0,
+                    stagger: 0.05,
+                    //delay:.25,
+                    duration: .25,
+                    ease: "ease.out",
+
+                    onComplete : function () {
+                        $('body').removeClass('menu-visible')
+                        $('.navigation ').find('.active-menu').removeClass('active-menu');
+                    }
+                })
+
+                
+             
+            }) // EVENT BODY CLOSE
+        }   
+        
+       
+        
+        
+        
+        
+        // #endregion
+        
+
+
+
         if (!is_phone() || is_phone()) {
+
             // Set initial State
             var $mn_itms = $(".navigation.top-main-menu .lv1 "),
-                $mn_anim = new TimelineMax();
+                // $mn_anim = new TimelineMax();
+                $mn_anim =  gsap.timeline();
 
             //
 
@@ -393,7 +457,7 @@ jQuery(document).ready(function ($) {
                 $(this).find(".sub-menu").removeClass("animate");
             });
 
-            $("body").on("click", ".menu-burger.menu-btn", function (e) {
+            $("___body").on("click", ".menu-burger.menu-btn", function (e) {
                 // clearing cache shit, it doesn't select after ajax, on same var,
                 // so re-declaring it again and again --
                 var __$menu_items = $(g_setting.main_menu_items);
@@ -409,7 +473,7 @@ jQuery(document).ready(function ($) {
 
                     $("body").addClass("menu-visible");
 
-                    new TimelineMax()
+                     gsap.timeline()
                         .set(__$menu_items, { clearProps: "all" })
                         .staggerFromTo(
                             __$menu_items,
@@ -821,10 +885,10 @@ jQuery(document).ready(function ($) {
         //---------------------------------------------------------------------------------------------
 
 
-
+        
         // <editor-fold desc="- - - - [ ANIMATION :: Homepage ] - - - -">
-
-
+       
+        
 
         // SERVICE
         // Main Scroller of Homepage Service
@@ -985,592 +1049,12 @@ jQuery(document).ready(function ($) {
         // </editor-fold>
         // Page About Ends ---------------------------------------------------
 
-        // <editor-fold desc="- - - - [ ANIMATION Page Contactus ] - - - -">
-
-        // Page Contact Us
-        // ----------------------------------------------------------------------------------------------
-        if ($("body").hasClass("page-contact-us")) {
-            var $_cform = $(".form-wrapper"),
-                $_c_map = $(".map-wrapper"),
-                $_c_map_w = $(g_setting.banner_wrapper);
-
-            var $_tw_cs_mp = new TimelineMax().staggerFromTo(
-                $_cform,
-                1,
-                { y: "-=10%", ease: Power0.easeIn },
-                { y: "+=10%" },
-                1.5,
-                "+=.5"
-            );
-
-            var $sc_contact_us = new ScrollMagic.Scene({
-                triggerElement: $_c_map_w,
-                triggerHook: 0.25,
-                duration: "100%",
-            })
-                .setTween($_tw_cs_mp)
-                .addTo(controller);
-        }
-
-        // Page Contact Us Ends ---------------------------------------------------
-        // </editor-fold>
-        // Page Contact Us Ends ---------------------------------------------------
-
-        // <editor-fold desc="- - - - [ ANIMATION Page Portfolio ] - - - -">
-
-        // Page PortFolio Stuff
-        // ----------------------------------------------------------------------------------------------
-        if ($("body").hasClass("page-showcase")) {
-            // header animation
-            if ($("body .bg-plate .animated-box").length) {
-                var $_sc_header = $("body .bg-plate"),
-                    $_sc_header_box1 = $(".animated-box.b-1", $_sc_header),
-                    $_sc_header_box2 = $(".animated-box.b-2", $_sc_header),
-                    $_sc_header_box3 = $(".animated-box.b-3", $_sc_header),
-                    $_sc_line_items = $("#header-wrapper .line-row > span");
-
-                var $tw_sc_header = new TimelineMax()
-                    .set($_sc_line_items, { y: "100%" })
-                    .set($_sc_header_box1, { y: "-120%" })
-                    .to($_sc_header_box2, 0.65, {
-                        left: "+=200%",
-                        ease: Power1.easeIn,
-                    })
-                    .to(
-                        $_sc_header_box3,
-                        0.75,
-                        { left: "-=180%", height: 10, ease: Power1.easeOut },
-                        "-=.35"
-                    )
-                    .to($_sc_header_box1, 1, {
-                        y: "0%",
-                        ease: Power1.easeInOut,
-                    })
-                    .staggerTo($_sc_line_items, 0.5, { y: "0%" }, 0.25, "-=1");
-
-                var $_sc_sc_header = new ScrollMagic.Scene({
-                    triggerElement: $_sc_header,
-                    triggerHook: 0,
-                })
-                    .setTween($tw_sc_header)
-                    .addTo(controller);
-            }
-        }
-        // </editor-fold>
-        // Page Portfolio Ends ---------------------------------------------------
-
-        // <editor-fold desc="- - - - [ ANIMATION::: Page Branding ] - - - -">
-
-        if ($("body").hasClass("page-srv-branding")) {
-            // First sticky section
-            //-----------------------------------------
-            var $des_wrap = $(".des-idea"),
-                _srv_tags_wrp = $(".tags-container", $des_wrap),
-                _srv_brn_svg_curv = $(".svg-import.curves-animate", $des_wrap),
-                _srv_bsc_curve_1 = $("#BS-Curve-1", _srv_brn_svg_curv),
-                _srv_bsc_curve_2 = $("#BS-Curve-2", _srv_brn_svg_curv),
-                _srv_logo = $(".logo-tmp.svg-import", $des_wrap),
-                _srv_logo_curve = $("#BrLogoGuides", _srv_logo),
-                _srv_logo_base = $("#BrLogoBase path", _srv_logo),
-                _srv_logo_base_sm = $("#BrLogoUpperText path", _srv_logo),
-                _srv_sticky_white = $(".white-over", $des_wrap),
-                _srv_sticky_card = $(".card-illus", $des_wrap),
-                _tag_max_width = Math.abs(
-                    _srv_tags_wrp.width() - $(window).width()
-                ),
-                _tag_max_scroll = Math.abs(_srv_tags_wrp.width()) * 0.85;
-
-            // prepare paths
-            svg_pathPrepare(_srv_bsc_curve_1, 1);
-            svg_pathPrepare(_srv_bsc_curve_2, 1);
-
-            // content scroll
-            var tw_des_wrap = new TimelineMax()
-                .addLabel("start_design")
-                .fromTo(
-                    _srv_tags_wrp,
-                    2,
-                    { x: "0%" },
-                    { x: _tag_max_width * -1 },
-                    "start_design"
-                )
-
-                // curves animate
-                //----------------------------------
-                .to(
-                    _srv_bsc_curve_1,
-                    2,
-                    {
-                        strokeDasharray: svg_getLength(_srv_bsc_curve_1),
-                        strokeDashoffset: 0,
-                    },
-                    "start_design+=.2"
-                )
-                .to(
-                    _srv_bsc_curve_2,
-                    2,
-                    {
-                        strokeDasharray: svg_getLength(_srv_bsc_curve_2),
-                        strokeDashoffset: 0,
-                    },
-                    "start_design"
-                )
-
-                // Bg
-                //-------------------------------------
-                .to(_srv_sticky_white, 0.2, { autoAlpha: 1 })
-                .to(_srv_logo_curve, 0.15, { autoAlpha: 0 })
-                .to(
-                    _srv_logo_base,
-                    0.2,
-                    { css: { fill: "#200a56" } } /*, "-=1" */
-                )
-                .to(
-                    _srv_logo_base_sm,
-                    0.2,
-                    { css: { fill: "#774EDE" } } /*, "-=1" */
-                )
-                .to([_srv_logo, _srv_logo_base_sm], 0.2, {
-                    css: { scale: ".35" },
-                })
-                .to(_srv_sticky_card, 0.1, { autoAlpha: 1 } /*, "-=.5"*/);
-
-            // .to($lc_3, 1.5, {strokeDasharray: svg_getLength($ac_3), strokeDashoffset: 0}, "-=1.75")
-
-            var sc_des_wrap = new ScrollMagic.Scene({
-                triggerHook: 0,
-                triggerElement: $des_wrap,
-                duration: _tag_max_scroll,
-                // offset: 100
-            })
-                //.addIndicators({name: "Scroll Horizon::" + _tag_max_width})
-                .setPin($des_wrap, { pushFollowers: true })
-                .setTween(tw_des_wrap)
-                .addTo(controller);
-
-            if ($(".card-template-wrap").length) {
-                var $_brd_card_scrll_w = $(".card-template-wrap"),
-                    $_brd_card_scrll = $(
-                        ".card-template-scroller",
-                        $_brd_card_scrll_w
-                    ),
-                    tw_brd_card_scrl = new TimelineMax().to(
-                        $_brd_card_scrll,
-                        1,
-                        {
-                            css: { backgroundPosition: "130% center" },
-                        }
-                    ),
-                    sc_brd_card_scrl = new ScrollMagic.Scene({
-                        triggerElement: $_brd_card_scrll_w,
-                        triggerHook: 0.15,
-                        duration: 700,
-                    })
-                        .setPin($_brd_card_scrll_w, { pushFollowers: true })
-                        .setTween(tw_brd_card_scrl)
-                        .addTo(controller);
-            }
-        }
-
-        // </editor-fold>
-        // Page Branding Ends -----------------------------------------------------
-
-        // <editor-fold desc="- - - - [ ANIMATION:: PAGE CLOUD ] - - - -">
-        if ($("body").hasClass("page-srv-cloud")) {
-            var _cst_flow_wrap = $(".customer-flow"),
-                _crv_cst_eng_img = $(".illus-custom-eng-img", _cst_flow_wrap),
-                _crv_cst_eng = $("#_CLOUD_CUSTOM_ENGAGE", _cst_flow_wrap),
-                _crv_cst_text = $(".text-area", _cst_flow_wrap),
-                _crv_cst_cont = $(
-                    ".illus-custom-eng  .area-illus",
-                    _cst_flow_wrap
-                ),
-                _crv_cst_max_scroll = Math.abs(_crv_cst_eng_img.height());
-
-            // Prepare Curves
-            svg_pathPrepare(_crv_cst_eng);
-
-            // Anim
-            // content scroll
-            var tw__crv_cst_ = new TimelineMax()
-                .addLabel("start_cloud")
-
-                // curves animate
-                //----------------------------------
-                .to(
-                    _crv_cst_eng,
-                    2,
-                    {
-                        strokeDasharray: svg_getLength(_crv_cst_eng),
-                        strokeDashoffset: 0,
-                    },
-                    "start_cloud-=.5"
-                );
-            // .to(_crv_cst_cont,1,{y:"-=70%", ease:Power1.easeOut}, "start_cloud+=.5")
-
-            var sc_cst_wrap = new ScrollMagic.Scene({
-                triggerHook: 0,
-                triggerElement: _cst_flow_wrap,
-                duration: _crv_cst_max_scroll,
-                // offset: 100
-            })
-                // .addIndicators({name: "Scroll Horizon::" + _crv_cst_max_scroll})
-  //              .setPin(_crv_cst_text, { pushFollowers: true })
-//                .setTween(tw__crv_cst_)
-               // .addTo(controller);
-        }
-
-        // </editor-fold>
-        // Page Cloud Ends -----------------------------------------------------
-
-        // <editor-fold desc="- - - - [ ANIMATION ::: Web Eng/Dev ] - - - -">
-        if ($("body").hasClass("page-srv-web-eng")) {
-            //alert("has class");
-            var $_wrap_se_dev = $(".main-dev-illus-wrap"),
-                $_svg_main_dev = $(".main-illus-web-eng"),
-                $_smd_out_c = $("#SWE-Ring-outer", $_svg_main_dev),
-                $_smd_fat_c = $("#SWE-Ring-fat", $_svg_main_dev),
-                $_smd_main_ring = $("#SWE-Ring-Init ", $_svg_main_dev),
-                $_smd_all_p = $("path[id*=SWE-P-]", $_svg_main_dev),
-                $_smd_all_p_c = $("circle[id*=SWE-C-]", $_svg_main_dev),
-                $_smd_all_p_g = $("polyline[id*=SWE-Gd-]", $_svg_main_dev),
-                $_smd_all_txt = $("#SWE-Text text", $_svg_main_dev),
-                $_smd_all_dt_c = $("path[id*=SWE-C-Dt]", $_svg_main_dev),
-                $_smd_c_hov = $("path[id*=SWE-C-Hov]", $_svg_main_dev),
-                $_smd_all_dt_txt = $("g#SWE-Srv-Detail text", $_svg_main_dev);
-
-            // set initial path
-            svg_pathPrepare($_smd_out_c);
-            svg_pathPrepare($_smd_fat_c, 1);
-            svg_pathPrepare($_smd_main_ring);
-            svg_pathPrepare($_smd_all_p, 1);
-            svg_pathPrepare($_smd_all_p_c);
-            svg_pathPrepare($_smd_all_dt_c);
-
-            // Main ring sets
-            var $_swe_ring_itms = $($_smd_out_c)
-                .add($_smd_fat_c)
-                .add($_smd_main_ring);
-
-            // Initial setup
-            var _tmp_tw_swe = new TimelineMax()
-                .set([$_smd_all_txt, $_smd_all_dt_txt], { opacity: 0 })
-                .set($_smd_c_hov, { css: { display: "none" } })
-                .set($_svg_main_dev, {
-                    opacity: 0,
-                    rotation: 189,
-                    transformOrigin: "50% 50%",
-                });
-
-            //Tweens-----------------------
-            var $_tw_p_swe = new TimelineMax()
-                .addLabel("mainDev")
-
-                .to(
-                    $_svg_main_dev,
-                    4.25,
-                    { opacity: 1, rotation: 0 },
-                    "mainDev"
-                )
-                // main rings
-                .staggerTo(
-                    $_swe_ring_itms,
-                    2.5,
-                    {
-                        strokeDasharray: function (i, v) {
-                            return svg_getLength(v);
-                        },
-                        strokeDashoffset: 0,
-                    },
-                    1.5,
-                    "mainDev-=.5"
-                )
-                // circles
-                .staggerTo(
-                    $_smd_all_p_c,
-                    1,
-                    {
-                        strokeDasharray: function (i, v) {
-                            return svg_getLength(v);
-                        },
-                        strokeDashoffset: 0,
-                    },
-                    0.5,
-                    "-=4.5"
-                )
-                // paths
-                .staggerTo(
-                    $_smd_all_p,
-                    2,
-                    {
-                        strokeDasharray: function (i, v) {
-                            return svg_getLength(v);
-                        },
-                        strokeDashoffset: 0,
-                    },
-                    0.75,
-                    "-=3.5"
-                )
-                //text popup
-                .staggerFromTo(
-                    $_smd_all_txt,
-                    0.35,
-                    { opacity: 0, y: "+=50" },
-                    { opacity: 1, y: "-=50" },
-                    0.25
-                );
-
-            // Scene implemented
-            var $_sc_p_swe = new ScrollMagic.Scene({
-                triggerElement: $_wrap_se_dev,
-                triggerHook: 0.75,
-            })
-
-             //   .setTween($_tw_p_swe)
-             //   .addTo(controller);
-
-            ////////////////////////////////////////
-            // Interactivity
-            ////////////////////////////////////////
-            // Global Flag
-            var _glb_path_hov = true;
-
-            $_smd_all_txt.on("mouseenter", function () {
-                if (_glb_path_hov == false) return;
-                _glb_path_hov = false;
-
-                console.log("circle hovered");
-
-                var _rel = "#" + $(this).attr("rel"),
-                    _rel_itm = $(_rel).find("path[id*=SWE-C-Dt]"),
-                    _rel_hov = $("#SWE-Hover-Out").find(
-                        "path[rel=" + $(this).attr("rel") + "]"
-                    ),
-                    _rel_txt = $("text", $(_rel)),
-                    _tmp_hvr_tl = new TimelineMax()
-                        .set(_rel_hov, {
-                            css: { display: "inline", fill: "transparent" },
-                        })
-                        .to(_rel_itm, 0.5, {
-                            strokeDasharray: svg_getLength(_rel_itm),
-                            strokeDashoffset: 0,
-                        })
-                        .to(_rel_itm, 0.75, { fill: "white" }, "-=.3")
-                        // .staggerFromTo( _rel_txt, .35, {opacity: 0, y:"+=50" },{ opacity: 1,y: "-=50"}, .15)
-                        .fromTo(
-                            _rel_txt,
-                            0.35,
-                            { opacity: 0 },
-                            {
-                                opacity: 1,
-                                onComplete: function () {
-                                    _glb_path_hov = true;
-                                },
-                            }
-                        );
-            });
-
-            $("#SWE-Hover-Out path").on("mouseleave", function (e) {
-                _glb_path_hov = true;
-
-                var $_t = "#" + $(this).attr("rel"),
-                    _path = $($_t).find("path"),
-                    _itm_grp = $("text", $_t),
-                    _tmp_hvr_tl = new TimelineMax()
-                        .to(_itm_grp, 0.25, { overwrite: "all", opacity: 0 })
-                        .to(_path, 0.5, {
-                            strokeDashoffset: svg_getLength(_path),
-                        })
-                        .to(_path, 0.75, { fill: "transparent" }, "-=.3")
-                        .set($(this), { css: { display: "none" } });
-            });
-
-            /*  Phone UX
-			//--------------------------------------------------*/
-            var _v_ux_des = $(".area-ux-ui"),
-                _v_ux_img = $("div.ux-img", _v_ux_des),
-                _tw_ux = new TimelineMax()
-                    .delay(1.5)
-                    .addLabel("start")
-                    .staggerFromTo(
-                        _v_ux_img,
-                        1,
-                        { yPercent: "100%", autoAlpha: 0 },
-                        { yPercent: "0%", autoAlpha: 1 },
-                        0.15
-                    );
-
-            var _sc_ux = new ScrollMagic.Scene({
-                triggerHook: 1,
-                triggerElement: _v_ux_des,
-                reverse: true,
-                // duration: "100%"
-            })
-                .setTween(_tw_ux)
-                .addTo(controller);
-        }
+       
 
         // </editor-fold>
         // Page Web Dev/Eng Ends ---------------------------------------------------
 
-        // <editor-fold desc="- - - - [ ANIMATION ::: Bespoke ] - - - -">
-        // Disabled
-        /*
-			if ( $('body').hasClass('page-srv-bespoke__') ) {
-
-					// vertical container
-					var $_s_bf_wrap = $('.bespoke-features-wrap'),
-						$_s_bf_cont = $('.bespoke-features', $_s_bf_wrap),
-						$_s_bf_itms = $('div[class*="v-panel-"]', $_s_bf_cont),
-						$_s_bf_itms_n = $('span.num-list', $_s_bf_itms),
-						_s_bf_itm_wid = _get_child_width($_s_bf_itms),
-						_s_bf_max_width  = Math.abs(_s_bf_itm_wid - $_s_bf_cont.width()),
-						_s_bf_max_scroll = Math.abs(_s_bf_itm_wid) * .95;
-						$_bf_cont_scroll = new TimelineMax();
-
-					  //  alert($_s_bf_cont.width());
-
-						$_bf_cont_scroll
-							.addLabel('start')
-							.to($_s_bf_cont,1, {x: _s_bf_max_width * (-1) }, "start")
-
-
-
-					$_sc_s_bf_wrap = new ScrollMagic.Scene({
-						triggerElement : $_s_bf_wrap,
-						duration: _s_bf_max_scroll,
-						triggerHook: 0
-					})
-						//.addIndicators({name: "Dfdfdfdf"})
-						.setPin($_s_bf_wrap, {pushFollowers: true})
-						.setTween($_bf_cont_scroll)
-						.addTo(controller)
-
-			}
-			*/
-        // Vertical
-        if ($("body").hasClass("page-srv-bespoke")) {
-            // vertical container
-            var $_s_bf_wrap = $(".bespoke-features-wrap"),
-                $_s_bf_cont = $(".bespoke-features", $_s_bf_wrap),
-                $_s_bf_itms = $('div[class*="col-md-"]', $_s_bf_cont),
-                $_s_bf_itms_n = $("span.num-list", $_s_bf_itms),
-                _s_bf_max_height = Math.round($_s_bf_cont.height()),
-                _s_bf_max_scroll = Math.abs(_s_bf_max_height),
-                $_bf_cont_scroll = new TimelineMax();
-
-            //  alert($_s_bf_cont.width());
-
-            $_bf_cont_scroll
-                .addLabel("bf_start")
-                .to($_s_bf_cont, 1, { y: _s_bf_max_height * -1 }, "bf_start");
-            // .staggerTo($_s_bf_itms,1, {x: 300},.3,"start");
-
-            //@todo experiment as for performance
-            // THIS IS EXPERIMENTAL
-
-            // Internal Animation
-            $_s_bf_itms.each(function (i, v) {
-                var $_s_bf_newTimeline = new TimelineMax();
-
-                var _t_m_child_ = $($_s_bf_itms[i]);
-
-                //newTimeline.fromTo(_t_m_child_,1,{x:300},{x:0},"BCSala")
-                // $_s_bf_newTimeline.to( $('.num-list',_t_m_child_),1, {  y: -250  }, " BCSala" );
-                $_s_bf_newTimeline.fromTo(
-                    $(".num-list", _t_m_child_),
-                    10,
-                    { x: -200 },
-                    { x: 0, ease: Circ.out },
-                    " BCSala"
-                );
-
-                var td_df = new ScrollMagic.Scene({
-                    triggerElement: _t_m_child_,
-                    triggerHook: 1,
-                    offset: 200,
-                    duration: "100%", //_t_m_child_.height() * 1.5,
-                    reverse: true,
-                })
-
-                    //.setClassToggle(_t_m_child_, "movedOn")
-                    .setTween($_s_bf_newTimeline)
-                    .addTo(controller);
-            });
-            // THIS IS EXPERIMENTAL  ENDS
-
-            var $_sc_s_bf_wrap = new ScrollMagic.Scene({
-                triggerElement: $_s_bf_wrap,
-                duration: _s_bf_max_height - 760,
-                triggerHook: 0,
-            })
-                // .addIndicators({name: _s_bf_max_height})
-                .setPin($_s_bf_wrap, { pushFollowers: true })
-                .setTween([$_bf_cont_scroll])
-                .addTo(controller);
-
-            /*  Header Animation
-				//--------------------------------------------------*/
-            var $_bf_header_wrap = ".page-srv-bespoke .banner-wrapper",
-                $_bf_chits = $(".chit", $_bf_header_wrap),
-                $_bf_chit_l = $(".chit-l", $_bf_header_wrap),
-                $_bf_chit_k = $(" > *", $_bf_chits),
-                $_bf_hd_txt_sm = $("p.lead", $_bf_header_wrap),
-                $_bf_hd_txt_lg = $(".huge-heading", $_bf_header_wrap);
-
-            //--------------------------------------------------------------------
-            var _tw_bf_header_init = new TimelineMax()
-
-                .set($_bf_chits, { yPercent: "-110%" })
-                .set($_bf_chit_k, { yPercent: "-150%", autoAlpha: 0 })
-                .set($_bf_chit_l, { yPercent: "-20%", autoAlpha: 0 })
-                .set($_bf_hd_txt_sm, { yPercent: "100%", autoAlpha: 0 })
-                .set($_bf_hd_txt_lg, { yPercent: "-100%", autoAlpha: 0 });
-
-            var _tw_bf_header = new TimelineMax()
-
-                .addLabel("bf_hd_start")
-                .staggerTo(
-                    $_bf_chits,
-                    0.7,
-                    { yPercent: "0" },
-                    0.2,
-                    "bf_hd_start"
-                )
-                .to($_bf_chit_l, 0.25, {
-                    yPercent: "0",
-                    autoAlpha: 1,
-                    ease: Circ.out,
-                })
-                .staggerTo(
-                    $_bf_chit_k,
-                    0.5,
-                    { yPercent: "0", autoAlpha: 1 },
-                    0.25,
-                    "bf_hd_start+=0.5"
-                )
-                .to(
-                    $_bf_hd_txt_sm,
-                    0.5,
-                    { yPercent: "0", autoAlpha: 1 },
-                    "bf_hd_start+=2.5"
-                )
-                .to(
-                    $_bf_hd_txt_lg,
-                    1,
-                    { yPercent: "0", autoAlpha: 1 },
-                    "bf_hd_start+=1.75"
-                );
-
-            var _sc_bf_header = new ScrollMagic.Scene({
-                triggerHook: 0,
-                triggerElement: $_bf_header_wrap,
-            })
-                .setTween(_tw_bf_header)
-                .addTo(controller);
-        }
-        // </editor-fold>
-        // Page Bespoke Ends ---------------------------------------------------
+        
 
         //-------------------------------------------------------------
         //-------------------------------------------------------------
@@ -1828,21 +1312,28 @@ jQuery(document).ready(function ($) {
 
     // SCROLLER to sections
     $("body").on("click", ".x-scroll-to", function (e) {
+        
         e.preventDefault();
 
         var _tg_scroll = $(this).attr("href");
-
-        xash_scrollTo(_tg_scroll);
+        if(_tg_scroll !== "#") {
+            xash_scrollTo(_tg_scroll);            
+        }
     });
 
-    //$('body').on('click','#body-wrapper a[rel="bookmark"]', function (e) {
-    $("body").on("click", "#body-wrapper a, .site-title a", function (e) {
-        e.preventDefault();
 
+    ///todo, ajax menu load need to rewrite
+    //$('body').on('click','#body-wrapper a[rel="bookmark"]', function (e) {
+    $("_body").on("click", "#body-wrapper a, .site-title a", function (e) {
+        // return false;
+       // e.preventDefault();
+        console.log('hey ' + e.target.href)
         // EXCEPTION
 
-        var new_tgt = e.target.href,
-            c_tgt = window.location.href;
+        var new_tgt = e.target.href;
+         //   c_tgt = window.location.href;
+
+        window.location.href = new_tgt;
 
         //if( tgt === "#" ) return false;
 
@@ -1861,6 +1352,7 @@ jQuery(document).ready(function ($) {
 
         if (xash_is_external(new_tgt)) {
             // console.log("External Link Clicked")
+           
             window.open(new_tgt, "_blank");
         } else {
             if (xash_is_local(new_tgt)) {
@@ -1870,11 +1362,11 @@ jQuery(document).ready(function ($) {
                 }
             } else {
                 loader_show();
-                load_content(new_tgt);
+                // load_content(new_tgt);
             }
 
             // console.log()
-            history.pushState({ c_url: c_tgt }, null, new_tgt);
+           // history.pushState({ c_url: c_tgt }, null, new_tgt);
 
             return false;
         }
@@ -1894,6 +1386,7 @@ jQuery(document).ready(function ($) {
 
     // $(window).on("popstate", function(e) {
     window.onpopstate = function (e) {
+        return false
         //@reference https://www.codemag.com/Article/1301091/HTML5-History-Clean-URLs-for-Deep-linking-Ajax-Applications
 
         this._popStateEventCount++;
@@ -2092,6 +1585,8 @@ jQuery(document).ready(function ($) {
 
     function hide_menu(ele) {
         var $__mn_itms = ele || $("body .top-main-menu li.lv1"); // $( g_setting.main_menu_items );
+        
+        /*
         new TimelineMax().staggerFromTo(
             $__mn_itms,
             0.35,
@@ -2103,6 +1598,14 @@ jQuery(document).ready(function ($) {
                 //  $('body').removeClass('menu-visible');
             }
         );
+        */
+        //gsap 3
+        // optmized code
+        gsap.fromTo($__mn_itms, 
+            {y: "0%", opacity: 1 },
+            { y: "+=30%", opacity: 0},.5
+        )
+
 
         $("body").removeClass("menu-visible");
     }
@@ -2467,6 +1970,8 @@ jQuery(document).ready(function ($) {
     function load_content($url) {
         loader_show();
 
+        //ajax load content end
+        return;
         $.ajax({
             url: $url,
             dataType: "html",

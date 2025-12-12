@@ -39,6 +39,21 @@
 
 .menu-wrapper {
 
+	&:before {
+		// The Curtain
+		content:"";
+		display: block;
+		width: 100vw;
+		position: fixed;
+		top: 0;
+		right: 0;
+		height : 100vw;
+		background: $bg-menu-curtain;
+		border-radius: 100vh;
+		transform:translate(50%, -050%) scale(0);
+		@include transition("transform 1s");
+
+	}
 
 	// Default:: style for phone
 	//-------------------------------------------------------
@@ -49,7 +64,8 @@
 	top: 0;
 	left: 0;
 	height : 100vh;
-	background: $bg-menu-curtain;
+	background: transparent;
+	// background: $bg-menu-curtain;
 
 
 	@include transition();
@@ -104,7 +120,6 @@
 
 
 
-
 			> li {
 
 				font-size: 		$font-size-nav-lv1;
@@ -125,6 +140,9 @@
 
 				position: relative;
 				//@include  transition();
+				
+
+				
 
 
 				/*
@@ -187,12 +205,9 @@
 					@include desktop {
 						font-size: 	$font-size-nav-lv1-desktop;
 						padding: 	$nav-link-padding-desktop;//$nav-link-padding * .5;
-
-
 					}
 				}
 				// a
-
 
 			} // li
 
@@ -250,7 +265,9 @@
 	width: 100%;
 	text-align: right;
 	// z-index: 5031;
-
+	position: absolute;
+	top: 20px;
+	right: 10px;
 
 
 	@include device {
@@ -273,11 +290,12 @@
 
 	background: transparent;
 	width: 		70px;
-	height: 	40px;
+	height: 	70px;
 	padding: 	0;
 	margin: 	0;
 	position: 	relative;
 	min-height: unset;
+	z-index: 	3;
 	//background: url(images/menu-bar-bg.svg) repeat-x -5% -5px;
 	//background-size: 90px 50px;
 	@include 	xash-border-radius(0);
@@ -334,6 +352,7 @@
 	//------------------------------------------------
 	&:hover,
 	&:active {
+		background-color: transparent;
 		background-position: -110% -5px;
 		@include xash-box-shadow(none);
 
@@ -362,7 +381,7 @@
 
 
 		span {
-			background-color: $white;
+			//background-color: $white;
 
 			i {
 				background-color: inherit;
@@ -440,8 +459,6 @@
 			}
 
 		}
-
-
 
 	}
 
@@ -571,7 +588,7 @@
 
 	}
 
-/* 
+
 //// DISABLED MENU SUB MENU>>> USED IN WP
 	.sub-menu,
 	.dropdown-menu {
@@ -595,7 +612,7 @@
 			position: absolute;
 			z-index: 5000;
 			visibility: hidden;
-			right: -70px;
+			right: -25%;
 			top: 50%;
 
 			@include transform( 'translateY(-50%) translateX(-30%)' );
@@ -660,11 +677,13 @@
 		li {
 
 			font-size: 			$font-size-nav-lv2;
+			font-weight:		$font-nav-lv2-weight;
 			color: 				$nav-sub-link-color;
 			background-color: 	$nav-sub-item-bg;
 			padding: 			$nav-sub-item-padding;
 			text-align: 		left;
 			width: 				100%;
+			@include transition('all .45s');
 
 
 			a {
@@ -672,6 +691,10 @@
 				color: inherit;
 				padding: $nav-sub-link-padding-y $nav-sub-link-padding-x;
 				display: block;
+				letter-spacing: .12em;
+
+				@include transition('all .45s');
+
 
 
 
@@ -701,11 +724,17 @@
 				}
 			}
 
+
+			&:hover > a {
+				padding-left : $nav-sub-link-padding-y + 20;
+				transform:translateX(30px);
+			}
+
 		} // Li
 
 	}   // submenu
 
-*/
+
 
 
 	.sub-menu,
@@ -780,13 +809,22 @@
 body.menu-visible {
 
 	.menu-wrapper {
+		&:before {
+			transform :translate(50%,-50%) scale(3);
+		}
+
 		@include transform(translateX(0));
 	}
 
+	.hide-close {
+		display: block;
+		visibility: visible;
+	}
 
 	.logo-wrapper .site-title {
 		svg * {
 			fill: $text-color-light;
+			stroke: $text-color-light;
 		}
 	}
 
@@ -800,6 +838,11 @@ body.menu-visible {
 
 // submenu container
 //-------------------------------------------------
+.hide-close {
+	display: none;
+	visibility: hidden;
+}
+
 .hover-animated {
 
 

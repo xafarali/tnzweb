@@ -24,9 +24,9 @@
         <div class="container-xl">
             <div class="section sm">
                 <div class="row mc text-center logo-solutions section-slider-phone  srv-logo-wrapper ">                    
-                    <div class="col-md-3 offset-md-1"><img src="/images/logo-googlecloud.svg" alt="" /></div>
+                    <div class="col-md-3 offset-md-1 text-left"><img src="/images/logo-googlecloud.svg" alt="" /></div>
                     <div class="col-md-3"><img src="/images/logo-microsoft.svg" alt="" /></div>
-                    <div class="col-md-3"><img src="/images/logo-azure.svg" alt="" /></div>                    
+                    <div class="col-md-3 text-right"><img src="/images/logo-azure.svg" alt="" /></div>                    
                 </div>
             </div>
         </div>

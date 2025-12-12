@@ -85,7 +85,7 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
                     <div class="col-md-12 margin-bottom-2x">
                         <div class="card wow fadeInLeft" data-wow-delay="0" data-wow-offset="25">
                             <div class="content mc ">
-                                <h3 class="color-secondary">Requirement Gathering</h3>
+                                <h3 class="color-primary">Requirement Gathering</h3>
                                 <p>Our journey begins with understanding your specific needs. We prioritize open communication, sitting down with you to discuss your objectives in detail. By asking clear, straightforward questions, we aim to capture a comprehensive understanding of what you aspire to achieve with your application. This stage is crucial as it sets the foundation for a solution that aligns perfectly with your business goals.</p>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
                     <div class="col-md-12 margin-bottom-2x">
                         <div class="card wow fadeInLeft" data-wow-delay="0" data-wow-offset="25">
                             <div class="content mc ">
-                                <h3 class="color-secondary">Environmental Evaluation</h3>
+                                <h3 class="color-primary">Environmental Evaluation</h3>
                                 <p>The next phase involves a thorough evaluation of your current systems and infrastructure. By understanding what you already have in place, we can make informed decisions about the type of application that will seamlessly integrate into your existing environment. This step ensures compatibility and optimizes the performance of the new application within your current setup.</p>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
                     <div class="col-md-12 margin-bottom-2x">
                         <div class="card wow fadeInLeft" data-wow-delay="0" data-wow-offset="25">
                             <div class="content mc ">
-                                <h3 class="color-secondary">Development</h3>
+                                <h3 class="color-primary">Development</h3>
                                 <p>This is where the magic truly happens. Our development team, equipped with expertise and innovative spirit, begins the coding process, meticulously crafting your application. We prioritize rigorous testing at every development stage to identify and rectify any potential bugs or issues. This commitment to quality assurance ensures that the final product is robust, reliable, and ready to enhance your business operations.</p>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
                     <div class="col-md-12 margin-bottom-2x">
                         <div class="card wow fadeInLeft" data-wow-delay="0" data-wow-offset="25">
                             <div class="content mc ">
-                                <h3 class="color-secondary">Deployment</h3>
+                                <h3 class="color-primary">Deployment</h3>
                                 <p>The final phase is the deployment of your application. We manage the launch process carefully to ensure everything runs smoothly. Our team monitors the implementation closely, making adjustments as needed to achieve optimal performance. Your satisfaction is our top priority, and we work diligently to ensure that your team is happy with the result.</p>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
 
 
 <!-- WHY -->
-<div class="auto-scroll-wrapper section fs __bg-sec-400 area-why-tnz">
+<div class="auto-scroll-wrapper section fs __bg-sec-400 area-why-tnz xs-fx-sticky-wrap" id="why-tnz">
 
     <div class="illus-cont">
         <img src="/images/tnz-logo.svg" alt="" class="illus-img">
@@ -187,13 +187,52 @@ body_open('page-app-dev full-width ', $root_path . 'template/header/header-app-d
     <div class="container">
         <div class="row">
             <div class="col-md-4 text-right">
-                <h2 class=" h2 font-light color-light  color-secondary wow fadeInUp">Why<strong>TnZ International?</strong></h2>
-                   
-                <p class="lfead wow fadeInUp" data-wow-delay=".5s">We write clean, modular code designed for the long haul, supported by robust CI/CD pipelines for
-seamless updates. Security and performance aren't afterthoughts; they are woven into the very
-fabric of our development process. </p>
+                <div class="content pin-panel"
+                    data-trigger="#why-tnz"
+                    data-trigger-start = "0 20%"
+                    data-trigger-end="100% 70%"
+                    data-trigger-end-element="#why-tnz .sticky-panel-wrapper">
+                    <h2 class=" h2 font-light color-light  color-secondary wow fadeInUp">Why<strong><div>TnZ International?</div></strong></h2>
+                    <p class="lfead wow fadeInUp" data-wow-delay=".5s">We write clean, modular code designed for the long haul, supported by robust CI/CD pipelines for
+                        seamless updates. Security and performance aren't afterthoughts; they are woven into the very
+                        fabric of our development process. </p>
+                </div>
+               
                                 
             </div>
+
+            <div class="col-md-6 offset-md-2 sticky-panel-wrapper">
+                <div class="sticky-panel">
+                    <div class="card rect wow fadeInRight">
+                        <div class="content mc no-margin">
+                            <h3 class="h-caption margin-bottom margin-top">Expertise and Experience</h3> 
+                            <p>Our team consists of seasoned professionals with extensive experience spanning a wide range of industries. We have a proven track record of delivering applications that work great and meet the clients' needs precisely. Our vast technical expertise ensures that we understand the nuances of your industry and can deliver solutions that are not just innovative but also practical and effective.</p>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div class="sticky-panel">
+                    <div class="card rect wow fadeInRight">
+                         <div class="content mc no-margin">
+                            <h3 class="h-caption margin-bottom margin-top">Tailored Solutions</h3> 
+                            <p>We reject the notion of one-size-fits-all. At TnZ International, every solution is custom-built. We are dedicated to understanding your specific challenges and objectives, ensuring that our applications are aligned with your strategic goals from the outset.</p>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="sticky-panel">
+                    <div class="card rect wow fadeInRight">
+                         <div class="content mc no-margin">
+                            <h3 class="h-caption margin-bottom margin-top">Commitment to Innovation</h3> 
+                            <p>Technology evolves at breakneck speed, and so do we. Our commitment to staying updated with the latest tech trends allows us to offer you innovative, state-of-the-art solutions that keep you ahead of the competition and ready for future challenges.</p>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
         </div>
 
 
@@ -215,7 +254,7 @@ fabric of our development process. </p>
 <div class="auto-scroll-wrapper section bg-white fs pr power-bi-for-you bg-clip">
     <div class="sticky-are[a">
         <div class="illus-cont style-lg">
-            <img src="/images/bg-circle-dotted.svg" class="illus-img" alt="">
+            <img src="/images/bg-circle-dotted.svg" class="illus-img bottom-left" alt="">
         </div>
     </div>
     <div class="container">
@@ -231,19 +270,17 @@ fabric of our development process. </p>
             <div class="row">
             <div class="col-md-5  wow fadeInUp">
                 <div class="content">
-                    <h3 class="font-light"><span class="h4 h-caption">How </span>We Work</h3>
-                    <p>Our working process at TnZ International is straightforward yet thorough, ensuring nothing less
-than excellence in system performance:</p>
+                    <h3 class="font-light">Technologies We Use</h3>
+                    <p>Our Technological Arsenal</p>
                 </div>
                 
                
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="check  small">
-                            <li><strong>Initial Evaluation:</strong> We start by gaining a comprehensive understanding of your current systems. This evaluation reveals the strengths and identifies areas for improvement.</li>
-                            <li><strong>Detailed Analysis:</strong> We delve into where the weak spots lie, using this data to craft informed strategies for enhancement.</li>
-                            <li><strong>Implementation:</strong> Our team rolls out carefully planned enhancements, systematically improving performance across your systems.</li>
-                            <li><strong>Continuous Monitoring:</strong> Our commitment doesn't end with implementation. We continuously monitor your systems to ensure they maintain optimal performance, making necessary adjustments as needed.</li>
+                            <li><strong>Serverless Cloud Applications :</strong> Our expertise in serverless cloud technologies allows us to offer applications that run optimally in the cloud without the need for traditional server management. This approach enhances performance, reduces operational costs, and offers unparalleled scalability as your business grows.</li>                            
+                            <li><strong>API Solutions :</strong>In today's interconnected digital environment, robust APIs are essential. They enable different software systems to communicate and work together seamlessly. We develop strong and reliable APIs, ensuring smooth integration and interoperability across all your business systems.</li>
+                            <li><strong>Advanced Technologies :</strong> We harness the power of advanced technologies such as Artificial Intelligence (AI) and Machine Learning (ML). By integrating these technologies into our applications, we create smarter, more efficient solutions that adapt and improve over time, adding strategic advantage to your business operations.</li>
                         </ul>
                     </div>
                 </div>
@@ -252,17 +289,17 @@ than excellence in system performance:</p>
 
             <div class="col-md-5 offset-md-1 wow fadeInUp" data-wow-delay=".25s">
                 <div class="content">
-                    <h3 class="font-light"><span class="h4 h-caption">Implementing Data Governance</span>with TnZ International</h3>
-                    <p>Here's how TnZ International assists in the implementation of data governance:</p>
+                    <h3 class="font-light">What to Expect During the Partnership</h3>
+                    <p>A Collaborative and Transparent Experience</p>
                 </div>
                 
                
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="check  small">
-                            <li><strong>Step-by-Step Process:</strong> We guide you through each phase of the journey—from planning to execution, ensuring a smooth transition.</li>
-                            <li><strong>Tailoring Solutions to Your Needs:</strong> Our services are not one-size-fits-all; we customize them to meet the specific requirements of your business.</li>
-                            <li><strong>Ensuring Sustainable Growth:</strong> Our data governance plans are crafted to support your business's steady and sustainable growth over time.</li>                            
+                            <li><strong>Regular Updates :</strong> We keep you informed about progress at every stage, building trust and ensuring alignment.</li>
+                            <li><strong>Clear Communication :</strong> We believe in maintaining open lines of communication, making sure you are always in the loop and have all the information you need to make informed decisions.</li>
+                            <li><strong>Dedicated Team :</strong> Our team is committed to your success and will work tirelessly to ensure your application delivers the desired impact on your business.</li>
                         </ul>
                     </div>
                 </div>
@@ -277,51 +314,98 @@ than excellence in system performance:</p>
 </div>
 
 
+  <!--   FAQ PRICES-->
+    <div class="auto-scroll-wrapper section isvs-price bg-secondary-400 bc-diamond">
+        <div class="container-xl">
+            <div class="_text-center-desktop">
+                 <div class="container-xl">
+            
+            <h2 class="h1_ text-center color-white">Frequently Asked Questions</h2>
+            
+            <div class="faq-wrapper">
+                                
+                <div class="panel collapsed">
+                    <div class="faq-heading">
+                        <div class="panel-title">
+                            <span>What platforms do you develop for?</span>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-content">
+                        <p>We build a wide range of applications, from web and mobile apps to specialized solutions using the latest technology.</p>
+                    </div>
 
+                </div>
 
+                
+                <div class="panel collapsed">
+                    <div class="faq-heading">
+                        <div class="panel-title">
+                            <span>How long does it take to build an app?</span>
+                        </div>
 
+                    </div>
 
+                    <div class="faq-content">
+                        <p>The timeline varies depending on the complexity of the project, but we always strive for efficiency without compromising quality.</p>
+                    </div>
+                </div>
 
+                
+                <div class="panel collapsed">
+                    <div class="faq-heading">
+                        <div class="panel-title">
+                            <span>Will I be able to make changes to the app later?</span>
+                        </div>
 
+                    </div>
 
+                    <div class="faq-content">
+                        <p>Absolutely! We design our applications to be flexible and easy to update, ensuring they can evolve with your business needs.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="panel collapsed">
+                    <div class="faq-heading">
+                        <div class="panel-title">
+                            <span>How much does it cost to build an app?</span>
+                        </div>
 
-<!--  CUSTOMER ENGAGEMENT-->
-<?php
-/*
-<div class="auto-scroll-wrapper fs section customer-flow">
+                    </div>
 
-<div class="container">
+                    <div class="faq-content">
+                        <p>Costs are project-specific, and we provide a clear and detailed estimate during the proposal stage.</p>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="panel  collapsed">
+                    <div class="faq-heading">
+                        <div class="panel-title">
+                            <span>Do you offer support after the app is launched?</span>
+                        </div>
 
-<div class="row">
+                    </div>
 
-<div class="col-md-3 text-right-desktop">
+                    <div class="faq-content">
+                        <p>Yes, we offer comprehensive support to address any questions or concerns that arise post-launch.</p>
+                    </div>
+                </div>
+                               
+                
+            </div>
+            
+        </div>
+            </div>
 
-    <div class="text-area">
-        <h2 class="font-size-h 3 font-light">Customer Engagement Flow</h2>
-        <p>Moving to the cloud may sound intimidating. But it becomes very easy when all you have to do is make the decision, while we do all the major work. Trust is our expertise as we skillfully guide you from the first step to the last, starting from professional advice, tailoring a solution for your business and giving it a competent completion.</p>
+        </div>
+
     </div>
 
-</div>
 
 
-<div class="col-md-9 illus-custom-eng">
-
-    <div class="content">                        
-        <div class="area-illus">
-            <img src="/images/cloud/illus-customer-engage.svg" alt="" class="svg-import illus-custom-eng-img" style="width: 100%">
-        </div>   
-    </div>
-
-
-</div>
-
-
-</div>
-
-</div>
-</div>
-*/
-?>
 
 
 

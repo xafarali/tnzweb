@@ -210,11 +210,10 @@
                         <div class="content pin-panel" 
                             data-trigger="#pinpanel-trigger" 
                             data-trigger-end-element="#tailored-solution .sticky-panel-x"
-                            data-trigger-start="0 0"
-                           
-                            data-spacing = false
+                            data-trigger-start="0 0" 
+                            data-trigger-end = "100% 70%"
+                            data-spacing = false >
                             
-                            >
                             <h3 class="h2 font-light color-primary text-center">
                                 <span class="color-primary-700 font-light">Cloud Versus On-Premises Solutions:</span> 
                                 <div><strong>Tailored to Your Needs</strong></div>

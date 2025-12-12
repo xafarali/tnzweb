@@ -90,7 +90,7 @@ body_open('page-data-gov full-width ', $root_path . 'template/header/header-data
 
 
 <!-- Business Matters -->
-<div class="auto-scroll-wrapper pr padding-top-xl-desktop section bg-secondary-500 fs overflow-clip bc-diamond zi-2"
+<div class="auto-scroll-wrapper pr padding-top-xl-desktop section bg-secondary-400 fs overflow-clip bc-diamond zi-2"
     id="it-detail-service-info">
     <div class="illus-cont">
         <img src="/images/srv/circle-test.svg" class="illus-img" alt="">

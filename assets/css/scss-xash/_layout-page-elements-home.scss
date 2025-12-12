@@ -141,8 +141,10 @@
 
 
 	.glossy {
+
 		padding: $gutter-width * 2;
-		background:rgba($brand-primary,.10);
+		background:rgba($brand-primary,.10) radial-gradient(rgba(white,.7), transparent);
+		
 		backdrop-filter: blur(13px);
 
 
@@ -180,6 +182,10 @@
 			}
 		}
 
+		}
+
+		&.card {
+			padding: 2vw;
 		}
 	}
 
@@ -852,6 +858,36 @@
 		}
 
 
+		//=========================================================================
+		//=========================================================================
+		//=========================================================================
+		//  BACKGROUND COLLECTION
+		//=========================================================================
+		//=========================================================================
+		.bg {
+			&-1 { background: white url('/assets/images/bg-1.jpg') no-repeat top center; }
+			&-2 { background: url('/assets/images/bg-2.jpg') no-repeat  top center;	}
+			&-3 { background: url('/assets/images/bg-3.jpg') no-repeat  top center;	}
+			&-4 { background: url('/assets/images/bg-4.jpg') no-repeat  top center;	}
+			&-5 { background: url('/assets/images/bg-5.jpg') no-repeat  top center;	}
+			&-6 { background: url('/assets/images/bg-6.jpg') no-repeat  top center;	}
+
+			
+			&-1,
+			&-2,
+			&-3,
+			&-4,
+			&-5,
+			&-6 {
+				&.bg-cover { background-size: cover;}
+				&.bg-fix { background-attachment: fixed!important;}	
+			}
+
+			
+		}
+			
+
+
 
 
 		//=========================================================================
@@ -875,6 +911,16 @@
 			}
 		}
 
+		.page-mob-dev {
+			#sec-mob-steps {
+				background: white url('/assets/images/header-about-us-bg.jpg') no-repeat top center fixed;
+			}
+		}
+
+		.power-bi-for-you {
+			background: url('/assets/images/header-bg-general-1.JPG') no-repeat  top center;
+			background-size: cover ;
+		}
 
 		//=========================================================================
 		//=========================================================================
@@ -882,6 +928,184 @@
 		//  Contact Us
 		//=========================================================================
 		//=========================================================================
+		.page-contact-us {
+
+			#wrapper,
+			#page-content {
+				background: transparent;
+			}
+
+
+			.map-wrapper {
+
+				line-height: 0;
+				width: 100vw;
+				margin: 0 -$grid-gutter-width/2;
+				height: 300px;
+
+				@include desktop {
+
+					width: 40vw;
+					margin: 0;
+					height: 66vw;
+					overflow: hidden;
+					position: absolute;
+					top: 5vh;
+					right: 10vw;
+
+					//@include transform(rotate(9deg));
+					//@include xash-box-shadow($shadow-dialog);
+					//@include xash-border-radius(70px);
+
+
+					> * {
+						//@include transform(rotate(-9deg));
+						width: 150%;
+						height: 150%;
+						margin: -10vw;
+					}
+
+
+					iframe {
+						margin: 0;
+					}
+
+				}
+
+			}
+
+
+
+			.contact-form-wrapper {
+				/*position: absolute;
+				width: 50%;
+				top: 60%;
+				left: 50%;*/
+				position: relative;
+
+
+				z-index: 10;
+				//@include transform(translateY());
+
+
+				@include desktop {
+					margin-top: 30%;
+				}
+
+			}
+
+
+
+
+			.form-wrapper {
+				padding: $grid-gutter-width * 1.5;
+				background: white;
+
+
+				form {
+					//@include xash-border-radius($border-radius-large * 2);
+					//border: 4px solid lighten( $brand-primary, 20% );
+					padding: 3px;
+
+
+					.row {
+						margin-bottom: $grid-gutter-width/2;
+					}
+				}
+
+				@include xash-box-shadow($shadow-dialog);
+
+
+				@include tablet {
+
+					margin: 0 auto 0;
+
+					width: 100%;
+
+					position: relative;
+					//z-index: 2000;
+
+					@include xash-box-shadow($shadow-dialog);
+
+
+
+					&.neg {
+						@include transform(translateY(-50%));
+					}
+				}
+
+
+
+
+				@include phone {
+
+
+					.form,
+					form {
+
+						.row {
+							margin-bottom: 0;
+
+
+							> * {
+								margin-bottom: $grid-gutter-width / 2;
+							}
+						}
+					}
+
+
+
+					&.xl {
+						.col {
+							flex-basis: 100%;
+						}
+
+
+						.col-auto {
+							width: 50%;
+
+
+							input,
+							button {
+								width: 100%;
+							}
+						}
+					}
+
+
+				}
+
+
+
+			}
+
+
+
+			.contact-body {
+				margin-top: -25vh;
+
+
+				* { color: $text-color; }
+
+
+				.fa { margin: 0 20px; }
+
+			}
+
+			.area-address {
+
+				.address-wrapper {
+					background: $brand-primary-light;
+					padding: 30px;
+					color: white;
+
+					@include xash-border-radius(10px 30px);
+					@include xash-box-shadow($shadow-dialog);
+				}
+
+			}
+
+		}
 
 
 		// Contact Us Ends --------------------------------------------------------
@@ -1361,15 +1585,20 @@
 		&.bottom-left {
 			position: absolute;
 			bottom: 0;
-			left: 0;	
+			left: 0;
+			top: auto;	
 		}
 
 		&.bottom-right {
 			position: absolute;
 			bottom: 0;
 			right: 0;	
+			top: auto;	
 		}
 
+		&.auto {
+			height: auto;
+		}
 
 
 

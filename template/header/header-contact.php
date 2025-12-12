@@ -10,9 +10,9 @@
 <div class="auto-scroll-wrapper">
     <div class="banner-wrapper section fs _home-banner auto-scroll">
 
-        <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
+        <div class="" style="position:absolute; top: 0;width: 100%; ">
 
-<!--            <img src="/images/header-about-us.jpg" alt="">-->
+           <img src="/images/srv/header-contact.jpg" alt="">
             
             <div class="map-wrapper wow fadeInUp itm-plx" data-wow-delay=".75s" data-parallex="30" >
                 <div class="map-child">
@@ -39,14 +39,14 @@
                             <div class="col-md-5">
                                 
                                 <h2 class="h1 margin-left-desktop-3x margin-bottom-2x-desktop color-primary-light _itm-plx " data-parallex="20">
-                                    <span class="light db wow fadeInLeft" data-wow-delay=".25s">Get In Touch</span>
-                                    <span class="color-primary db wow fadeInLeft" data-wow-delay=".40s">Quickly!</span>
+                                    <span class="light db wow fadeInLeft" data-wow-delay=".25s">Let's Talk</span>
+                                    <!-- <span class="color-primary db wow fadeInLeft" data-wow-delay=".40s">Quickly!</span> -->
                                 </h2>
 
                                 <div class="row wow fadeInLeft hide-phone" data-wow-delay=".75s">
-                                    <div class="col-md-8 offset-md-1">
+                                    <div class="col-md-10 offset-md-1">
                                         <p class="lead light">
-                                            We'd love to hear from you. Whether you want to learn more about our services, chat about your project, or just to say hello. Let's connect!
+                                            Having gained insights into our company, we're eager to learn more about you. Share details about yourself, your company, and let's explore how we can enhance your IT solutions together.
                                         </p>
                                     </div>
                                 </div>
@@ -86,11 +86,15 @@
                                                         <div class="col-md-6">
                                                             <select name="interestedIn" id="" title="Interested In">
                                                                 <option value="" disabled selected>Interested In?</option>
-                                                                <option value="azure">Azure</option>
+                                                                <option value="power-bi">Business Intelligence</option>
                                                                 <option value="cloud-solution">Cloud Solutions</option>
-                                                                <option value="office-365">Office 365</option>
-                                                                <option value="1">App Development</option>
-                                                                <option value="1">Branding</option>
+                                                                <option value="mobile-app-dev">Mobile App Development</option>
+                                                                <option value="web-app">Website/App Development</option>
+                                                                <option value="branding">Branding</option>
+                                                                <option value="seo">Search Engine Optimization</option>
+                                                                <option value="seo">Staff Augmentation</option>
+                                                                <option value="seo">Data Warehouse</option>
+                                                                <option value="seo">Performance Optimization</option>
                                                             </select>
                                                         </div>
                                                     </div>

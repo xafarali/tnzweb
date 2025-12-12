@@ -35,7 +35,7 @@
 
                         <div class="col-md-12_  area-menu">
                              <div class="area-menu-button">
-                                <a href="#" class="btn">MENU</a>
+                                <a href="" class="btn btn-menu">MENU</a>
                                 <a href="#" class="btn primary text-uppercase icon">Lets Talk <span>
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 10.625V8.375H8.55L14.175 2.75H11.25V0.5H18V7.25H15.75V4.325L9.45 10.625H0ZM11.25 18.5V16.25H14.175L10.575 12.7063L12.2063 11.075L15.75 14.675V11.75H18V18.5H11.25Z" fill="#CB2026"/>
@@ -43,7 +43,7 @@
                                 </span></a>
                             </div>
 
-                            <div class="menu-button hide-desktop">
+                            <div class="menu-button hide-close">
                                 <button class="menu-burger menu-btn">
                                     <span class="smb-wrap">
                                         <i class="mbfrst">&nbsp;</i>

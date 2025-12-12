@@ -34,7 +34,7 @@
                             <div class="col-md-12 offset-mdk-2 text-center">
                                 <div class="ev-scrolltrigger">
                                     <h1 class="font-size-xl no-margin text=capatilize heading fx-spin-text _itm-plx _wow _fadeInUp" data-parallex="20"  data-wow-delay=".25s">
-                                        Welcome to TnZ
+                                        Your Vision <br>Brought to Life
                                     </h1>
                                 </div>                          
 
@@ -46,7 +46,8 @@
                             <div class="container-xl">
 
                                 <p class="lead xl fx-split-row-text">
-                                    Imagine being partnered with a specialist IT team who can analyze your current data trends, manage all your application development needs!
+                                We're not your typical IT company. For us, every project is personal. We believe the best results come from genuine collaboration, not rigid hierarchies.   
+                                <!-- Imagine being partnered with a specialist IT team who can analyze your current data trends, manage all your application development needs! -->
                                 </p>
                                 <?php /*
                                 <div class="anim-circle-wrap row mc ">

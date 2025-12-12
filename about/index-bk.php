@@ -27,13 +27,9 @@
                   
                     <div class="}padding-left-3x-desktop">
                         <p class="lead x-l light wow fadeInUp" data-wow-delay="1s">
-                            Our journey began with a simple idea: <strong>Technology should make things easier</strong>, <br>not more 
-                            complicated. 
+                            At <strong>TnZ</strong>, our passion for technology propels your company's success. We are dedicated to aligning with your company's goals, introducing innovative ideas
                         </p>
-                        <p class=" condensed wow fadeInUp" data-wow-delay="1s">Too many businesses were stuck with clunky systems and endless delays, so we built a team, a family of developers, designers, and problem-solvers who share a passion for turning your complex challenges into simple, scalable solutions.</p>
-                        <p class=" condensed wow fadeInUp" data-wow-delay="1s">
-                            We don't just take requirements and deliver code, we immerse ourselves in your world. By understanding your customers and your unique challenges, we create solutions that are practical, secure, and ready for the future. 
-                        </p>
+                        <p class=" condensed wow fadeInUp" data-wow-delay="1s">Imagine being partnered with a specialist IT team who can analyze your current data trends, manage all your application development needs, integrate applications, enhance your web, intranet and extranet presence, and create advanced analytics resulting in optimal productivity and profitability for your business.</p>
                     </div>
                     
                 </div>
@@ -112,12 +108,12 @@
                             </div>
                     <p class="lead light wow fadeInUp" data-wow-delay="1s">
                          <!-- We offer a full scope of managed and consulting IT services. Our talented IT consultants thoroughly invest time in getting to know the goals of businesses and focus on their customized experience.  -->
-                            Our expertise spans <strong class="color-secondary">AI</strong>, cloud migrations, custom applications, data intelligence, and security. 
-                            
+                          Our expertise spans <strong class="color-secondary">AI</strong> and Automation, cloud engineering, web and mobile app development, UI/UX design, cybersecurity, enterprise solutions, and data intelligence. 
+
                     </p>
-                    <p class="wow fadeInUp">What sets us apart is how we bring these skills together with creativity and care, blending smart 
-                            technology with thoughtful design to help your business grow with confidence. </p>
-                    <p class="wow fadeInUp">At the end of the day, our biggest achievement isn't the systems we build, it's the partnerships we form. We measure success by your growth, your agility, and the trust we earn along the way. Together, we don't just adapt to the future, we build it.</p>
+                    <p class="wow fadeInUp">
+                        Our team creates the framework of digital transformation by tackling the client’s challenges and delivering key business optimization techniques that allow businesses to achieve efficient results. Our dynamic technology team brings our clients the most current concepts and market trends in the technology industry and our belief in excellence allows our clients to reach their full potential in the digital space
+                    </p>
                     <p class="wow fadeInUp">
                         <a href="/services/" class="btn primary text-uppercase">More About Services</a>
                     </p>

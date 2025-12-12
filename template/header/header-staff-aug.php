@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-innovative-app-dev.jpg" alt="" class="imgFit" style="filter:blur(2px)">
+                <img src="<?php echo $images ?>/srv/header-staff-aug.jpg" alt="" class="imgFit">
             </div>
             
         </div>
@@ -33,28 +33,25 @@
                                 <div class="">
                                     <div class="fx-spin-wrapper">
                                         <h1 class="color-white text-center text-shadow">
+                                            <div class="h2 text-center margin-left-xxl-deskftop fadeInUp wow">Expert  </div>
                                            <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" 
-                                        data-mod = "rev"                                   
-                                        > Innovative Application</div><div class="h2 color-white wow fadeInUp" data-wow-delay="1s">Development</div>
+                                        data-mod = "rev">Staff Augmentation</div>
+                                        <div class="h2 text-center mfargin-right-xxl-desktop wow fadeInUp" data-wow-delay="1s">by TnZ International</div>
                                     </h1>
                                     </div>
                                    
                                    
                                    <div class="fx-spin-wrapper">
-                                    <p class=" xs-fx-spin-text lead xl light color-white text-center-phone "  
+                                    <p class=" xs-fx-spin-text lead light color-white text-center-phone "  
                                         data-type="chars" 
                                         data-style="fd" 
                                         data-trigger=".banner-content"
                                         data-trigger-start="top 60%"
                                         data-delay="2",
-                                        data-stagger=".05"
-                                        >
-                                        To <strong>stay ahead</strong> of the curve is not just an advantage, it's a <strong>necessity</strong>
+                                        data-stagger=".05">
+                                        Having an agile, skilled team is crucial to staying competitive and meeting your business objectives
                                     </p>
-                                    </div>
-                                    <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">
-                                        In a world where technology is a critical cornerstone of success, TnZ International stands at the forefront of ensuring your computer networks are not just operational but are consistently optimized for peak performance. We pride ourselves on empowering businesses to manage their IT infrastructure efficiently, maintaining both hardware and software at the highest standards of excellence. 
-                                    </p> -->
+                                    </div>                                 
 
                                 </div>
                             </div>  <!-- col-6 -->

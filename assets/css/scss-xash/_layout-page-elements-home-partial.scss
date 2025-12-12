@@ -35,6 +35,10 @@ div {
 	color: white;
 }
 
+.push-back { transform : translateX(-20%); }
+.push-forward { transform : translateX(020%); }
+
+
 
 // STICKY ELEMENTS
 @mixin _resposnive_utilset ( $_pre ) {
@@ -1295,7 +1299,7 @@ _body,h_tml {
 	background: rgba($brand-secondary,.15);
 	top: 0;
 	left: 0;
-	@include transform(translate(-50%,-50%) scale(1));
+	@include transform(translate(-50%,-50%) scale(.15));
 	@include xash-border-radius(400px);
 	@include transition(transform .15s ease-in);
 	z-index: 2;
@@ -1311,6 +1315,11 @@ _body,h_tml {
 		// width: 130px;
 		// height: 130px;
 		z-index: 5001;
+		
+
+		body.menu-visible &.xpanded {
+			opacity: .14
+		}
 	}
 
 }

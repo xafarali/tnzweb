@@ -22,10 +22,15 @@
                     <div class="sub-menu hover-animated">
                         <ul class="">
                             <li class="lv2"><a href="/services/power-bi/" rel="bookmark">Business Intelligence</a></li>
+                            <li class="lv2"><a href="/services/it-management/" rel="bookmark">IT Infrastructure</a></li>
                             <li class="lv2"><a href="/services/data-gov/" rel="bookmark">Data Governance</a></li>
-                            <li class="lv2"><a href="/services/it-management/" rel="bookmark">IT Management</a></li>
                             <li class="lv2"><a href="/services/data-integration/" rel="bookmark">Data Integration|Cloud Migration</a></li>
                             <li class="lv2"><a href="/services/data-warehouse/" rel="bookmark">Data Warehouse</a></li>                            
+                            <li class="lv2"><a href="/services/mobile-development/" rel="bookmark">Mobile App</a></li>                            
+                            <li class="lv2"><a href="/services/performance-optimization/" rel="bookmark">Performance Optimization</a></li>                            
+                            <li class="lv2"><a href="/services/innovative-application-development/" rel="bookmark">Innovative App Development</a></li>                            
+                            <li class="lv2"><a href="/services/search-engine-optimization/" rel="bookmark">Search Engine Optimization</a></li>                            
+                            <li class="lv2"><a href="/services/staff-augmentation/" rel="bookmark">Staff Augmentation</a></li>                            
                         </ul>
                     </div>
                 </li>

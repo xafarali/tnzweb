@@ -71,14 +71,26 @@ jQuery(document).ready(function ($) {
 
     //----------------------------------------------------------------------
     // Main Menu Toggle
-    $('.btn-menu').on('click', function () {
-        $('body').toggleClass('menu-visible');
+    $('.btn-menu').on('click', function (e) {
+        
+        e.preventDefault()
+
+        // TRIGGER CUSTOM EVENT
+        
 
         if (!$('body').hasClass('menu-visible')) {
-            $('.navigation ').find('.active-menu').removeClass('active-menu');
+            // TRIGGER CUSTOM EVENT
+            $('body').trigger('event-menu-open')
+            // $('.navigation ').find('.active-menu').removeClass('active-menu');
+        } else {
+            $('body').trigger('event-menu-close');
+            //$('body').addClass('menu-visible');    
         }
 
     });
+    $('.menu-burger').on('click', function (e) {
+        $('body').trigger('event-menu-close');
+    })
 
 
     //// Sticky Menu
@@ -163,7 +175,7 @@ jQuery(document).ready(function ($) {
         // temp prefix
 
         console.log(nav_val);
-        window.location = nav_host + nav_val;
+       // window.location = nav_host + nav_val;
     });
 
 
@@ -713,7 +725,7 @@ jQuery(document).ready(function ($) {
 
     function checkPhone() {
 
-        var is_phone = $('.btn-menu').is(":visible") ? true : false;
+        var is_phone = $('.footer .dv-device').is(":visible") ? true : false;
 
         if (is_phone) {
             $('body').addClass('is-phone');

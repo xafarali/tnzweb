@@ -269,10 +269,10 @@
     <div class="auto-scroll-wrapper section fs bg-light-blue cloud-why-tnz" id="key-features">
        
         
-        <div class="container">
+        <div class="container-fluid">
             
             <div class="row">               
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="text-right">
                         <h2>
                             <div class="h3 wow fadeInUp">Key Features of </div>
@@ -300,7 +300,7 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-5 offset-md-2">
                     <div class="">
                         <h2>
                             <div class="h3 wow fadeInUp">Platform</div>
@@ -309,6 +309,7 @@
                         </h2>
                             <!-- <p class="wow fadeInUp" data-wow-delay=".5s">After you have made the decision that would change your business forever, we provide you with our full technical support, giving you full deployment assistance, and taking you successfully to the last step.</p> -->
                     </div>
+                    
                     <div class="row">
                         <div class="col-md-10">
                             <div class="content">

@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-innovative-app-dev.jpg" alt="" class="imgFit" style="filter:blur(2px)">
+                <img src="<?php echo $images ?>/srv/header-mob-app-dev.jpg" alt="" class="imgFit">
             </div>
             
         </div>
@@ -35,13 +35,13 @@
                                         <h1 class="color-white text-center text-shadow">
                                            <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" 
                                         data-mod = "rev"                                   
-                                        > Innovative Application</div><div class="h2 color-white wow fadeInUp" data-wow-delay="1s">Development</div>
+                                        > Innovative Mobile App</div><div class="h2 _color-white wow fadeInUp" data-wow-delay="1s">Development</div>
                                     </h1>
                                     </div>
                                    
                                    
                                    <div class="fx-spin-wrapper">
-                                    <p class=" xs-fx-spin-text lead xl light color-white text-center-phone "  
+                                    <p class=" xs-fx-spin-text lead light color-white text-center-phone "  
                                         data-type="chars" 
                                         data-style="fd" 
                                         data-trigger=".banner-content"
@@ -49,7 +49,7 @@
                                         data-delay="2",
                                         data-stagger=".05"
                                         >
-                                        To <strong>stay ahead</strong> of the curve is not just an advantage, it's a <strong>necessity</strong>
+                                        Our mission is to push the boundaries of mobile app development, delivering exceptional applications for both iOS and Android.
                                     </p>
                                     </div>
                                     <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">
