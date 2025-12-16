@@ -495,16 +495,16 @@ $nav-lv1-spacing: 							.75px;
 
 //=== Sub Menu Items  ======================================
 $nav-sub-container-bg:					$bg-dark; //transparent;
-$nav-sub-container-width: 				400px;
+$nav-sub-container-width: 				560px;
 $nav-sub-item-bg:						transparent;
 $nav-sub-item-bg-hover:					$nav-sub-item-bg;
 $nav-sub-link-color:					white;
 $nav-sub-link-color-hover:				$blue; //$brand-primary;
 
 $nav-sub-item-padding:					0;
-$nav-sub-link-padding:					20px; // 8px 20px
-$nav-sub-link-padding-x:				$nav-sub-link-padding;
-$nav-sub-link-padding-y:				$nav-sub-link-padding;
+$nav-sub-link-padding:					20px; 	// 8px 20px
+$nav-sub-link-padding-x:				1.5vh; 	//$nav-sub-link-padding;
+$nav-sub-link-padding-y:				15vh; 	//$nav-sub-link-padding;
 
 $nav-sub-link-padding-child:			8px 40px 8px 20px;
 
@@ -864,7 +864,7 @@ $blockquote-line-height: 2;
 // Cards
 $border-radius-card: $grid-gutter-width * 1;
 $card-padding: 2vw;
-$card-padding-sm: 1vw;
+$card-padding-sm: 1.5vw;
 
 
 

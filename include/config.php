@@ -16,6 +16,6 @@
 	$css_asset 	= $url . 'assets/';
 	$images 	= $url . 'images/';
 
-	$_company = "TnZ International";
+	$_company = " | TnZ International";
 	
 	include_once('function.php');

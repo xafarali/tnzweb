@@ -22,9 +22,9 @@
                         <section class=" wow fadeInUp">
                             <div class="_card">
                                 <div class="content">
-                                    <h3 class="-h2 font-light"><i class="fa fa-envelope-open-o"></i>info@sepiasolutions.com
+                                    <!-- <h3 class="-h2 font-light"><i class="fa fa-envelope-open-o"></i>info@tnzinternational.com
                                     </h3>
-                                    <h3 class="-h2 font-light"><i class="fa fa-phone"></i>+1 646 7094216</h3>
+                                    <h3 class="-h2 font-light"><i class="fa fa-phone"></i>+1 800 321 443</h3> -->
 
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
 
                         <hr>
 
-                        <section class=" wow fadeInUp" data-wow-delay=".25s">
+                        <!-- <section class=" wow fadeInUp" data-wow-delay=".25s">
                             <div class="row mc contact-social">
                                 <div class="col-md-3">
                                     <h4 class="font-size-h3"><a href="#"><i class="fa fa-facebook"></i></a></h4>
@@ -44,7 +44,7 @@
                                     <h4 class="font-size-h3"><a href="#"><i class="fa fa-linkedin"></i></a></h4>
                                 </div>
                             </div>
-                        </section>
+                        </section> -->
                         
                         
                     </div>

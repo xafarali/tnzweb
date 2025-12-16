@@ -1,6 +1,7 @@
 <?php
     global $page_title;
-	$title = isset($page_title) ? $page_title : "Current Page";
+	global $_company;
+	$title = isset( $page_title) ? $page_title . $_company : "Current Page";
 ?>
 
 <!DOCTYPE html>

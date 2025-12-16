@@ -13,7 +13,7 @@
         <div class="bg-plate cloudy" style="position:absolute; top: 0;width: 100%; ">
 
             <div class="bg-plate-base">
-                <img src="<?php echo $images ?>/srv/header-it-management-2.jpg" alt="" class="imgFit" style="filter:blur(2px) hue-rotate(45deg)">
+                <img src="<?php echo $images ?>/srv/header-ai.jpg" alt="" class="imgFit" style="filter:blur(2px)">
             </div>
             
         </div>
@@ -32,11 +32,12 @@
                             <div class="col-md-10 text-center-phone offset-md-1">
                                 <div class="">
                                     <div class="fx-spin-wrapper">
-                                        <h1 class="color-white text-center">
-                                       <!-- <span class="h2">Comprehensive</span><br>  -->
-                                       <div class="xs-fx-spin-text dp  font-size-xl" data-trigger=".banner-content" ,
-                                        data-mod = "rev"                                   
-                                        > IT Infrastructure </div><div class="h2">Management</div>
+                                        <h1 class="color-white text-center text-shadow">
+                                           <div class="xs-fx-spin-text dp  font-size-xl" 
+                                                data-trigger=".banner-content" 
+                                                data-mod = "rev">
+                                                <div class="h2 color-white">Advance</div> 
+                                                AI Solutions </div><div class="h2 color-white wow fadeInUp" data-wow-delay="1s">for Intelligent Business Growth </div>
                                     </h1>
                                     </div>
                                    
@@ -47,16 +48,13 @@
                                         data-style="fd" 
                                         data-trigger=".banner-content"
                                         data-trigger-start="top 60%"
-                                        data-delay="2"
-                                        data-stagger="0.05"
-                                        >
-                                        <br>
-                                       Enhance and Safeguard Your IT Infrastructure with <strong>TnZ International</strong>
+                                        data-delay="2",
+                                        data-stagger=".025"
+                                        >                                                                          
+                                        TnZ International provides scalable AI solutions that enable intelligent automation, predictive insights, workflow automation and data-driven decision-making.
                                     </p>
                                     </div>
-                                    <!-- <p class="wow fadeInUp text-light" data-wow-delay="2s">
-                                        In a world where technology is a critical cornerstone of success, TnZ International stands at the forefront of ensuring your computer networks are not just operational but are consistently optimized for peak performance. We pride ourselves on empowering businesses to manage their IT infrastructure efficiently, maintaining both hardware and software at the highest standards of excellence. 
-                                    </p> -->
+                                    
 
                                 </div>
                             </div>  <!-- col-6 -->

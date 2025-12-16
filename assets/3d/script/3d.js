@@ -116,7 +116,7 @@ if ( canvas ) {
 	const targetgpt = new THREE.Vector3();
 
 	/** */
-	console.log("dfdddffdddfdfdfddf" + scene.rotation.y)
+	//console.log("dfdddffdddfdfdfddf" + scene.rotation.y)
 
 	scene.add(lookTarget);
 	const moveSens = .65, sceneYAxisPreset = -2.35;

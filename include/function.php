@@ -124,3 +124,40 @@
 		else { $icon_text = '';}
 		echo "<a href='${url}' class=\"${css}\" >${text} ${icon_text}</a>";
 	}
+
+
+
+
+
+
+
+	// add team member
+	function print_team_member( $col='6', $title='Name', $des='CEO', $dec='', $img='/images/taimur-baig1.webp') {?>
+	
+	<?php echo	"<div class=\"col-md-${col}\">
+			<div class='team-card'>
+				<div class=\"row\">
+					<div class=\"col-md-6 team-thumb\">
+						<img src=\"${img}\" class=\"team-snap\" alt=''>
+					</div>
+					
+					<div class=\"col-md-6 mc\">
+						<div class=\"detail \">
+							<div class=\"content\">
+								<h4 class=\"team-title\">${title}</h4>
+								<p class=\"designation\">${des}</p>"?>
+
+								<?php if( trim($dec) != '') { 
+									echo	"<p class=\"info small no-margin\"> ${dec}</p>";
+								} ?>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>                                            
+		</div>
+
+<?php
+	}

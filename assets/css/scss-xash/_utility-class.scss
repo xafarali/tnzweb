@@ -502,8 +502,7 @@ p.lg {
 
 
 
-.no-border,
-.nb-meralund {
+.no-border {
 	border:0!important;
 
 	&:focus {
@@ -539,7 +538,9 @@ em {
 	}
 }
 
-
+.height-auto {
+	height: auto!important;
+}
 
 .txt-large,
 .text-large {
@@ -552,8 +553,17 @@ em {
 }
 
 
-.opacity-0 {
-	@include opacity(0);
+.opacity {
+	&-0 {	@include opacity(0); }
+	&-1 {	@include opacity(.1); }
+	&-2 {	@include opacity(.2); }
+	&-3 {	@include opacity(0.3); }
+	&-4 {	@include opacity(0.4); }
+	&-5 {	@include opacity(0.5); }
+	&-6 {	@include opacity(0.6); }
+	&-7 {	@include opacity(0.7); }
+	&-8 {	@include opacity(0.8); }
+	&-9 {	@include opacity(0.8); }
 }
 
 
