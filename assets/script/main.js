@@ -399,7 +399,7 @@ jQuery(document).ready(function ($) {
             $('body').on('event-menu-open', function (e) {
                 $('body').addClass('menu-visible')
                 gsap.to( lv1, {
-                    x:-100,
+                    x:-0,
                     autoAlpha:1,
                     stagger: 0.1,
                     delay:.5,
@@ -412,7 +412,7 @@ jQuery(document).ready(function ($) {
             $('body').on('event-menu-close', function (e) {
               // alert('menu got closed')
                 gsap.to( lv1, {
-                    x:200,
+                    x:-100,
                     autoAlpha:0,
                     stagger: 0.05,
                     //delay:.25,

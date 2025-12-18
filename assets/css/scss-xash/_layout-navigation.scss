@@ -100,7 +100,7 @@
 
 .main-navigation {
 	padding: 0;
-
+	background-color: $bg-dark;
 
 	li.lv1 {
 		width: 100%;
@@ -483,8 +483,11 @@
 	//  MENU OPEN
 	//=========================================================================
 	//=========================================================================
-		body.menu-open {
-
+		body.menu-open,
+		body.menu-visible {
+			.area-menu.mobile-menu-btn	{
+				opacity: 0;
+			}
 		}
 
 
@@ -522,6 +525,21 @@
 
 
 			.caret {
+				
+				vertical-align: middle;
+				padding:0 15px;
+				transform: translateX(0);
+				transition: all .25s ease-in-out;	
+				font-size: .6em;
+
+
+				&.fa {
+					font-size: .6em;
+				}
+			}
+
+
+			._caret__DISABLED {
 				// font-family: $icon-font-awesome;
 				position: absolute;
 				content: $nav-lv1-arrow;
@@ -570,9 +588,15 @@
 
 			&:hover {
 
+			
+
 				@include desktop {
 
-					> a .caret {
+						.caret {
+							transform: translateX(20px);
+						}
+
+					> a ._caret__DISABLED {
 
 						@include animation( submenu-hover-arrow .25s ease-in 0s 1 );
 						animation-fill-mode: forwards;
@@ -736,7 +760,7 @@
 
 
 			&:hover > a {
-				padding-left : $nav-sub-link-padding-y + 20;
+				padding-left : calc( $nav-sub-link-padding-y + 20px);
 				transform:translateX(30px);
 			}
 
@@ -757,7 +781,9 @@
 			> a:before {
 				content: $nav-lv2-arrow;
 			}
+
 		}
+
 	}
 
 
@@ -870,8 +896,8 @@ body.menu-visible {
 	> ul > li a {
 
 		line-height: 1.75;
-		padding-top: 22vh;		//$navbar-padding-y ;
-		padding-bottom: 1vh; 	// $navbar-padding-y ;
+		padding-top: 10px;		//$navbar-padding-y ;
+		padding-bottom: 10px; 	// $navbar-padding-y ;
 
 		@include transform('translateX(10%)');
 

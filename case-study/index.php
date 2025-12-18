@@ -66,9 +66,9 @@
                             <div class="col-md-4">
                                 <h4 class="h3 color-primary-600">Success &amp; Impact</h4>
                                 <ul class="arrow strong">
-                                    <li>Improved estimation accuracy by <span class="h2 color-secondary">40%</span></li>
-                                    <li>Increased visibility into refresh costs by <span class="h2 color-secondary">60%</span></strong></li>                                
-                                    <li>Enhanced reporting scalability by <span class="h2 color-secondary">50%</span></strong></li>                                
+                                    <li>Improved estimation accuracy by <span class="h2 color-secondary fr clearfix">40%</span></li>
+                                    <li>Increased visibility into refresh costs by <span class="h2 color-secondary fr clearfix">60%</span></strong></li>                                
+                                    <li>Enhanced reporting scalability by <span class="h2 color-secondary fr clearfix">50%</span></strong></li>                                
                                 </ul>
                             </div>
 
