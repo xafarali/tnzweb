@@ -94,10 +94,21 @@ ul.reset,
 .bc-diamond,
 .bc-diamond-inv,
 .bg-clip,
+.bc,
 .bg-clip-left {
-	margin-top: -10vh;
-    margin-bottom: -10vh;
-    padding: 30vh 0;
+
+	margin-top: -50px;
+	margin-bottom: -50px;
+	padding: 50px 0;
+
+
+	@include desktop {
+		margin-top: -10vh;
+		margin-bottom: -10vh;
+		padding: 30vh 0;
+	}
+
+	
 }
 
 

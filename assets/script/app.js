@@ -500,7 +500,7 @@ jQuery(document).ready(function ($) {
 
         
         // Grow / Shrink Container based on Scroll
-        if ( $('.xs-fx-grow').length ) {
+        if ( $('.xs-fx-grow').length && ! window.is_phone() ) {
 
             let container = $('.xs-fx-grow');
             container.each(function(i,v) {

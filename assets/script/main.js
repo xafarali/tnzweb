@@ -387,7 +387,7 @@ jQuery(document).ready(function ($) {
 
             // Initial Setup
             let $menu_cont   = $('.top-main-menu');
-            let lv1       = $('li.lv1', $menu_cont );
+            let lv1        = $('li.lv1', $menu_cont );
             let lv2        = $('li.lv2', $menu_cont )
 
             gsap.set([lv1], {
@@ -425,13 +425,25 @@ jQuery(document).ready(function ($) {
                     }
                 })
 
-                
+
+                // close mobile submenues
+                $('div.sub-menu').removeClass('sub-menu-opened')
              
             }) // EVENT BODY CLOSE
         }   
         
-       
-        
+        // phone Menu
+        if(is_phone()) {
+
+            let $targetItem = $('.main-navigation li.dropdown > a');
+
+            $targetItem.click(function (e) {
+                e.preventDefault()
+                $(this).next('.sub-menu').toggleClass('sub-menu-opened')
+            })
+
+
+        };
         
         
         
@@ -1561,11 +1573,16 @@ jQuery(document).ready(function ($) {
         );
     }
 
+
     function is_phone($flag) {
         $flag = $flag || null;
         if ($flag != null) {
             return $flag;
         } else return $(".dv-device").is(":visible");
+    }
+
+    window.is_phone = function() {
+        return is_phone();
     }
 
     function val_to_perc(value, neg) {

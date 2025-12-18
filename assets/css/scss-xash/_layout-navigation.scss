@@ -38,6 +38,7 @@
 }
 
 .menu-wrapper {
+	background: $bg-menu-curtain;
 
 	&:before {
 		// The Curtain
@@ -49,10 +50,22 @@
 		right: 0;
 		height : 100vw;
 		background: $bg-menu-curtain;
-		border-radius: 100vh;
 		transform:translate(50%, -050%) scale(0);
 		@include transition("transform 1s");
+	
 
+	}
+
+
+
+	@include desktop {
+		background: transparent;
+
+		&:before {
+			border-radius: 100vh;
+			
+		}
+			
 	}
 
 	// Default:: style for phone
@@ -64,7 +77,7 @@
 	top: 0;
 	left: 0;
 	height : 100vh;
-	background: transparent;
+	//background: transparent;
 	// background: $bg-menu-curtain;
 
 
@@ -99,8 +112,9 @@
 
 
 .main-navigation {
+
 	padding: 0;
-	background-color: $bg-dark;
+	background-color: $bg-menu-curtain;
 
 	li.lv1 {
 		width: 100%;
@@ -116,7 +130,7 @@
 			flex-wrap: wrap;
 			justify-content: left;
 			align-content: center;
-			margin-top: 0; //12vh;
+			margin-top: 8vh;
 
 
 
@@ -195,7 +209,7 @@
 					padding: 		$nav-link-padding;
 					letter-spacing: $nav-lv1-spacing;
 					line-height: 	$nav-lv1-line-height;
-					display: 		inline-block;
+					display: 		block;
 					position: 		relative;
 
 
@@ -203,9 +217,13 @@
 
 					// Prevent Menu fall
 					@include desktop {
+						display: 		inline-block;
 						font-size: 	$font-size-nav-lv1-desktop;
 						padding: 	$nav-link-padding-desktop;//$nav-link-padding * .5;
 					}
+
+
+
 				}
 				// a
 
@@ -511,6 +529,15 @@
 			
 			a {
 				position: relative;
+				
+				width: 100%;
+			}
+
+
+			@include phone {
+				> a {
+					border-bottom: 1px solid rgba($primary-100,.25);
+				}
 			}
 		}
 
@@ -520,6 +547,26 @@
 
 			> a {
 				padding: $nav-sub-link-padding-child;
+
+
+
+				// caret in phone
+				@include phone {
+					width: 100%;
+					border-bottom: 1px solid rgba($primary-100,.25);
+					
+					
+					.caret {
+						position: absolute;
+						right: 0;
+						font-size: 1em;
+						transform: rotate(90deg);
+
+						&.fa {
+							font-size: 1em;
+						}
+					}
+				}
 
 			}
 
@@ -536,6 +583,9 @@
 				&.fa {
 					font-size: .6em;
 				}
+
+
+				
 			}
 
 
@@ -585,16 +635,13 @@
 			}
 
 
+			@include desktop { 
+				
+				&:hover {
 
-			&:hover {
-
-			
-
-				@include desktop {
-
-						.caret {
-							transform: translateX(20px);
-						}
+					.caret {
+						transform: translateX(20px);
+					}
 
 					> a ._caret__DISABLED {
 
@@ -603,9 +650,12 @@
 
 					}
 
-				}
-
+				
+				}	// hover
 			}
+
+
+			
 
 
 		}
@@ -674,10 +724,31 @@
 			}
 
 
-			&.dropdown-menu {
+			
+
+
+			//-----------------------------------------------------------------
+			//-----------------------------------------------------------------
+			// SUBMENU
+			//-----------------------------------------------------------------
+			//-----------------------------------------------------------------
+			@include phone {
+
+				&.hover-animated {
+					display: none;
+
+					padding: 20px 20px 20px 30px;
+
+					a {
+						padding-top: 20px;
+						padding-bottom: 20px;
+						font-size: 1.5rem;
+						border-bottom: 1px solid rgba($primary-600, .7);
+					}
+				}
+				
+				
 			}
-
-
 
 
 
@@ -766,6 +837,15 @@
 
 		} // Li
 
+	
+	
+		@include phone {
+			&.sub-menu-opened {
+				display: block;
+			}
+		}
+	
+	
 	}   // submenu
 
 
@@ -899,7 +979,10 @@ body.menu-visible {
 		padding-top: 10px;		//$navbar-padding-y ;
 		padding-bottom: 10px; 	// $navbar-padding-y ;
 
-		@include transform('translateX(10%)');
+		@include desktop {
+			@include transform('translateX(10%)');
+		}
+		
 
 
 
