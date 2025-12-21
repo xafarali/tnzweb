@@ -120,10 +120,6 @@
 	padding : 5px 0;
 	position: relative;
 	z-index: $zindex-fixed;
-
-
-
-
 }
 
 
@@ -196,6 +192,20 @@
 
 	}
 
+
+
+	@include phone {
+		height: 64px;
+
+		a {
+			height: 100%;
+
+			img,
+			svg {
+				height: 100%;
+			}
+		}
+	}
 
 
 }
@@ -301,3 +311,6 @@ html {
 	}
 
 }
+
+
+

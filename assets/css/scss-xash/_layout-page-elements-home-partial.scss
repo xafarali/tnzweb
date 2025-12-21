@@ -84,28 +84,58 @@ ul.reset,
 }
 
 .bc-inv,
-.bg-clip-left { clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);}
+.bg-clip-left { 
+	clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 calc(100% - 64px));
+
+	@include desktop {
+		clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%)
+	}
+	;
+}
+
 .bc,
-.bg-clip { clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);} 
-.bc-diamond { clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);}
-.bc-diamond-inv { clip-path:polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%) }
+.bg-clip { 
+
+	clip-path: polygon(0 0, 100% 40px, 100% calc(100% - 64px), 0 100%);
+
+	@include desktop {
+		clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+	}
+	
+} 
+.bc-diamond { 
+
+	clip-path: polygon(0 40px, 25% 0, 100% 6%, 100% calc(100% - 64px), 25% 100%, 0 94%);
+
+	@include desktop {
+		clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);
+	}
+	
+}
+.bc-diamond-inv { 
+	clip-path:polygon(0 40px, 75% 0, 100% 40px, 100% calc(100% - 64px), 75% 100%, calc(100% - 64px));
+
+	@include desktop {
+		clip-path:polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%) 
+	}
+}
 
 
 .bc-diamond,
 .bc-diamond-inv,
-.bg-clip,
 .bc,
+.bg-clip,
 .bg-clip-left {
 
-	margin-top: -50px;
-	margin-bottom: -50px;
+	margin-top: -64px;
+	margin-bottom: -64px;
 	padding: 50px 0;
-
+	z-index: 1;
 
 	@include desktop {
 		margin-top: -10vh;
 		margin-bottom: -10vh;
-		padding: 30vh 0;
+		padding: 25vh 0;
 	}
 
 	

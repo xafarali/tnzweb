@@ -16,7 +16,7 @@ body_open('page-data-int full-width ', $root_path . 'template/header/header-data
 
     <div class="container-xl fx-spin-wrap" id="why-power-bi">
         <h2 class=" size_-h1 font-light padding  text-center xs-fx-spin-text" data-trigger="#why-power-bi"
-            data-style="fd" data-trigger-start="0 50%">Your Partner in Digital Transformation</h2>
+            data-style="fd" data-trigger-start="0 50%">Your Partner in the Digital Transformation</h2>
         <p class="lead">Working with TnZ International means you'll be supported every step of the way in your data journey.
         </p>
         <p>We make sure your data environment is in harmony, fostering success driven by data. Partner with us and see how TnZ can drive your digital transformation through expert data integration and smooth cloud migration.</p>
@@ -43,8 +43,7 @@ body_open('page-data-int full-width ', $root_path . 'template/header/header-data
                             </li>
                             
                             <li class="col-md-6">
-                                <strong>Deployment:</strong> We launch the application, ensuring everything is running smoothly and meets your satisfaction.
-                                
+                                <strong>Deployment:</strong> We launch the application, ensuring everything is running smoothly and meets your satisfaction.                                
                             </li>    
                         </ul>
                     </div>

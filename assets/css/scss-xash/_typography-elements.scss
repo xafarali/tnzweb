@@ -378,6 +378,15 @@ sup {
 }
 
 
+.small,
+small {
+	font-size: 90%;
+
+	@include desktop {
+		font-size: 85%;
+	}
+}
+
 .display-1,
 .display-2 {
 	letter-spacing: -3px;

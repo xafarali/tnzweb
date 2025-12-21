@@ -12,8 +12,8 @@
                     <div class="col-md-6">
                         
                         <div class="anim-heading">
-                            <h2 class="display-2 text-uppercase h1 text-right font-thin">
-                                <span class="anim-head-1">From Insight to</span>
+                            <h2 class="display-2 text-uppercase h1 text-right-desktop font-thin">
+                                <span class="anim-head-1 text-left-phone">From Insight to</span>
                                 <span class="anim-head-2 highlight h1"><strong>Impact</strong></span>
                             </h2>
                         </div>                
@@ -34,7 +34,7 @@
                 
                 <div class="garnish plx-container">
                     <div class="spacer"></div>
-                    <div class="itm-plx" data-parallex="-60">
+                    <div class="itm-plx hide-phone" data-parallex="-60">
                         <div class="img-1" >
                             <img src="images/diamond-diether.png" alt="" class="anim-bubble item-blur-1">
                         </div>

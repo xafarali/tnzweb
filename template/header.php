@@ -15,7 +15,7 @@
 
             <div class="container-fluid">
 
-                <div class="row  _mc">
+                <div class="row  mc-phone menu-wrap-phone">
 
                     <div class="col-6 logo-wrapper">
                         <div class="logo-wr_apper">
@@ -55,7 +55,13 @@
                             </div>
 
                             <div class="area-menu mobile-menu-btn hide-desktop hide-laptop">
-                                <a href="" class="btn btn-menu">MENU Phone</a>
+                                <a href="" class="btn btn-menu">
+                                    <span class="mb-wrap">
+                                        <i class="first">&nbsp;</i>
+                                        <i class="mid">&nbsp;</i>
+                                        <i class="last">&nbsp;</i>
+                                    </span>
+                                </a>
                             </div>
 
                             <div class="menu-button hide-close">

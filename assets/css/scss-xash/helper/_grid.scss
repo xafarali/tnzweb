@@ -179,6 +179,18 @@
 }
 
 
+@include phone {
+	.mc-phone,
+	.flex-vc-phone {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		flex-grow: 1;
+		flex-wrap: wrap;
+	}
+}
+
+
 .flex-vc {
 	flex-direction: column;
 	justify-content: space-around;

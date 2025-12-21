@@ -230,6 +230,23 @@
 				width: 100%;
 				margin-top: -10vh;			
 			}
+
+
+
+			@include phone {
+				svg {
+					margin-top: -3vh;
+					width: unset;
+					height: 100vh;
+					object-fit: fill;
+					opacity: .5;
+
+
+					path {
+						stroke-width: 45px;
+					}
+				}
+			}
 		}
 
 
@@ -278,6 +295,21 @@
 				}
 				
 			}
+
+
+
+
+			// Phoneshit
+			@include phone {
+				.anim-head-1 {
+					display: block;
+					text-align: center;
+					font-weight: 400;
+					letter-spacing: .1em;
+
+					font-size: $font-size-h1;
+				}
+			}
 	}
 
 
@@ -301,9 +333,11 @@
 			}
 
 
+			
+
 
 			.tag {
-				position: absolute;
+				
 				top: 3vh;
 				right:  20vw;
 				padding : 1rem 1.5rem;
@@ -354,8 +388,33 @@
 					}
 				}
 
+
+				// tags
+				@include desktop {
+					position: absolute;
+				}
+
 			}
 		}
+
+
+		// #sec-client-home
+		@include phone {
+			padding: 40px 0;
+
+			.bg-illus {
+				position: relative;
+
+
+				.svg-ribbon {
+					top: 0;
+				}
+			}
+			
+		}
+
+
+
 	}
 
 
@@ -2068,6 +2127,11 @@
 
 
 	&.bottom { 	bottom: $gutter-width; top: auto;	}
+
+
+	@include phone {
+		display: none;
+	}
 }
 
 
@@ -2075,9 +2139,9 @@
 .canvas-container {
 	position: fixed;
 	top: 0;
-	left: 35vw;
-	height: 100vh;
-	width: 100vw;
+	left: 45vw;
+	height: 70vh;
+	width: 40vw;
 	pointer-events: none;
 	z-index: 4;
 	//background: rgba(0,0,0,.2);
@@ -2086,6 +2150,13 @@
 	canvas {
 		height: 100%;
 		width: 100%;
+	}
+
+
+
+	@include desktop {
+		height: 100vh;
+		width: 100vw;
 	}
 }
 
@@ -2099,4 +2170,18 @@
 	#tagline-home,
 	#service-home{ 
 		//border:1px solid red;
+		@include phone {
+			min-height: 70vh;
+		}
+	}
+
+
+	.home-banner .home-main-slider{
+
+		@include phone {
+			.banner-wrapper > * .banner-content-wrapper {
+				overflow: visible!important;
+			}
+		}
+		
 	}

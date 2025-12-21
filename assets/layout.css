@@ -15256,6 +15256,22 @@ a.text-def:hover, a.text-def:focus {
   flex-wrap: wrap;
 }
 
+/*
+$_ph : breakpoint-max(sm, $grid-breakpoints );
+
+@include media-breakpoint-down( sm ) {
+	@content;
+}*/
+@media only screen and (max-width: 767.98px) {
+  .mc-phone,
+  .flex-vc-phone {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+  }
+}
 .flex-vc {
   flex-direction: column;
   justify-content: space-around;
@@ -17175,6 +17191,17 @@ sup {
 @media only screen and (min-width: 1680px) {
   .font-size-xl {
     font-size: 10rem;
+  }
+}
+
+.small,
+small {
+  font-size: 90%;
+}
+@media (min-width: 992px) {
+  .small,
+  small {
+    font-size: 85%;
   }
 }
 
@@ -19810,6 +19837,17 @@ sup {
   }
 }
 
+.small,
+small {
+  font-size: 90%;
+}
+@media (min-width: 992px) {
+  .small,
+  small {
+    font-size: 85%;
+  }
+}
+
 .display-1,
 .display-2 {
   letter-spacing: -3px;
@@ -20663,6 +20701,26 @@ body.sticky .site-title .site-title-heading img {
 body.sticky .site-title .site-title-heading a {
   height: 38px;
 }
+.site-title {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  .site-title {
+    height: 64px;
+  }
+  .site-title a {
+    height: 100%;
+  }
+  .site-title a img,
+  .site-title a svg {
+    height: 100%;
+  }
+}
 
 /*  Primary Header Area
 //--------------------------------------------------*/
@@ -20738,6 +20796,22 @@ html {
 @media only screen and (max-width: 767.98px) {
   .area-menu {
     justify-content: flex-end;
+  }
+}
+
+.menu-wrap-phone {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  .menu-wrap-phone {
+    padding: 5px 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.25);
   }
 }
 
@@ -21100,6 +21174,28 @@ body.menu-visible .menu-burger:after, body.menu-visible .menu-burger:before {
 body.menu-open .area-menu.mobile-menu-btn,
 body.menu-visible .area-menu.mobile-menu-btn {
   opacity: 0;
+}
+
+.area-menu.mobile-menu-btn {
+  margin-top: 5px;
+  padding: 0;
+}
+.area-menu.mobile-menu-btn .mb-wrap {
+  height: 42px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-items: space-between;
+  flex-wrap: wrap;
+}
+.area-menu.mobile-menu-btn .first,
+.area-menu.mobile-menu-btn .mid,
+.area-menu.mobile-menu-btn .last {
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 30px;
+  background: #DCE1EF;
 }
 
 .navbar-nav > li {
@@ -22024,11 +22120,6 @@ body #header-wrapper header.top-menu-wrapper {
   @include media-breakpoint-down( sm ) {
   	@content;
   }*/
-}
-@media only screen and (max-width: 767.98px) {
-  .banner-wrapper > * .banner-content-wrapper {
-    overflow: hidden;
-  }
 }
 .banner-wrapper > * {
   /*
@@ -23827,8 +23918,8 @@ ul, ol {
   height: auto;
   display: inline-block;
   width: 100%;
-  padding-top: 37.5px;
-  padding-bottom: 37.5px;
+  padding-top: 49.5px;
+  padding-bottom: 49.5px;
 }
 @media only screen and (min-width:768px) {
   .section {
@@ -25558,6 +25649,26 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
   width: 100%;
   margin-top: -10vh;
 }
+#sec-about-home .illus-wrapper {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  #sec-about-home .illus-wrapper svg {
+    margin-top: -3vh;
+    width: unset;
+    height: 100vh;
+    object-fit: fill;
+    opacity: 0.5;
+  }
+  #sec-about-home .illus-wrapper svg path {
+    stroke-width: 45px;
+  }
+}
 @media only screen and (min-width: 1366px) {
   #sec-about-home .slide-cont .side-slide-wrapper {
     display: flex;
@@ -25583,6 +25694,23 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
   right: 40vw;
   transform: scale(0.45);
 }
+#sec-about-home {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  #sec-about-home .anim-head-1 {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-size: 3rem;
+  }
+}
 
 #sec-client-home {
   position: relative;
@@ -25600,7 +25728,6 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
   width: 100%;
 }
 #sec-client-home .bg-illus .tag {
-  position: absolute;
   top: 3vh;
   right: 20vw;
   padding: 1rem 1.5rem;
@@ -25634,6 +25761,30 @@ body.media-detail .media-gallery-wrap > .col-md-2 {
 }
 #sec-client-home .bg-illus .tag .fa.badge:empty {
   display: unset;
+}
+@media (min-width: 992px) {
+  #sec-client-home .bg-illus .tag {
+    position: absolute;
+  }
+}
+#sec-client-home {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  #sec-client-home {
+    padding: 40px 0;
+  }
+  #sec-client-home .bg-illus {
+    position: relative;
+  }
+  #sec-client-home .bg-illus .svg-ribbon {
+    top: 0;
+  }
 }
 
 .client-list {
@@ -26864,19 +27015,74 @@ select.ajax-loader {
   bottom: 30px;
   top: auto;
 }
+.fancy-bar {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  .fancy-bar {
+    display: none;
+  }
+}
 
 .canvas-container {
   position: fixed;
   top: 0;
-  left: 35vw;
-  height: 100vh;
-  width: 100vw;
+  left: 45vw;
+  height: 70vh;
+  width: 40vw;
   pointer-events: none;
   z-index: 4;
 }
 .canvas-container canvas {
   height: 100%;
   width: 100%;
+}
+@media (min-width: 992px) {
+  .canvas-container {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.home-main-slider,
+#sec-about-home,
+#sec-client-home,
+#tagline-home,
+#service-home {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  .home-main-slider,
+  #sec-about-home,
+  #sec-client-home,
+  #tagline-home,
+  #service-home {
+    min-height: 70vh;
+  }
+}
+
+.home-banner .home-main-slider {
+  /*
+  $_ph : breakpoint-max(sm, $grid-breakpoints );
+
+  @include media-breakpoint-down( sm ) {
+  	@content;
+  }*/
+}
+@media only screen and (max-width: 767.98px) {
+  .home-banner .home-main-slider .banner-wrapper > * .banner-content-wrapper {
+    overflow: visible !important;
+  }
 }
 
 /**
@@ -27009,40 +27215,63 @@ ul.reset li,
 
 .bc-inv,
 .bg-clip-left {
-  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 calc(100% - 64px));
+}
+@media (min-width: 992px) {
+  .bc-inv,
+  .bg-clip-left {
+    clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 94%);
+  }
 }
 
 .bc,
 .bg-clip {
-  clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+  clip-path: polygon(0 0, 100% 40px, 100% calc(100% - 64px), 0 100%);
+}
+@media (min-width: 992px) {
+  .bc,
+  .bg-clip {
+    clip-path: polygon(0 0, 100% 6%, 100% 94%, 0 100%);
+  }
 }
 
 .bc-diamond {
-  clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);
+  clip-path: polygon(0 40px, 25% 0, 100% 6%, 100% calc(100% - 64px), 25% 100%, 0 94%);
+}
+@media (min-width: 992px) {
+  .bc-diamond {
+    clip-path: polygon(0 6%, 25% 0, 100% 6%, 100% 94%, 25% 100%, 0 94%);
+  }
 }
 
 .bc-diamond-inv {
-  clip-path: polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%);
+  clip-path: polygon(0 40px, 75% 0, 100% 40px, 100% calc(100% - 64px), 75% 100%, calc(100% - 64px));
+}
+@media (min-width: 992px) {
+  .bc-diamond-inv {
+    clip-path: polygon(0 6%, 75% 0, 100% 6%, 100% 94%, 75% 100%, 0 94%);
+  }
 }
 
 .bc-diamond,
 .bc-diamond-inv,
-.bg-clip,
 .bc,
+.bg-clip,
 .bg-clip-left {
-  margin-top: -50px;
-  margin-bottom: -50px;
+  margin-top: -64px;
+  margin-bottom: -64px;
   padding: 50px 0;
+  z-index: 1;
 }
 @media (min-width: 992px) {
   .bc-diamond,
   .bc-diamond-inv,
-  .bg-clip,
   .bc,
+  .bg-clip,
   .bg-clip-left {
     margin-top: -10vh;
     margin-bottom: -10vh;
-    padding: 30vh 0;
+    padding: 25vh 0;
   }
 }
 

@@ -9,7 +9,7 @@
 	?>
 <div class="auto-scroll-wrapper">
    
-    <div class="banner-wrapper _section fs home-banner auto-scroll st-home">
+    <div class="banner-wrapper _section fs home-banner auto-scroll  z-2 pr st-home">
 
         <div class="slider-wrapper section home-main-slider fs">
             

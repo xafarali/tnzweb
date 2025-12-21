@@ -33,21 +33,22 @@
                                 <div class="">
                                     <div class="fx-spin-wrapper">
                                         <h1 class="color-primary-600 text-center ">
-                                            <div class="h2 text-center margin-left-xxl-deskftop fadeInUp wow">Case Study</div>
+                                            <!-- <div class="h2 text-center margin-left-xxl-deskftop fadeInUp wow">Case Study</div> -->
                                             <div class="__xs-fx-spin-text dp  font-size-h1" 
                                                 data-trigger=".banner-content" 
-                                                data-mod = "rev">Data Warehousing with Databricks</div>                                            
+                                                data-mod = "rev">Databricks Lakehouse for Enterprise Data Consolidation</div>
                                         </h1>
                                     </div>                 
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <h4 class="h3 font-light color-secondary text-right-desktop">Challenge:</h4>
+                                    <div class="col-md-12">
+                                        <h4 class="h2 font-light color-secondary text-left-desktop">Client Context </h4>
                                     </div>
-                                    <div class="col-md-10">
+                                    <div class="col-md-12">
                                         <p class="lead">
                                             The organization had scattered data sources and needed a unified lakehouse to handle large volumes of operational and analytical data. Traditional pipelines were slow and hard to maintain.
+
                                         </p>
                                     </div>
                                 </div>

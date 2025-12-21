@@ -622,7 +622,7 @@ jQuery(document).ready(function ($) {
 
         //#region HOME- ABOUT US
         //------------------------------------------------------------------------
-        if ($("#sec-about-home").length) {
+        if ($("#sec-about-home").length && !is_phone()) {
             
 			let $_sah = $("#sec-about-home");
             let $_path = $("path#illu-home-path-red", $_sah);
